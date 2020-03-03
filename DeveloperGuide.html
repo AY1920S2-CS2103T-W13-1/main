@@ -742,23 +742,29 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <p>(For all use cases below, the <strong>System</strong> is the <code>EYLAH</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
 <h3 id="diet-tracker-use-cases" class="discrete">Diet Tracker Use Cases</h3>
-<h3 id="use-case-add-person" class="discrete">Use case: Add Person</h3>
+<h3 id="use-case-uc01-update-user-profile" class="discrete">Use case: UC01 Update User Profile</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list persons</p>
+<p>User chooses dieting mode (i.e. Weight Loss, Weight Gain, Maintain)</p>
 </li>
 <li>
-<p>AddressBook shows a list of persons</p>
+<p>EYLAH updates users' dieting mode</p>
 </li>
 <li>
-<p>User requests to delete a specific person in the list</p>
+<p>User updates height</p>
 </li>
 <li>
-<p>AddressBook deletes the person</p>
+<p>EYLAH updates height of user</p>
+</li>
+<li>
+<p>User updates weight</p>
+</li>
+<li>
+<p>EYLAH updates weight of user</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -771,20 +777,375 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.</p>
+<p>1a. The flag field for dieting mode is empty or flag is invalid.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. EYLAH requests user to re-enter command with flag</p>
+</li>
+<li>
+<p>1a2. User enters command with flag<br>
+Steps 1a1-1a2 are repeated until the correct entered is correct.<br>
+Use case resumes from step 3.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3a. Height field is empty or in invalid format.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. EYLAH requests user to re-enter height in correct format</p>
+</li>
+<li>
+<p>3a2. User enters command with height in correct format<br>
+Steps 3a1-3a2 are repeated until the correct  entered is correct.<br>
+Use case resumes from step 5.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>5a. Weight field is empty or in invalid format.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>5a1. EYLAH requests user to re-enter weight in correct format</p>
+</li>
+<li>
+<p>5a2. User enters command with weight in correct format<br>
+Steps 5a1-5a2 are repeated until the correct  entered is correct.<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc02-add-food-item" class="discrete">Use case: UC02 Add Food Item</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User adds food item</p>
+</li>
+<li>
+<p>EYLAH adds food item to user&#8217;s log</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-<li>
-<p>3a. The given index is invalid.</p>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. AddressBook shows an error message.</p>
-<div class="paragraph">
-<p>Use case resumes at step 2.</p>
+<p>1a. The food item is added in an invalid format or certain fields are missing.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. EYLAH requests user to re-enter food item in valid format.</p>
+</li>
+<li>
+<p>1a2. User enters command in the correct format as requested by EYLAH<br>
+Steps 1a1-1a2 are repeated until the correct entered is correct.<br>
+Use case ends.</p>
+</li>
+</ul>
 </div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc03-delete-food-item" class="discrete">Use case: UC03 Delete Food Item</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User lists out existing items</p>
+</li>
+<li>
+<p>EYLAH shows the list based on flags entered</p>
+</li>
+<li>
+<p>User deletes item by index</p>
+</li>
+<li>
+<p>EYLAH deletes item tagged to specified index</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. List command contains invalid flag.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. EYLAH prints out default list which contains food logged for the day</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3a. Invalid or empty index keyed into command.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. EYLAH requests user to re-enter index in correct format</p>
+</li>
+<li>
+<p>3a2. User enters delete item in  correct format<br>
+Steps 3a1-3a2 are repeated until the correct  entered is correct.<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc04-edit-food-item" class="discrete">Use case: UC04 Edit Food Item</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User lists out existing items</p>
+</li>
+<li>
+<p>EYLAH shows the list based on flags entered</p>
+</li>
+<li>
+<p>User edits item by index</p>
+</li>
+<li>
+<p>EYLAH edits the data of the item stored at the index.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. List command contains invalid flag.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. EYLAH prints out default list which contains food logged for the day</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3a. Invalid or empty index keyed into command.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. EYLAH requests user to re-enter index in correct format</p>
+</li>
+<li>
+<p>3a2. User enters delete item in  correct format<br>
+Steps 3a1-3a2 are repeated until the correct  entered is correct.<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3b. No additional tags and data keyed in as flags to replace existing data.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3b1. EYLAH requests user to re-enter command with at least one flag</p>
+</li>
+<li>
+<p>3a2. User enters command with flag and data<br>
+Steps 3b1-3b2 are repeated until the correct  entered is correct.<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc05-list-food-items" class="discrete">Use case: UC05 List Food Items</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User lists out existing items</p>
+</li>
+<li>
+<p>EYLAH shows the list based on flags entered</p>
+</li>
+<li>
+<p>User deletes item by index</p>
+</li>
+<li>
+<p>EYLAH deletes item tagged to specified index</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. List command contains invalid flag.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. EYLAH prints out default list which contains food logged for the day</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3a. Invalid or empty index keyed into command.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. EYLAH requests user to re-enter index in correct format</p>
+</li>
+<li>
+<p>3a2. User enters delete item in  correct format<br>
+Steps 3a1-3a2 are repeated until the correct  entered is correct.<br>
+Use ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc06-calories-count" class="discrete">Use case: UC06 Calories count</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User lists out existing items</p>
+</li>
+<li>
+<p>EYLAH shows the list based on flags entered</p>
+</li>
+<li>
+<p>User deletes item by index</p>
+</li>
+<li>
+<p>EYLAH deletes item tagged to specified index</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. List command contains invalid flag.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. EYLAH prints out default list which contains food logged for the day</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3a. Invalid or empty index keyed into command.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. EYLAH requests user to re-enter index in correct format</p>
+</li>
+<li>
+<p>3a2. User enters delete item in  correct format<br>
+Steps 3a1-3a2 are repeated until the correct  entered is correct.<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc07-calculate-bmi" class="discrete">Use case: UC07 Calculate BMI</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User lists out existing items</p>
+</li>
+<li>
+<p>EYLAH shows the list based on flags entered</p>
+</li>
+<li>
+<p>User deletes item by index</p>
+</li>
+<li>
+<p>EYLAH deletes item tagged to specified index</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. List command contains invalid flag.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. EYLAH prints out default list which contains food logged for the day</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3a. Invalid or empty index keyed into command.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. EYLAH requests user to re-enter index in correct format</p>
+</li>
+<li>
+<p>3a2. User enters delete item in  correct format<br>
+Steps 3a1-3a2 are repeated until the correct  entered is correct.<br>
+Use case ends.</p>
 </li>
 </ul>
 </div>
@@ -1372,4 +1733,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 13:42:10 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 13:45:27 UTC</div></div></div></body></html>
