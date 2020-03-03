@@ -1,10 +1,30 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>EYELAH - User Guide</title><link rel="stylesheet" href="./gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>EYELAH - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="./coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>EYELAH - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level3</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level3"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>EYELAH - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>AY1920S2-CS2103T-W13-1</code>      Since: <code>Mar 2020</code></p>
 </div>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle"></div>
+<ul class="sectlevel1">
+<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#quick-start">2. Quick Start</a></li>
+<li><a href="#Features">3. Features</a>
+<ul class="sectlevel2">
+<li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
+<li><a href="#diet-tracker-code-diet-code">3.2. Diet Tracker: <code>diet</code></a></li>
+<li><a href="#expense-splitter-code-split-code">3.3. Expense Splitter : <code>split</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">3.4. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.5. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.6. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.7. Encrypting data files <code>[coming in v2.0]</code></a></li>
+</ul>
+</li>
+<li><a href="#faq">4. FAQ</a></li>
+<li><a href="#command-summary">5. Command Summary</a></li>
+</ul>
 </div>
 </div>
 <div class="sect1">
@@ -78,13 +98,13 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>addperson -n NAME</code>, <code>NAME</code> is a parameter which can be used as <code>addperson -n John Doe</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
+<p>Items in square brackets are optional e.g <code>-n NAME [-r ROOM]</code> can be used as <code>-n John Doe -r D411</code> or as <code>-n John Doe</code>.</p>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[-n NAME]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>-n John Doe</code>, <code>-n John Doe -n Daniel</code> etc.</p>
 </li>
 </ul>
 </div>
@@ -172,7 +192,7 @@ Weight in kilograms (kg), rounded to nearest kilogram
 <div class="sect3">
 <h4 id="add-food-code-add-code"><a class="link" href="#add-food-code-add-code">3.2.4. Add food <code>add</code></a></h4>
 <div class="paragraph">
-<p>Adds food to the list</p>
+<p>Adds food to the list.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>add food CALORIES</code><br>
@@ -217,7 +237,36 @@ Example: <code>list -t 3</code></p>
 </div>
 <div class="sect2">
 <h3 id="expense-splitter-code-split-code"><a class="link" href="#expense-splitter-code-split-code">3.3. Expense Splitter : <code>split</code></a></h3>
-
+<div class="paragraph">
+<p>Splitting the food cost with friends. Add person and item, then calculate.</p>
+</div>
+<div class="sect3">
+<h4 id="add-person-code-person-code"><a class="link" href="#add-person-code-person-code">3.3.1. Add person <code>person</code></a></h4>
+<div class="paragraph">
+<p>Add new person to the list of people involved in the splitting.</p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>addperson -n NAME [-r ROOM] [-t TELEGRAM] [-p PHONE]</code><br>
+Example:<br>
+<code>addperson -n john -r D411 -t @john -p 91234567</code> <br>
+<code>addperson -daniel</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-food-code-addfood-code"><a class="link" href="#add-food-code-addfood-code">3.3.2. Add food <code>addfood</code></a></h4>
+<div class="paragraph">
+<p>Add food and the person involved in the splitting.</p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>addfood -f FOOD -c COST -n ALL</code><br>
+<code>addfood -f FOOD -c COST -n NAME [-n NAME]&#8230;&#8203;</code><br>
+Example:<br>
+<code>addfood -f pizza -c 30 -n all</code><br>
+<code>addfood -f pasta -c 6 -n john -n bob -n daniel</code></p>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.4. Clearing all entries : <code>clear</code></a></h3>
@@ -290,4 +339,4 @@ e.g. <code>find James Jake</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 02:34:36 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 04:01:21 UTC</div></div></div></body></html>
