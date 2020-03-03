@@ -14,7 +14,7 @@
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#diet-tracker-code-diet-code">3.2. Diet Tracker: <code>diet</code></a></li>
+<li><a href="#diet-tracker-code-diet-code">3.2. Diet Tracker : <code>diet</code></a></li>
 <li><a href="#expense-splitter-code-split-code">3.3. Expense Splitter : <code>split</code></a></li>
 </ul>
 </li>
@@ -49,7 +49,7 @@
 <p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/Ui.png" alt="Ui" width="790">
+<img src="images/EyLah_mockup.png" alt="EyLah mockup" width="790">
 </div>
 </div>
 </li>
@@ -114,7 +114,7 @@ Format: <code>help</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="diet-tracker-code-diet-code"><a class="link" href="#diet-tracker-code-diet-code">3.2. Diet Tracker: <code>diet</code></a></h3>
+<h3 id="diet-tracker-code-diet-code"><a class="link" href="#diet-tracker-code-diet-code">3.2. Diet Tracker : <code>diet</code></a></h3>
 <div class="paragraph">
 <p>Tracks our daily calories intake. Add food, then calculate.</p>
 </div>
@@ -228,6 +228,171 @@ Default value of list is food consumed for the day. Default number of days for t
 <div class="paragraph">
 <p>Format: <code>list [-f] [-d] [-t [numDays]]</code><br>
 Example: <code>list -t 3</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="delete-food-item-code-delete-code"><a class="link" href="#delete-food-item-code-delete-code">3.2.6. Delete Food Item <code>delete</code></a></h4>
+<div class="paragraph">
+<p>Deletes a Food item from the list of foods stored.<br>
+Format: <code>delete INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the food item at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed food list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use list to view your item indices before deletion.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+<code>delete 2</code><br>
+Deletes the 2nd row of food data from the past 7 days of food.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-food-item-code-edit-code"><a class="link" href="#editing-a-food-item-code-edit-code">3.2.7. Editing a Food Item <code>edit</code></a></h4>
+<div class="paragraph">
+<p>Allows you to edit either the Food name, or the calories. <br>
+Format: <code>edit INDEX [-n NAME] [-c CALORIES]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the Food Item at the specified <code>INDEX</code>.
+The index refers to the index number shown in the displayed Food list.
+The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>edit 2 -n Chicken Rice -c 585</code><br>
+Edits the name of the food item at index 2 to be 'Chicken Rice' and the calories to be '585'.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="calculate-daily-calories-code-calc-code"><a class="link" href="#calculate-daily-calories-code-calc-code">3.2.8. Calculate Daily Calories <code>calc</code></a></h4>
+<div class="paragraph">
+<p>Calculates and lists the following:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Total Calorie Intake for the day.</p>
+</li>
+<li>
+<p>Calories left based on your preferred dieting mode.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Format: <code>calc</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="calculate-body-mass-index-bmi-code-bmi-code"><a class="link" href="#calculate-body-mass-index-bmi-code-bmi-code">3.2.9. Calculate Body Mass Index (BMI) <code>bmi</code></a></h4>
+<div class="paragraph">
+<p>Allows the user to calculate their BMI based on the height and weight stored in the program.<br>
+It will display the following data:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Height</p>
+</li>
+<li>
+<p>Weight</p>
+</li>
+<li>
+<p>BMI value</p>
+</li>
+<li>
+<p>BMI category</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Format: <code>bmi [-w WEIGHT] [-h HEIGHT]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the person at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed person list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>height 172</code><br>
+<code>weight 65</code><br>
+<code>bmi</code><br>
+Change your height and your weight to your current measurements before calculating your BMI.
+BMI is calculated based off the stored height and weight in this instance.</p>
+</li>
+<li>
+<p><code>bmi 65 172</code><br>
+Calculate BMI based on the input height and weight values.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -373,4 +538,4 @@ e.g. <code>removefood -f fries</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 12:18:32 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 13:01:29 UTC</div></div></div></body></html>
