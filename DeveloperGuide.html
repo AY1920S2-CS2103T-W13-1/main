@@ -628,30 +628,30 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p>hall residents</p>
+<p><a href="#temasek-hall">Temasek Hall</a> residents</p>
 </li>
 <li>
-<p>Want to keep track of diet</p>
+<p>Diet-conscious residents</p>
 </li>
 <li>
-<p>Usually make payment first when eating together with friends</p>
+<p>Residents who frequently pays on behalf of a group</p>
 </li>
 <li>
-<p>prefer desktop apps over other types</p>
+<p>Residents who prefer desktop applications</p>
 </li>
 <li>
-<p>can type fast</p>
+<p>Residents who can type fast</p>
 </li>
 <li>
-<p>prefers typing over mouse input</p>
+<p>Residents who prefer typing over using the mouse</p>
 </li>
 <li>
-<p>is reasonably comfortable using CLI apps</p>
+<p>Residents who are reasonably comfortable using <a href="#cli">CLI</a> applications</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Value proposition</strong>: manage contacts faster than a typical mouse/GUI driven app</p>
+<p><strong>Value proposition</strong>: manage diet and expenses faster than a typical mouse/GUI driven app</p>
 </div>
 </div>
 </div>
@@ -835,7 +835,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1b. EYLAH detects invalid syntax in a Person&#8217;s details. For instance, a Person&#8217;s name cannot begin with numbers.</p>
+<p>1b. Eylah detects invalid <a href="#syntax">syntax</a> in person&#8217;s details.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -892,7 +892,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1b. EYLAH detects invalid syntax.</p>
+<p>1b. Eylah detects invalid <a href="#syntax">syntax</a>.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -926,6 +926,242 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 </ol>
 </div>
+<h3 id="use-case-uc04-listing-food-items" class="discrete">Use case: UC04 - Listing food items</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list the food items.</p>
+</li>
+<li>
+<p>EYLAH displays the list of food items.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. EYLAH detects an empty list.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. EYLAH displays an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. EYLAH detects invalid <a href="#syntax">syntax</a>.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. EYLAH displays an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc05-listing-the-persons" class="discrete">Use case: UC05 - Listing the persons</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list the persons.</p>
+</li>
+<li>
+<p>EYLAH displays the list of persons.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. EYLAH detects an empty list.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. EYLAH displays an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. EYLAH detects invalid <a href="#syntax">syntax</a>.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. EYLAH displays an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc06-removing-food" class="discrete">Use case: UC06 - Removing food</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to remove food from the list.</p>
+</li>
+<li>
+<p>EYLAH removes the food from the list.</p>
+</li>
+<li>
+<p>EYLAH displays the list of food.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. EYLAH detects an empty list.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. EYLAH displays an error message.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. EYLAH detects invalid <a href="#syntax">syntax</a>.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. EYLAH displays an error message.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1c. EYLAH detects that the food does not exist in the list.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1c1. EYLAH displays an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-uc07-removing-person" class="discrete">Use case: UC07 - Removing person</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to remove a person from the list.</p>
+</li>
+<li>
+<p>EYLAH removes the person from the list.</p>
+</li>
+<li>
+<p>EYLAH displays the list of persons.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. EYLAH detects an empty list.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. EYLAH displays an error message.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. EYLAH detects invalid <a href="#syntax">syntax</a>.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. EYLAH displays an error message.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1c. EYLAH detects that the person does not exist in the list.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1c1. EYLAH displays an error message.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -938,6 +1174,18 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </li>
 <li>
 <p>Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.</p>
+</li>
+<li>
+<p>Should be able to hold up to 1000 food items without a noticeable sluggishness in performance for typical usage.</p>
+</li>
+<li>
+<p>Should have a pre-loaded list of commonly consumed food items in database.</p>
+</li>
+<li>
+<p>Should be able to work without internet access.</p>
+</li>
+<li>
+<p>A user should be able to use EYLAH easily and intuitively.</p>
 </li>
 <li>
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
@@ -954,6 +1202,18 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="sectionbody">
 <div class="dlist">
 <dl>
+<dt class="hdlist1"><a id="temasek-hall"></a> Temasek Hall</dt>
+<dd>
+<p>A Hall of Residences in National University of Singapore</p>
+</dd>
+<dt class="hdlist1"><a id="cli"></a> CLI</dt>
+<dd>
+<p>Command Line Interface</p>
+</dd>
+<dt class="hdlist1"><a id="syntax"></a> Syntax</dt>
+<dd>
+<p>The structure of statements in the command</p>
+</dd>
 <dt class="hdlist1"><a id="mainstream-os"></a> Mainstream OS</dt>
 <dd>
 <p>Windows, Linux, Unix, OS-X</p>
@@ -1112,4 +1372,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 13:22:33 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 13:27:21 UTC</div></div></div></body></html>
