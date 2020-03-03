@@ -16,10 +16,6 @@
 <li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
 <li><a href="#diet-tracker-code-diet-code">3.2. Diet Tracker: <code>diet</code></a></li>
 <li><a href="#expense-splitter-code-split-code">3.3. Expense Splitter : <code>split</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.4. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.5. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.6. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.7. Encrypting data files <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -297,32 +293,58 @@ Example:<br>
 <code>list food</code></p>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.4. Clearing all entries : <code>clear</code></a></h3>
+<div class="sect3">
+<h4 id="list-person-s-code-listperson-code"><a class="link" href="#list-person-s-code-listperson-code">3.3.5. List person(s) <code>listperson</code></a></h4>
 <div class="paragraph">
-<p>Clears all entries from the address book.<br>
-Format: <code>clear</code></p>
+<p>Display the person(s) in the list<br>
+Format:<br>
+<code>listperson</code><br></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>listperson</code></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.5. Exiting the program : <code>exit</code></a></h3>
+<div class="sect3">
+<h4 id="remove-person-s-code-removeperson-code"><a class="link" href="#remove-person-s-code-removeperson-code">3.3.6. Remove person(s) <code>removeperson</code></a></h4>
+<div class="paragraph">
+<p>Remove person(s) from the list of persons.<br>
+Format:<br>
+<code>removeperson -n NAME [-n NAME]&#8230;&#8203;</code><br></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>removeperson -n john</code><br>
+<code>removeperson -n john -n bob</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="remove-food-s-code-removefood-code"><a class="link" href="#remove-food-s-code-removefood-code">3.3.7. Remove food(s) <code>removefood</code></a></h4>
+<div class="paragraph">
+<p>Remove food(s) from the list of foods.<br>
+Format:<br>
+<code>removefood -f FOOD [-f FOOD]&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>removefood -f fries</code><br>
+<code>removefood -f pizza -f pasta</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.3.8. Exiting the program <code>exit</code></a></h4>
 <div class="paragraph">
 <p>Exits the program.<br>
-Format: <code>exit</code></p>
+Format:<br>
+<code>exit</code></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.6. Saving the data</a></h3>
+<div class="sect3">
+<h4 id="saving-the-data"><a class="link" href="#saving-the-data">3.3.9. Saving the data</a></h4>
 <div class="paragraph">
 <p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.7. Encrypting data files <code>[coming in v2.0]</code></a></h3>
-<div class="paragraph">
-<p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
 </div>
 </div>
@@ -342,26 +364,8 @@ There is no need to save manually.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
-</li>
-<li>
-<p><strong>Clear</strong> : <code>clear</code></p>
-</li>
-<li>
-<p><strong>Delete</strong> : <code>delete INDEX</code><br>
-e.g. <code>delete 3</code></p>
-</li>
-<li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
-</li>
-<li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find James Jake</code></p>
-</li>
-<li>
-<p><strong>List</strong> : <code>list</code></p>
+<p><strong>Remove food</strong> <code>removefood -f FOOD</code><br>
+e.g. <code>removefood -f fries</code></p>
 </li>
 <li>
 <p><strong>Help</strong> : <code>help</code></p>
@@ -369,4 +373,4 @@ e.g. <code>find James Jake</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 11:16:47 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 11:31:16 UTC</div></div></div></body></html>
