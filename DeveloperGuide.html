@@ -964,7 +964,7 @@ Use case ends.</p>
 </li>
 <li>
 <p>3a2. User enters delete item in  correct format<br>
-Steps 3a1-3a2 are repeated until the correct  entered is correct.<br>
+Steps 2a1-2a2 are repeated until the correct  entered is correct.<br>
 Use case ends.</p>
 </li>
 </ul>
@@ -978,7 +978,7 @@ Use case ends.</p>
 <p>3b1. EYLAH requests user to re-enter command with at least one flag</p>
 </li>
 <li>
-<p>3a2. User enters command with flag and data<br>
+<p>3b2. User enters command with flag and data<br>
 Steps 3b1-3b2 are repeated until the correct  entered is correct.<br>
 Use case ends.</p>
 </li>
@@ -998,12 +998,6 @@ Use case ends.</p>
 </li>
 <li>
 <p>EYLAH shows the list based on flags entered</p>
-</li>
-<li>
-<p>User deletes item by index</p>
-</li>
-<li>
-<p>EYLAH deletes item tagged to specified index</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1021,21 +1015,9 @@ Use case ends.</p>
 <ul>
 <li>
 <p>1a1. EYLAH prints out default list which contains food logged for the day</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Use case ends.</p>
 </div>
-</li>
-<li>
-<p>3a. Invalid or empty index keyed into command.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>3a1. EYLAH requests user to re-enter index in correct format</p>
-</li>
-<li>
-<p>3a2. User enters delete item in  correct format<br>
-Steps 3a1-3a2 are repeated until the correct  entered is correct.<br>
-Use ends.</p>
 </li>
 </ul>
 </div>
@@ -1049,16 +1031,13 @@ Use ends.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User lists out existing items</p>
+<p>User calls the command</p>
 </li>
 <li>
-<p>EYLAH shows the list based on flags entered</p>
+<p>EYLAH shows the list food, their calories, as well as the total calories consumed for the day</p>
 </li>
 <li>
-<p>User deletes item by index</p>
-</li>
-<li>
-<p>EYLAH deletes item tagged to specified index</p>
+<p>User can track their remaining calories via the interface, based on their input height and weight</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1071,26 +1050,14 @@ Use ends.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. List command contains invalid flag.</p>
+<p>1a. Invalid argument keyed into command.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>1a1. EYLAH prints out default list which contains food logged for the day</p>
-</li>
-</ul>
-</div>
+<p>1a1. EYLAH would raise a <strong>"errorneous argument"</strong> message</p>
 </li>
 <li>
-<p>3a. Invalid or empty index keyed into command.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>3a1. EYLAH requests user to re-enter index in correct format</p>
-</li>
-<li>
-<p>3a2. User enters delete item in  correct format<br>
-Steps 3a1-3a2 are repeated until the correct  entered is correct.<br>
-Use case ends.</p>
+<p>1a2. EYLAH would run the command and calculate the outputs ignoring additional arguments</p>
 </li>
 </ul>
 </div>
@@ -1104,16 +1071,10 @@ Use case ends.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User lists out existing items</p>
+<p>User calls <code>bmi</code> command, with optional height and weight entered</p>
 </li>
 <li>
-<p>EYLAH shows the list based on flags entered</p>
-</li>
-<li>
-<p>User deletes item by index</p>
-</li>
-<li>
-<p>EYLAH deletes item tagged to specified index</p>
+<p>EYLAH calculates and shows user&#8217;s BMI based on the height and weight</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1126,26 +1087,14 @@ Use case ends.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. List command contains invalid flag.</p>
+<p>1a. BMI command contains invalid flag.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>1a1. EYLAH prints out default list which contains food logged for the day</p>
-</li>
-</ul>
-</div>
+<p>1a1. EYLAH suggests to user the correct format to use</p>
 </li>
 <li>
-<p>3a. Invalid or empty index keyed into command.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>3a1. EYLAH requests user to re-enter index in correct format</p>
-</li>
-<li>
-<p>3a2. User enters delete item in  correct format<br>
-Steps 3a1-3a2 are repeated until the correct  entered is correct.<br>
-Use case ends.</p>
+<p>1a2. User will key in the correct format</p>
 </li>
 </ul>
 </div>
@@ -1733,4 +1682,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-03 14:04:08 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-07 09:21:12 UTC</div></div></div></body></html>
