@@ -27,7 +27,12 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ease Your Life At Halls (EYLAH) is for those who <strong>prefer to use a desktop app to solve issues related to Halls of Residences in National University of Singapore (NUS)</strong>. More importantly, EYLAH is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI). If you can type fast, EYLAH can solve your problems in halls by tracking your diet after those unhealthy supper runs and splitting the cost after each outing or late-night party session. Interested? Jump to <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
+<p>Ease Your Life At Halls (EYLAH) is for those who <strong>prefer to use a desktop app to solve issues related to Halls of
+Residences in National University of Singapore (NUS)</strong>. More importantly, EYLAH is <strong>optimized for those who prefer to
+work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI).
+If you can type fast, EYLAH can solve your problems in halls by tracking your diet after those unhealthy supper runs
+and splitting the cost after each outing or late-night party session. Interested?
+Jump to <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
 </div>
 </div>
 </div>
@@ -94,13 +99,18 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>addperson -n NAME</code>, <code>NAME</code> is a parameter which can be used as <code>addperson -n John Doe</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>additem -i ITEM -p PRICE -n NAME</code>. <code>NAME</code>, <code>ITEM</code> and
+<code>PRICE</code> are a parameters which can decided by the user <code>additem -i beer tower -p 19.90 -n charlotte</code>.</p>
 </li>
 <li>
 <p>Items in square brackets are optional e.g <code>-n NAME [-r ROOM]</code> can be used as <code>-n John Doe -r D411</code> or as <code>-n John Doe</code>.</p>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[-n NAME]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>-n John Doe</code>, <code>-n John Doe -n Daniel</code> etc.</p>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[-n NAME]&#8230;&#8203;</code> can be used as <code>&#160;</code>
+(i.e. 0 times), <code>-n John Doe</code>, <code>-n John Doe -n Daniel</code> etc.</p>
+</li>
+<li>
+<p>Parameters can be in any order e.g if the command specifies <code>-n NAME -p PRICE</code>, <code>-p PRICE -n NAME</code> is also acceptable</p>
 </li>
 </ul>
 </div>
@@ -399,25 +409,13 @@ Calculate BMI based on the input height and weight values.</p>
 <div class="sect2">
 <h3 id="expense-splitter-code-split-code"><a class="link" href="#expense-splitter-code-split-code">3.3. Expense Splitter : <code>split</code></a></h3>
 <div class="paragraph">
-<p>Splitting the food cost with friends. Add person and item, then calculate.</p>
+<p>Splitting the Items' cost with friends. All you have to do is add the items and the names involved in splitting that item and
+EYLAH will calculate the rest for you!</p>
 </div>
 <div class="sect3">
-<h4 id="add-person-code-person-code"><a class="link" href="#add-person-code-person-code">3.3.1. Add person <code>person</code></a></h4>
+<h4 id="add-item-code-additem-code"><a class="link" href="#add-item-code-additem-code">3.3.1. Add item <code>additem</code></a></h4>
 <div class="paragraph">
-<p>Add new person to the list of people involved in the splitting.</p>
-</div>
-<div class="paragraph">
-<p>Format:<br>
-<code>addperson -n NAME [-r ROOM] [-t TELEGRAM] [-p PHONE]</code><br>
-Example:<br>
-<code>addperson -n john -r D411 -t @john -p 91234567</code> <br>
-<code>addperson -daniel</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="add-food-code-addfood-code"><a class="link" href="#add-food-code-addfood-code">3.3.2. Add food <code>addfood</code></a></h4>
-<div class="paragraph">
-<p>Add food and the person involved in the splitting.</p>
+<p>Add item and the person involved in the splitting.</p>
 </div>
 <div class="paragraph">
 <p>Format:<br>
@@ -429,25 +427,9 @@ Example:<br>
 </div>
 </div>
 <div class="sect3">
-<h4 id="calculate-cost-code-calculate-code"><a class="link" href="#calculate-cost-code-calculate-code">3.3.3. Calculate cost <code>calculate</code></a></h4>
+<h4 id="delete-item-code-deleteitem-code"><a class="link" href="#delete-item-code-deleteitem-code">3.3.2. Delete item  <code>deleteitem</code></a></h4>
 <div class="paragraph">
-<p>Calculate the total cost for each person or display cost owed for a particular person.</p>
-</div>
-<div class="paragraph">
-<p>Format:<br>
-<code>calculate [-n NAME]. . .</code><br></p>
-</div>
-<div class="paragraph">
-<p>Example:<br>
-<code>calculate</code><br>
-<code>calculate -n john</code><br>
-<code>calculate -n john -alice</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="list-food-s-items-code-listfood-code"><a class="link" href="#list-food-s-items-code-listfood-code">3.3.4. List food(s) items  <code>listfood</code></a></h4>
-<div class="paragraph">
-<p>Display the food(s) in a list:</p>
+<p>Delete the item(s) in a receipt:</p>
 </div>
 <div class="paragraph">
 <p>Format:<br>
@@ -459,11 +441,13 @@ Example:<br>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-person-s-code-listperson-code"><a class="link" href="#list-person-s-code-listperson-code">3.3.5. List person(s) <code>listperson</code></a></h4>
+<h4 id="list-person-s-code-listamount-code"><a class="link" href="#list-person-s-code-listamount-code">3.3.3. List person(s) <code>listamount</code></a></h4>
 <div class="paragraph">
-<p>Display the person(s) in the list<br>
-Format:<br>
-<code>listperson</code><br></p>
+<p>Display all the Person(s) with the amount they owe you.</p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>listamount</code><br></p>
 </div>
 <div class="paragraph">
 <p>Example:<br>
@@ -471,43 +455,63 @@ Format:<br>
 </div>
 </div>
 <div class="sect3">
-<h4 id="remove-person-s-code-removeperson-code"><a class="link" href="#remove-person-s-code-removeperson-code">3.3.6. Remove person(s) <code>removeperson</code></a></h4>
+<h4 id="list-the-current-receipt-code-listreceipt-code"><a class="link" href="#list-the-current-receipt-code-listreceipt-code">3.3.4. List the current receipt <code>listreceipt</code></a></h4>
 <div class="paragraph">
-<p>Remove person(s) from the list of persons.<br>
-Format:<br>
-<code>removeperson -n NAME [-n NAME]&#8230;&#8203;</code><br></p>
+<p>Display the current receipt which shows all the Items and its respective price and Person(s) involved in splitting that Item.</p>
 </div>
 <div class="paragraph">
-<p>Example:<br>
-<code>removeperson -n john</code><br>
-<code>removeperson -n john -n bob</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="remove-food-s-code-removefood-code"><a class="link" href="#remove-food-s-code-removefood-code">3.3.7. Remove food(s) <code>removefood</code></a></h4>
-<div class="paragraph">
-<p>Remove food(s) from the list of foods.<br>
-Format:<br>
-<code>removefood -f FOOD [-f FOOD]&#8230;&#8203;</code></p>
+<p>Format:<br>
+<code>listreceipt</code><br></p>
 </div>
 <div class="paragraph">
 <p>Example:<br>
-<code>removefood -f fries</code><br>
-<code>removefood -f pizza -f pasta</code></p>
+<code>listreceipt</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.3.8. Exiting the program <code>exit</code></a></h4>
+<h4 id="paid-money-code-paid-code"><a class="link" href="#paid-money-code-paid-code">3.3.5. Paid money <code>paid</code></a></h4>
 <div class="paragraph">
-<p>Exits the program.<br>
-Format:<br>
-<code>exit</code></p>
+<p>When a Person pays an amount, or part of the amount, they owe you.</p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>paid INDEX</code><br></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>paid 2</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+When using the <code>paid</code> command, use the <code>listamount</code> command to find the index of the Person who paid you.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="saving-the-data"><a class="link" href="#saving-the-data">3.3.9. Saving the data</a></h4>
+<h4 id="exiting-split-to-go-back-to-main-menu-code-back-code"><a class="link" href="#exiting-split-to-go-back-to-main-menu-code-back-code">3.3.6. Exiting split to go back to main menu <code>back</code></a></h4>
 <div class="paragraph">
-<p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
+<p>Exits split to go back to main menu of the application.</p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>back</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>back</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="saving-the-data"><a class="link" href="#saving-the-data">3.3.7. Saving the data</a></h4>
+<div class="paragraph">
+<p>EYLAH data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
@@ -529,13 +533,18 @@ There is no need to save manually.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Remove food</strong> <code>removefood -f FOOD</code><br>
+<p><strong>List Receipt</strong> <code>listreceipt</code><br>
 e.g. <code>removefood -f fries</code></p>
 </li>
 <li>
-<p><strong>Help</strong> : <code>help</code></p>
+<p><strong>Paid</strong> : <code>paid INDEX</code><br>
+e.g. <code>paid 3</code></p>
+</li>
+<li>
+<p><strong>back</strong> <code>back</code>
+e.g. <code>back</code></p>
 </li>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-12 15:45:42 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-14 12:11:09 UTC</div></div></div></body></html>
