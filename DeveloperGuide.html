@@ -151,11 +151,13 @@ The following class plays an important role at the architecture level:</p>
 <div class="paragraph">
 <p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>delete 1</code>.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
+<div class="paragraph">
+<div class="title">Component interactions for <code>delete 1</code> command</div>
+<p>image::ArchitectureSequenceDiagram.png[]<br></p>
 </div>
-<div class="title">Figure 3. Component interactions for <code>delete 1</code> command</div>
+<h4 id="eylah-comprehensive-class-diagram-for-both-diet-tracker-and-expense-spliter" class="discrete">EYLAH comprehensive class diagram for both Diet Tracker and Expense Spliter</h4>
+<div class="paragraph">
+<p>image::eylah_overall_class_diagram.png[]<br></p>
 </div>
 <div class="paragraph">
 <p>The sections below give more details of each component.</p>
@@ -167,7 +169,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram">
 </div>
-<div class="title">Figure 4. Structure of the UI Component</div>
+<div class="title">Figure 3. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
@@ -198,7 +200,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
 </div>
-<div class="title">Figure 5. Structure of the Logic Component</div>
+<div class="title">Figure 4. Structure of the Logic Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
@@ -230,7 +232,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
 </div>
-<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<div class="title">Figure 5. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -251,7 +253,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
 </div>
-<div class="title">Figure 7. Structure of the Model Component</div>
+<div class="title">Figure 6. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
@@ -296,7 +298,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
 </div>
-<div class="title">Figure 8. Structure of the Storage Component</div>
+<div class="title">Figure 7. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -1102,64 +1104,7 @@ Use case ends.</p>
 </ul>
 </div>
 <h3 id="expense-splitter-use-cases" class="discrete">Expense Splitter Use Cases</h3>
-<h3 id="use-case-uc01-add-person" class="discrete">Use case: UC01 - Add person</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User keys in the Person(s) name followed by some additional details, such as Telegram username and room number.</p>
-</li>
-<li>
-<p>EYLAH adds Person(s) to the PersonList.</p>
-</li>
-<li>
-<p>EYLAH displays the added person.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. EYLAH detects empty string in place of name.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a1. EYLAH shows an error message informing user that a Person&#8217;s name cannot be empty.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1b. Eylah detects invalid <a href="#syntax">syntax</a> in person&#8217;s details.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1b1. EYLAH shows an error message informing the user about the incorrect name format.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="use-case-uc02-add-food" class="discrete">Use case: UC02 - Add food</h3>
+<h3 id="use-case-uc01-add-item" class="discrete">Use case: UC01 - Add item</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1216,7 +1161,7 @@ Use case ends.</p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc03-calculate-cost" class="discrete">Use case: UC03 - Calculate cost</h3>
+<h3 id="use-case-uc02-delete-item" class="discrete">Use case: UC02 - Delete item</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1236,17 +1181,17 @@ Use case ends.</p>
 </li>
 </ol>
 </div>
-<h3 id="use-case-uc04-listing-food-items" class="discrete">Use case: UC04 - Listing food items</h3>
+<h3 id="use-case-uc03-listing-receipt" class="discrete">Use case: UC03 - Listing Receipt</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list the food items.</p>
+<p>User requests to list receipt containing Item(s) in the current Receipt</p>
 </li>
 <li>
-<p>EYLAH displays the list of food items.</p>
+<p>EYLAH displays the list of Item(s) in the current Receipt, its ItemPrice and Person(s) involved in spliting that Item.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1259,11 +1204,11 @@ Use case ends.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. EYLAH detects an empty list.</p>
+<p>1a. EYLAH detects an empty Receipt.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a1. EYLAH displays an error message.</p>
+<p>1a1. EYLAH displays an error message, saying that the Receipt has 0 Item.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1290,17 +1235,17 @@ Use case ends.</p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc05-listing-the-persons" class="discrete">Use case: UC05 - Listing the persons</h3>
+<h3 id="use-case-uc04-listing-the-person-s-and-their-amount" class="discrete">Use case: UC04 - Listing the Person(s) and their Amount</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list the persons.</p>
+<p>User requests to list the Person(s) and the Amount they owe the user.</p>
 </li>
 <li>
-<p>EYLAH displays the list of persons.</p>
+<p>EYLAH displays the list of Person and its associated Amount.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1313,11 +1258,11 @@ Use case ends.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. EYLAH detects an empty list.</p>
+<p>1a. EYLAH detects an empty Person list.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a1. EYLAH displays an error message.</p>
+<p>1a1. EYLAH displays an error message, informing user that there are no Person in the list.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1344,20 +1289,20 @@ Use case ends.</p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc06-removing-food" class="discrete">Use case: UC06 - Removing food</h3>
+<h3 id="use-case-uc05-amount-paid" class="discrete">Use case: UC05 - Amount paid</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to remove food from the list.</p>
+<p>User requests to reduce the Person&#8217;s Amount when he/she has paid the user.</p>
 </li>
 <li>
-<p>EYLAH removes the food from the list.</p>
+<p>EYLAH searches for the Person and reduces the Amount they owe the user, if Amount = $0 the Person is removed from the list.</p>
 </li>
 <li>
-<p>EYLAH displays the list of food.</p>
+<p>EYLAH then displays the new Amount owed by the Person</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1374,7 +1319,7 @@ Use case ends.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a1. EYLAH displays an error message.</p>
+<p>1a1. EYLAH displays an error message, saying that there is no Person in the list.</p>
 </li>
 </ul>
 </div>
@@ -1394,11 +1339,11 @@ Use case ends.</p>
 </div>
 </li>
 <li>
-<p>1c. EYLAH detects that the food does not exist in the list.</p>
+<p>1c. EYLAH detects that the Person does not exist in the list.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1c1. EYLAH displays an error message.</p>
+<p>1c1. EYLAH displays an error message, informing the user to key in the correct index of the Person.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1408,20 +1353,17 @@ Use case ends.</p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc07-removing-person" class="discrete">Use case: UC07 - Removing person</h3>
+<h3 id="use-case-uc06-back-to-main-menu" class="discrete">Use case: UC06 - Back to Main Menu</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to remove a person from the list.</p>
+<p>User requests to exit Expense Splitter and go back to Main Menu of EYLAH.</p>
 </li>
 <li>
-<p>EYLAH removes the person from the list.</p>
-</li>
-<li>
-<p>EYLAH displays the list of persons.</p>
+<p>EYLAH exits Expense Splitter and goes back to Main Menu</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1430,47 +1372,6 @@ Use case ends.</p>
 </div>
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. EYLAH detects an empty list.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a1. EYLAH displays an error message.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1b. EYLAH detects invalid <a href="#syntax">syntax</a>.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1b1. EYLAH displays an error message.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>1c. EYLAH detects that the person does not exist in the list.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1c1. EYLAH displays an error message.</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -1682,4 +1583,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-15 13:41:32 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-16 17:31:49 UTC</div></div></div></body></html>
