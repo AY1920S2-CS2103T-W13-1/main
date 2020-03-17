@@ -167,7 +167,7 @@ Example: <code>height 172</code></p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Height in centimetres (cm), rounded to nearest centimetre
+Height in centimetres (cm)
 </td>
 </tr>
 </table>
@@ -189,7 +189,7 @@ Example: <code>weight 65.7</code></p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Weight in kilograms (kg), rounded to nearest kilogram
+Weight in kilograms (kg)
 </td>
 </tr>
 </table>
@@ -353,34 +353,26 @@ It will display the following data:<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Height</p>
-</li>
-<li>
-<p>Weight</p>
-</li>
-<li>
 <p>BMI value</p>
-</li>
-<li>
-<p>BMI category</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Format: <code>bmi [-w WEIGHT] [-h HEIGHT]</code></p>
+<p>Format: <code>bmi [-h HEIGHT] [-w WEIGHT]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the person at the specified <code>INDEX</code>.</p>
+<p>There are 2 ways to use <code>bmi</code>.</p>
 </li>
 <li>
-<p>The index refers to the index number shown in the displayed person list.</p>
+<p>The first is if there is no input height and weight. This will use
+the height and weight that is stored in the Self object.</p>
 </li>
 <li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>The second is to calculate bmi with an input height and weight.</p>
 </li>
 </ul>
 </div>
@@ -399,7 +391,7 @@ Change your height and your weight to your current measurements before calculati
 BMI is calculated based off the stored height and weight in this instance.</p>
 </li>
 <li>
-<p><code>bmi 65 172</code><br>
+<p><code>bmi -h 172 -w 65.5</code><br>
 Calculate BMI based on the input height and weight values.</p>
 </li>
 </ul>
@@ -547,4 +539,4 @@ e.g. <code>back</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-17 15:11:05 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-17 15:28:04 UTC</div></div></div></body></html>
