@@ -9,28 +9,28 @@
 <div id="toc" class="toc">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#setting-up">1. Setting up</a></li>
-<li><a href="#design">2. Design</a>
+<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#setting-up">2. Setting up</a></li>
+<li><a href="#design">3. Design</a>
 <ul class="sectlevel2">
-<li><a href="#Design-Architecture">2.1. Architecture</a></li>
-<li><a href="#Design-Ui">2.2. UI component</a></li>
-<li><a href="#Design-Logic">2.3. Logic component</a></li>
-<li><a href="#Design-Model">2.4. Model component</a></li>
-<li><a href="#Design-Storage">2.5. Storage component</a></li>
-<li><a href="#Design-Commons">2.6. Common classes</a></li>
+<li><a href="#Design-Architecture">3.1. Architecture</a></li>
+<li><a href="#Design-Ui">3.2. UI component</a></li>
+<li><a href="#Design-Logic">3.3. Logic component</a></li>
+<li><a href="#Design-Model">3.4. Model component</a></li>
+<li><a href="#Design-Storage">3.5. Storage component</a></li>
+<li><a href="#Design-Commons">3.6. Common classes</a></li>
 </ul>
 </li>
-<li><a href="#implementation">3. Implementation</a>
+<li><a href="#implementation">4. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#proposed-undo-redo-feature">3.1. [Proposed] Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">3.3. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.4. Configuration</a></li>
+<li><a href="#diettracker-feature">4.1. DietTracker feature</a></li>
+<li><a href="#expense-splitter-feature">4.2. Expense Splitter feature</a></li>
+<li><a href="#logging">4.3. Logging</a></li>
 </ul>
 </li>
-<li><a href="#documentation">4. Documentation</a></li>
-<li><a href="#testing">5. Testing</a></li>
-<li><a href="#dev-ops">6. Dev Ops</a></li>
+<li><a href="#documentation">5. Documentation</a></li>
+<li><a href="#testing">6. Testing</a></li>
+<li><a href="#dev-ops">7. Dev Ops</a></li>
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
 <li><a href="#use-cases">Appendix C: Use Cases</a></li>
@@ -48,7 +48,35 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="setting-up"><a class="link" href="#setting-up">1. Setting up</a></h2>
+<h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ease Your Lives At Hall (EYLAH) is a Command Line Interface (CLI) application designed to aid students staying in NUS with commonly faced problems in halls such as,
+tracking their diet and splitting the bill with a large group of friends.</p>
+</div>
+<div class="paragraph">
+<p>Shown below is the GUI of EYLAH.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Ui.png" alt="Ui">
+</div>
+</div>
+<div class="paragraph">
+<p>This documentation serves as an introduction to the architecture and implementation of EYLAH,
+and is made for developers who wish to maintain,
+modify or understand the software development behind our application.
+We adopted the top-down approach; we will first look into high-level
+architectures before exploring implementation details of each feature.</p>
+</div>
+<div class="paragraph">
+<p>We encourage you to traverse the full path from the high level design to the
+implementation details of the feature you are interested for the most complete understanding.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setting-up"><a class="link" href="#setting-up">2. Setting up</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="SettingUp.html">here</a>.</p>
@@ -56,10 +84,10 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="design"><a class="link" href="#design">2. Design</a></h2>
+<h2 id="design"><a class="link" href="#design">3. Design</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">2.1. Architecture</a></h3>
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
@@ -156,7 +184,7 @@ The following class plays an important role at the architecture level:</p>
 <p>image::ArchitectureSequenceDiagram.png[]<br></p>
 </div>
 <div class="sect3">
-<h4 id="eylah-comprehensive-class-diagram-for-both-diet-tracker-and-expense-spliter"><a class="link" href="#eylah-comprehensive-class-diagram-for-both-diet-tracker-and-expense-spliter">2.1.1. EYLAH comprehensive class diagram for both Diet Tracker and Expense Spliter</a></h4>
+<h4 id="eylah-comprehensive-class-diagram-for-both-diet-tracker-and-expense-spliter"><a class="link" href="#eylah-comprehensive-class-diagram-for-both-diet-tracker-and-expense-spliter">3.1.1. EYLAH comprehensive class diagram for both Diet Tracker and Expense Spliter</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/eylah_overall_class_diagram.png" alt="eylah overall class diagram">
@@ -167,7 +195,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="eylah-activity-diagram-for-expense-splitter"><a class="link" href="#eylah-activity-diagram-for-expense-splitter">2.1.2. EYLAH Activity Diagram for Expense Splitter</a></h4>
+<h4 id="eylah-activity-diagram-for-expense-splitter"><a class="link" href="#eylah-activity-diagram-for-expense-splitter">3.1.2. EYLAH Activity Diagram for Expense Splitter</a></h4>
 <div class="imageblock">
 <div class="content">
 <img src="images/activityDiagram_for_expensesplitter.png" alt="activityDiagram for expensesplitter">
@@ -182,7 +210,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">2.2. UI component</a></h3>
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">3.2. UI component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram">
@@ -213,7 +241,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">2.3. Logic component</a></h3>
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">3.3. Logic component</a></h3>
 <div id="fig-LogicClassDiagram" class="imageblock">
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
@@ -266,7 +294,7 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">2.4. Model component</a></h3>
+<h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
@@ -311,7 +339,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">2.5. Storage component</a></h3>
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
@@ -336,7 +364,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Commons"><a class="link" href="#Design-Commons">2.6. Common classes</a></h3>
+<h3 id="Design-Commons"><a class="link" href="#Design-Commons">3.6. Common classes</a></h3>
 <div class="paragraph">
 <p>Classes used by multiple components are in the <code>seedu.addressbook.commons</code> package.</p>
 </div>
@@ -344,15 +372,18 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 </div>
 <div class="sect1">
-<h2 id="implementation"><a class="link" href="#implementation">3. Implementation</a></h2>
+<h2 id="implementation"><a class="link" href="#implementation">4. Implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="proposed-undo-redo-feature"><a class="link" href="#proposed-undo-redo-feature">3.1. [Proposed] Undo/Redo feature</a></h3>
+<h3 id="diettracker-feature"><a class="link" href="#diettracker-feature">4.1. DietTracker feature</a></h3>
+<div class="paragraph">
+<p>DIET TEAM PLEASE EDIT 4.1</p>
+</div>
 <div class="sect3">
-<h4 id="proposed-implementation"><a class="link" href="#proposed-implementation">3.1.1. Proposed Implementation</a></h4>
+<h4 id="add-command"><a class="link" href="#add-command">4.1.1. Add Command</a></h4>
 <div class="paragraph">
 <p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
 It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
@@ -494,7 +525,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1.2. Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
@@ -564,20 +595,117 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></h3>
+<h3 id="expense-splitter-feature"><a class="link" href="#expense-splitter-feature">4.2. Expense Splitter feature</a></h3>
 <div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
+<p>The Expense Splitter feature is designed to aid our users with the splitting of large bills that involves meany people.
+The feature comprises of six commands namely.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Add-Item-Command"><code>AddItemCommand</code></a> - Creates an Item with its ItemPrice, Person(s) involved in splitting that Item and adds it to Receipt.</p>
+</li>
+<li>
+<p><a href="#Delete-Item-Command"><code>DeleteItemCommand</code></a> - Deletes an Item from the current Receipt and reduces the Person&#8217;s amount accordingly.</p>
+</li>
+<li>
+<p><a href="#List-Receipt-Command"><code>ListReceiptCommand</code></a> - Lists the Item(s) in the current Receipt, its ItemPrice and Person(s) involved in splitting that Item.</p>
+</li>
+<li>
+<p><a href="#List-Amount-Command"><code>ListAmountCommand</code></a> - Lists the Person(s) Name and Amount they owe the user.</p>
+</li>
+<li>
+<p><a href="#Paid-Command"><code>PaidCommand</code></a> - Reduces the Amount a Person owes.</p>
+</li>
+<li>
+<p><a href="#Back-Command"><code>BackCommand</code></a> - Exits Expense Splitter portion to return to EYLAH&#8217;s Main Menu.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Below are some diagrams to explain how our team implemented this portion.</p>
+</div>
+<div class="paragraph">
+<p><strong>Activity Diagram</strong> of Expense Splitter:<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/activityDiagram_for_expensesplitter.png" alt="activityDiagram for expensesplitter">
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-item-command"><a class="link" href="#add-item-command">4.2.1. Add Item Command</a></h4>
+
+</div>
+<div class="sect3">
+<h4 id="delete-item-command"><a class="link" href="#delete-item-command">4.2.2. Delete Item Command</a></h4>
+<div class="paragraph">
+<p><strong>Implementation</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>DeleteItemCommand</code> performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>DeieteItemCommand#execute(Model model)</code> method is executed and it validates that the specified <code>INDEX</code> to delete
+is within range. If valid, the item to be deleted will be retrieved from Receipt using its I`Index`.</p>
+</li>
+<li>
+<p>The method <code>Model#deleteEntry(int Index) will then be called to remove the Item from the Receipt.
+`Receipt#deleteEntry(int Index)</code> is invoked which makes a call to its internal list to remove the specified Item.</p>
+</li>
+<li>
+<p>If successful, a success message will be generated by <code>CommandResult</code> and it will be returned with the generated
+success message. Otherwise, an error message showing the correct command syntax is thrown as <code>CommandException</code>.</p>
+</li>
+<li>
+<p>If the command syntax was valid and Item was removed from Receipt, <code>LogicManager</code> calls
+<code>PersonAmountStorage#savePersonAmountBook(ReadOnlyPersonAmountBook personAmountBook)</code> which saves the new Person(s) Amount
+into JSON format after serializing it using <code>JsonAdaptedPerson</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following is a sample sequence diagram of the DeleteItemCommand.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ExpenseSplitterDeleteItemCommandSequenceDiagram.png" alt="ExpenseSplitterDeleteItemCommandSequenceDiagram">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-receipt-command"><a class="link" href="#list-receipt-command">4.2.3. List Receipt Command</a></h4>
+<div class="paragraph">
+<p><strong>Implementation</strong></p>
+</div>
+<div class="paragraph">
+<p>The following</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-amount-command"><a class="link" href="#list-amount-command">4.2.4. List Amount Command</a></h4>
+
+</div>
+<div class="sect3">
+<h4 id="paid-command"><a class="link" href="#paid-command">4.2.5. Paid Command</a></h4>
+
+</div>
+<div class="sect3">
+<h4 id="back-command"><a class="link" href="#back-command">4.2.6. Back Command</a></h4>
+
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.3. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.3. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.4, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">[Implementation-Configuration]</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -607,16 +735,10 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.4. Configuration</a></h3>
-<div class="paragraph">
-<p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="documentation"><a class="link" href="#documentation">4. Documentation</a></h2>
+<h2 id="documentation"><a class="link" href="#documentation">5. Documentation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Documentation.html">here</a>.</p>
@@ -624,7 +746,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect1">
-<h2 id="testing"><a class="link" href="#testing">5. Testing</a></h2>
+<h2 id="testing"><a class="link" href="#testing">6. Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Testing.html">here</a>.</p>
@@ -632,7 +754,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect1">
-<h2 id="dev-ops"><a class="link" href="#dev-ops">6. Dev Ops</a></h2>
+<h2 id="dev-ops"><a class="link" href="#dev-ops">7. Dev Ops</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="DevOps.html">here</a>.</p>
@@ -1621,4 +1743,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 07:38:12 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 12:36:02 UTC</div></div></div></body></html>
