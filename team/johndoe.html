@@ -182,7 +182,7 @@ based on their user input.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-command"><a class="link" href="#add-command">Add Command</a></h4>
+<h4 id="Add-Command"><a class="link" href="#Add-Command">Add Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -227,7 +227,7 @@ Amount into JSON format after serializing it using <code>JsonAdaptedFood</code>.
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-command"><a class="link" href="#delete-command">Delete Command</a></h4>
+<h4 id="Delete-Command"><a class="link" href="#Delete-Command">Delete Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -275,7 +275,7 @@ into JSON format after serializing it using <code>JsonAdaptedFood</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-command"><a class="link" href="#list-command">List Command</a></h4>
+<h4 id="List-Command"><a class="link" href="#List-Command">List Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -309,7 +309,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-command"><a class="link" href="#edit-command">Edit Command</a></h4>
+<h4 id="Edit-Command"><a class="link" href="#Edit-Command">Edit Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -351,7 +351,7 @@ into JSON format after serializing it using <code>JsonAdaptedFood</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="bmi-command"><a class="link" href="#bmi-command">Bmi Command</a></h4>
+<h4 id="Bmi-Command"><a class="link" href="#Bmi-Command">Bmi Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -519,7 +519,7 @@ Self&#8217;s Height and Weight attributes.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="height-command"><a class="link" href="#height-command">Height Command</a></h4>
+<h4 id="Height-Command"><a class="link" href="#Height-Command">Height Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -552,7 +552,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 </div>
 </div>
 <div class="sect3">
-<h4 id="weight-command"><a class="link" href="#weight-command">Weight Command</a></h4>
+<h4 id="Weight-Command"><a class="link" href="#Weight-Command">Weight Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -585,7 +585,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 </div>
 </div>
 <div class="sect3">
-<h4 id="mode-command"><a class="link" href="#mode-command">Mode Command</a></h4>
+<h4 id="Mode-Command"><a class="link" href="#Mode-Command">Mode Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -1789,7 +1789,30 @@ Reduces the Amount a Person owes and if they owe $0 the Person is automatically 
 <dd>
 <p>A contact detail that is not meant to be shared with others</p>
 </dd>
+<dt class="hdlist1"><a id="bmi"></a> Body-Mass Index (BMI)</dt>
+<dd>
+<p>The BMI is a convenient rule of thumb used to broadly categorize a person as underweight, normal weight, overweight,
+or obese based on tissue mass (muscle, fat, and bone) and height</p>
+</dd>
 </dl>
+</div>
+<div class="paragraph">
+<p><a id="self"></a> Self:
+A static class used in Diet Tracker to represent the user in the model.</p>
+</div>
+<div class="paragraph">
+<p><em>Table 1. Diet Tracker Command Prefix</em><br>
+| Prefix | Description | Used in Following Commands |
+| --- | --- | --- |
+| -n | Name of Food | <a href="#Add-Command"><strong>Add</strong></a>, <a href="#Edit-Command"><strong>Edit</strong></a>  |
+| -c | Calories | <a href="#Add-Command"><strong>Add</strong></a>, <a href="#Edit-Command"><strong>Edit</strong></a> |
+| -g | Gain | <a href="#Mode-Command"><strong>Mode</strong></a> |
+| -m | Maintain | <a href="#Mode-Command"><strong>Mode</strong></a> |
+| -f | Foods | <a href="#List-Command"><strong>List</strong></a> |
+| -d | Day | <a href="#List-Command"><strong>List</strong></a> |
+| -t | Track | <a href="#List-Command"><strong>List</strong></a> |
+| -h | Height | <a href="#Bmi-Command"><strong>Bmi</strong></a> |
+| -w | Weight | <a href="#Bmi-Command"><strong>Bmi</strong></a> |</p>
 </div>
 </div>
 </div>
@@ -1873,23 +1896,23 @@ Expected: Shows the CLI interface with welcome message. The window size may not 
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">Deleting a person</a></h3>
+<h3 id="deleting-a-food-in-diet-tracker"><a class="link" href="#deleting-a-food-in-diet-tracker">Deleting a Food in Diet Tracker</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a person while all persons are listed</p>
+<p>Deleting a Food while all Foods are listed</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list.</p>
+<p>Prerequisites: List all Foods using the <code>list -f</code> command. Multiple Foods in the list.</p>
 </li>
 <li>
 <p>Test case: <code>delete 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.</p>
+Expected: First Food is deleted from the list. Details of the deleted Food shown in the status message. Timestamp in the status bar is updated.</p>
 </li>
 <li>
 <p>Test case: <code>delete 0</code><br>
-Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.</p>
+Expected: No Food is deleted. Error details shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
 <p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
@@ -1902,6 +1925,36 @@ Expected: Similar to previous.</p>
 </div>
 <div class="paragraph">
 <p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-a-food-in-diet-tracker"><a class="link" href="#editing-a-food-in-diet-tracker">Editing a Food in Diet Tracker</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Editing a Food while all Foods are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all Foods using the <code>list -f</code> command. Multiple Foods in the list.</p>
+</li>
+<li>
+<p>Test case: <code>edit 1 -n Pasta</code><br>
+Expected: First Food is edited. Details of the edited Food shown in the status message. Timestamp in the status bar is updated.
+Food is edited and then restored.</p>
+</li>
+<li>
+<p>Test case: <code>edit 1</code><br>
+Expected: No Food is edited. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect2">
@@ -1934,4 +1987,4 @@ Expected: Similar to previous.</p>
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-26 06:38:57 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-26 07:11:36 UTC</div></div></div></body></html>
