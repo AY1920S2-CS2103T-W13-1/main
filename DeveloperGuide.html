@@ -917,16 +917,34 @@ Amount into JSON format after serializing it using <code>JsonAdaptedPerson</code
 <p>The <code>PaidCommand#execute(Model model)</code> method is executed.</p>
 </li>
 <li>
-<p>The <code>Model#paidPerson()</code> will be called</p>
+<p>The <code>Model#paidPerson(Person person, String amountPaid)</code> will be called. String amountPaid will be converted into an Amount.</p>
 </li>
 <li>
-<p>KIV temporarily while I implement the paidCommand method..</p>
+<p>The <code>personAmountBook#removeAmount(Person person, Amount amount)</code> is then called to remove Amount from Person.</p>
+</li>
+<li>
+<p>Thus calling <code>UniquePersonList#removeAmount(Person person, Amount amount)</code>.</p>
+</li>
+<li>
+<p>Lastly, <code>Person#removeAmount(Amount amount)</code> is called to subtract the amount.</p>
 </li>
 </ol>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Person(s) with $0 Amount will be deleted from UniquePersonList.
+</td>
+</tr>
+</table>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
+<img src="images/ExpenseSplitterPaidCommandSequenceDiagramV2.png" alt="ExpenseSplitterPaidCommandSequenceDiagramV2">
 </div>
 </div>
 </div>
@@ -1981,4 +1999,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-25 17:46:08 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-26 02:43:10 UTC</div></div></div></body></html>
