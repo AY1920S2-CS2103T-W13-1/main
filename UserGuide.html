@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>EYELAH - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>EYLAH - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="index.html">EYLAH</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">EYLAH</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W13-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>EYELAH - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="index.html">EYLAH</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">EYLAH</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W13-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>EYLAH - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>AY1920S2-CS2103T-W13-1</code>      Since: <code>Jan 2020</code></p>
@@ -10,22 +10,23 @@
 <div id="toctitle"></div>
 <ul class="sectlevel1">
 <li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#quick-start">2. Quick Start</a></li>
-<li><a href="#Features">3. Features</a>
+<li><a href="#features-summary">2. Features Summary</a></li>
+<li><a href="#getting-started">3. Getting Started</a></li>
+<li><a href="#Features">4. Features</a>
 <ul class="sectlevel2">
-<li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#diet-tracker-code-diet-code">3.2. Diet Tracker : <code>diet</code></a></li>
-<li><a href="#expense-splitter-code-split-code">3.3. Expense Splitter : <code>split</code></a></li>
+<li><a href="#viewing-help-code-help-code">4.1. Viewing help : <code>help</code></a></li>
+<li><a href="#diet-tracker-code-diet-code">4.2. Diet Tracker : <code>diet</code></a></li>
+<li><a href="#expense-splitter-code-split-code">4.3. Expense Splitter : <code>split</code></a></li>
 </ul>
 </li>
-<li><a href="#faq">4. FAQ</a></li>
-<li><a href="#command-summary">5. Command Summary</a>
+<li><a href="#faq">5. FAQ</a></li>
+<li><a href="#command-summary">6. Command Summary</a>
 <ul class="sectlevel2">
-<li><a href="#for-diet-tracker">5.1. For Diet Tracker</a></li>
-<li><a href="#for-expense-splitter">5.2. For Expense Splitter</a></li>
+<li><a href="#for-diet-tracker">6.1. For Diet Tracker</a></li>
+<li><a href="#for-expense-splitter">6.2. For Expense Splitter</a></li>
 </ul>
 </li>
-<li><a href="#appendix-a-simple-activity-diagram-to-aid-user-with-using-expense-splitter">6. Appendix A: Simple activity diagram to aid user with using Expense Splitter</a></li>
+<li><a href="#appendix-a-simple-activity-diagram-to-aid-user-with-using-expense-splitter">7. Appendix A: Simple activity diagram to aid user with using Expense Splitter</a></li>
 </ul>
 </div>
 </div>
@@ -38,12 +39,37 @@ Residences in National University of Singapore (NUS)</strong>. More importantly,
 work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI).
 If you can type fast, EYLAH can solve your problems in halls by tracking your diet after those unhealthy supper runs
 and splitting the cost after each outing or late-night party session. Interested?
-Jump to <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started. Enjoy!</p>
+Jump to <a href="#getting-started">Section 3, &#8220;Getting Started&#8221;</a> to get started. Enjoy!</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="quick-start"><a class="link" href="#quick-start">2. Quick Start</a></h2>
+<h2 id="features-summary"><a class="link" href="#features-summary">2. Features Summary</a></h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Diet Tracker</strong> tracks your diet easily.</p>
+</li>
+<li>
+<p><strong>Expense Splitter</strong> solves your hassle of splitting bills with a large group.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Add and Delete Item(s) to split.</p>
+</li>
+<li>
+<p>Lists the amount each Person(s) owes you.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="getting-started"><a class="link" href="#getting-started">3. Getting Started</a></h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -88,14 +114,14 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </li>
 <li>
-<p>Refer to <a href="#Features">Section 3, &#8220;Features&#8221;</a> for details of each command.</p>
+<p>Refer to <a href="#Features">Section 4, &#8220;Features&#8221;</a> for details of each command.</p>
 </li>
 </ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="Features"><a class="link" href="#Features">3. Features</a></h2>
+<h2 id="Features"><a class="link" href="#Features">4. Features</a></h2>
 <div class="sectionbody">
 <div class="exampleblock">
 <div class="content">
@@ -123,19 +149,19 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></h3>
+<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">4.1. Viewing help : <code>help</code></a></h3>
 <div class="paragraph">
 <p>To provide help for users<br>
 Format: <code>help</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="diet-tracker-code-diet-code"><a class="link" href="#diet-tracker-code-diet-code">3.2. Diet Tracker : <code>diet</code></a></h3>
+<h3 id="diet-tracker-code-diet-code"><a class="link" href="#diet-tracker-code-diet-code">4.2. Diet Tracker : <code>diet</code></a></h3>
 <div class="paragraph">
 <p>Tracks our daily calories intake. Add food, then calculate</p>
 </div>
 <div class="sect3">
-<h4 id="dieting-mode-code-mode-code"><a class="link" href="#dieting-mode-code-mode-code">3.2.1. Dieting Mode <code>mode</code></a></h4>
+<h4 id="dieting-mode-code-mode-code"><a class="link" href="#dieting-mode-code-mode-code">4.2.1. Dieting Mode <code>mode</code></a></h4>
 <div class="paragraph">
 <p>Allows users to decide which dieting mode they want, based on the following modes:<br></p>
 </div>
@@ -158,7 +184,7 @@ Example: <code>diet mode -m</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="store-height-code-height-code"><a class="link" href="#store-height-code-height-code">3.2.2. Store Height <code>height</code></a></h4>
+<h4 id="store-height-code-height-code"><a class="link" href="#store-height-code-height-code">4.2.2. Store Height <code>height</code></a></h4>
 <div class="paragraph">
 <p>Allows user to input their height.</p>
 </div>
@@ -180,7 +206,7 @@ Height in centimetres (cm)
 </div>
 </div>
 <div class="sect3">
-<h4 id="store-weight-code-weight-code"><a class="link" href="#store-weight-code-weight-code">3.2.3. Store Weight <code>weight</code></a></h4>
+<h4 id="store-weight-code-weight-code"><a class="link" href="#store-weight-code-weight-code">4.2.3. Store Weight <code>weight</code></a></h4>
 <div class="paragraph">
 <p>Allows user to input their weight.</p>
 </div>
@@ -202,7 +228,7 @@ Weight in kilograms (kg)
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-food-code-add-code"><a class="link" href="#add-food-code-add-code">3.2.4. Add food <code>add</code></a></h4>
+<h4 id="add-food-code-add-code"><a class="link" href="#add-food-code-add-code">4.2.4. Add food <code>add</code></a></h4>
 <div class="paragraph">
 <p>Adds food to the list.</p>
 </div>
@@ -212,7 +238,7 @@ Example: <code>add Fishball Noodles 383</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-items-code-list-code"><a class="link" href="#list-items-code-list-code">3.2.5. List items <code>list</code></a></h4>
+<h4 id="list-items-code-list-code"><a class="link" href="#list-items-code-list-code">4.2.5. List items <code>list</code></a></h4>
 <div class="paragraph">
 <p>List all the items in your current diet tracker. Show different data based on flags.</p>
 </div>
@@ -247,7 +273,7 @@ Example: <code>list -t 3</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-food-item-code-delete-code"><a class="link" href="#delete-food-item-code-delete-code">3.2.6. Delete Food Item <code>delete</code></a></h4>
+<h4 id="delete-food-item-code-delete-code"><a class="link" href="#delete-food-item-code-delete-code">4.2.6. Delete Food Item <code>delete</code></a></h4>
 <div class="paragraph">
 <p>Deletes a Food item from the list of foods stored.<br>
 Format: <code>delete INDEX</code></p>
@@ -295,7 +321,7 @@ Deletes the 2nd row of food data from the past 7 days of food.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-a-food-item-code-edit-code"><a class="link" href="#editing-a-food-item-code-edit-code">3.2.7. Editing a Food Item <code>edit</code></a></h4>
+<h4 id="editing-a-food-item-code-edit-code"><a class="link" href="#editing-a-food-item-code-edit-code">4.2.7. Editing a Food Item <code>edit</code></a></h4>
 <div class="paragraph">
 <p>Allows you to edit either the Food name, or the calories. <br>
 Format: <code>edit INDEX [-n NAME] [-c CALORIES]</code></p>
@@ -332,7 +358,7 @@ Edits the name of the food item at index 2 to be 'Chicken Rice' and the calories
 </div>
 </div>
 <div class="sect3">
-<h4 id="calculate-daily-calories-code-calc-code"><a class="link" href="#calculate-daily-calories-code-calc-code">3.2.8. Calculate Daily Calories <code>calc</code></a></h4>
+<h4 id="calculate-daily-calories-code-calc-code"><a class="link" href="#calculate-daily-calories-code-calc-code">4.2.8. Calculate Daily Calories <code>calc</code></a></h4>
 <div class="paragraph">
 <p>Calculates and lists the following:<br></p>
 </div>
@@ -351,7 +377,7 @@ Edits the name of the food item at index 2 to be 'Chicken Rice' and the calories
 </div>
 </div>
 <div class="sect3">
-<h4 id="calculate-body-mass-index-bmi-code-bmi-code"><a class="link" href="#calculate-body-mass-index-bmi-code-bmi-code">3.2.9. Calculate Body Mass Index (BMI) <code>bmi</code></a></h4>
+<h4 id="calculate-body-mass-index-bmi-code-bmi-code"><a class="link" href="#calculate-body-mass-index-bmi-code-bmi-code">4.2.9. Calculate Body Mass Index (BMI) <code>bmi</code></a></h4>
 <div class="paragraph">
 <p>Allows the user to calculate their BMI based on the height and weight stored in the program.<br>
 It will display the following data:<br></p>
@@ -405,14 +431,14 @@ Calculate BMI based on the input height and weight values.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="expense-splitter-code-split-code"><a class="link" href="#expense-splitter-code-split-code">3.3. Expense Splitter : <code>split</code></a></h3>
+<h3 id="expense-splitter-code-split-code"><a class="link" href="#expense-splitter-code-split-code">4.3. Expense Splitter : <code>split</code></a></h3>
 <div class="paragraph">
 <p>Splitting the items' cost with friends. All you have to do is add the item,
 price and the names involved in splitting that item and EYLAH will
 calculate the rest for you!</p>
 </div>
 <div class="sect3">
-<h4 id="add-item-code-additem-code"><a class="link" href="#add-item-code-additem-code">3.3.1. Add item <code>additem</code></a></h4>
+<h4 id="add-item-code-additem-code"><a class="link" href="#add-item-code-additem-code">4.3.1. Add item <code>additem</code></a></h4>
 <div class="paragraph">
 <p>Add item and the person(s) involved in the splitting for that item.</p>
 </div>
@@ -441,7 +467,7 @@ There is no need to add the dollar sign ($).
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-item-code-deleteitem-code"><a class="link" href="#delete-item-code-deleteitem-code">3.3.2. Delete item  <code>deleteitem</code></a></h4>
+<h4 id="delete-item-code-deleteitem-code"><a class="link" href="#delete-item-code-deleteitem-code">4.3.2. Delete item  <code>deleteitem</code></a></h4>
 <div class="paragraph">
 <p>Delete the item(s) in a receipt:</p>
 </div>
@@ -467,23 +493,10 @@ Use <code>listreceipt</code> to view your item indices before deletion.
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-person-s-amount-code-listamount-code"><a class="link" href="#list-person-s-amount-code-listamount-code">3.3.3. List person&#8217;s amount <code>listamount</code></a></h4>
+<h4 id="list-the-current-receipt-code-listreceipt-code"><a class="link" href="#list-the-current-receipt-code-listreceipt-code">4.3.3. List the current receipt <code>listreceipt</code></a></h4>
 <div class="paragraph">
-<p>Display all the Person(s) in the PersonList with the amount they owe you.</p>
-</div>
-<div class="paragraph">
-<p>Format:<br>
-<code>listamount</code><br></p>
-</div>
-<div class="paragraph">
-<p>Example:<br>
-<code>listamount</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="list-the-current-receipt-code-listreceipt-code"><a class="link" href="#list-the-current-receipt-code-listreceipt-code">3.3.4. List the current receipt <code>listreceipt</code></a></h4>
-<div class="paragraph">
-<p>Display the current receipt which shows all the Items and its respective price and Person(s) involved in splitting that Item.</p>
+<p>Display the current receipt which shows all the items and its
+respective price and person(s) involved in splitting the cost of that item</p>
 </div>
 <div class="paragraph">
 <p>Format:<br>
@@ -495,9 +508,23 @@ Use <code>listreceipt</code> to view your item indices before deletion.
 </div>
 </div>
 <div class="sect3">
-<h4 id="paid-money-code-paid-code"><a class="link" href="#paid-money-code-paid-code">3.3.5. Paid money <code>paid</code></a></h4>
+<h4 id="list-amounts-owed-listamount"><a class="link" href="#list-amounts-owed-listamount">4.3.4. List amounts owed`listamount`</a></h4>
 <div class="paragraph">
-<p>When a Person pays an amount, or part of the amount, they owe you.</p>
+<p>Display all the person(s) and the amount they owe</p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>listamount</code><br></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>listamount</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="paid-money-code-paid-code"><a class="link" href="#paid-money-code-paid-code">4.3.5. Paid money <code>paid</code></a></h4>
+<div class="paragraph">
+<p>Subtracts the paid amount from the person</p>
 </div>
 <div class="paragraph">
 <p>Format:<br>
@@ -515,7 +542,7 @@ Use <code>listreceipt</code> to view your item indices before deletion.
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-When using the <code>paid</code> command, use the <code>listamount</code> command to find the index of the Person who paid you.
+Use <code>listamount</code> command to find the index of the person who paid you.
 </td>
 </tr>
 </table>
@@ -527,8 +554,32 @@ When using the <code>paid</code> command, use the <code>listamount</code> comman
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Index represents the Index of the Person who paid you while Amount represents how much they paid you. If left blank, EYLAH
-will take it as the full amount they owe is paid.
+Leaving the amount empty is equivalent to paying the full amount.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The person will automatically be removed from the list if the amount owed is $0.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Price can be up to 2 decimal places, i.e. 7.99.
+There is no need to add the dollar sign ($).
 </td>
 </tr>
 </table>
@@ -547,7 +598,7 @@ When a Person owes $0 he/she will be automatically deleted from PersonList.
 </div>
 </div>
 <div class="sect3">
-<h4 id="exiting-split-to-go-back-to-main-menu-code-back-code"><a class="link" href="#exiting-split-to-go-back-to-main-menu-code-back-code">3.3.6. Exiting split to go back to main menu <code>back</code></a></h4>
+<h4 id="exiting-split-to-go-back-to-main-menu-code-back-code"><a class="link" href="#exiting-split-to-go-back-to-main-menu-code-back-code">4.3.6. Exiting split to go back to main menu <code>back</code></a></h4>
 <div class="paragraph">
 <p>Exits split to go back to main menu of the application.</p>
 </div>
@@ -561,7 +612,7 @@ When a Person owes $0 he/she will be automatically deleted from PersonList.
 </div>
 </div>
 <div class="sect3">
-<h4 id="saving-the-data"><a class="link" href="#saving-the-data">3.3.7. Saving the data</a></h4>
+<h4 id="saving-the-data"><a class="link" href="#saving-the-data">4.3.7. Saving the data</a></h4>
 <div class="paragraph">
 <p>EYLAH data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -571,7 +622,7 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="faq"><a class="link" href="#faq">4. FAQ</a></h2>
+<h2 id="faq"><a class="link" href="#faq">5. FAQ</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
@@ -580,14 +631,14 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
+<h2 id="command-summary"><a class="link" href="#command-summary">6. Command Summary</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="for-diet-tracker"><a class="link" href="#for-diet-tracker">5.1. For Diet Tracker</a></h3>
+<h3 id="for-diet-tracker"><a class="link" href="#for-diet-tracker">6.1. For Diet Tracker</a></h3>
 
 </div>
 <div class="sect2">
-<h3 id="for-expense-splitter"><a class="link" href="#for-expense-splitter">5.2. For Expense Splitter</a></h3>
+<h3 id="for-expense-splitter"><a class="link" href="#for-expense-splitter">6.2. For Expense Splitter</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -620,11 +671,11 @@ e.g. <code>back</code></p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="appendix-a-simple-activity-diagram-to-aid-user-with-using-expense-splitter"><a class="link" href="#appendix-a-simple-activity-diagram-to-aid-user-with-using-expense-splitter">6. Appendix A: Simple activity diagram to aid user with using Expense Splitter</a></h2>
+<h2 id="appendix-a-simple-activity-diagram-to-aid-user-with-using-expense-splitter"><a class="link" href="#appendix-a-simple-activity-diagram-to-aid-user-with-using-expense-splitter">7. Appendix A: Simple activity diagram to aid user with using Expense Splitter</a></h2>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="images/activityDiagram_for_expensesplitter.png" alt="activityDiagram for expensesplitter" width="790">
+<img src="images/ExpenseSplitterActivityDiagram.png" alt="ExpenseSplitterActivityDiagram" width="790">
 </div>
 </div>
 <div class="paragraph">
@@ -632,4 +683,4 @@ e.g. <code>back</code></p>
 at the bottom represents the end point.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-26 04:17:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-26 04:51:38 UTC</div></div></div></body></html>
