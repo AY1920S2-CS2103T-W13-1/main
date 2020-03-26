@@ -1105,7 +1105,37 @@ Person(s) with $0 Amount will be deleted from UniquePersonList.
 </div>
 <div class="sect3">
 <h4 id="back-command"><a class="link" href="#back-command">4.2.6. Back Command</a></h4>
-
+<div class="paragraph">
+<p><strong>Implementation</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>BackCommand</code> performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>BackCommand#execute(Model model)</code> method is executed.</p>
+</li>
+<li>
+<p>The <code>CommandResult</code> with the <code>isBack</code> will set to true and returns to <code>EYLAH</code>.</p>
+</li>
+<li>
+<p>The <code>EYLAH#runCommandLoopUntilExitCommand()</code> will check if <code>isBack</code> is set to true.</p>
+</li>
+<li>
+<p>If the <code>isBack</code> is true, the <code>EYLAH</code> will return the the main menu. Otherwise, the
+<code>Eylah</code> will continue running in Expense Splitter mode.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following is a sample sequence diagram of the BackCommand.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ExpenseSplitterBackCommandSequenceDiagram.png" alt="ExpenseSplitterBackCommandSequenceDiagram">
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -1655,7 +1685,7 @@ Use case ends.</p>
 </ul>
 </div>
 <h3 id="expense-splitter-use-cases" class="discrete">Expense Splitter Use Cases</h3>
-<h4 id="use-case-uc01-add-item" class="discrete">Use case: UC01 - Add item</h4>
+<h4 id="use-case-uc08-add-item" class="discrete">Use case: UC08 - Add item</h4>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -1712,7 +1742,7 @@ Use case ends.</p>
 </li>
 </ul>
 </div>
-<h4 id="use-case-uc02-delete-item" class="discrete">Use case: UC02 - Delete item</h4>
+<h4 id="use-case-uc09-delete-item" class="discrete">Use case: UC09 - Delete item</h4>
 <div class="paragraph">
 <p><strong>Actor:</strong> User<br>
 <strong>Preconditions:</strong> User is logged in.<br>
@@ -1758,7 +1788,7 @@ Item will be deleted from Receipt only if the Item is currently present in Recei
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc03-listing-receipt" class="discrete">Use case: UC03 - Listing Receipt</h3>
+<h3 id="use-case-uc10-listing-receipt" class="discrete">Use case: UC10 - Listing Receipt</h3>
 <div class="paragraph">
 <p><strong>Actor:</strong> User<br>
 <strong>Preconditions:</strong> User is logged in.<br>
@@ -1801,7 +1831,7 @@ All Items in the current Receipt will be listed out.</p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc04-listing-person-s-and-the-amount-they-owe" class="discrete">Use case: UC04 - Listing Person(s) and the Amount they owe</h3>
+<h3 id="use-case-uc11-listing-person-s-and-the-amount-they-owe" class="discrete">Use case: UC11 - Listing Person(s) and the Amount they owe</h3>
 <div class="paragraph">
 <p><strong>Actor:</strong> User<br>
 <strong>Preconditions:</strong> User is logged in.<br>
@@ -1844,7 +1874,7 @@ All Person(s) and the amount they owe will be listed.</p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc05-amount-paid" class="discrete">Use case: UC05 - Amount paid</h3>
+<h3 id="use-case-uc12-amount-paid" class="discrete">Use case: UC12 - Amount paid</h3>
 <div class="paragraph">
 <p><strong>Actor:</strong> User<br>
 <strong>Preconditions:</strong> User is logged in.<br>
@@ -1924,7 +1954,7 @@ Reduces the Amount a Person owes and if they owe $0 the Person is automatically 
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc06-back-to-main-menu" class="discrete">Use case: UC06 - Back to Main Menu</h3>
+<h3 id="use-case-uc13-back-to-main-menu" class="discrete">Use case: UC13 - Back to Main Menu</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -2076,21 +2106,7 @@ These instructions only provide a starting point for testers to work on; testers
 </li>
 <li>
 <p>Double-click the jar file<br>
-Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Saving window preferences</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Resize the window to an optimum size. Move the window to a different location. Close the window.</p>
-</li>
-<li>
-<p>Re-launch the app by double-clicking the jar file.<br>
-Expected: The most recent window size and location is retained.</p>
+Expected: Shows the CLI interface with welcome message. The window size may not be optimum.</p>
 </li>
 </ol>
 </div>
@@ -2154,4 +2170,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-26 04:51:38 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-26 06:38:57 UTC</div></div></div></body></html>
