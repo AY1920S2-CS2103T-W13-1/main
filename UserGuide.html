@@ -9,7 +9,12 @@
 <div id="toc" class="toc">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#how-to-use">1.1. How to use?</a></li>
+<li><a href="#purpose">1.2. Purpose</a></li>
+</ul>
+</li>
 <li><a href="#features-summary">2. Features Summary</a></li>
 <li><a href="#getting-started">3. Getting Started</a></li>
 <li><a href="#Features">4. Features</a>
@@ -34,12 +39,48 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ease Your Life At Halls (EYLAH) is for those who <strong>prefer to use a desktop app to solve issues related to Halls of
-Residences in National University of Singapore (NUS)</strong>. More importantly, EYLAH is <strong>optimized for those who prefer to
-work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI).
-If you can type fast, EYLAH can solve your problems in halls by tracking your diet after those unhealthy supper runs
-and splitting the cost after each outing or late-night party session. Interested?
+<p>Are you someone who often goes out to eat with friends? And do you also sometimes feel that you might be eating too much?
+If yes, Ease Your Life At Halls (EYLAH) is a revolutionary new super-application that will make your life much easier!</p>
+</div>
+<div class="paragraph">
+<p>EYLAH is an Expense Splitter and Diet Tracker rolled into one, for Temasek Hall residents who <strong>prefer to use a desktop
+app to solve issues. More importantly, EYLAH is *optimized for residents who prefer to work with a Command Line Interface</strong>
+(CLI) while still having the benefits of a Graphical User Interface (GUI).</p>
+</div>
+<div class="paragraph">
+<p>If you can type fast, EYLAH can solve your problems in halls by tracking your diet after those unhealthy supper runs
+and splitting the cost after each outing or late-night party session with a few pokes of your keyboard. Interested?
 Jump to <a href="#getting-started">Section 3, &#8220;Getting Started&#8221;</a> to get started. Enjoy!</p>
+</div>
+<div class="sect2">
+<h3 id="how-to-use"><a class="link" href="#how-to-use">1.1. How to use?</a></h3>
+<div class="paragraph">
+<p>Below is some special syntax used throughout the documentation:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Markup</code> - Text in markup are inputs into the application through the CLI.</p>
+</li>
+<li>
+<p>NOTE - Text in NOTE indicates important things to consider to prevent unexpected behaviour.</p>
+</li>
+<li>
+<p>TIP - Text in TIP shows certain actions to make using the application easier.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="purpose"><a class="link" href="#purpose">1.2. Purpose</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>This documentation serves as an introduction to the features and proper use of EYLAH, and is made for users who wish
+to use the application to improve their lives on campus.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -245,13 +286,16 @@ Example: <code>add Fishball Noodles 383</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>List all food and data in tabular format (-l)</p>
+<p>List all food and data in tabular format (-f)</p>
 </li>
 <li>
-<p>Food consumed for the day (-g)</p>
+<p>Food consumed for the day (-d)</p>
 </li>
 <li>
-<p>Track calories over past number of days (-m)</p>
+<p>Track calories over past number of days (-t)</p>
+</li>
+<li>
+<p>List items filtered by a specific tag (-e)</p>
 </li>
 </ul>
 </div>
@@ -268,8 +312,8 @@ Default value of list is food consumed for the day. Default number of days for t
 </table>
 </div>
 <div class="paragraph">
-<p>Format: <code>list [-f] [-d] [-t [numDays]]</code><br>
-Example: <code>list -t 3</code></p>
+<p>Format: <code>list [-f] [-d] [-t [numDays]] [-e [tagName]] `<br>
+Example: `list -t 3</code></p>
 </div>
 </div>
 <div class="sect3">
@@ -683,4 +727,4 @@ e.g. <code>back</code></p>
 at the bottom represents the end point.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-30 00:46:43 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-30 07:04:58 UTC</div></div></div></body></html>
