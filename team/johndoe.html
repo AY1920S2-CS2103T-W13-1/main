@@ -197,7 +197,7 @@ based on their user input.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>AddCommand#execute(Model model)</code> method is executed and a new <code>Food</code> would be created.</p>
+<p>The <code>AddCommand#execute(Model splitterModel)</code> method is executed and a new <code>Food</code> would be created.</p>
 </li>
 <li>
 <p>The <code>Model#addFood(Food food)</code> method would then call <code>FoodBook#addFood(Food food)</code>.</p>
@@ -242,7 +242,7 @@ Amount into JSON format after serializing it using <code>JsonAdaptedFood</code>.
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>DeleteCommand#execute(Model model)</code> method is executed and it validates that the specified <code>INDEX</code> to delete
+<p>The <code>DeleteCommand#execute(Model splitterModel)</code> method is executed and it validates that the specified <code>INDEX</code> to delete
 is within range. If valid, the item to be deleted will be retrieved from Storage using its <code>Index</code>.</p>
 </li>
 <li>
@@ -285,12 +285,12 @@ into JSON format after serializing it using <code>JsonAdaptedFood</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>ListCommand#execute(Model model)</code> method is executed and it validates that the flag used to decide what
+<p>The <code>ListCommand#execute(Model splitterModel)</code> method is executed and it validates that the flag used to decide what
 Foods to list. If the flag is valid, the items to be listed will be retrieved from FoodBookStorage according
 to the input flag.</p>
 </li>
 <li>
-<p>The method <code>model#updateFilteredFoodList() will then be called to retrieve the List of Foods from Storage.
+<p>The method <code>splitterModel#updateFilteredFoodList() will then be called to retrieve the List of Foods from Storage.
 `FilteredList#setPredicate(Predicate&lt;Food&gt; predicate)</code> is then invoked which retrieves the specified Foods to be listed.</p>
 </li>
 <li>
@@ -319,7 +319,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>EditCommand#execute(Model model)</code> method is executed and it validates that the specified <code>INDEX</code> to edit
+<p>The <code>EditCommand#execute(Model splitterModel)</code> method is executed and it validates that the specified <code>INDEX</code> to edit
 is within range. If valid, the item to be edited will be retrieved from Storage using its <code>Index</code>.</p>
 </li>
 <li>
@@ -362,7 +362,7 @@ depending on the user input.<br></p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>BmiCommand#execute(Model model)</code> method is executed and it will return the output of the calculated BMI
+<p>The <code>BmiCommand#execute(Model splitterModel)</code> method is executed and it will return the output of the calculated BMI
 based on user arguments.</p>
 </li>
 <li>
@@ -395,7 +395,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <p>Step 3. Since there are no arguments, the <code>BmiCommandParser</code> will call the empty constructor <code>BmiCommand()</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 4. <code>BmiCommand</code> would then refer to the internal state of the model under Self, and retrieve the values stored in
+<p>Step 4. <code>BmiCommand</code> would then refer to the internal state of the splitterModel under Self, and retrieve the values stored in
 Self&#8217;s Height and Weight attributes.</p>
 </div>
 <div class="paragraph">
@@ -434,7 +434,7 @@ There is a need to ensure that there are stored values in <code>Height</code> an
 <p>Step 3. Since there are no arguments, the <code>BmiCommandParser</code> will call the empty constructor <code>BmiCommand()</code>.</p>
 </div>
 <div class="paragraph">
-<p>Step 4. <code>BmiCommand</code> would then refer to the internal state of the model under Self, and retrieve the values stored in
+<p>Step 4. <code>BmiCommand</code> would then refer to the internal state of the splitterModel under Self, and retrieve the values stored in
 Self&#8217;s Height and Weight attributes.</p>
 </div>
 <div class="paragraph">
@@ -490,7 +490,7 @@ Self&#8217;s Height and Weight attributes.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Alternative 1 (current choice): No storage of BMI value, simply prints when user requests.</p>
+<p>Alternative 1 (current choice): No splitterStorage of BMI value, simply prints when user requests.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -529,7 +529,7 @@ Self&#8217;s Height and Weight attributes.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>HeightCommand#execute(Model model)</code> method is executed and it validates that the specified <code>HEIGHT</code> to store
+<p>The <code>HeightCommand#execute(Model splitterModel)</code> method is executed and it validates that the specified <code>HEIGHT</code> to store
 is a valid Height. If valid, the height will be stored in the <code>Self</code> class.</p>
 </li>
 <li>
@@ -562,7 +562,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>WeightCommand#execute(Model model)</code> method is executed and it validates that the specified <code>WEIGHT</code> to store
+<p>The <code>WeightCommand#execute(Model splitterModel)</code> method is executed and it validates that the specified <code>WEIGHT</code> to store
 is a valid Weight. If valid, the weight will be stored in the <code>Self</code> class.</p>
 </li>
 <li>
@@ -595,7 +595,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>ModeCommand#execute(Model model)</code> method is executed and it validates that the specified <code>MODE</code> to store
+<p>The <code>ModeCommand#execute(Model splitterModel)</code> method is executed and it validates that the specified <code>MODE</code> to store
 is a valid Mode. If valid, the mode will be stored in the <code>Self</code> class.</p>
 </li>
 <li>
@@ -668,7 +668,7 @@ The feature comprises of six commands namely.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>AddItemCommand#execute(Model model)</code> method is executed and it checks if the specified <code>ITEM</code> and <code>PERSONS</code> to
+<p>The <code>AddItemCommand#execute(Model splitterModel)</code> method is executed and it checks if the specified <code>ITEM</code> and <code>PERSONS</code> to
 be added are valid. If valid, a new <code>Entry</code> would be created with the specified <code>ITEM</code> and <code>PERSONS</code>.</p>
 </li>
 <li>
@@ -718,7 +718,7 @@ Amount into JSON format after serializing it using <code>JsonAdaptedPerson</code
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>DeleteItemCommand#execute(Model model)</code> method is executed and it validates that the specified <code>INDEX</code> to delete
+<p>The <code>DeleteItemCommand#execute(Model splitterModel)</code> method is executed and it validates that the specified <code>INDEX</code> to delete
 is within range. If valid, the item to be deleted will be retrieved from Receipt using its <code>Index</code>.</p>
 </li>
 <li>
@@ -764,7 +764,7 @@ Amount into JSON format after serializing it using <code>JsonAdaptedPerson</code
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>ListReceiptCommand#execute(Model model)</code> method is executed.</p>
+<p>The <code>ListReceiptCommand#execute(Model splitterModel)</code> method is executed.</p>
 </li>
 <li>
 <p>The method <code>Model#listReceipt()</code> will then be called to return the list of Item(s) currently in that Receipt.</p>
@@ -794,7 +794,7 @@ Amount into JSON format after serializing it using <code>JsonAdaptedPerson</code
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>ListAmountCommand#execute(Model model)</code> method is executed.</p>
+<p>The <code>ListAmountCommand#execute(Model splitterModel)</code> method is executed.</p>
 </li>
 <li>
 <p>The method <code>Model#listAmount()</code> will then be called to return the list of person with amount.</p>
@@ -824,7 +824,7 @@ Amount into JSON format after serializing it using <code>JsonAdaptedPerson</code
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>PaidCommand#execute(Model model)</code> method is executed.</p>
+<p>The <code>PaidCommand#execute(Model splitterModel)</code> method is executed.</p>
 </li>
 <li>
 <p>The <code>Model#paidPerson(Person person, String amountPaid)</code> will be called. String amountPaid will be converted into an Amount.</p>
@@ -869,7 +869,7 @@ Person(s) with $0 Amount will be deleted from UniquePersonList.
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>BackCommand#execute(Model model)</code> method is executed.</p>
+<p>The <code>BackCommand#execute(Model splitterModel)</code> method is executed.</p>
 </li>
 <li>
 <p>The <code>CommandResult</code> with the <code>isBack</code> will set to true and returns to <code>EYLAH</code>.</p>
@@ -1802,7 +1802,7 @@ or obese based on tissue mass (muscle, fat, and bone) and height</p>
 </div>
 <div class="paragraph">
 <p><a id="self"></a> Self:
-A static class used in Diet Tracker to represent the user in the model.</p>
+A static class used in Diet Tracker to represent the user in the splitterModel.</p>
 </div>
 <div class="paragraph">
 <p><em>Table 1. Diet Tracker Command Prefix</em><br></p>
@@ -2139,4 +2139,4 @@ in splitting that item.</p>
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-31 12:05:23 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-31 15:11:44 UTC</div></div></div></body></html>
