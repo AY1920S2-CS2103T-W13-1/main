@@ -1848,10 +1848,14 @@ Reduces the Amount a Person owes and if they owe $0 the Person is automatically 
 <li>
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
 </li>
+<li>
+<p>An Item should not have a Item Price more than $10,000.</p>
+</li>
+<li>
+<p>The amount owed by a Person should not exceed $10,000.
+<em>{More to be added}</em></p>
+</li>
 </ol>
-</div>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
 </div>
 </div>
 </div>
@@ -1958,6 +1962,38 @@ A static class used in Diet Tracker to represent the user in the model.</p>
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p><em>Table 2. Expense Splitter Command Prefix</em><br></p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 59%;">
+<colgroup>
+<col style="width: 31.4285%;">
+<col style="width: 32.8571%;">
+<col style="width: 35.7144%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prefix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in Following Commands</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-i</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Add-Item-Command"><strong>Add</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-p</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item Price</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Add-Item-Command"><strong>Add</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-n</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of Person</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Add-Item-Command"><strong>Add</strong></a></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
@@ -2034,9 +2070,6 @@ Expected: Shows the CLI interface with welcome message. The window size may not 
 </div>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
 </div>
 <div class="sect2">
@@ -2125,18 +2158,61 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
+<h3 id="add-item-in-expense-splitter"><a class="link" href="#add-item-in-expense-splitter">Add Item In Expense Splitter</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding an Item into the current Receipt.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Add item command format: <code>additem -i ITEMNAME -p ITEMPRICE -n PERSON [-n PERSON]</code></p>
+</li>
+<li>
+<p>Test case: <code>additem -i pasta -p 33.50 -n John -n Bob</code><br>
+Expected: Adds an item with the above details to current receipt and increase the person amount equal to dividing the price
+with the number of person splitting that item.</p>
+</li>
+<li>
+<p>Test case: <code>Invalid Syntax</code><br>
+Expected: No item is added to the current receipt and no change to person amount.
+Error details shown in the response message.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-receipt-in-expense-splitter"><a class="link" href="#list-receipt-in-expense-splitter">List Receipt In Expense Splitter</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Listing the items contained in the current receipt. The order of items listed depends on the order of items added
+by the user.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>List Receipt command format: <code>listreceipt</code></p>
+</li>
+<li>
+<p>Test case: <code>listamount</code><br>
+Expected: List all items in the current receipt, its price and amount associated with each person involved
+in splitting that item.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
 <h3 id="saving-data"><a class="link" href="#saving-data">Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Dealing with missing/corrupted data files</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em></p>
-</li>
-</ol>
-</div>
+<p>Manual saving is not required as data is already saved in the hard disk after any commands that changes the data.</p>
 </li>
 </ol>
 </div>
@@ -2161,4 +2237,4 @@ will throw an exception? Because in AB3 everything there is assertFalse<br>
 3.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-31 10:48:39 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-31 11:30:22 UTC</div></div></div></body></html>
