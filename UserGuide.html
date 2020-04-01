@@ -145,7 +145,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>diet</code></strong> : enters the Diet Tracker component of EYLAH.</p>
+<p><code>diet</code> : enters the Diet Tracker component of EYLAH.</p>
 </li>
 <li>
 <p><code>help</code> : shows the list of commands you can execute at each page.</p>
@@ -154,7 +154,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><code>split</code> : enters the Expense Splitter segment of EYLAH.</p>
 </li>
 <li>
-<p><strong><code>exit</code></strong> : exits the app</p>
+<p><code>exit</code> : exits the app</p>
 </li>
 </ul>
 </div>
@@ -200,11 +200,19 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#donereceipt">donereceipt</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clearreceipt">clearreceipt</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#help">help</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#show">back</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#back">back</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -217,14 +225,17 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>additem -i ITEM -p PRICE -n NAME</code>. <code>NAME</code>, <code>ITEM</code> and
-<code>PRICE</code> are parameters which can decided by the user <code>additem -i beer tower -p 19.90 -n charlotte</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters are compulsory and have to be supplied by the user,
+e.g: in <code>additem -i ITEM -p PRICE -n NAME</code>.
+<code>NAME</code>, <code>ITEM</code> and <code>PRICE</code> are parameters which can decided by the user ,
+e.g:`additem -i beer tower -p 19.90 -n charlotte`.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>-n NAME [-r ROOM]</code> thus it can be used as <code>-n John Doe -r D411</code> or as <code>-n John Doe</code>.</p>
+<p>Items in square brackets are optional, e.g: <code>paid INDEX [AMOUNT]</code> can be used as <code>paid 1</code> or as
+<code>paid 1 3.90</code>.</p>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[-n NAME]&#8230;&#8203;</code> can be used as <code>&#160;</code>
+<p>Parameters with <code>…</code>​ after them can be used multiple times including zero times, e.g: <code>[-n NAME]&#8230;&#8203;</code> can be used as <code>&#160;</code>
 (i.e. 0 times), <code>-n charlotte</code>, <code>-n John Doe -n Daniel</code> etc.</p>
 </li>
 <li>
@@ -556,7 +567,7 @@ There is no need to add the dollar sign ($).
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleteitem"><a class="link" href="#deleteitem">4.3.2. Delete item  <code>deleteitem</code></a></h4>
+<h4 id="deleteitem"><a class="link" href="#deleteitem">4.3.2. Delete item <code>deleteitem</code></a></h4>
 <div class="paragraph">
 <p>Delete the item(s) in a receipt:</p>
 </div>
@@ -655,13 +666,14 @@ respective price and person(s) involved in splitting the cost of that item</p>
 <div class="ulist">
 <ul>
 <li>
-<p>The person will automatically be removed from the list if the amount owed is $0.<br></p>
+<p>You will only be able to use this command after you have marked the receipt as done using the
+<code>donereceipt</code> command.</p>
+</li>
+<li>
+<p>The person will automatically be removed from the list if the amount owed is $0.</p>
 </li>
 <li>
 <p>Price can be up to 2 decimal places, i.e. 7.99.  There is no need to add the dollar sign ($).</p>
-</li>
-<li>
-<p>When a Person owes $0 he/she will be automatically deleted from PersonList.</p>
 </li>
 </ul>
 </div>
@@ -671,7 +683,96 @@ respective price and person(s) involved in splitting the cost of that item</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="back"><a class="link" href="#back">4.3.6. Exiting split to go back to main menu <code>back</code></a></h4>
+<h4 id="donereceipt"><a class="link" href="#donereceipt">4.3.6. Mark receipt as done <code>donereceipt</code></a></h4>
+<div class="paragraph">
+<p>Use this command to mark the receipt as done when you have completed entering all the items.</p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>donereceipt</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>donereceipt</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Use this command only after you are sure you do not have to make any other changes.</p>
+</li>
+<li>
+<p>After you use this command, you will be unable to add any new items using the <code>additem</code> command
+or delete any items using the <code>deleteitem</code> command.</p>
+</li>
+<li>
+<p>However, you are now able to use the <code>paid</code> command.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="clearreceipt"><a class="link" href="#clearreceipt">4.3.7. Clears the receipt <code>clearreceipt</code></a></h4>
+<div class="paragraph">
+<p>Use this command when you want to clear the receipt and start a new receipt.</p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>clearreceipt</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>clearreceipt</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>After you use this command, you will be able to add new items by using the <code>additem</code> command
+and delete items using the <code>deleteitem</code> command.</p>
+</li>
+<li>
+<p>However, you will be unable to use the <code>paid</code> command.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="help"><a class="link" href="#help">4.3.8. Display the available commands <code>help</code></a></h4>
+<div class="paragraph">
+<p>Use this command to view the available commands.</p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>help</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>help</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="back"><a class="link" href="#back">4.3.9. Exiting split to go back to main menu <code>back</code></a></h4>
 <div class="paragraph">
 <p>You can exits <code>split</code> mode to go back to the main menu of the application.</p>
 </div>
@@ -685,7 +786,7 @@ respective price and person(s) involved in splitting the cost of that item</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="saving-the-data"><a class="link" href="#saving-the-data">4.3.7. Saving the data</a></h4>
+<h4 id="saving-the-data"><a class="link" href="#saving-the-data">4.3.10. Saving the data</a></h4>
 <div class="paragraph">
 <p>EYLAH data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -769,7 +870,7 @@ or<br>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#deleteitem"><strong>Delete Item</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>deleitem</code> <code>INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>deleteitem</code> <code>INDEX</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>deleteitem</code> <code>1</code><br>
 <code>deleteitem</code> <code>2</code></p></td>
 </tr>
@@ -784,6 +885,16 @@ or<br>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>listamount</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#donereceipt"><strong>Done Receipt</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>donereceipt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>donereceipt</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clearreceipt"><strong>Clear Receipt</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clearreceipt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clearreceipt</code></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#paid"><strong>Paid</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>paid</code> <code>INDEX</code> <code>[AMOUNT]</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>paid</code> <code>3</code> <br>
@@ -795,12 +906,7 @@ or<br>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#exit"><strong>Exit</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#donereceipt"><strong>Done Receipt</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>search</code> <code>-r</code> <code>tid/ac1e345x7s</code><br></p>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p>
 <p class="tableblock"><code>search</code> <code>-o</code> <code>p/92039999</code> <code>tid/asj2od3943</code> <code>n/jeremy</code></p></td>
 </tr>
 <tr>
@@ -848,4 +954,4 @@ or<br>
 at the bottom represents the end point.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-31 17:22:38 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-01 03:10:35 UTC</div></div></div></body></html>
