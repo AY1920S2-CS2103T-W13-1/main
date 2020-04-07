@@ -1,384 +1,292 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>EYLAH - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Ng Jun Guang, Jarrod - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="index.html">EYLAH</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">EYLAH</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W13-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>EYLAH - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="../index.html">EYLAH</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">EYLAH</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W13-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Ng Jun Guang, Jarrod - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-eylah"><a class="link" href="#project-eylah">PROJECT: EYLAH</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>By: <code>AY1920S2-CS2103T-W13-1</code>      Since: <code>Jan 2020</code>      Licence: <code>MIT</code></p>
-</div>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle"></div>
-<ul class="sectlevel1">
-<li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#setting-up">2. Setting up</a></li>
-<li><a href="#design">3. Design</a>
-<ul class="sectlevel2">
-<li><a href="#Design-Architecture">3.1. Architecture</a></li>
-<li><a href="#Design-Ui">3.2. UI component</a></li>
-<li><a href="#Design-Logic">3.3. Logic component</a></li>
-<li><a href="#Design-Model">3.4. Model component</a></li>
-<li><a href="#Design-Storage">3.5. Storage component</a></li>
-<li><a href="#Design-Commons">3.6. Common classes</a></li>
-</ul>
-</li>
-<li><a href="#implementation">4. Implementation</a>
-<ul class="sectlevel2">
-<li><a href="#diettracker-feature">4.1. DietTracker feature</a></li>
-<li><a href="#expense-splitter-feature">4.2. Expense Splitter feature</a></li>
-<li><a href="#logging">4.3. Logging</a></li>
-</ul>
-</li>
-<li><a href="#documentation">5. Documentation</a></li>
-<li><a href="#testing">6. Testing</a></li>
-<li><a href="#dev-ops">7. Dev Ops</a></li>
-<li><a href="#product-scope">Appendix A: Product Scope</a></li>
-<li><a href="#user-stories">Appendix B: User Stories</a></li>
-<li><a href="#use-cases">Appendix C: Use Cases</a></li>
-<li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
-<li><a href="#glossary">Appendix E: Glossary</a></li>
-<li><a href="#product-survey">Appendix F: Product Survey</a></li>
-<li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
-<ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-person">G.2. Deleting a person</a></li>
-<li><a href="#saving-data">G.3. Saving data</a></li>
-</ul>
-</li>
-</ul>
+<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ease Your Lives At Hall (EYLAH) is a Command Line Interface (CLI) application designed to aid students staying in NUS with commonly faced problems in halls such as,
-tracking their diet and splitting the bill with a large group of friends.</p>
-</div>
-<div class="paragraph">
-<p>Shown below is the GUI of EYLAH.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/Ui.png" alt="Ui">
-</div>
-</div>
-<div class="paragraph">
-<p>This documentation serves as an introduction to the architecture and implementation of EYLAH,
-and is made for developers who wish to maintain,
-modify or understand the software development behind our application.
-We adopted the top-down approach; we will first look into high-level
-architectures before exploring implementation details of each feature.</p>
-</div>
-<div class="paragraph">
-<p>We encourage you to traverse the full path from the high level design to the
-implementation details of the feature you are interested for the most complete understanding.</p>
+<p>EYELAH is a desktop application specifically programmed for Freshmen staying on NUS Campus. It aims to ease their lives
+at halls/residential colleges by providing them with an application to split bills easily and help
+them track their diet. The user interacts with it using a CLI and it is programmed using JAVA 11.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="setting-up"><a class="link" href="#setting-up">2. Setting up</a></h2>
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Refer to the guide <a href="SettingUp.html">here</a>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: [In Process]</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does:</p>
+</li>
+<li>
+<p>Justification:</p>
+</li>
+<li>
+<p>Highlights:</p>
+</li>
+<li>
+<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
+</li>
+<li>
+<p><strong>Adding of Height, Weight, Mode, Bmi and Self classes for the Diet Tracker portion of EYLAH</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Height and Weight are used when the User wants to store their personal health metrics into Eylah for the ease of Diet Tracking. Self is the object that represents the User in Eylah. Bmi is used to do calculations using the Height and Weight of the User.</p>
+</li>
+<li>
+<p>Justification:</p>
+</li>
+<li>
+<p>Highlights:</p>
+</li>
+<li>
+<p>Credits:</p>
+</li>
+</ul>
 </div>
+</li>
+<li>
+<p><strong>Adding of HeightCommand, WeightCommand, BmiCommand, ModeCommand for the Diet Tracker portion of EYLAH</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: HeightCommand, WeightCommand and BmiCommand are all health metric commands that are essential for any diet tracking app to help the User. BmiCommand is a simple function to allow the user to gauge their current health status.</p>
+</li>
+<li>
+<p>Justification:</p>
+</li>
+<li>
+<p>Highlights:</p>
+</li>
+<li>
+<p>Credits:</p>
+</li>
+</ul>
 </div>
+</li>
+<li>
+<p><strong>Adapted most of the beginning classes for the DietModel class from Addressbook 3</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: The Model and Parsers are extremely important in order to ensure a functioning pre-product.</p>
+</li>
+<li>
+<p>Justification:</p>
+</li>
+<li>
+<p>Highlights:</p>
+</li>
+<li>
+<p>Credits:</p>
+</li>
+</ul>
 </div>
-<div class="sect1">
-<h2 id="design"><a class="link" href="#design">3. Design</a></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture</a></h3>
+</li>
+<li>
+<p><strong>Suggested for the renaming of same sounding class components across both DietTracker and ExpenseSplitter for EYLAH</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Allows the integration of the both Diet Tracker and Expense Splitter seamlessly in the unified Eylah class.</p>
+</li>
+<li>
+<p>Justification: Otherwise, the name usages in the code would be lengthy and hard to read also. Class names in the unified Eylah files would include the entire path name of the Class file.</p>
+</li>
+<li>
+<p>Highlights: I noticed this in my review of my team mate, Shee Xiong&#8217;s, initial reorganisation of the code to allow for unification of both components. Upon further research as to why he may have left the class names as they were, I realised that it was because Java does not support <strong>class name aliasing</strong>, so we could not import the same named classes from DietTracker and ExpenseSplitter without first renaming them.</p>
+</li>
+<li>
+<p>Credits: Understanding more about Java from "https://stackoverflow.com/questions/2204157/class-or-method-alias-in-java"</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: [In Process]</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Drew Diet Tracker component of UML Class diagram</strong></p>
 <div class="imageblock">
 <div class="content">
-<img src="images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
+<img src="../images/diet_tracker_uml_class_diagram.png" alt="diet tracker uml class diagram">
 </div>
-<div class="title">Figure 1. Architecture Diagram</div>
 </div>
-<div class="paragraph">
-<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-The <code>.puml</code> files used to create diagrams in this document can be found in the <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/docs/diagrams/">diagrams</a> folder.
-Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how to create and edit diagrams.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><code>Main</code> has two classes called <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/Main.java"><code>Main</code></a> and <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>At app launch: Initializes the components in the correct sequence, and connects them up with each other.</p>
 </li>
 <li>
-<p>At shut down: Shuts down the components and invokes cleanup method where necessary.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><a href="#Design-Commons"><strong><code>Commons</code></strong></a> represents a collection of classes used by multiple other components.
-The following class plays an important role at the architecture level:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log file.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The rest of the App consists of four components.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#Design-Ui"><strong><code>UI</code></strong></a>: The UI of the App.</p>
+<p><strong>Added tests for HeightCommand, WeightCommand, BmiCommand, ModeCommand, and some of the tests for EditCommand</strong></p>
 </li>
 <li>
-<p><a href="#Design-Logic"><strong><code>Logic</code></strong></a>: The command executor.</p>
+<p><strong>Added tests for the respective Command Parser classes as seen in the previous point. Also added tests for the FoodBookParser and Parser classes.</strong></p>
 </li>
 <li>
-<p><a href="#Design-Model"><strong><code>Model</code></strong></a>: Holds the data of the App in-memory.</p>
+<p><strong>Assisted in downscaling of AddressBook3 by removing Email object</strong></p>
 </li>
 <li>
-<p><a href="#Design-Storage"><strong><code>Storage</code></strong></a>: Reads data from, and writes data to, the hard disk.</p>
-</li>
-</ul>
+<p><strong>Drew Activity Diagrams for various Diet Tracker functions.</strong></p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/BmiActivityDiagram.png" alt="BmiActivityDiagram">
 </div>
-<div class="paragraph">
-<p>Each of the four components</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Defines its <em>API</em> in an <code>interface</code> with the same name as the Component.</p>
-</li>
-<li>
-<p>Exposes its functionality using a <code>{Component Name}Manager</code> class.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For example, the <code>Logic</code> component (see the class diagram given below) defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
+<img src="../images/BmiNILSequenceDiagram.png" alt="BmiNILSequenceDiagram">
 </div>
-<div class="title">Figure 2. Class Diagram of the Logic Component</div>
 </div>
-<h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
-<div class="paragraph">
-<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>delete 1</code>.</p>
+</li>
+<li>
+<p><strong>Drew Sequence Diagrams for various Diet Tracker functions.</strong></p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/BmiNILSequenceDiagram.png" alt="BmiNILSequenceDiagram">
 </div>
-<div class="paragraph">
-<div class="title">Component interactions for <code>delete 1</code> command</div>
-<p>image::ArchitectureSequenceDiagram.png[]<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/BmiSequenceDiagram.png" alt="BmiSequenceDiagram">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerHeightCommandSequenceDiagram.png" alt="DietTrackerHeightCommandSequenceDiagram">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerWeightCommandSequenceDiagram.png" alt="DietTrackerWeightCommandSequenceDiagram">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerModeCommandSequenceDiagram.png" alt="DietTrackerModeCommandSequenceDiagram">
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In charge of Diet Tracker functionalities for EYLAH.</p>
+</li>
+<li>
+<p>Drew most UML Diagrams for the various Diet Tracker classes and functions for EYLAH.</p>
+</li>
+<li>
+<p>Participated in planning the project timeline for EYLAH.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements to existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Adapted the given Parser and Command Design into Diet Tracker&#8217;s Design for EYLAH. <a href="https://github.com/" class="bare">https://github.com/</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To be added</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed (with non-trivial review comments):</p>
+</li>
+<li>
+<p>Contributed to forum discussions (examples:  <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/52">1</a>, <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/48">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
+</li>
+<li>
+<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tools:</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 <div class="sect3">
-<h4 id="eylah-comprehensive-class-diagram-for-both-diet-tracker-and-expense-spliter"><a class="link" href="#eylah-comprehensive-class-diagram-for-both-diet-tracker-and-expense-spliter">3.1.1. EYLAH comprehensive class diagram for both Diet Tracker and Expense Spliter</a></h4>
-<div class="imageblock">
-<div class="content">
-<img src="images/eylah_overall_class_diagram.png" alt="eylah overall class diagram">
-</div>
-</div>
+<h4 id="code-contributed"><a class="link" href="#code-contributed">Code contributed</a></h4>
 <div class="paragraph">
-<p>This shows a brief class diagram for EYLAH. [More details to be added in v1.3]</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="eylah-activity-diagram-for-expense-splitter"><a class="link" href="#eylah-activity-diagram-for-expense-splitter">3.1.2. EYLAH Activity Diagram for Expense Splitter</a></h4>
-<div class="imageblock">
-<div class="content">
-<img src="images/activityDiagram_for_expensesplitter.png" alt="activityDiagram for expensesplitter">
-</div>
-</div>
-<div class="paragraph">
-<p>This shows a brief activity diagram for Expense Splitter. [More details to be added in v1.3]</p>
-</div>
-<div class="paragraph">
-<p>The sections below give more details of each component.<br></p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">3.2. UI component</a></h3>
-<div class="imageblock">
-<div class="content">
-<img src="images/UiClassDiagram.png" alt="UiClassDiagram">
-</div>
-<div class="title">Figure 3. Structure of the UI Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
-</div>
-<div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
-</div>
-<div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
-</div>
-<div class="paragraph">
-<p>The <code>UI</code> component,</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Executes user commands using the <code>Logic</code> component.</p>
-</li>
-<li>
-<p>Listens for changes to <code>Model</code> data so that the UI can be updated with the modified data.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">3.3. Logic component</a></h3>
-<div id="fig-LogicClassDiagram" class="imageblock">
-<div class="content">
-<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
-</div>
-<div class="title">Figure 4. Structure of the Logic Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> :
-<a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><code>Logic</code> uses the <code>AddressBookParser</code> class to parse the user command.</p>
-</li>
-<li>
-<p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
-</li>
-<li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a person).</p>
-</li>
-<li>
-<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
-</li>
-<li>
-<p>In addition, the <code>CommandResult</code> object can also instruct the <code>Ui</code> to perform certain actions, such as displaying help to the user.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
-</div>
-<div class="title">Figure 5. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The lifeline for <code>DeleteCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model component</a></h3>
-<div class="imageblock">
-<div class="content">
-<img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
-</div>
-<div class="title">Figure 6. Structure of the Model Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/splitterModel/Model.java"><code>Model.java</code></a></p>
-</div>
-<div class="paragraph">
-<p>The <code>Model</code>,</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
-</li>
-<li>
-<p>stores the Address Book data.</p>
-</li>
-<li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Person&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
-</li>
-<li>
-<p>does not depend on any of the other three components.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-As a more OOP splitterModel, we can store a <code>Tag</code> list in <code>Address Book</code>, which <code>person</code> can reference. This would allow <code>Address Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>person</code> needing their own <code>Tag</code> object. An example of how such a splitterModel may look like is given below.<br>
-<br>
-<span class="image"><img src="images/BetterModelClassDiagram.png" alt="BetterModelClassDiagram"></span>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage component</a></h3>
-<div class="imageblock">
-<div class="content">
-<img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
-</div>
-<div class="title">Figure 7. Structure of the Storage Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/splitterStorage/Storage.java"><code>Storage.java</code></a></p>
-</div>
-<div class="paragraph">
-<p>The <code>Storage</code> component,</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>can save <code>UserPref</code> objects in json format and read it back.</p>
-</li>
-<li>
-<p>can save the Address Book data in json format and read it back.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Design-Commons"><a class="link" href="#Design-Commons">3.6. Common classes</a></h3>
-<div class="paragraph">
-<p>Classes used by multiple components are in the <code>seedu.addressbook.commons</code> package.</p>
+<p>Please click the following link to see my code contributions dashboard.
+<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=jarrod-bob">Code Report</a></p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="implementation"><a class="link" href="#implementation">4. Implementation</a></h2>
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>This section describes some noteworthy details on how certain features are implemented.</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
 </div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect2">
-<h3 id="diettracker-feature"><a class="link" href="#diettracker-feature">4.1. DietTracker feature</a></h3>
+<h3 id="diettracker-feature"><a class="link" href="#diettracker-feature">DietTracker feature</a></h3>
 <div class="paragraph">
 <p>The Diet Tracker feature is designed to aid our users in maintaining a healthy lifestyle. The feature comprises
 of 9 Commands.</p>
@@ -423,20 +331,66 @@ based on their user input.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/activityDiagram_for_expensesplitter.png" alt="activityDiagram for expensesplitter">
+<img src="../images/activityDiagram_for_expensesplitter.png" alt="activityDiagram for expensesplitter">
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-command"><a class="link" href="#add-command">4.1.1. Add Command</a></h4>
-
-</div>
-<div class="sect3">
-<h4 id="delete-command"><a class="link" href="#delete-command">4.1.2. Delete Command</a></h4>
+<h4 id="Add-Command"><a class="link" href="#Add-Command">Add Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
 <div class="paragraph">
-<p>The following is a detailed explanation of the operations <code>DeleteCommand</code> performs.<br></p>
+<p>The following is an activity diagram and a detailed explanation of the operations <code>AddItemCommand</code> performs.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AddFoodActivityDiagram.png" alt="AddFoodActivityDiagram">
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>AddCommand#execute(Model splitterModel)</code> method is executed and a new <code>Food</code> would be created.</p>
+</li>
+<li>
+<p>The <code>Model#addFood(Food food)</code> method would then call <code>FoodBook#addFood(Food food)</code>.</p>
+</li>
+<li>
+<p>The <code>FoodBook#addFood(Food food)</code> method would then add the food into a <code>UniqueFoodList</code>.</p>
+</li>
+<li>
+<p>If successful, a success message will be generated by <code>CommandResult</code> and it will be returned with the generated
+success message. Otherwise, an error message showing the correct command syntax is thrown as <code>CommandException</code>.</p>
+</li>
+<li>
+<p>If the command syntax was valid and Food was added to the FoodBook, <code>LogicManager</code> calls
+<code>FoodBookStorage#saveFoodBook(ReadOnlyFoodBook foodBook)</code> which saves the new Food
+Amount into JSON format after serializing it using <code>JsonAdaptedFood</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following is a sample sequence diagram of the AddCommand.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/AddFoodSequenceDiagram.png" alt="AddFoodSequenceDiagram">
+</div>
+<div class="title">Figure 1. Interactions for add food command</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Delete-Command"><a class="link" href="#Delete-Command">Delete Command</a></h4>
+<div class="paragraph">
+<p><strong>Implementation</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is an activity diagram and a detailed explanation of the operations <code>DeleteCommand</code> performs.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DeleteFoodActivityDiagram.png" alt="DeleteFoodActivityDiagram">
+</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -468,12 +422,13 @@ into JSON format after serializing it using <code>JsonAdaptedFood</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/.png" alt=".png">
+<img src="../images/DeleteFoodSequenceDiagram.png" alt="DeleteFoodSequenceDiagram">
 </div>
+<div class="title">Figure 2. Interactions for delete food command</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-command"><a class="link" href="#list-command">4.1.3. List Command</a></h4>
+<h4 id="List-Command"><a class="link" href="#List-Command">List Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -502,12 +457,12 @@ success message. Otherwise, an error message showing the correct command syntax 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DietTrackerListCommandSequenceDiagram.png" alt="DietTrackerListCommandSequenceDiagram">
+<img src="../images/DietTrackerListCommandSequenceDiagram.png" alt="DietTrackerListCommandSequenceDiagram">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit-command"><a class="link" href="#edit-command">4.1.4. Edit Command</a></h4>
+<h4 id="Edit-Command"><a class="link" href="#Edit-Command">Edit Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -544,12 +499,12 @@ into JSON format after serializing it using <code>JsonAdaptedFood</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DietTrackerEditCommandSequenceDiagram.png" alt="DietTrackerEditCommandSequenceDiagram">
+<img src="../images/DietTrackerEditCommandSequenceDiagram.png" alt="DietTrackerEditCommandSequenceDiagram">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="bmi-command"><a class="link" href="#bmi-command">4.1.5. Bmi Command</a></h4>
+<h4 id="Bmi-Command"><a class="link" href="#Bmi-Command">Bmi Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -574,7 +529,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/BmiActivityDiagram.png" alt="BmiActivityDiagram">
+<img src="../images/BmiActivityDiagram.png" alt="BmiActivityDiagram">
 </div>
 </div>
 <div class="paragraph">
@@ -604,7 +559,7 @@ Self&#8217;s Height and Weight attributes.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/BmiNILSequenceDiagram.png" alt="BmiNILSequenceDiagram">
+<img src="../images/BmiNILSequenceDiagram.png" alt="BmiNILSequenceDiagram">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -643,7 +598,7 @@ Self&#8217;s Height and Weight attributes.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/BmiSequenceDiagram.png" alt="BmiSequenceDiagram">
+<img src="../images/BmiSequenceDiagram.png" alt="BmiSequenceDiagram">
 </div>
 </div>
 <div class="paragraph">
@@ -717,7 +672,7 @@ Self&#8217;s Height and Weight attributes.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="height-command"><a class="link" href="#height-command">4.1.6. Height Command</a></h4>
+<h4 id="Height-Command"><a class="link" href="#Height-Command">Height Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -745,12 +700,12 @@ success message. Otherwise, an error message showing the correct command syntax 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DietTrackerHeightCommandSequenceDiagram.png" alt="DietTrackerHeightCommandSequenceDiagram">
+<img src="../images/DietTrackerHeightCommandSequenceDiagram.png" alt="DietTrackerHeightCommandSequenceDiagram">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="weight-command"><a class="link" href="#weight-command">4.1.7. Weight Command</a></h4>
+<h4 id="Weight-Command"><a class="link" href="#Weight-Command">Weight Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -778,12 +733,12 @@ success message. Otherwise, an error message showing the correct command syntax 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DietTrackerWeightCommandSequenceDiagram.png" alt="DietTrackerWeightCommandSequenceDiagram">
+<img src="../images/DietTrackerWeightCommandSequenceDiagram.png" alt="DietTrackerWeightCommandSequenceDiagram">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="mode-command"><a class="link" href="#mode-command">4.1.8. Mode Command</a></h4>
+<h4 id="Mode-Command"><a class="link" href="#Mode-Command">Mode Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -811,221 +766,13 @@ success message. Otherwise, an error message showing the correct command syntax 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DietTrackerModeCommandSequenceDiagram.png" alt="DietTrackerModeCommandSequenceDiagram">
-</div>
-</div>
-<div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
-It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
-Additionally, it implements the following operations:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>VersionedAddressBook#commit()</code>&#8201;&#8212;&#8201;Saves the current address book state in its history.</p>
-</li>
-<li>
-<p><code>VersionedAddressBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous address book state from its history.</p>
-</li>
-<li>
-<p><code>VersionedAddressBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone address book state from its history.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> and <code>Model#redoAddressBook()</code> respectively.</p>
-</div>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedAddressBook</code> will be initialized with the initial address book state, and the <code>currentStatePointer</code> pointing to that single address book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState0.png" alt="UndoRedoState0">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th person in the address book. The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState1.png" alt="UndoRedoState1">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new person. The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified address book state to be saved into the <code>addressBookStateList</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState2.png" alt="UndoRedoState2">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If a command fails its execution, it will not call <code>Model#commitAddressBook()</code>, so the address book state will not be saved into the <code>addressBookStateList</code>.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState3.png" alt="UndoRedoState3">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial address book state, then there are no previous address book states to restore. The <code>undo</code> command uses <code>Model#canUndoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram shows how the undo operation works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoSequenceDiagram.png" alt="UndoSequenceDiagram">
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The lifeline for <code>UndoCommand</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoAddressBook()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the address book to that state.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If the <code>currentStatePointer</code> is at index <code>addressBookStateList.size() - 1</code>, pointing to the latest address book state, then there are no undone address book states to restore. The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the address book, such as <code>list</code>, will usually not call <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> or <code>Model#redoAddressBook()</code>. Thus, the <code>addressBookStateList</code> remains unchanged.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState4.png" alt="UndoRedoState4">
-</div>
-</div>
-<div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>addressBookStateList</code>, all address book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UndoRedoState5.png" alt="UndoRedoState5">
-</div>
-</div>
-<div class="paragraph">
-<p>The following activity diagram summarizes what happens when a user executes a new command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/CommitActivityDiagram.png" alt="CommitActivityDiagram">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.9. Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire address book.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to implement.</p>
-</li>
-<li>
-<p>Cons: May have performance issues in terms of memory usage.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Individual command knows how to undo/redo by itself.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the person being deleted).</p>
-</li>
-<li>
-<p>Cons: We must ensure that the implementation of each individual command are correct.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="aspect-data-structure-to-support-the-undo-redo-commands"><a class="link" href="#aspect-data-structure-to-support-the-undo-redo-commands">Aspect: Data structure to support the undo/redo commands</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of address book states.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
-</li>
-<li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedAddressBook</code>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Use <code>HistoryManager</code> for undo/redo</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: We do not need to maintain a separate list, and just reuse what is already in the codebase.</p>
-</li>
-<li>
-<p>Cons: Requires dealing with commands that have already been undone: We must remember to skip these commands. Violates Single Responsibility Principle and Separation of Concerns as <code>HistoryManager</code> now needs to do two different things.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<img src="../images/DietTrackerModeCommandSequenceDiagram.png" alt="DietTrackerModeCommandSequenceDiagram">
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="expense-splitter-feature"><a class="link" href="#expense-splitter-feature">4.2. Expense Splitter feature</a></h3>
+<h3 id="expense-splitter-feature"><a class="link" href="#expense-splitter-feature">Expense Splitter feature</a></h3>
 <div class="paragraph">
 <p>The Expense Splitter feature is designed to aid our users with the splitting of large bills that involves meany people.
 The feature comprises of six commands namely.</p>
@@ -1060,15 +807,61 @@ The feature comprises of six commands namely.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/activityDiagram_for_expensesplitter.png" alt="activityDiagram for expensesplitter">
+<img src="../images/ExpenseSplitterActivityDiagram.png" alt="ExpenseSplitterActivityDiagram">
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-item-command"><a class="link" href="#add-item-command">4.2.1. Add Item Command</a></h4>
-
+<h4 id="add-item-command"><a class="link" href="#add-item-command">Add Item Command</a></h4>
+<div class="paragraph">
+<p><strong>Implementation</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>AddItemCommand</code> performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>AddItemCommand#execute(Model splitterModel)</code> method is executed and it checks if the specified <code>ITEM</code> and <code>PERSONS</code> to
+be added are valid. If valid, a new <code>Entry</code> would be created with the specified <code>ITEM</code> and <code>PERSONS</code>.</p>
+</li>
+<li>
+<p>The <code>Model#addEntry(Entry entry)</code> method would then be called to add the <code>Entry</code> into the Receipt</p>
+</li>
+<li>
+<p>For each person in <code>PERSONS</code>, the person is first checked through the <code>PersonAmountBook#persons</code> using the
+<code>Model#hasPerson(Person person)</code> method to check if the person already exists.</p>
+</li>
+<li>
+<p>If the person does not already exist, the method <code>Model#addPerson(Person person)</code> would be called to add the person,
+together with the amount, into the <code>PersonAmountBook#persons</code>.</p>
+</li>
+<li>
+<p>If the person exists, the person would be retrieved from the <code>PersonAmountBook#persons</code> using the
+<code>Model#getPerson(Person person)</code> method, and then the amount would be added to that person using the
+<code>Model#addAmount(Person person, Amount amount)</code> method.</p>
+</li>
+<li>
+<p>If successful, a success message will be generated by <code>CommandResult</code> and it will be returned with the generated
+success message. Otherwise, an error message showing the correct command syntax is thrown as <code>CommandException</code>.</p>
+</li>
+<li>
+<p>If the command syntax was valid and Entry was added to the Receipt, <code>LogicManager</code> calls
+<code>PersonAmountStorage#savePersonAmountBook(ReadOnlyPersonAmountBook personAmountBook)</code> which saves the new Person(s)
+Amount into JSON format after serializing it using <code>JsonAdaptedPerson</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following is a sample sequence diagram of the DeleteItemCommand.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ExpenseSplitterAddItemCommandSequenceDiagram.png" alt="ExpenseSplitterAddItemCommandSequenceDiagram">
+</div>
+</div>
 </div>
 <div class="sect3">
-<h4 id="delete-item-command"><a class="link" href="#delete-item-command">4.2.2. Delete Item Command</a></h4>
+<h4 id="delete-item-command"><a class="link" href="#delete-item-command">Delete Item Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -1079,10 +872,18 @@ The feature comprises of six commands namely.</p>
 <ol class="arabic">
 <li>
 <p>The <code>DeleteItemCommand#execute(Model splitterModel)</code> method is executed and it validates that the specified <code>INDEX</code> to delete
-is within range. If valid, the item to be deleted will be retrieved from Receipt using its I`Index`.</p>
+is within range. If valid, the item to be deleted will be retrieved from Receipt using its <code>Index</code>.</p>
 </li>
 <li>
-<p>The method <code>Model#deleteEntry(int Index) will then be called to remove the Item from the Receipt.
+<p>The method <code>Model#getEntry(int index)</code> is called to retrieve the current Entry, which subsequently retrieves the
+current Item using the <code>Entry#getItem()</code> method and the amountPerPerson associated with it via the
+<code>Item#getAmountPerPerson()</code> method. The list of persons are also retrieved via the <code>Entry#getPersonsList()</code> method.</p>
+</li>
+<li>
+<p>For each person in the list of persons, the amount is subtracted from the current amount owed by the person.</p>
+</li>
+<li>
+<p>The method <code>Model#deleteEntry(int index) will then be called to remove the Item from the Receipt.
 `Receipt#deleteEntry(int Index)</code> is invoked which makes a call to its internal list to remove the specified Item.</p>
 </li>
 <li>
@@ -1090,9 +891,9 @@ is within range. If valid, the item to be deleted will be retrieved from Receipt
 success message. Otherwise, an error message showing the correct command syntax is thrown as <code>CommandException</code>.</p>
 </li>
 <li>
-<p>If the command syntax was valid and Item was removed from Receipt, <code>LogicManager</code> calls
-<code>PersonAmountStorage#savePersonAmountBook(ReadOnlyPersonAmountBook personAmountBook)</code> which saves the new Person(s) Amount
-into JSON format after serializing it using <code>JsonAdaptedPerson</code>.</p>
+<p>If the command syntax was valid and Entry was removed from Receipt, <code>LogicManager</code> calls
+<code>PersonAmountStorage#savePersonAmountBook(ReadOnlyPersonAmountBook personAmountBook)</code> which saves the new Person(s)
+Amount into JSON format after serializing it using <code>JsonAdaptedPerson</code>.</p>
 </li>
 </ol>
 </div>
@@ -1101,21 +902,42 @@ into JSON format after serializing it using <code>JsonAdaptedPerson</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ExpenseSplitterDeleteItemCommandSequenceDiagram.png" alt="ExpenseSplitterDeleteItemCommandSequenceDiagram">
+<img src="../images/ExpenseSplitterDeleteItemCommandSequenceDiagram.png" alt="ExpenseSplitterDeleteItemCommandSequenceDiagram">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-receipt-command"><a class="link" href="#list-receipt-command">4.2.3. List Receipt Command</a></h4>
+<h4 id="list-receipt-command"><a class="link" href="#list-receipt-command">List Receipt Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
 <div class="paragraph">
-<p>The following</p>
+<p>The following is a detailed explanation of the operations <code>ListReceiptCommand</code> performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>ListReceiptCommand#execute(Model splitterModel)</code> method is executed.</p>
+</li>
+<li>
+<p>The method <code>Model#listReceipt()</code> will then be called to return the list of Item(s) currently in that Receipt.</p>
+</li>
+<li>
+<p>The method <code>receipt.toString()</code> will use StringBuilder to print the Items(s) currently in Receipt by calling <code>entry.toString()</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following is a sample sequence diagram of the ListReceiptCommand.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
+</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-amount-command"><a class="link" href="#list-amount-command">4.2.4. List Amount Command</a></h4>
+<h4 id="list-amount-command"><a class="link" href="#list-amount-command">List Amount Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -1140,21 +962,92 @@ into JSON format after serializing it using <code>JsonAdaptedPerson</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
+<img src="../images/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="paid-command"><a class="link" href="#paid-command">4.2.5. Paid Command</a></h4>
-
+<h4 id="paid-command"><a class="link" href="#paid-command">Paid Command</a></h4>
+<div class="paragraph">
+<p><strong>Implementation</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>PaidCommand</code> performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>PaidCommand#execute(Model splitterModel)</code> method is executed.</p>
+</li>
+<li>
+<p>The <code>Model#paidPerson(Person person, String amountPaid)</code> will be called. String amountPaid will be converted into an Amount.</p>
+</li>
+<li>
+<p>The <code>personAmountBook#removeAmount(Person person, Amount amount)</code> is then called to remove Amount from Person.</p>
+</li>
+<li>
+<p>Thus calling <code>UniquePersonList#removeAmount(Person person, Amount amount)</code>.</p>
+</li>
+<li>
+<p>Lastly, <code>Person#removeAmount(Amount amount)</code> is called to subtract the amount.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Person(s) with $0 Amount will be deleted from UniquePersonList.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ExpenseSplitterPaidCommandSequenceDiagramV2.png" alt="ExpenseSplitterPaidCommandSequenceDiagramV2">
+</div>
+</div>
 </div>
 <div class="sect3">
-<h4 id="back-command"><a class="link" href="#back-command">4.2.6. Back Command</a></h4>
-
+<h4 id="back-command"><a class="link" href="#back-command">Back Command</a></h4>
+<div class="paragraph">
+<p><strong>Implementation</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>BackCommand</code> performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>BackCommand#execute(Model splitterModel)</code> method is executed.</p>
+</li>
+<li>
+<p>The <code>CommandResult</code> with the <code>isBack</code> will set to true and returns to <code>EYLAH</code>.</p>
+</li>
+<li>
+<p>The <code>EYLAH#runCommandLoopUntilBackCommand()</code> will check if <code>isBack</code> is set to true.</p>
+</li>
+<li>
+<p>If the <code>isBack</code> is true, the <code>EYLAH</code> will return the the main menu. Otherwise, the
+<code>Eylah</code> will continue running in Expense Splitter mode.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The following is a sample sequence diagram of the BackCommand.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ExpenseSplitterBackCommandSequenceDiagram.png" alt="ExpenseSplitterBackCommandSequenceDiagram">
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.3. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
@@ -1194,7 +1087,7 @@ into JSON format after serializing it using <code>JsonAdaptedPerson</code>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="documentation"><a class="link" href="#documentation">5. Documentation</a></h2>
+<h2 id="documentation"><a class="link" href="#documentation">Documentation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Documentation.html">here</a>.</p>
@@ -1202,7 +1095,7 @@ into JSON format after serializing it using <code>JsonAdaptedPerson</code>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="testing"><a class="link" href="#testing">6. Testing</a></h2>
+<h2 id="testing"><a class="link" href="#testing">Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Testing.html">here</a>.</p>
@@ -1210,7 +1103,7 @@ into JSON format after serializing it using <code>JsonAdaptedPerson</code>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="dev-ops"><a class="link" href="#dev-ops">7. Dev Ops</a></h2>
+<h2 id="dev-ops"><a class="link" href="#dev-ops">Dev Ops</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="DevOps.html">here</a>.</p>
@@ -1700,20 +1593,20 @@ Use case ends.</p>
 </ul>
 </div>
 <h3 id="expense-splitter-use-cases" class="discrete">Expense Splitter Use Cases</h3>
-<h4 id="use-case-uc01-add-item" class="discrete">Use case: UC01 - Add item</h4>
+<h4 id="use-case-uc08-add-item" class="discrete">Use case: UC08 - Add item</h4>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User keys in Food name, its price and Person(s) involved in the splitting of that food.</p>
+<p>User keys in Item name, its price and Person(s) involved in the splitting of that item.</p>
 </li>
 <li>
-<p>EYLAH adds the Food object.</p>
+<p>EYLAH adds the Item object.</p>
 </li>
 <li>
-<p>EYLAH displays the Food and the Person(s) involved with splitting of that food.</p>
+<p>EYLAH displays the Item and the Person(s) involved with splitting of that item.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1726,11 +1619,11 @@ Use case ends.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. EYLAH detects empty Food name, Food price or Person(s)</p>
+<p>1a. EYLAH detects empty Item name, Item price or Person(s)</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a1. EYLAH shows an error message and displays an example of a correct <code>addfood</code> function.</p>
+<p>1a1. EYLAH shows an error message and displays an example of a correct <code>additem</code> function.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1747,7 +1640,7 @@ Use case ends.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1b1. EYLAH shows an error message and displays an example of a correct <code>addfood</code> function.</p>
+<p>1b1. EYLAH shows an error message and displays an example of a correct <code>additem</code> function.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1757,7 +1650,7 @@ Use case ends.</p>
 </li>
 </ul>
 </div>
-<h4 id="use-case-uc02-delete-item" class="discrete">Use case: UC02 - Delete item</h4>
+<h4 id="use-case-uc09-delete-item" class="discrete">Use case: UC09 - Delete item</h4>
 <div class="paragraph">
 <p><strong>Actor:</strong> User<br>
 <strong>Preconditions:</strong> User is logged in.<br>
@@ -1803,7 +1696,7 @@ Item will be deleted from Receipt only if the Item is currently present in Recei
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc03-listing-receipt" class="discrete">Use case: UC03 - Listing Receipt</h3>
+<h3 id="use-case-uc10-listing-receipt" class="discrete">Use case: UC10 - Listing Receipt</h3>
 <div class="paragraph">
 <p><strong>Actor:</strong> User<br>
 <strong>Preconditions:</strong> User is logged in.<br>
@@ -1846,7 +1739,7 @@ All Items in the current Receipt will be listed out.</p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc04-listing-person-s-and-the-amount-they-owe" class="discrete">Use case: UC04 - Listing Person(s) and the Amount they owe</h3>
+<h3 id="use-case-uc11-listing-person-s-and-the-amount-they-owe" class="discrete">Use case: UC11 - Listing Person(s) and the Amount they owe</h3>
 <div class="paragraph">
 <p><strong>Actor:</strong> User<br>
 <strong>Preconditions:</strong> User is logged in.<br>
@@ -1889,7 +1782,7 @@ All Person(s) and the amount they owe will be listed.</p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc05-amount-paid" class="discrete">Use case: UC05 - Amount paid</h3>
+<h3 id="use-case-uc12-amount-paid" class="discrete">Use case: UC12 - Amount paid</h3>
 <div class="paragraph">
 <p><strong>Actor:</strong> User<br>
 <strong>Preconditions:</strong> User is logged in.<br>
@@ -1969,7 +1862,7 @@ Reduces the Amount a Person owes and if they owe $0 the Person is automatically 
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc06-back-to-main-menu" class="discrete">Use case: UC06 - Back to Main Menu</h3>
+<h3 id="use-case-uc13-back-to-main-menu" class="discrete">Use case: UC13 - Back to Main Menu</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -2017,10 +1910,14 @@ Reduces the Amount a Person owes and if they owe $0 the Person is automatically 
 <li>
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
 </li>
+<li>
+<p>An Item should not have a Item Price more than $10,000.</p>
+</li>
+<li>
+<p>The amount owed by a Person should not exceed $10,000.
+<em>{More to be added}</em></p>
+</li>
 </ol>
-</div>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
 </div>
 </div>
 </div>
@@ -2049,8 +1946,116 @@ Reduces the Amount a Person owes and if they owe $0 the Person is automatically 
 <dd>
 <p>A contact detail that is not meant to be shared with others</p>
 </dd>
+<dt class="hdlist1"><a id="bmi"></a> Body-Mass Index (BMI)</dt>
+<dd>
+<p>The BMI is a convenient rule of thumb used to broadly categorize a person as underweight, normal weight, overweight,
+or obese based on tissue mass (muscle, fat, and bone) and height</p>
+</dd>
 </dl>
 </div>
+<div class="paragraph">
+<p><a id="self"></a> Self:
+A static class used in Diet Tracker to represent the user in the splitterModel.</p>
+</div>
+<div class="paragraph">
+<p><em>Table 1. Diet Tracker Command Prefix</em><br></p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 59%;">
+<colgroup>
+<col style="width: 31.4285%;">
+<col style="width: 32.8571%;">
+<col style="width: 35.7144%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prefix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in Following Commands</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-n</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of Food</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Add-Command"><strong>Add</strong></a>, <a href="#Edit-Command"><strong>Edit</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-c</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Calories</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Add-Command"><strong>Add</strong></a>, <a href="#Edit-Command"><strong>Edit</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-i</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Index</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Edit-Command"><strong>Edit</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-g</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Mode-Command"><strong>Mode</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-m</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maintain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Mode-Command"><strong>Mode</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Foods</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#List-Command"><strong>List</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-d</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Day</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#List-Command"><strong>List</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-t</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Track</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#List-Command"><strong>List</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Height</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Bmi-Command"><strong>Bmi</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-w</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Weight</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Bmi-Command"><strong>Bmi</strong></a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p><em>Table 2. Expense Splitter Command Prefix</em><br></p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 59%;">
+<colgroup>
+<col style="width: 31.4285%;">
+<col style="width: 32.8571%;">
+<col style="width: 35.7144%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prefix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in Following Commands</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-i</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Add-Item-Command"><strong>Add</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-p</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item Price</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Add-Item-Command"><strong>Add</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-n</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of Person</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Add-Item-Command"><strong>Add</strong></a></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">
@@ -2109,7 +2114,7 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 <div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">G.1. Launch and Shutdown</a></h3>
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">Launch and Shutdown</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2121,49 +2126,58 @@ These instructions only provide a starting point for testers to work on; testers
 </li>
 <li>
 <p>Double-click the jar file<br>
-Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Saving window preferences</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Resize the window to an optimum size. Move the window to a different location. Close the window.</p>
-</li>
-<li>
-<p>Re-launch the app by double-clicking the jar file.<br>
-Expected: The most recent window size and location is retained.</p>
+Expected: Shows the CLI interface with welcome message. The window size may not be optimum.</p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">G.2. Deleting a person</a></h3>
+<h3 id="adding-a-food-in-diet-tracker"><a class="link" href="#adding-a-food-in-diet-tracker">Adding a Food in Diet Tracker</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a person while all persons are listed</p>
+<p>Adding a Food</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list.</p>
+<p>Test case: <code>add -n burger -c 170</code><br>
+Expected: Food is added to FoodBook. Details of the added Food are shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>add burger</code><br>
+Expected: No Food is added. Error details and the correct format to input will be shown to the user.</p>
+</li>
+<li>
+<p>Other incorrect add commands to try: <code>add</code>, <code>add</code> with no flags <code>-f</code> and <code>-c</code> appended to the command.<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-food-in-diet-tracker"><a class="link" href="#deleting-a-food-in-diet-tracker">Deleting a Food in Diet Tracker</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a Food while all Foods are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all Foods using the <code>list -f</code> command. Multiple Foods in the list.</p>
 </li>
 <li>
 <p>Test case: <code>delete 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.</p>
+Expected: First Food is deleted from the list. Details of the deleted Food shown in the status message. Timestamp in the status bar is updated.</p>
 </li>
 <li>
 <p>Test case: <code>delete 0</code><br>
-Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.</p>
+Expected: No Food is deleted. Error details shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
 <p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
@@ -2174,29 +2188,115 @@ Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.3. Saving data</a></h3>
+<h3 id="editing-a-food-in-diet-tracker"><a class="link" href="#editing-a-food-in-diet-tracker">Editing a Food in Diet Tracker</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Dealing with missing/corrupted data files</p>
+<p>Editing a Food while all Foods are listed</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em></p>
+<p>Prerequisites: List all Foods using the <code>list -f</code> command. Multiple Foods in the list.</p>
+</li>
+<li>
+<p>Test case: <code>edit 1 -n Pasta</code><br>
+Expected: First Food is edited. Details of the edited Food shown in the status message. Timestamp in the status bar is updated.
+Food is edited and then restored.</p>
+</li>
+<li>
+<p>Test case: <code>edit 1</code><br>
+Expected: No Food is edited. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
+Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-item-in-expense-splitter"><a class="link" href="#add-item-in-expense-splitter">Add Item In Expense Splitter</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding an Item into the current Receipt.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Add item command format: <code>additem -i ITEMNAME -p ITEMPRICE -n PERSON [-n PERSON]</code></p>
+</li>
+<li>
+<p>Test case: <code>additem -i pasta -p 33.50 -n John -n Bob</code><br>
+Expected: Adds an item with the above details to current receipt and increase the person amount equal to dividing the price
+with the number of person splitting that item.</p>
+</li>
+<li>
+<p>Test case: <code>Invalid Syntax</code><br>
+Expected: No item is added to the current receipt and no change to person amount.
+Error details shown in the response message.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-receipt-in-expense-splitter"><a class="link" href="#list-receipt-in-expense-splitter">List Receipt In Expense Splitter</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Listing the items contained in the current receipt. The order of items listed depends on the order of items added
+by the user.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>List Receipt command format: <code>listreceipt</code></p>
+</li>
+<li>
+<p>Test case: <code>listamount</code><br>
+Expected: List all items in the current receipt, its price and amount associated with each person involved
+in splitting that item.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">Saving data</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Manual saving is not required as data is already saved in the hard disk after any commands that changes the data.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
 <p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
+<div class="sectionbody">
+<hr>
+<div class="paragraph">
+<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+</div>
+<div class="paragraph">
+<p>Questions to ask:<br>
+1. is BigDecimal the best way to represent currency?<br>
+2. under ItemPriceTest, instead of assertFalse can I assertThrows because BigDecimal
+will throw an exception? Because in AB3 everything there is assertFalse<br>
+3.</p>
 </div>
 </div>
 </div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 16:01:52 UTC</div></div></div></body></html>
