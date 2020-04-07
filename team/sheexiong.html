@@ -1,388 +1,218 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>EYLAH - Developer Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Chen Shee Xiong - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="index.html">EYLAH</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">EYLAH</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W13-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>EYLAH - Developer Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="../index.html">EYLAH</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">EYLAH</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W13-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Chen Shee Xiong - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-eylah"><a class="link" href="#project-eylah">PROJECT: EYLAH</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>By: <code>AY1920S2-CS2103T-W13-1</code>      Since: <code>Jan 2020</code>      Licence: <code>MIT</code></p>
-</div>
-</div>
-<div id="toc" class="toc">
-<div id="toctitle"></div>
-<ul class="sectlevel1">
-<li><a href="#introduction">1. Introduction</a></li>
-<li><a href="#setting-up">2. Setting up</a></li>
-<li><a href="#design">3. Design</a>
-<ul class="sectlevel2">
-<li><a href="#Design-Architecture">3.1. Architecture</a></li>
-<li><a href="#Design-Ui">3.2. UI component</a></li>
-<li><a href="#Design-Logic">3.3. Logic component</a></li>
-<li><a href="#Design-Model">3.4. Model component</a></li>
-<li><a href="#Design-Storage">3.5. Storage component</a></li>
-<li><a href="#Design-Commons">3.6. Common classes</a></li>
-</ul>
-</li>
-<li><a href="#implementation">4. Implementation</a>
-<ul class="sectlevel2">
-<li><a href="#diettracker-feature">4.1. DietTracker feature</a></li>
-<li><a href="#expense-splitter-feature">4.2. Expense Splitter feature</a></li>
-<li><a href="#logging">4.3. Logging</a></li>
-</ul>
-</li>
-<li><a href="#documentation">5. Documentation</a></li>
-<li><a href="#testing">6. Testing</a></li>
-<li><a href="#dev-ops">7. Dev Ops</a></li>
-<li><a href="#product-scope">Appendix A: Product Scope</a></li>
-<li><a href="#user-stories">Appendix B: User Stories</a></li>
-<li><a href="#use-cases">Appendix C: Use Cases</a></li>
-<li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
-<li><a href="#glossary">Appendix E: Glossary</a></li>
-<li><a href="#product-survey">Appendix F: Product Survey</a></li>
-<li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
-<ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#adding-a-food-in-diet-tracker">G.2. Adding a Food in Diet Tracker</a></li>
-<li><a href="#deleting-a-food-in-diet-tracker">G.3. Deleting a Food in Diet Tracker</a></li>
-<li><a href="#editing-a-food-in-diet-tracker">G.4. Editing a Food in Diet Tracker</a></li>
-<li><a href="#add-item-in-expense-splitter">G.5. Add Item In Expense Splitter</a></li>
-<li><a href="#list-receipt-in-expense-splitter">G.6. List Receipt In Expense Splitter</a></li>
-<li><a href="#saving-data">G.7. Saving data</a></li>
-</ul>
-</li>
-</ul>
+<hr>
 </div>
 </div>
 <div class="sect1">
-<h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Ease Your Lives At Hall (EYLAH) is a Command Line Interface (CLI) application designed to aid students staying in NUS with commonly faced problems in halls such as,
-tracking their diet and splitting the bill with a large group of friends.</p>
-</div>
-<div class="paragraph">
-<p>Shown below is the GUI of EYLAH.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/Ui.png" alt="Ui">
-</div>
-</div>
-<div class="paragraph">
-<p>This documentation serves as an introduction to the architecture and implementation of EYLAH,
-and is made for developers who wish to maintain,
-modify or understand the software development behind our application.
-We adopted the top-down approach; we will first look into high-level
-architectures before exploring implementation details of each feature.</p>
-</div>
-<div class="paragraph">
-<p>We encourage you to traverse the full path from the high level design to the
-implementation details of the feature you are interested for the most complete understanding.</p>
+<p>EYELAH is a desktop application specifically programmed for Freshmen staying on NUS Campus. It aims to ease their lives
+at halls/residential colleges by providing them with an application to split bills easily and help
+them track their diet. The user interacts with it using a CLI and it is programmed using JAVA 11.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="setting-up"><a class="link" href="#setting-up">2. Setting up</a></h2>
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Refer to the guide <a href="SettingUp.html">here</a>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: Integrating 2 main features of EYLAH. [In Process]</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Ensure both of the features integrated with proper Object-Oriented Programing concept.</p>
+</li>
+<li>
+<p>Justification: This is to ensure the code quality of the project and remove the duplicate part in both features.</p>
+</li>
+<li>
+<p>Highlights: During the implementation, I faced a lot of difficulty as we working on the existing <code>addressbook level-3</code>, the code base given does not give any hints of how to integrate 2 different features.</p>
+</li>
+<li>
+<p>Credits: -</p>
+</li>
+<li>
+<p><strong>Adding Amount field of the Person object for the Expense Splitter portion of EYLAH</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Person&#8217;s amount is used for both price per person for each item and total price for each person.</p>
+</li>
+<li>
+<p>Justification: Each person in the EYLAH will required to have a price associate with them, so the amount is use to fulfil this purpose.</p>
+</li>
+<li>
+<p>Highlights: This amount is using the BigDecimal to store the decimal value, this way was recommended by my teammate, Willy. After he doing the research about the ItemPrice, he decide to go with BigDecimal to store the price.</p>
+</li>
+<li>
+<p>Credits: Online links where I researched on: "https://stackoverflow.com/questions/1359817/using-bigdecimal-to-work-with-currencies"</p>
+</li>
+</ul>
 </div>
+</li>
+<li>
+<p><strong>Adding Storage for the receipt portion into Expense Splitter portion of EYLAH</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: This storage is used to store the receipt details into the local files.</p>
+</li>
+<li>
+<p>Justification: The reason of storing the receipt is for the user able to still viewing the receipt details even they accidentally close the application or the application crashing.</p>
+</li>
+<li>
+<p>Highlights: The structure of the receipt storage is much more complicated from the original <code>AddressBook Level-3</code> storage. So when I implementing this storage, I am required to understand how the Json file store the value and how to modify the current code to achieve the storage purpose.</p>
+</li>
+<li>
+<p>Credits:</p>
+</li>
+</ul>
 </div>
+</li>
+</ul>
 </div>
-<div class="sect1">
-<h2 id="design"><a class="link" href="#design">3. Design</a></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture</a></h3>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: [In Process]</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Drew UML Class diagram for the overall EYLAH project</strong></p>
 <div class="imageblock">
 <div class="content">
-<img src="images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
+<img src="../images/expense-splitter/expense_splitter_uml_class_diagram.png" alt="expense splitter uml class diagram">
 </div>
-<div class="title">Figure 1. Architecture Diagram</div>
-</div>
-<div class="paragraph">
-<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-The <code>.puml</code> files used to create diagrams in this document can be found in the <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/docs/diagrams/">diagrams</a> folder.
-Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how to create and edit diagrams.
-</td>
-</tr>
-</table>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has two classes called <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/Main.java"><code>Main</code></a> and <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+<p>(Excluding the Height Class)</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>At app launch: Initializes the components in the correct sequence, and connects them up with each other.</p>
 </li>
 <li>
-<p>At shut down: Shuts down the components and invokes cleanup method where necessary.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><a href="#Design-Commons"><strong><code>Commons</code></strong></a> represents a collection of classes used by multiple other components.
-The following class plays an important role at the architecture level:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log file.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The rest of the App consists of four components.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#Design-Ui"><strong><code>UI</code></strong></a>: The UI of the App.</p>
+<p><strong>Added tests for Person related class</strong></p>
 </li>
 <li>
-<p><a href="#Design-Logic"><strong><code>Logic</code></strong></a>: The command executor.</p>
+<p><strong>Assisted in downscaling of AddressBook3 by removing Email object</strong></p>
 </li>
 <li>
-<p><a href="#Design-Model"><strong><code>Model</code></strong></a>: Holds the data of the App in-memory.</p>
-</li>
-<li>
-<p><a href="#Design-Storage"><strong><code>Storage</code></strong></a>: Reads data from, and writes data to, the hard disk.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Each of the four components</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Defines its <em>API</em> in an <code>interface</code> with the same name as the Component.</p>
-</li>
-<li>
-<p>Exposes its functionality using a <code>{Component Name}Manager</code> class.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>For example, the <code>Logic</code> component (see the class diagram given below) defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
-</div>
+<p><strong>Drew Activity Diagram for Expense Spliter portion of EYLAH</strong></p>
 <div class="imageblock">
 <div class="content">
-<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
+<img src="../images/expense-splitter/activityDiagram_for_expensesplitter.png" alt="activityDiagram for expensesplitter">
 </div>
-<div class="title">Figure 2. Class Diagram of the Logic Component</div>
 </div>
-<h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
-<div class="paragraph">
-<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>delete 1</code>.</p>
+</li>
+</ul>
 </div>
-<div class="paragraph">
-<div class="title">Component interactions for <code>delete 1</code> command</div>
-<p>image::ArchitectureSequenceDiagram.png[]<br></p>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In charge of project repository management and ensure the weekly task achievement.</p>
+</li>
+<li>
+<p>Participated in planning the project timeline for EYLAH.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements to existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Adapted the given Address Book UI into EYLAH&#8217;s first draft UI. <a href="https://github.com/" class="bare">https://github.com/</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To be added</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed (with non-trivial review comments):</p>
+</li>
+<li>
+<p>Contributed to forum discussions (examples:  <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/52">1</a>, <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/48">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
+</li>
+<li>
+<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tools:</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 <div class="sect3">
-<h4 id="eylah-comprehensive-class-diagram-for-both-diet-tracker-and-expense-spliter"><a class="link" href="#eylah-comprehensive-class-diagram-for-both-diet-tracker-and-expense-spliter">3.1.1. EYLAH comprehensive class diagram for both Diet Tracker and Expense Spliter</a></h4>
-<div class="imageblock">
-<div class="content">
-<img src="images/eylah_overall_class_diagram.png" alt="eylah overall class diagram">
-</div>
-</div>
+<h4 id="code-contributed"><a class="link" href="#code-contributed">Code contributed</a></h4>
 <div class="paragraph">
-<p>This shows a brief class diagram for EYLAH. [More details to be added in v1.3]</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="eylah-activity-diagram-for-expense-splitter"><a class="link" href="#eylah-activity-diagram-for-expense-splitter">3.1.2. EYLAH Activity Diagram for Expense Splitter</a></h4>
-<div class="imageblock">
-<div class="content">
-<img src="images/activityDiagram_for_expensesplitter.png" alt="activityDiagram for expensesplitter">
-</div>
-</div>
-<div class="paragraph">
-<p>This shows a brief activity diagram for Expense Splitter. [More details to be added in v1.3]</p>
-</div>
-<div class="paragraph">
-<p>The sections below give more details of each component.<br></p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">3.2. UI component</a></h3>
-<div class="imageblock">
-<div class="content">
-<img src="images/UiClassDiagram.png" alt="UiClassDiagram">
-</div>
-<div class="title">Figure 3. Structure of the UI Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
-</div>
-<div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
-</div>
-<div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
-</div>
-<div class="paragraph">
-<p>The <code>UI</code> component,</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Executes user commands using the <code>Logic</code> component.</p>
-</li>
-<li>
-<p>Listens for changes to <code>Model</code> data so that the UI can be updated with the modified data.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">3.3. Logic component</a></h3>
-<div id="fig-LogicClassDiagram" class="imageblock">
-<div class="content">
-<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
-</div>
-<div class="title">Figure 4. Structure of the Logic Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> :
-<a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><code>Logic</code> uses the <code>AddressBookParser</code> class to parse the user command.</p>
-</li>
-<li>
-<p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
-</li>
-<li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a person).</p>
-</li>
-<li>
-<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
-</li>
-<li>
-<p>In addition, the <code>CommandResult</code> object can also instruct the <code>Ui</code> to perform certain actions, such as displaying help to the user.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
-</div>
-<div class="title">Figure 5. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The lifeline for <code>DeleteCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model component</a></h3>
-<div class="imageblock">
-<div class="content">
-<img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
-</div>
-<div class="title">Figure 6. Structure of the Model Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/splitterModel/Model.java"><code>Model.java</code></a></p>
-</div>
-<div class="paragraph">
-<p>The <code>Model</code>,</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
-</li>
-<li>
-<p>stores the Address Book data.</p>
-</li>
-<li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Person&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
-</li>
-<li>
-<p>does not depend on any of the other three components.</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-As a more OOP splitterModel, we can store a <code>Tag</code> list in <code>Address Book</code>, which <code>person</code> can reference. This would allow <code>Address Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>person</code> needing their own <code>Tag</code> object. An example of how such a splitterModel may look like is given below.<br>
-<br>
-<span class="image"><img src="images/BetterModelClassDiagram.png" alt="BetterModelClassDiagram"></span>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage component</a></h3>
-<div class="imageblock">
-<div class="content">
-<img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
-</div>
-<div class="title">Figure 7. Structure of the Storage Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/splitterStorage/Storage.java"><code>Storage.java</code></a></p>
-</div>
-<div class="paragraph">
-<p>The <code>Storage</code> component,</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>can save <code>UserPref</code> objects in json format and read it back.</p>
-</li>
-<li>
-<p>can save the Address Book data in json format and read it back.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="Design-Commons"><a class="link" href="#Design-Commons">3.6. Common classes</a></h3>
-<div class="paragraph">
-<p>Classes used by multiple components are in the <code>seedu.addressbook.commons</code> package.</p>
+<p>Please click the following link to see my code contributions dashboard.<br>
+<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#=undefined&amp;search=sheexiong" class="bare">https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#=undefined&amp;search=sheexiong</a></p>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="implementation"><a class="link" href="#implementation">4. Implementation</a></h2>
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>This section describes some noteworthy details on how certain features are implemented.</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
 </div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
 <div class="sect2">
-<h3 id="diettracker-feature"><a class="link" href="#diettracker-feature">4.1. DietTracker feature</a></h3>
+<h3 id="diettracker-feature"><a class="link" href="#diettracker-feature">DietTracker feature</a></h3>
 <div class="paragraph">
 <p>The Diet Tracker feature is designed to aid our users in maintaining a healthy lifestyle. The feature comprises
 of 9 Commands.</p>
@@ -427,11 +257,11 @@ based on their user input.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/activityDiagram_for_expensesplitter.png" alt="activityDiagram for expensesplitter">
+<img src="../images/expense-splitter/activityDiagram_for_expensesplitter.png" alt="activityDiagram for expensesplitter">
 </div>
 </div>
 <div class="sect3">
-<h4 id="Add-Command"><a class="link" href="#Add-Command">4.1.1. Add Command</a></h4>
+<h4 id="Add-Command"><a class="link" href="#Add-Command">Add Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -440,7 +270,7 @@ based on their user input.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AddFoodActivityDiagram.png" alt="AddFoodActivityDiagram">
+<img src="../images/expense-splitter/AddFoodActivityDiagram.png" alt="AddFoodActivityDiagram">
 </div>
 </div>
 <div class="olist arabic">
@@ -470,13 +300,13 @@ Amount into JSON format after serializing it using <code>JsonAdaptedFood</code>.
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AddFoodSequenceDiagram.png" alt="AddFoodSequenceDiagram">
+<img src="../images/expense-splitter/AddFoodSequenceDiagram.png" alt="AddFoodSequenceDiagram">
 </div>
-<div class="title">Figure 8. Interactions for add food command</div>
+<div class="title">Figure 1. Interactions for add food command</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Delete-Command"><a class="link" href="#Delete-Command">4.1.2. Delete Command</a></h4>
+<h4 id="Delete-Command"><a class="link" href="#Delete-Command">Delete Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -485,7 +315,7 @@ Amount into JSON format after serializing it using <code>JsonAdaptedFood</code>.
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DeleteFoodActivityDiagram.png" alt="DeleteFoodActivityDiagram">
+<img src="../images/expense-splitter/DeleteFoodActivityDiagram.png" alt="DeleteFoodActivityDiagram">
 </div>
 </div>
 <div class="olist arabic">
@@ -518,13 +348,13 @@ into JSON format after serializing it using <code>JsonAdaptedFood</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DeleteFoodSequenceDiagram.png" alt="DeleteFoodSequenceDiagram">
+<img src="../images/expense-splitter/DeleteFoodSequenceDiagram.png" alt="DeleteFoodSequenceDiagram">
 </div>
-<div class="title">Figure 9. Interactions for delete food command</div>
+<div class="title">Figure 2. Interactions for delete food command</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="List-Command"><a class="link" href="#List-Command">4.1.3. List Command</a></h4>
+<h4 id="List-Command"><a class="link" href="#List-Command">List Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -553,12 +383,12 @@ success message. Otherwise, an error message showing the correct command syntax 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DietTrackerListCommandSequenceDiagram.png" alt="DietTrackerListCommandSequenceDiagram">
+<img src="../images/expense-splitter/DietTrackerListCommandSequenceDiagram.png" alt="DietTrackerListCommandSequenceDiagram">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Edit-Command"><a class="link" href="#Edit-Command">4.1.4. Edit Command</a></h4>
+<h4 id="Edit-Command"><a class="link" href="#Edit-Command">Edit Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -595,12 +425,12 @@ into JSON format after serializing it using <code>JsonAdaptedFood</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DietTrackerEditCommandSequenceDiagram.png" alt="DietTrackerEditCommandSequenceDiagram">
+<img src="../images/expense-splitter/DietTrackerEditCommandSequenceDiagram.png" alt="DietTrackerEditCommandSequenceDiagram">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Bmi-Command"><a class="link" href="#Bmi-Command">4.1.5. Bmi Command</a></h4>
+<h4 id="Bmi-Command"><a class="link" href="#Bmi-Command">Bmi Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -625,7 +455,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/BmiActivityDiagram.png" alt="BmiActivityDiagram">
+<img src="../images/expense-splitter/BmiActivityDiagram.png" alt="BmiActivityDiagram">
 </div>
 </div>
 <div class="paragraph">
@@ -655,7 +485,7 @@ Self&#8217;s Height and Weight attributes.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/BmiNILSequenceDiagram.png" alt="BmiNILSequenceDiagram">
+<img src="../images/expense-splitter/BmiNILSequenceDiagram.png" alt="BmiNILSequenceDiagram">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -694,7 +524,7 @@ Self&#8217;s Height and Weight attributes.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/BmiSequenceDiagram.png" alt="BmiSequenceDiagram">
+<img src="../images/expense-splitter/BmiSequenceDiagram.png" alt="BmiSequenceDiagram">
 </div>
 </div>
 <div class="paragraph">
@@ -768,7 +598,7 @@ Self&#8217;s Height and Weight attributes.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Height-Command"><a class="link" href="#Height-Command">4.1.6. Height Command</a></h4>
+<h4 id="Height-Command"><a class="link" href="#Height-Command">Height Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -796,12 +626,12 @@ success message. Otherwise, an error message showing the correct command syntax 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DietTrackerHeightCommandSequenceDiagram.png" alt="DietTrackerHeightCommandSequenceDiagram">
+<img src="../images/expense-splitter/DietTrackerHeightCommandSequenceDiagram.png" alt="DietTrackerHeightCommandSequenceDiagram">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Weight-Command"><a class="link" href="#Weight-Command">4.1.7. Weight Command</a></h4>
+<h4 id="Weight-Command"><a class="link" href="#Weight-Command">Weight Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -829,12 +659,12 @@ success message. Otherwise, an error message showing the correct command syntax 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DietTrackerWeightCommandSequenceDiagram.png" alt="DietTrackerWeightCommandSequenceDiagram">
+<img src="../images/expense-splitter/DietTrackerWeightCommandSequenceDiagram.png" alt="DietTrackerWeightCommandSequenceDiagram">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Mode-Command"><a class="link" href="#Mode-Command">4.1.8. Mode Command</a></h4>
+<h4 id="Mode-Command"><a class="link" href="#Mode-Command">Mode Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -862,13 +692,13 @@ success message. Otherwise, an error message showing the correct command syntax 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DietTrackerModeCommandSequenceDiagram.png" alt="DietTrackerModeCommandSequenceDiagram">
+<img src="../images/expense-splitter/DietTrackerModeCommandSequenceDiagram.png" alt="DietTrackerModeCommandSequenceDiagram">
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="expense-splitter-feature"><a class="link" href="#expense-splitter-feature">4.2. Expense Splitter feature</a></h3>
+<h3 id="expense-splitter-feature"><a class="link" href="#expense-splitter-feature">Expense Splitter feature</a></h3>
 <div class="paragraph">
 <p>The Expense Splitter feature is designed to aid our users with the splitting of large bills that involves meany people.
 The feature comprises of six commands namely.</p>
@@ -903,11 +733,11 @@ The feature comprises of six commands namely.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ExpenseSplitterActivityDiagram.png" alt="ExpenseSplitterActivityDiagram">
+<img src="../images/expense-splitter/ExpenseSplitterActivityDiagram.png" alt="ExpenseSplitterActivityDiagram">
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-item-command"><a class="link" href="#add-item-command">4.2.1. Add Item Command</a></h4>
+<h4 id="add-item-command"><a class="link" href="#add-item-command">Add Item Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -952,12 +782,12 @@ Amount into JSON format after serializing it using <code>JsonAdaptedPerson</code
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ExpenseSplitterAddItemCommandSequenceDiagram.png" alt="ExpenseSplitterAddItemCommandSequenceDiagram">
+<img src="../images/expense-splitter/ExpenseSplitterAddItemCommandSequenceDiagram.png" alt="ExpenseSplitterAddItemCommandSequenceDiagram">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-item-command"><a class="link" href="#delete-item-command">4.2.2. Delete Item Command</a></h4>
+<h4 id="delete-item-command"><a class="link" href="#delete-item-command">Delete Item Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -998,12 +828,12 @@ Amount into JSON format after serializing it using <code>JsonAdaptedPerson</code
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ExpenseSplitterDeleteItemCommandSequenceDiagram.png" alt="ExpenseSplitterDeleteItemCommandSequenceDiagram">
+<img src="../images/expense-splitter/ExpenseSplitterDeleteItemCommandSequenceDiagram.png" alt="ExpenseSplitterDeleteItemCommandSequenceDiagram">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-receipt-command"><a class="link" href="#list-receipt-command">4.2.3. List Receipt Command</a></h4>
+<h4 id="list-receipt-command"><a class="link" href="#list-receipt-command">List Receipt Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -1028,12 +858,12 @@ Amount into JSON format after serializing it using <code>JsonAdaptedPerson</code
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
+<img src="../images/expense-splitter/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-amount-command"><a class="link" href="#list-amount-command">4.2.4. List Amount Command</a></h4>
+<h4 id="list-amount-command"><a class="link" href="#list-amount-command">List Amount Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -1058,12 +888,12 @@ Amount into JSON format after serializing it using <code>JsonAdaptedPerson</code
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
+<img src="../images/expense-splitter/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="paid-command"><a class="link" href="#paid-command">4.2.5. Paid Command</a></h4>
+<h4 id="paid-command"><a class="link" href="#paid-command">Paid Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -1103,12 +933,12 @@ Person(s) with $0 Amount will be deleted from UniquePersonList.
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ExpenseSplitterPaidCommandSequenceDiagramV2.png" alt="ExpenseSplitterPaidCommandSequenceDiagramV2">
+<img src="../images/expense-splitter/ExpenseSplitterPaidCommandSequenceDiagramV2.png" alt="ExpenseSplitterPaidCommandSequenceDiagramV2">
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="back-command"><a class="link" href="#back-command">4.2.6. Back Command</a></h4>
+<h4 id="back-command"><a class="link" href="#back-command">Back Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -1137,13 +967,13 @@ Person(s) with $0 Amount will be deleted from UniquePersonList.
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ExpenseSplitterBackCommandSequenceDiagram.png" alt="ExpenseSplitterBackCommandSequenceDiagram">
+<img src="../images/expense-splitter/ExpenseSplitterBackCommandSequenceDiagram.png" alt="ExpenseSplitterBackCommandSequenceDiagram">
 </div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.3. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
@@ -1183,7 +1013,7 @@ Person(s) with $0 Amount will be deleted from UniquePersonList.
 </div>
 </div>
 <div class="sect1">
-<h2 id="documentation"><a class="link" href="#documentation">5. Documentation</a></h2>
+<h2 id="documentation"><a class="link" href="#documentation">Documentation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Documentation.html">here</a>.</p>
@@ -1191,7 +1021,7 @@ Person(s) with $0 Amount will be deleted from UniquePersonList.
 </div>
 </div>
 <div class="sect1">
-<h2 id="testing"><a class="link" href="#testing">6. Testing</a></h2>
+<h2 id="testing"><a class="link" href="#testing">Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Testing.html">here</a>.</p>
@@ -1199,7 +1029,7 @@ Person(s) with $0 Amount will be deleted from UniquePersonList.
 </div>
 </div>
 <div class="sect1">
-<h2 id="dev-ops"><a class="link" href="#dev-ops">7. Dev Ops</a></h2>
+<h2 id="dev-ops"><a class="link" href="#dev-ops">Dev Ops</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="DevOps.html">here</a>.</p>
@@ -2210,7 +2040,7 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 <div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">G.1. Launch and Shutdown</a></h3>
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">Launch and Shutdown</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2231,7 +2061,7 @@ Expected: Shows the CLI interface with welcome message. The window size may not 
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-food-in-diet-tracker"><a class="link" href="#adding-a-food-in-diet-tracker">G.2. Adding a Food in Diet Tracker</a></h3>
+<h3 id="adding-a-food-in-diet-tracker"><a class="link" href="#adding-a-food-in-diet-tracker">Adding a Food in Diet Tracker</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2257,7 +2087,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-food-in-diet-tracker"><a class="link" href="#deleting-a-food-in-diet-tracker">G.3. Deleting a Food in Diet Tracker</a></h3>
+<h3 id="deleting-a-food-in-diet-tracker"><a class="link" href="#deleting-a-food-in-diet-tracker">Deleting a Food in Diet Tracker</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2286,7 +2116,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-a-food-in-diet-tracker"><a class="link" href="#editing-a-food-in-diet-tracker">G.4. Editing a Food in Diet Tracker</a></h3>
+<h3 id="editing-a-food-in-diet-tracker"><a class="link" href="#editing-a-food-in-diet-tracker">Editing a Food in Diet Tracker</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2316,7 +2146,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="add-item-in-expense-splitter"><a class="link" href="#add-item-in-expense-splitter">G.5. Add Item In Expense Splitter</a></h3>
+<h3 id="add-item-in-expense-splitter"><a class="link" href="#add-item-in-expense-splitter">Add Item In Expense Splitter</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2343,7 +2173,7 @@ Error details shown in the response message.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="list-receipt-in-expense-splitter"><a class="link" href="#list-receipt-in-expense-splitter">G.6. List Receipt In Expense Splitter</a></h3>
+<h3 id="list-receipt-in-expense-splitter"><a class="link" href="#list-receipt-in-expense-splitter">List Receipt In Expense Splitter</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2366,7 +2196,7 @@ in splitting that item.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.7. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2377,6 +2207,22 @@ in splitting that item.</p>
 <div class="paragraph">
 <p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
+<div class="sectionbody">
+<hr>
+<div class="paragraph">
+<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+</div>
+<div class="paragraph">
+<p>Questions to ask:<br>
+1. is BigDecimal the best way to represent currency?<br>
+2. under ItemPriceTest, instead of assertFalse can I assertThrows because BigDecimal
+will throw an exception? Because in AB3 everything there is assertFalse<br>
+3.</p>
 </div>
 </div>
 </div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 14:17:39 UTC</div></div></div></body></html>
