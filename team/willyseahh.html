@@ -10,8 +10,9 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>EYELAH is a desktop application specifically programmed for Freshmen staying on NUS Campus. It aims to ease their lives
-at halls/residential colleges by providing them with an application to split bills easily and help
+<p>EYLAH is a desktop application specifically programmed for students staying in National University
+of Singapore. It aims to ease their lives
+at halls by providing them with an application that split bills easily and help
 them track their diet. The user interacts with it using a CLI and it is programmed using JAVA 11.</p>
 </div>
 </div>
@@ -22,83 +23,90 @@ them track their diet. The user interacts with it using a CLI and it is programm
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: [In Process]</p>
+<p><strong>Major enhancement</strong>:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding of <strong>Item, ItemPrice, ItemName for the Expense Splitter</strong> portion of EYLAH
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/issues/121">#121</a>)</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does:</p>
+<p><strong>What it does:</strong><br>
+Allows the user to perform the <code>additem</code> command successfully hence adding an Entry which consists
+of an Item into the current Receipt.</p>
 </li>
 <li>
-<p>Justification:</p>
+<p><strong>Justification:</strong><br>
+These classes are crucial for Expense Splitter to work because this the User
+has to input an Item to split among his friends.</p>
 </li>
 <li>
-<p>Highlights:</p>
+<p><strong>Highlights:</strong><br>
+Implementing the ItemPrice was a little tricky because Double should not be used to hold Currency
+as it will lead to rounding errors.
+Upon further research on Stack Overflow, I have decided that BigDecimal will be a better type to hold currency.</p>
 </li>
 <li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
-</li>
-<li>
-<p><strong>Adding of ItemClass, ItemPrice, ItemName for the Expense Splitter portion of EYLAH</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>What it does: Item is used when User wants to calculate how much each Person(s) must pay for that Item.</p>
-</li>
-<li>
-<p>Justifcation:</p>
-</li>
-<li>
-<p>Highlights: Implementing the ItemPrice was a little tricky because Double should not be used to hold Currency as it will lead to rounding errors. Upon further research on Stack Overflow, I decided that BigDecimal will be a better type to hold currency</p>
-</li>
-<li>
-<p>Credits: Online links where I researched on: "https://stackoverflow.com/questions/1359817/using-bigdecimal-to-work-with-currencies"</p>
+<p><strong>Credits:</strong><br>
+Online links where I researched on: "https://stackoverflow.com/questions/1359817/using-bigdecimal-to-work-with-currencies"</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Adding of PaidCommand, ListReceipt Command and BackCommand for the Expense Splitter portion of EYLAH</strong></p>
+<p>Added <strong>the ability to deduct Amount owed by a Person when they have paid</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: These commands are essential for Expense Splitter of EYLAH</p>
+<p><strong>What it does:</strong><br>
+Allows the user to reduce the amount owed by a Person.
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/issues/195">#195</a>)</p>
 </li>
 <li>
-<p>Justifcation:</p>
+<p><strong>Justification:</strong><br>
+This feature allows a Person to clear his/her debt. In EYLAH after a Person has cleared his/her debt, their
+name will be deleted to prevent cluttering of names which may confuse the user. Thus it is important to have a feature which reduces the
+amount of money owed by a Person.</p>
 </li>
 <li>
-<p>Highlights:</p>
+<p><strong>Highlights:</strong><br>
+This enhancement helped our team discover a rather major bug with Expense Splitter workflow. Fortunately, we
+resolved it by not allowing users to use the <code>paid</code> command until after a receipt has been finalised.</p>
 </li>
 <li>
-<p>Credits:</p>
+<p><strong>Credits:</strong><br>
+N.A</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Integrating Storage into Expense Splitter portion of EYLAH</strong></p>
+<p>Added <strong>the storage component that allowed the user to automatically save a Person and their amount owed after
+each command</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: Storage component is essential for Expense Splitter of EYLAH as it needs to save PersonName and Amount</p>
+<p><strong>Justification:</strong><br>
+This feature allows the user to automatically save the amount of money each person owes him after every command.
+This is important so the user do not have to manually input every entry again in the unlikely event where EYLAH crash.</p>
 </li>
 <li>
-<p>Justifcation:</p>
+<p><strong>Highlights:</strong><br>
+Ability to save a Person name and their amount owed automatically.</p>
 </li>
 <li>
-<p>Highlights:</p>
-</li>
-<li>
-<p>Credits:</p>
+<p><strong>Credits:</strong><br>
+N.A</p>
 </li>
 </ul>
 </div>
 </li>
-</ul>
+</ol>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: [In Process]</p>
+<p><strong>Minor enhancement</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -2236,12 +2244,5 @@ in splitting that item.</p>
 <div class="paragraph">
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
-<div class="paragraph">
-<p>Questions to ask:<br>
-1. is BigDecimal the best way to represent currency?<br>
-2. under ItemPriceTest, instead of assertFalse can I assertThrows because BigDecimal
-will throw an exception? Because in AB3 everything there is assertFalse<br>
-3.</p>
 </div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-08 14:44:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 02:56:14 UTC</div></div></div></body></html>
