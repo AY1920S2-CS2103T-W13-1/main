@@ -3,13 +3,18 @@
 <link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="index.html">EYLAH</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">EYLAH</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link active" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W13-1/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>EYLAH - Developer Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>AY1920S2-CS2103T-W13-1</code>      Since: <code>Jan 2020</code>      Licence: <code>MIT</code></p>
+<p>By: <code>AY1920S2-CS2103T-W13-1</code>      Since: <code>Feb 2020</code>      Licence: <code>MIT</code></p>
 </div>
 </div>
 <div id="toc" class="toc">
 <div id="toctitle"></div>
 <ul class="sectlevel1">
-<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#introduction">1. Introduction</a>
+<ul class="sectlevel2">
+<li><a href="#about-eylah">1.1. About EYLAH</a></li>
+<li><a href="#about-this-guide">1.2. About this guide</a></li>
+</ul>
+</li>
 <li><a href="#setting-up">2. Setting up</a></li>
 <li><a href="#design">3. Design</a>
 <ul class="sectlevel2">
@@ -54,18 +59,24 @@
 <div class="sect1">
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="about-eylah"><a class="link" href="#about-eylah">1.1. About EYLAH</a></h3>
 <div class="paragraph">
-<p>Ease Your Lives At Hall (EYLAH) is a Command Line Interface (CLI) application designed to aid students staying in NUS with commonly faced problems in halls such as,
-tracking their diet and splitting the bill with a large group of friends.</p>
+<p>Ease Your Lives At Hall (EYLAH) is a Command Line Interface (CLI) application designed to aid students staying in
+<strong>Temasek Hall within the National University of Singapore</strong> with commonly faced problems such as,
+<strong>tracking their diet</strong> and <strong>splitting a large bill</strong> with a group of friends.</p>
 </div>
 <div class="paragraph">
-<p>Shown below is the GUI of EYLAH.</p>
+<p>Shown below is the CLI of EYLAH.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/Ui.png" alt="Ui">
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="about-this-guide"><a class="link" href="#about-this-guide">1.2. About this guide</a></h3>
 <div class="paragraph">
 <p>This documentation serves as an introduction to the architecture and implementation of EYLAH,
 and is made for developers who wish to maintain,
@@ -76,6 +87,7 @@ architectures before exploring implementation details of each feature.</p>
 <div class="paragraph">
 <p>We encourage you to traverse the full path from the high level design to the
 implementation details of the feature you are interested for the most complete understanding.</p>
+</div>
 </div>
 </div>
 </div>
@@ -379,7 +391,7 @@ As a more OOP splitterModel, we can store a <code>Tag</code> list in <code>Addre
 <h2 id="implementation"><a class="link" href="#implementation">4. Implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section describes some noteworthy details on how certain features are implemented.</p>
+<p>This section describes some noteworthy details on how the features in EYLAH are implemented.</p>
 </div>
 <div class="sect2">
 <h3 id="diettracker-feature"><a class="link" href="#diettracker-feature">4.1. DietTracker feature</a></h3>
@@ -907,7 +919,7 @@ The feature comprises of six commands namely.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-item-command"><a class="link" href="#add-item-command">4.2.1. Add Item Command</a></h4>
+<h4 id="Add-Item-Command"><a class="link" href="#Add-Item-Command">4.2.1. Add Item Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -957,7 +969,7 @@ Amount into JSON format after serializing it using <code>JsonAdaptedPerson</code
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-item-command"><a class="link" href="#delete-item-command">4.2.2. Delete Item Command</a></h4>
+<h4 id="Delete-Item-Command"><a class="link" href="#Delete-Item-Command">4.2.2. Delete Item Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -1003,7 +1015,7 @@ Amount into JSON format after serializing it using <code>JsonAdaptedPerson</code
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-receipt-command"><a class="link" href="#list-receipt-command">4.2.3. List Receipt Command</a></h4>
+<h4 id="List-Receipt-Command"><a class="link" href="#List-Receipt-Command">4.2.3. List Receipt Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -1033,7 +1045,7 @@ Amount into JSON format after serializing it using <code>JsonAdaptedPerson</code
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-amount-command"><a class="link" href="#list-amount-command">4.2.4. List Amount Command</a></h4>
+<h4 id="List-Amount-Command"><a class="link" href="#List-Amount-Command">4.2.4. List Amount Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -1063,9 +1075,55 @@ Amount into JSON format after serializing it using <code>JsonAdaptedPerson</code
 </div>
 </div>
 <div class="sect3">
-<h4 id="paid-command"><a class="link" href="#paid-command">4.2.5. Paid Command</a></h4>
+<h4 id="Paid-Command"><a class="link" href="#Paid-Command">4.2.5. Paid Command</a></h4>
 <div class="paragraph">
-<p><strong>Implementation</strong></p>
+<p>In this section, we will learn more about how the <code>paid</code> command is implemented.</p>
+</div>
+<div class="paragraph">
+<p><strong>What is the Paid Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>The <code>paid</code> command allows user to reduce the amount of money owed by a Person after they
+have paid.</p>
+</div>
+<div class="paragraph">
+<p>The <code>paid</code> command was implemented as a <code>PaidCommand</code> in the <code>expenseSplitterLogic</code> package.</p>
+</div>
+<div class="paragraph">
+<p>The <code>paid</code> command has the following input format:</p>
+</div>
+<div class="paragraph">
+<p><code>paid</code> <code>INDEX</code> <code>[AMOUNT]</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> is a <strong>compulsory</strong> field. Instead of typing a Person&#8217;s name, the user
+can type their index. To find out his/her index, use the command
+ <code>listamount</code>.</p>
+</li>
+<li>
+<p><code>AMOUNT</code> is an <strong>optional</strong> field. It refers to the amount paid by that Person. Leaving this field
+empty is equivalent to the Person paying you the full amount he/she owes the user.</p>
+</li>
+<li>
+<p><code>AMOUNT</code> can be up to 2 decimal places, i.e. 7.99.  There is no need to add the dollar sign ($).</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Implementation of Paid Command</strong></p>
 </div>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>PaidCommand</code> performs.<br></p>
@@ -1108,7 +1166,7 @@ Person(s) with $0 Amount will be deleted from UniquePersonList.
 </div>
 </div>
 <div class="sect3">
-<h4 id="back-command"><a class="link" href="#back-command">4.2.6. Back Command</a></h4>
+<h4 id="Back-Command"><a class="link" href="#Back-Command">4.2.6. Back Command</a></h4>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
@@ -1297,26 +1355,95 @@ Person(s) with $0 Amount will be deleted from UniquePersonList.
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall exchange student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">to have a translation for Singaporean lingo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have a translation for Singaporean lingo</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">better understand the language my friends speak in hall</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall sports captain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">to keep track of the various attendances for my training</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the various attendances for my training</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">know who usually attends training and who does not</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall leader</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">to keep track of my committee events</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of my committee events</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ensure things run smoothly</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall resident who actively participates in hall events</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">check the upcoming events</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep myself up-to-date.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep myself up-to-date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall leader</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of when my meetings are</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ensure I do not keep my teammates or committee member waiting</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">forgetful Temasek Hall resident</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the myriad of hall activities</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">attend all the fun and exciting events at hall</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">organised resident of Teamsek Hall</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remind myself for the tasks i have</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">meet all deadlines</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">main person in-charge of fixing faults in Temasek Hall</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of all different faults that have been
+reported</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fix is as soon as possible to reduce the disruptions to my fellow hall mates</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">international student who is new to Singapore&#8217;s culture</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of upcoming
+hall events</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">join all the fun activities in hall</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hardworking Temasek Hall resident who wants to manage his schedule</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">to check
+module prerequisites</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plan my modules</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">attentive resident who notices that the gym has many users</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">log the entry of users</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">track the entry and exit timings of all gym users</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">food-loving Temasek Hall resident who frequently uses Grab Food</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of my expenses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">calculate my savings every month</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall resident who has many hall friends</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of my friends&#8217;s particulars, especially their room number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find them easily in case I need help</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall resident who has to pay hall fees</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">record down my school payments</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">inform my parents about the necessary expenditures in school</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">swimming captain of Temasek Hall</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">plan my training sets</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">better prepare my team for the upcoming competition</p></td>
 </tr>
 </tbody>
 </table>
@@ -2379,4 +2506,4 @@ in splitting that item.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 16:51:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 16:56:34 UTC</div></div></div></body></html>
