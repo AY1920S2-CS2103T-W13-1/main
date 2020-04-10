@@ -55,7 +55,8 @@
 <li><a href="#for-expense-splitter">5.2. For Expense Splitter</a></li>
 </ul>
 </li>
-<li><a href="#AppendixA">6. Appendix A: Simple activity diagram to aid user with using Expense Splitter</a></li>
+<li><a href="#glossary">6. Glossary</a></li>
+<li><a href="#AppendixA">7. Appendix A: Simple activity diagram to aid user with using Expense Splitter</a></li>
 </ul>
 </div>
 </div>
@@ -63,8 +64,8 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This user guide provides in-depth documentation on the EYLAH desktop application:
-features summary, getting started, features, FAQ, command summary, and glossary.</p>
+<p>This user guide provides in-depth documentation on the EYLAH desktop application. It comprises of 6 main portions,
+including the introduction, getting started, features, FAQ, command summary, and glossary.</p>
 </div>
 <div class="paragraph">
 <p>Hello there! welcome to EYLAH&#8217;s User Guide.
@@ -124,8 +125,8 @@ the symbols and their meaning.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-This block of text with a blue exclamation mark indicates <strong>additional notes</strong> that you should consider to prevent
-unexpected behaviour.
+This block of text with a blue exclamation mark indicates <strong>additional notes</strong> and <strong>information</strong> that you should
+consider to prevent unexpected behaviour you are using EYLAH.
 </td>
 </tr>
 </table>
@@ -698,46 +699,26 @@ Use <code>listreceipt</code> to view your item indices before deletion.
 <div class="sect3">
 <h4 id="listreceipt"><a class="link" href="#listreceipt">3.3.3. Listing the current receipt: <code>listreceipt</code></a></h4>
 <div class="paragraph">
-<p>Display the current receipt which shows all the items and its
-respective price and person(s) involved in splitting the cost of that item</p>
+<p>In this section, you will learn more about the <code>listreceipt</code> command, <a href="#howtouselistreceiptcommand">how to use it</a>
+and the <a href="#listreceiptexpectedoutcome">expected outcome</a> after using the
+<code>listreceipt</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of List Receipt Command:</strong> <code>listreceipt</code> <strong>shows you all the entries in your current receipt</strong>.</p>
+</div>
+<div id="howtouselistreceiptcommand" class="paragraph">
+<p><strong>How to use the List Receipt Command:</strong></p>
 </div>
 <div class="paragraph">
 <p>Format:<br>
 <code>listreceipt</code><br></p>
 </div>
 <div class="paragraph">
-<p>Example:<br>
+<p>Valid Example:<br>
 <code>listreceipt</code></p>
 </div>
-<hr>
-</div>
-<div class="sect3">
-<h4 id="listamount"><a class="link" href="#listamount">3.3.4. Listing amounts owed by each person: <code>listamount</code></a></h4>
-<div class="paragraph">
-<p>Listing the amount of money each Person owes you.</p>
-</div>
-<div class="paragraph">
-<p>OR</p>
-</div>
-<div class="paragraph">
-<p>If you want to find how much each Person(s) owes you!</p>
-</div>
-<div class="paragraph">
-<p><strong>Summary of List Amount Command: <code>listamount</code> shows you how much each Person owes you</strong>.</p>
-</div>
-<div class="paragraph">
-<p><strong>How to use the List Amount Command:</strong></p>
-</div>
-<div class="paragraph">
-<p>Format of List Amount Command:<br>
-<code>listamount</code><br></p>
-</div>
-<div class="paragraph">
-<p>Example of valid List Amount Command:<br>
-<code>listamount</code></p>
-</div>
-<div class="paragraph">
-<p><strong>Expected outcome after using Paid Command:</strong></p>
+<div id="listreceiptexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -745,7 +726,103 @@ respective price and person(s) involved in splitting the cost of that item</p>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Additional tips and notes for List Amount Command</strong><br></p>
+<p><strong>Additional notes and tips</strong><br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Each entry in the receipt has the item&#8217;s name, price and person(s) who is splitting that item with you thus you do
+not have to remember who you split this item with!</p>
+</li>
+<li>
+<p>When you enter <code>clearrreceipt</code> it deletes the old receipt&#8217;s data. Use it with caution!</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Use <code>listreceipt</code> command to find the index of the item in the receipt. The index is useful for commands
+such as <code>deleteitem</code> where you have to pass in the index of item to be deleted.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="listamount"><a class="link" href="#listamount">3.3.4. Listing amounts owed by each person: <code>listamount</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>listamount</code> command, <a href="#howtouselistamountcommand">how to use it</a>
+and the <a href="#listamountexpectedoutcome">expected outcome</a> after using the
+<code>listamount</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of List Amount Command:</strong> <code>listamount</code> <strong>shows you how much each Person owes you</strong>.</p>
+</div>
+<div id="howtouselistamountcommand" class="paragraph">
+<p><strong>How to use the List Amount Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>listamount</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid example:<br>
+<code>listamount</code></p>
+</div>
+<div id="listamountexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/expenseSplitterListAmountCommandSuccessPhoto.png" alt="expenseSplitterListAmountCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional notes and tips</strong><br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The Person and amount owed will be automatically saved after each command.</p>
+</li>
+<li>
+<p>A person is deleted after they have completely paid the amount they owe you.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -776,13 +853,13 @@ such as <code>paid</code>.</p>
 <code>paid</code> command.</p>
 </div>
 <div class="paragraph">
-<p><strong>Summary of Paid Command: <code>paid</code> subtracts the amount a Person owes you.</strong></p>
+<p><strong>Summary of Paid Command:</strong> <code>paid</code> <strong>subtracts the amount of money a Person owes you.</strong></p>
 </div>
 <div id="howtousepaidcommand" class="paragraph">
 <p><strong>How to use the Paid Command:</strong></p>
 </div>
 <div class="paragraph">
-<p>Format of Paid Command:<br></p>
+<p>Format:<br></p>
 </div>
 <div class="paragraph">
 <p><code>paid INDEX [AMOUNT]</code><br></p>
@@ -815,7 +892,7 @@ empty is equivalent to the Person paying you the full amount he/she owes you.</p
 </table>
 </div>
 <div class="paragraph">
-<p>Example of valid Paid Commands:<br></p>
+<p>Valid examples:<br></p>
 </div>
 <div class="paragraph">
 <p><code>paid 2</code> - This commmand means that the Person at index 2 has paid you the full amount they owe you.<br></p>
@@ -824,7 +901,7 @@ empty is equivalent to the Person paying you the full amount he/she owes you.</p
 <p><code>paid 3 3.90</code> - This command means that the Perosn at index 3 has paid you $3.90.<br></p>
 </div>
 <div id="paidcommandexpectedoutcome" class="paragraph">
-<p><strong>Expected outcome after using Paid Command:</strong></p>
+<p><strong>Expected outcome:</strong></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -832,25 +909,7 @@ empty is equivalent to the Person paying you the full amount he/she owes you.</p
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Additional tips and notes for Paid Command</strong></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Use <code>listamount</code> command to find the index of the person who paid you.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
+<p><strong>Additional notes and tips</strong></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -867,6 +926,24 @@ empty is equivalent to the Person paying you the full amount he/she owes you.</p
 </li>
 <li>
 <p>The person will automatically be removed from the list if the amount he owes you drops to $0.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Use <code>listamount</code> command to find the index of the person who paid you.</p>
 </li>
 </ul>
 </div>
@@ -1238,7 +1315,60 @@ or<br>
 </div>
 </div>
 <div class="sect1">
-<h2 id="AppendixA"><a class="link" href="#AppendixA">6. Appendix A: Simple activity diagram to aid user with using Expense Splitter</a></h2>
+<h2 id="glossary"><a class="link" href="#glossary">6. Glossary</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 40%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Term</th>
+<th class="tableblock halign-left valign-top">Explanation</th>
+<th class="tableblock halign-left valign-top">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This refers the one of the Halls of Residences at the National University of Singapore</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Halls of Residences</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This refers to student accommodation on campus</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NUS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is the short form of National Univeristy of Singapore.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SOC or SoC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is the short form for School of Computing.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CLI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is the short form for Command Line Interface. It processes commands to
+TA-Tracker in the form of lines of text</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Index</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This refers to the position of an item on a list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Index of 1 refers to the first
+item in a list.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="AppendixA"><a class="link" href="#AppendixA">7. Appendix A: Simple activity diagram to aid user with using Expense Splitter</a></h2>
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
@@ -1258,4 +1388,4 @@ or<br>
 at the bottom represents the end point.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 10:07:28 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 10:34:39 UTC</div></div></div></body></html>
