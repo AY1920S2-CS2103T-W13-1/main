@@ -22,14 +22,14 @@
 <li><a href="#diet-tracker-code-diet-code">3.2. Diet Tracker : <code>diet</code></a>
 <ul class="sectlevel3">
 <li><a href="#mode">3.2.1. Dieting Mode <code>mode</code></a></li>
-<li><a href="#storeheight">3.2.2. Store Height <code>height</code></a></li>
-<li><a href="#storeweight">3.2.3. Store Weight <code>weight</code></a></li>
-<li><a href="#addfood">3.2.4. Add food <code>add</code></a></li>
-<li><a href="#listfooditem">3.2.5. List items <code>list</code></a></li>
-<li><a href="#deletefooditem">3.2.6. Delete Food Item <code>delete</code></a></li>
+<li><a href="#height">3.2.2. Storing Height <code>height</code></a></li>
+<li><a href="#weight">3.2.3. Storing Weight <code>weight</code></a></li>
+<li><a href="#addfood">3.2.4. Adding food <code>add</code></a></li>
+<li><a href="#listfooditem">3.2.5. Listing items <code>list</code></a></li>
+<li><a href="#deletefooditem">3.2.6. Deleting a Food Item <code>delete</code></a></li>
 <li><a href="#editfooditem">3.2.7. Editing a Food Item <code>edit</code></a></li>
-<li><a href="#calculatebmi">3.2.8. Calculate Body Mass Index (BMI) <code>bmi</code></a></li>
-<li><a href="#diettrackerhelp">3.2.9. Diet Tracker <code>help</code></a></li>
+<li><a href="#calculatebmi">3.2.8. Calculating Body Mass Index (BMI) <code>bmi</code></a></li>
+<li><a href="#diettrackerhelp">3.2.9. Displaying available commands for Diet Tracker <code>help</code></a></li>
 </ul>
 </li>
 <li><a href="#expense-splitter-code-split-code">3.3. Expense Splitter : <code>split</code></a>
@@ -233,15 +233,15 @@ to to improve your user experience of EYLAH.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#additem">additem</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#storeheight">storeheight</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#height">height</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#deleteitem">deleteitem</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#storeweight">storeweight</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#weight">weight</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#listreceipt">listreceipt</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#addfood">addfood</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#addfood">add</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#listamount">listamount</a></p></td>
 </tr>
 <tr>
@@ -263,6 +263,10 @@ to to improve your user experience of EYLAH.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#diettrackerhelp">help</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#back">back</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#back">back</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -330,7 +334,7 @@ Example: <code>mode -m</code></p>
 <hr>
 </div>
 <div class="sect3">
-<h4 id="storeheight"><a class="link" href="#storeheight">3.2.2. Store Height <code>height</code></a></h4>
+<h4 id="height"><a class="link" href="#height">3.2.2. Storing Height <code>height</code></a></h4>
 <div class="paragraph">
 <p>Allows user to input their height.</p>
 </div>
@@ -345,7 +349,7 @@ Example: <code>height 172</code></p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Height in centimetres (cm)
+Height in centimetres (cm). Decimal places are accepted. I.e. <code>height 172.305</code> is accepted.
 </td>
 </tr>
 </table>
@@ -353,7 +357,7 @@ Height in centimetres (cm)
 <hr>
 </div>
 <div class="sect3">
-<h4 id="storeweight"><a class="link" href="#storeweight">3.2.3. Store Weight <code>weight</code></a></h4>
+<h4 id="weight"><a class="link" href="#weight">3.2.3. Storing Weight <code>weight</code></a></h4>
 <div class="paragraph">
 <p>Allows user to input their weight.</p>
 </div>
@@ -368,7 +372,7 @@ Example: <code>weight 65.7</code></p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Weight in kilograms (kg)
+Weight in kilograms (kg). Decimal places are accepted. I.e. <code>weight 65.77</code> is accepted.
 </td>
 </tr>
 </table>
@@ -376,7 +380,7 @@ Weight in kilograms (kg)
 <hr>
 </div>
 <div class="sect3">
-<h4 id="addfood"><a class="link" href="#addfood">3.2.4. Add food <code>add</code></a></h4>
+<h4 id="addfood"><a class="link" href="#addfood">3.2.4. Adding food <code>add</code></a></h4>
 <div class="paragraph">
 <p>Adds food to the list.</p>
 </div>
@@ -398,13 +402,13 @@ Weight in kilograms (kg)
 </div>
 </div>
 <div class="paragraph">
-<p>Format: <code>add food CALORIES</code><br>
-Example: <code>add Fishball Noodles 383</code></p>
+<p>Format: <code>add -n NAME -c CALORIES</code><br>
+Example: <code>add -n Fishball Noodles -c 383</code></p>
 </div>
 <hr>
 </div>
 <div class="sect3">
-<h4 id="listfooditem"><a class="link" href="#listfooditem">3.2.5. List items <code>list</code></a></h4>
+<h4 id="listfooditem"><a class="link" href="#listfooditem">3.2.5. Listing items <code>list</code></a></h4>
 <div class="paragraph">
 <p>List food in your current diet tracker along with the total calorie count.
 Watch your diet intake for different time frames and food of different categories.</p>
@@ -444,6 +448,18 @@ Default value of list is food consumed for the day.
 </tr>
 </table>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For the <code>-d</code> tag, the amount of days specified must be a positive Integer value.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>Format: <code>list [-a] [-d NUMDAYS] [-t TAGNAME]</code><br>
 Example: <code>list</code>, <code>list -a</code>, <code>list -d 3</code>, <code>list -t healthy</code> ,</p>
@@ -451,7 +467,7 @@ Example: <code>list</code>, <code>list -a</code>, <code>list -d 3</code>, <code>
 <hr>
 </div>
 <div class="sect3">
-<h4 id="deletefooditem"><a class="link" href="#deletefooditem">3.2.6. Delete Food Item <code>delete</code></a></h4>
+<h4 id="deletefooditem"><a class="link" href="#deletefooditem">3.2.6. Deleting a Food Item <code>delete</code></a></h4>
 <div class="paragraph">
 <p>Deletes a Food item from the list of foods stored.<br>
 Format: <code>delete INDEX</code></p>
@@ -503,7 +519,7 @@ Deletes the 2nd row of food data from the past 7 days of food.</p>
 <h4 id="editfooditem"><a class="link" href="#editfooditem">3.2.7. Editing a Food Item <code>edit</code></a></h4>
 <div class="paragraph">
 <p>Allows you to edit either the Food name, or the calories. <br>
-Format: <code>edit INDEX [-n NAME] [-c CALORIES]</code></p>
+Format: <code>edit -i INDEX [-n NAME] [-c CALORIES]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -530,7 +546,7 @@ The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit 2 -n Chicken Rice -c 585</code><br>
+<p><code>edit -i 2 -n Chicken Rice -c 585</code><br>
 Edits the name of the food item at index 2 to be 'Chicken Rice' and the calories to be '585'.</p>
 </li>
 </ul>
@@ -538,7 +554,7 @@ Edits the name of the food item at index 2 to be 'Chicken Rice' and the calories
 <hr>
 </div>
 <div class="sect3">
-<h4 id="calculatebmi"><a class="link" href="#calculatebmi">3.2.8. Calculate Body Mass Index (BMI) <code>bmi</code></a></h4>
+<h4 id="calculatebmi"><a class="link" href="#calculatebmi">3.2.8. Calculating Body Mass Index (BMI) <code>bmi</code></a></h4>
 <div class="paragraph">
 <p>Allows the user to calculate their BMI based on the height and weight stored in the program.<br>
 It will display the following data:<br></p>
@@ -592,7 +608,23 @@ Calculate BMI based on the input height and weight values.</p>
 <hr>
 </div>
 <div class="sect3">
-<h4 id="diettrackerhelp"><a class="link" href="#diettrackerhelp">3.2.9. Diet Tracker <code>help</code></a></h4>
+<h4 id="diettrackerhelp"><a class="link" href="#diettrackerhelp">3.2.9. Displaying available commands for Diet Tracker <code>help</code></a></h4>
+<div class="paragraph">
+<p>If uncertain, you may use the <code>help</code> command to see the list of available commands for Diet Tracker.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>help</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>help</code></p>
+</li>
+</ul>
+</div>
 <hr>
 </div>
 </div>
@@ -985,39 +1017,43 @@ There is no need to save manually.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add Food</strong> <code>add</code><br>
+<p><strong>Adding Food</strong> <code>add</code><br>
 e.g <code>add -n salad -c 235 -t healthy</code></p>
 </li>
 <li>
-<p><strong>Delete Food</strong> <code>delete</code><br>
+<p><strong>Deleting Food</strong> <code>delete</code><br>
 e.g <code>delete 3</code></p>
 </li>
 <li>
-<p><strong>Edit Food</strong> <code>edit</code><br>
-e.g <code>edit 2 -n chips -c 230</code></p>
+<p><strong>Editing Food</strong> <code>edit</code><br>
+e.g <code>edit -i 2 -n chips -c 230</code></p>
 </li>
 <li>
-<p><strong>List Food</strong> <code>list [-a] [-d numDays] [-t tagName]</code><br>
+<p><strong>Listing Food</strong> <code>list [-a] [-d numDays] [-t tagName]</code><br>
 e.g <code>list</code></p>
 </li>
 <li>
-<p><strong>Set Mode</strong> <code>mode MODE</code><br>
-e.g. <code>back</code></p>
+<p><strong>Setting Mode</strong> <code>mode MODE</code><br>
+e.g. <code>mode -m</code></p>
 </li>
 <li>
-<p><strong>Set Height</strong> : <code>height HEIGHT</code><br>
+<p><strong>Setting Height</strong> : <code>height HEIGHT</code><br>
 e.g. <code>height 169</code></p>
 </li>
 <li>
-<p><strong>Set Weight</strong> <code>weight WEIGHT</code><br>
+<p><strong>Setting Weight</strong> <code>weight WEIGHT</code><br>
 e.g. <code>weight 56</code></p>
 </li>
 <li>
-<p><strong>Calculate BMI</strong> <code>bmi</code><br>
+<p><strong>Calculating BMI</strong> <code>bmi</code><br>
 e.g. <code>bmi -h 172 -w 65.5</code></p>
 </li>
 <li>
-<p><strong>Back</strong> <code>back</code><br>
+<p><strong>Getting Help</strong> <code>help</code><br>
+e.g. <code>help</code></p>
+</li>
+<li>
+<p><strong>Going Back</strong> <code>back</code><br>
 e.g. <code>back</code></p>
 </li>
 </ul>
@@ -1037,25 +1073,25 @@ e.g. <code>back</code></p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#add"><strong>Add Food</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add -f FOODNAME -c CALORIES -t TAGS</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>insert -f salad -c 235</code><br>
-<code>insert -f fries -c 195 -t fastfood</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#addfood"><strong>Adding Food</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add -n NAME -c CALORIES -t TAGS</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>insert -n salad -c 235</code><br>
+<code>insert -n fries -c 195 -t fastfood</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#delete"><strong>Delete Food</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#deletefooditem"><strong>Deleting Food</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete INDEX</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete 1</code><br>
 <code>delete 2</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#edit"><strong>Edit Food</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#editfooditem"><strong>Editing Food</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit INDEX [-n NAME] [-c CALORIES]</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit 1 -n carbonara -c 543</code><br>
 <code>edit 2 -n chips -c 230</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#list"><strong>List Food</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#listfooditem"><strong>Listing Food</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>list [-a] [-d NUMDAYS] [-t TAGNAME]</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>list</code><br>
 <code>list -a</code><br>
@@ -1063,26 +1099,26 @@ e.g. <code>back</code></p>
 <code>list-t healthy</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#mode"><strong>Set Mode</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#mode"><strong>Setting Mode</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mode MODE</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mode -l</code><br>
 <code>mode -g</code><br>
 <code>mode -h</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#height"><strong>Set Height</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#height"><strong>Storing Height</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>height HEIGHT</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete 1</code><br>
 <code>delete 2</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#weight"><strong>Set Weight</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#weight"><strong>Storing Weight</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>weight WEIGHT</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete 1</code><br>
 <code>delete 2</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#bmi"><strong>Calculate BMI</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#calculatebmi"><strong>Calculating BMI</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>bmi [-h HEIGHT] [-w WEIGHT]</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>bmi</code><br>
 <code>bmi -h 172 -w 65.5</code></p></td>
@@ -1222,4 +1258,4 @@ or<br>
 at the bottom represents the end point.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 05:57:40 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 06:06:11 UTC</div></div></div></body></html>
