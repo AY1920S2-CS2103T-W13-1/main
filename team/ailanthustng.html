@@ -928,10 +928,21 @@ empty is equivalent to the Person paying you the full amount he/she owes the use
 </table>
 </div>
 <div class="paragraph">
+<p>The following activity diagram illustrates what happens when a user executes <code>paid</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterPaidCommandActivityDiagram.png" alt="ExpenseSplitterPaidCommandActivityDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure : Paid Command Activity Diagram</p>
+</div>
+<div class="paragraph">
 <p><strong>Implementation of Paid Command</strong></p>
 </div>
 <div class="paragraph">
-<p>The following is a detailed explanation of the operations <code>PaidCommand</code> performs.<br></p>
+<p>The following is a detailed explanation of the operations PaidCommand performs.<br></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -939,7 +950,8 @@ empty is equivalent to the Person paying you the full amount he/she owes the use
 <p>The <code>PaidCommand#execute(Model splitterModel)</code> method is executed.</p>
 </li>
 <li>
-<p>The <code>Model#paidPerson(Person person, String amountPaid)</code> will be called. String amountPaid will be converted into an Amount.</p>
+<p>The <code>splitterModel#paidPerson(Person person, String amountPaid)</code> will be called.
+String amountPaid will be converted into an Amount by instantiating a new instance of Amount.</p>
 </li>
 <li>
 <p>The <code>personAmountBook#removeAmount(Person person, Amount amount)</code> is then called to remove Amount from Person.</p>
@@ -952,22 +964,27 @@ empty is equivalent to the Person paying you the full amount he/she owes the use
 </li>
 </ol>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Person(s) with $0 Amount will be deleted from UniquePersonList.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p><strong>Sequence Diagram for Paid Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens during the execution of <code>paid</code> command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/ExpenseSplitterPaidCommandSequenceDiagramV2.png" alt="ExpenseSplitterPaidCommandSequenceDiagramV2">
+<img src="../images/expense-splitter/ExpenseSplitterPaidCommandSequenceDiagram.png" alt="ExpenseSplitterPaidCommandSequenceDiagram">
 </div>
+</div>
+<div class="paragraph">
+<p>Figure : Paid Command Sequence Diagram</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterPaidCommandSequenceDiagram2.png" alt="ExpenseSplitterPaidCommandSequenceDiagram2">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure : Execution of Paid Command</p>
 </div>
 </div>
 <div class="sect3">
@@ -2320,4 +2337,4 @@ in splitting that item.</p>
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 15:15:04 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 15:18:15 UTC</div></div></div></body></html>
