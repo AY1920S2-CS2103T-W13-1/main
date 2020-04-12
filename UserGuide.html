@@ -1185,7 +1185,7 @@ and the <a href="#additemexpectedoutcome">expected outcome</a> after using the <
 <code>additem -i ITEMNAME -p PRICE -n NAME [-n NAME]&#8230;&#8203;</code><br></p>
 </div>
 <div class="paragraph">
-<p>Example:<br>
+<p>Valid Example:<br>
 <code>additem -i pizza -p 30 -n bob</code><br>
 <code>additem -i pasta -p 19.90 -n alice -n bob -n charlie</code></p>
 </div>
@@ -1204,8 +1204,20 @@ and the <a href="#additemexpectedoutcome">expected outcome</a> after using the <
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Price can be up to 2 decimal places, i.e. 7.99.
-There is no need to add the dollar sign ($).
+<div class="ulist">
+<ul>
+<li>
+<p>Price can be up to 2 decimal places, i.e. 7.99.
+There is no need to add the dollar sign ($).</p>
+</li>
+<li>
+<p>The maximum price of an item is 10,000.</p>
+</li>
+<li>
+<p>All names inputted will automatically be converted to lowercase. (e.g: Bob &#8594; bob)</p>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
@@ -1230,7 +1242,7 @@ and the <a href="#deleteitemexpectedoutcome">expected outcome</a> after using th
 <code>deleteitem INDEX</code><br></p>
 </div>
 <div class="paragraph">
-<p>Example:<br>
+<p>Valid Example:<br>
 <code>deleteitem 3</code></p>
 </div>
 <div id="deleteitemexpectedoutcome" class="paragraph">
@@ -1559,7 +1571,7 @@ and the <a href="#clearreceipt">expected outcome</a> after using the <code>clear
 <code>clearreceipt</code></p>
 </div>
 <div class="paragraph">
-<p>Example:<br>
+<p>Valid Example:<br>
 <code>clearreceipt</code></p>
 </div>
 <div id="clearreceiptexpectedoutcome" class="paragraph">
@@ -2007,4 +2019,4 @@ item in a list.</p></td>
 at the bottom represents the end point.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 09:25:46 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 10:15:24 UTC</div></div></div></body></html>

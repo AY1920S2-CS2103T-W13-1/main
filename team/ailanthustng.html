@@ -19,82 +19,164 @@ them track their diet. The user interacts with it using a CLI and it is programm
 <div class="sect1">
 <h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
+<div class="ulist">
+<ul>
+<li>
 <p><strong>Major Enhancements</strong></p>
-</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Added Entry and Receipt for Expense Splitter portion of EYLAH</strong>
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/130">#130</a>)</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Added Entry and Receipt for Expense Splitter portion of EYLAH</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>What it does: Receipt is used to store multiple Entries, and these Entries are meant to store the information about a particular Item and the Persons involved in splitting the cost of that item.</p>
+<p><strong>What it does:</strong><br>
+Receipt is used to store multiple Entries, and these Entries are used to store the information about a particular Item
+and the Persons involved in splitting the cost of that Item.</p>
 </li>
 <li>
-<p>Justification: These classes are required to keep track of items and the persons involved for each of that item.</p>
-</li>
-<li>
-<p>Highlights:</p>
+<p><strong>Justification:</strong><br>
+These classes are required to keep track of Items and the Persons involved for each of that Item.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Added AddItemCommand and DeleteItemCommand for the Expense Splitter portion of EYLAH</strong></p>
+<p><strong>Added AddItemCommand and enhanced the DeleteItemCommand for the Expense Splitter portion of EYLAH</strong>
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/134">#134</a>,
+<a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/164">#163</a>)</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: It simply adds a new Entry into the Receipt or deletes an existing Entry from the Receipt.</p>
+<p><strong>What it does:</strong><br>
+It simply adds a new Entry into the Receipt or deletes an existing Entry from the Receipt.</p>
 </li>
 <li>
-<p>Justification: The DeleteItemCommand feature allows the user to delete any items that he/she made a mistake on.</p>
+<p><strong>Justification:</strong><br>
+The AddItemCommand is required for users to input new Items and the Persons involved in splitting the cost of that Item.
+The DeleteItemCommand is for users to remove an Item in case he/she made a mistake or simply wants to remove the Item.</p>
 </li>
 <li>
-<p>Highlights: These commands are only allowed to be used when the Receipt has not been marked as completed as this was accomplished using a boolean flag in the Receipt class. This is because DeleteItemCommand actually removes the Amount owed by the person from the PersonAmountBook. So does the PaidCommand. As such, if a user uses the DeleteItemCommand after using the PaidCommand, and if the Amount owed goes to negative, an exception would be thrown due to the nature of BigDecimal. Hence, a flag was included to prevent this from happening.</p>
+<p><strong>Highlights:</strong><br>
+These commands are only allowed to be used when the Receipt has not been marked as completed as this was accomplished
+using a boolean flag in the Receipt class. This is because of a bug that we discovered, which will be explained in the
+point below.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Added DoneReceiptCommand and ClearReceiptCommand for the Expense Splitter portion of EYLAH</strong></p>
+<p><strong>Added a boolean flag in Receipt</strong>
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/201">#201</a>)</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: DoneReceiptCommand marks the Receipt as done and ClearReceiptCommand removes all existing Entries from the Receipt.</p>
+<p><strong>What it does</strong><br>
+It checks if the Receipt is marked as complete (true) or incomplete (false).</p>
 </li>
 <li>
-<p>Justification: DoneReceiptCommand is required to toggle the boolean flag of Receipt to be done. ClearReceiptCommand does the opposite by toggling the Receipt back as undone.</p>
-</li>
-<li>
-<p>Highlights: These commands are required to prevent an exception being thrown with regards to negative BigDecimal values, as explained in the text above.</p>
+<p><strong>Justification</strong><br>
+DeleteItemCommand actually removes the Amount owed by the person from the PersonAmountBook. So does the PaidCommand.
+As such, if a user uses the DeleteItemCommand after using the PaidCommand, and if the Amount owed goes to negative,
+an exception would be thrown due to the nature of BigDecimal (BigDecimal does not accept negative values).
+Hence, a flag was included to prevent this from happening.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Added CalculateUtil and ParserUtil for the Expense Splitter portion of EYLAH</strong></p>
+<p><strong>Added DoneReceiptCommand and ClearReceiptCommand for the Expense Splitter portion of EYLAH</strong>
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/201">#201</a>,
+<a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/204">#204</a>)</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: CalculateUtil does all the handling of calculations required in EYLAH. ParserUtil parses all the inputted texts and outputs them as the required Objects.</p>
+<p><strong>What it does:</strong><br>
+DoneReceiptCommand marks the Receipt as done and ClearReceiptCommand removes all existing Entries from the Receipt.</p>
 </li>
 <li>
-<p>Justification: Abstraction, to make things easier and more streamlined in our application.</p>
+<p><strong>Justification:</strong><br>
+DoneReceiptCommand is required to toggle the boolean flag of Receipt to be done. ClearReceiptCommand does the opposite
+by toggling the Receipt back as undone.</p>
 </li>
 <li>
-<p>Highlights:</p>
+<p><strong>Highlights:</strong><br>
+These commands are required to prevent an Exception being thrown with regards to negative BigDecimal values, as
+explained in the point above.</p>
 </li>
 </ul>
 </div>
 </li>
+<li>
+<p><strong>Added CalculateUtil for EYLAH</strong>
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/191">#191</a>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong><br>
+CalculateUtil does all the handling of calculations required in EYLAH.</p>
+</li>
+<li>
+<p><strong>Justification:</strong><br>
+Abstraction, to make things easier and more streamlined in our application.</p>
+</li>
 </ul>
 </div>
-<div class="paragraph">
+</li>
+</ol>
+</div>
+</li>
+<li>
 <p><strong>Minor Enhancements</strong></p>
-</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Removed case sensitivity when adding a new Person</strong></p>
 <div class="ulist">
 <ul>
+<li>
+<p><strong>What it does:</strong><br>
+All the names inputted by the user are now made into lowercase.</p>
+</li>
+<li>
+<p><strong>Justification</strong><br>
+This is to facilitate quicker use of the application as users would not be required to capitalize any names.
+Internally, this is also to prevent duplicate Person objects with the same name (but in different case sensitivity)
+from being created, i.e Bob vs bob or aLiCe vs alice.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Fixed the rounding issue with regards to using BigDecimal as currency in our application</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong><br>
+Decimals with regards to currency in EYLAH is made to be 2 decimal points (d.p).</p>
+</li>
+<li>
+<p><strong>Justification</strong><br>
+The Amount class only accepts decimals up till 2 d.p. Users are also made to only input decimals up
+till 2 d.p. However, the problem comes when dividing BigDecimals, e.g 10 / 3 = 3.333333&#8230;&#8203; Since we create a new Amount
+object called amountPerPerson, i.e new Amount("3.33333"), this would throw an Exception. As such, I made it such that
+any all calculations with regards to BigDecimal and Amount would be kept at a maximum of 2 d.p to prevent this Exception
+from being thrown. In addition, I also did the formatting of the BigDecimal to be represented as a currency.</p>
+</li>
+<li>
+<p><strong>Credits</strong><br></p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://www.javapractices.com/topic/TopicAction.do?Id=13" class="bare">http://www.javapractices.com/topic/TopicAction.do?Id=13</a><br></p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/1359817/using-bigdecimal-to-work-with-currencies" class="bare">https://stackoverflow.com/questions/1359817/using-bigdecimal-to-work-with-currencies</a></p>
+</li>
+</ul>
+</div>
+</li>
 <li>
 <p>Added test cases for Entry and Receipt classes</p>
 </li>
@@ -103,17 +185,21 @@ them track their diet. The user interacts with it using a CLI and it is programm
 </li>
 <li>
 <p>Assisted in downscaling of AddressBook3 by removing Phone class</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
-</li>
-<li>
-<p><strong>Other contributions</strong>:</p>
 </li>
 </ul>
 </div>
 </li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>:<br>
+<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=ailanthustng&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">Functional and Test code</a></p>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
 <li>
 <p>Project management:</p>
 <div class="ulist">
@@ -129,6 +215,13 @@ them track their diet. The user interacts with it using a CLI and it is programm
 </li>
 <li>
 <p>Enhancements to existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Enhanced ParserUtil to be able to handle more inputted texts and output the required Objects.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Documentation:</p>
@@ -158,6 +251,9 @@ them track their diet. The user interacts with it using a CLI and it is programm
 </li>
 <li>
 <p>Tools:</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -3211,4 +3307,4 @@ in splitting that item.</p>
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 09:25:46 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 10:15:24 UTC</div></div></div></body></html>
