@@ -13,6 +13,7 @@
 <ul class="sectlevel2">
 <li><a href="#about-eylah">1.1. About EYLAH</a></li>
 <li><a href="#about-this-guide">1.2. About this guide</a></li>
+<li><a href="#tips-on-reading-the-developer-guide">1.3. Tips on reading the Developer Guide</a></li>
 </ul>
 </li>
 <li><a href="#setting-up">2. Setting up</a></li>
@@ -50,7 +51,9 @@
 <li><a href="#editing-a-food-in-diet-tracker">G.4. Editing a Food in Diet Tracker</a></li>
 <li><a href="#add-item-in-expense-splitter">G.5. Add Item In Expense Splitter</a></li>
 <li><a href="#list-receipt-in-expense-splitter">G.6. List Receipt In Expense Splitter</a></li>
-<li><a href="#saving-data">G.7. Saving data</a></li>
+<li><a href="#list-amount-in-expense-splitter">G.7. List Amount In Expense Splitter</a></li>
+<li><a href="#paid-command-in-expense-splitter">G.8. Paid Command In Expense Splitter</a></li>
+<li><a href="#saving-data">G.9. Saving data</a></li>
 </ul>
 </li>
 <li><a href="#effort">Appendix H: Effort</a></li>
@@ -88,6 +91,54 @@ architectures before exploring implementation details of each feature.</p>
 <div class="paragraph">
 <p>We encourage you to traverse the full path from the high level design to the
 implementation details of the feature you are interested for the most complete understanding.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="tips-on-reading-the-developer-guide"><a class="link" href="#tips-on-reading-the-developer-guide">1.3. Tips on reading the Developer Guide</a></h3>
+<div class="paragraph">
+<p>While reading the Developer Guide you may encounter some symbols.
+These symbols are used to highlight crucial information and in this portion we are explaining (or will be explaining)
+the symbols and their meaning.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This block of text with a blue exclamation mark indicates <strong>additional notes</strong> and <strong>information</strong> that the user should
+consider to prevent unexpected behaviour.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+This block of text with a yellow light bulb indicates <strong>additional tips</strong> that will help the user when using EYLAH.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+This symbol indicates warnings.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><code>markup</code> - A grey highlight (known as a mark-up) indicates keywords, including commands you can type into EYLAH.</p>
 </div>
 </div>
 </div>
@@ -1415,19 +1466,29 @@ The feature comprises of six commands namely.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#Add-Item-Command"><code>AddItemCommand</code></a> - Creates an Item with its ItemPrice, Person(s) involved in splitting that Item and adds it to Receipt.</p>
+<p><a href="#Add-Item-Command"><code>AddItemCommand</code></a> - Creates an Item with its ItemPrice, Person(s) involved in splitting that
+Item and adds it to Receipt.</p>
 </li>
 <li>
-<p><a href="#Delete-Item-Command"><code>DeleteItemCommand</code></a> - Deletes an Item from the current Receipt and reduces the Person&#8217;s amount accordingly.</p>
+<p><a href="#Delete-Item-Command"><code>DeleteItemCommand</code></a> - Deletes an Item from the current Receipt and reduces the
+Person&#8217;s amount accordingly.</p>
 </li>
 <li>
-<p><a href="#List-Receipt-Command"><code>ListReceiptCommand</code></a> - Lists the Item(s) in the current Receipt, its ItemPrice and Person(s) involved in splitting that Item.</p>
+<p><a href="#List-Receipt-Command"><code>ListReceiptCommand</code></a> - Lists the Item(s) in the current Receipt,
+its ItemPrice and Person(s) involved in splitting that Item.</p>
 </li>
 <li>
 <p><a href="#List-Amount-Command"><code>ListAmountCommand</code></a> - Lists the Person(s) Name and Amount they owe the user.</p>
 </li>
 <li>
+<p><a href="#Done-Receipt-Command"><code>DoneReceiptCommand</code></a> - Finalize the receipt, after which the Receipt
+will be immutable.</p>
+</li>
+<li>
 <p><a href="#Paid-Command"><code>PaidCommand</code></a> - Reduces the Amount a Person owes.</p>
+</li>
+<li>
+<p><a href="#Clear-Receipt-Command"><code>ClearReceipt</code></a> - Clear the current Receipt to start a new Receipt.</p>
 </li>
 <li>
 <p><a href="#Back-Command"><code>BackCommand</code></a> - Exits Expense Splitter portion to return to EYLAH&#8217;s Main Menu.</p>
@@ -1664,10 +1725,10 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 <p><strong>What is the List Receipt Command</strong></p>
 </div>
 <div class="paragraph">
-<p>The <code>listreceipt</code> command allows user to find out the current entries in the receipt.</p>
+<p>The <code>listreceipt</code> command allows user to find out the current Items in the receipt.</p>
 </div>
 <div class="paragraph">
-<p>The <code>listreceipt</code> command was implemented as a <code>ListReceiptCommand</code> in the <code>expensesplitter/logic</code> package.</p>
+<p>The <code>listreceipt</code> command was implemented as a <code>ListReceiptCommand</code> in the <code>expensesplitter/logic/commands</code> package.</p>
 </div>
 <div class="paragraph">
 <p>The <code>listreceipt</code> has the following input format:</p>
@@ -1709,7 +1770,7 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 <p><strong>Implementation of List Receipt Command</strong></p>
 </div>
 <div class="paragraph">
-<p>The following is a detailed explanation of the operations ListReceiptCommand performs.<br></p>
+<p>The following is a detailed explanation of the operations <code>ListReceiptCommand</code> performs.<br></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1717,11 +1778,11 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 <p>The <code>ListReceiptCommand#execute(SplitterModel splitterModel)</code> method is executed.</p>
 </li>
 <li>
-<p>The method <code>splitterModel#listReceipt()</code> will then be called to return the list of entries currently in that Receipt.</p>
+<p>The method <code>SplitterModel#listReceipt()</code> will then be called to return the list of entries currently in that Receipt.</p>
 </li>
 <li>
-<p>The method <code>receipt#toString()</code> will use StringBuilder to build the string of the Items(s) currently in
-Receipt by calling <code>entry.toString()</code> for entry. After all entries are done, <code>receipt#toString()</code> would have
+<p>The method <code>Receipt#toString()</code> will use StringBuilder to build the string of the Items(s) currently in
+Receipt by calling <code>Entry.toString()</code> for entry. After all entries are done, <code>Receipt#toString()</code> would have
 finish building the string and will return to SplitterModelManager where it will be printed out.</p>
 </li>
 </ol>
@@ -1751,7 +1812,7 @@ finish building the string and will return to SplitterModelManager where it will
 <p>The <code>listamount</code> command allows users to find out how much each Person owes them.<br></p>
 </div>
 <div class="paragraph">
-<p>The <code>listamount</code> command was implemented as a <code>ListAmountCommand</code> in the <code>expensesplitter/logic</code> package.</p>
+<p>The <code>listamount</code> command was implemented as a <code>ListAmountCommand</code> in the <code>expensesplitter/logic/commands</code> package.</p>
 </div>
 <div class="paragraph">
 <p>The <code>listamount</code> command has the following input format:</p>
@@ -1790,6 +1851,22 @@ finish building the string and will return to SplitterModelManager where it will
 <div class="title">Figure 40. List Amount Activity Diagram<br></div>
 </div>
 <div class="paragraph">
+<p><strong>Structure of List Amount Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>listamount</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ExpenseSplitterListAmountCommandClassDiagram.png" alt="ExpenseSplitterListAmountCommandClassDiagram">
+</div>
+<div class="title">Figure 41. List Amount Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>ListAmountCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>ListAmountCommand</code></p>
+</div>
+<div class="paragraph">
 <p><strong>Implementation of List Amount Command</strong></p>
 </div>
 <div class="paragraph">
@@ -1801,7 +1878,7 @@ finish building the string and will return to SplitterModelManager where it will
 <p>The <code>ListAmountCommand#execute(SplitterModel splitterModel)</code> method is executed.</p>
 </li>
 <li>
-<p>The method <code>splitterModel#listAmount()</code> will then be called to return the list of Person(s) with their amount.</p>
+<p>The method <code>SplitterModel#listAmount()</code> will then be called to return the list of Person(s) with their amount.</p>
 </li>
 <li>
 <p><code>PersonAmountBook#toString()</code> will convert list of person in the list to the expected format and return it to
@@ -1819,11 +1896,11 @@ SplitterModelManager where it will be printed out.</p>
 <div class="content">
 <img src="images/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
 </div>
-<div class="title">Figure 41. List Amount Command Sequence Diagram</div>
+<div class="title">Figure 42. List Amount Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="done-receipt-command"><a class="link" href="#done-receipt-command">4.2.5. Done Receipt Command</a></h4>
+<h4 id="Done-Receipt-Command"><a class="link" href="#Done-Receipt-Command">4.2.5. Done Receipt Command</a></h4>
 <div class="paragraph">
 <p>In this section, we will learn more about how the <code>donereceipt</code> command is implemented.</p>
 </div>
@@ -1866,7 +1943,7 @@ the correct item back.</p>
 <div class="content">
 <img src="images/ExpenseSplitterDoneReceiptCommandActivityDiagram.png" alt="ExpenseSplitterDoneReceiptCommandActivityDiagram">
 </div>
-<div class="title">Figure 42. Done Receipt Command Activity Diagram</div>
+<div class="title">Figure 43. Done Receipt Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Done Receipt Command</strong></p>
@@ -1900,7 +1977,7 @@ the correct item back.</p>
 <div class="content">
 <img src="images/ExpenseSplitterDoneReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterDoneReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 43. Done Receipt Command Sequence Diagram</div>
+<div class="title">Figure 44. Done Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1958,7 +2035,23 @@ empty is equivalent to the Person paying the user the full amount he/she owes th
 <div class="content">
 <img src="images/ExpenseSplitterPaidCommandActivityDiagram.png" alt="ExpenseSplitterPaidCommandActivityDiagram">
 </div>
-<div class="title">Figure 44. Paid Command Activity Diagram</div>
+<div class="title">Figure 45. Paid Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>Structure of Paid Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>paid</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ExpenseSplitterPaidCommandClassDiagram.png" alt="ExpenseSplitterPaidCommandClassDiagram">
+</div>
+<div class="title">Figure 46. Paid Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>PaidCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>PaidCommand</code></p>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Paid Command</strong></p>
@@ -1972,11 +2065,11 @@ empty is equivalent to the Person paying the user the full amount he/she owes th
 <p>The <code>PaidCommand#execute(SplitterModel splitterModel)</code> method is executed.</p>
 </li>
 <li>
-<p>The <code>splitterModel#paidPerson(Person person, String amountPaid)</code> will be called.
+<p>The <code>SplitterModel#paidPerson(Person person, String amountPaid)</code> will be called.
 String amountPaid will be converted into an Amount by instantiating a new instance of Amount.</p>
 </li>
 <li>
-<p>The <code>personAmountBook#removeAmount(Person person, Amount amount)</code> is then called to remove Amount from Person.</p>
+<p>The <code>PersonAmountBook#removeAmount(Person person, Amount amount)</code> is then called to remove Amount from Person.</p>
 </li>
 <li>
 <p>This in turns calls <code>UniquePersonList#removeAmount(Person person, Amount amount)</code>.</p>
@@ -1996,13 +2089,13 @@ String amountPaid will be converted into an Amount by instantiating a new instan
 <div class="content">
 <img src="images/ExpenseSplitterPaidCommandSequenceDiagram.png" alt="ExpenseSplitterPaidCommandSequenceDiagram">
 </div>
-<div class="title">Figure 45. Paid Command Sequence Diagram</div>
+<div class="title">Figure 47. Paid Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ExpenseSplitterPaidCommandSequenceDiagram2.png" alt="ExpenseSplitterPaidCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 46. Execution of Paid Command Sequence Diagram</div>
+<div class="title">Figure 48. Execution of Paid Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -2055,7 +2148,7 @@ only be able to use the <code>additem</code> and <code>deleteitem</code> command
 <div class="content">
 <img src="images/ExpenseSplitterClearReceiptCommandActivityDiagram.png" alt="ExpenseSplitterClearReceiptCommandActivityDiagram">
 </div>
-<div class="title">Figure 47. Clear Receipt Command Activity Diagram</div>
+<div class="title">Figure 49. Clear Receipt Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Clear Receipt Command</strong></p>
@@ -2089,7 +2182,7 @@ only be able to use the <code>additem</code> and <code>deleteitem</code> command
 <div class="content">
 <img src="images/ExpenseSplitterClearReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterClearReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 48. Clear Receipt Command Sequence Diagram</div>
+<div class="title">Figure 50. Clear Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -2872,9 +2965,7 @@ Item.</p>
 <h3 id="use-case-uc10-listing-receipt" class="discrete">Use case: UC10 - Listing Receipt</h3>
 <div class="paragraph">
 <p><strong>Actor:</strong> User<br>
-<strong>Preconditions:</strong> User is logged in.<br>
-<strong>Guarantees:</strong><br>
-All Items in the current Receipt will be listed out.</p>
+<strong>Guarantees:</strong> All Items in the current Receipt will be listed out.</p>
 </div>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -2885,7 +2976,7 @@ All Items in the current Receipt will be listed out.</p>
 <p>User requests to list receipt containing Item(s) in the current Receipt.</p>
 </li>
 <li>
-<p>EYLAH displays the list of Item(s) in the current Receipt, its ItemPrice and Person(s) involved in spliting that Item.</p>
+<p>EYLAH displays the list of Item(s) in the current Receipt, its ItemPrice and Person(s) involved in splitting that Item.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2915,9 +3006,7 @@ All Items in the current Receipt will be listed out.</p>
 <h3 id="use-case-uc11-listing-person-s-and-the-amount-they-owe" class="discrete">Use case: UC11 - Listing Person(s) and the Amount they owe</h3>
 <div class="paragraph">
 <p><strong>Actor:</strong> User<br>
-<strong>Preconditions:</strong> User is logged in.<br>
-<strong>Guarantees:</strong><br>
-All Person(s) and the amount they owe will be listed.</p>
+<strong>Guarantees:</strong> All Person(s) and the amount they owe will be listed.</p>
 </div>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -2925,10 +3014,10 @@ All Person(s) and the amount they owe will be listed.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list the Person(s) and the Amount they owe the user.</p>
+<p>User requests to list all the Person(s) and the Amount they owe the user.</p>
 </li>
 <li>
-<p>EYLAH displays the list of Person and its associated Amount.</p>
+<p>EYLAH displays the list of Person(s) and the associated Amount they owe they user.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2955,12 +3044,11 @@ All Person(s) and the amount they owe will be listed.</p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc12-amount-paid" class="discrete">Use case: UC12 - Amount paid</h3>
+<h3 id="use-case-uc12-paying-money" class="discrete">Use case: UC12 - Paying money</h3>
 <div class="paragraph">
 <p><strong>Actor:</strong> User<br>
-<strong>Preconditions:</strong> User is logged in.<br>
-<strong>Guarantees:</strong><br>
-Reduces the Amount a Person owes and if they owe $0 the Person is automatically deleted.</p>
+<strong>Guarantees:</strong> Reduces the Amount a Person owes and if they owe $0 the Person
+is automatically deleted.</p>
 </div>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -2971,10 +3059,11 @@ Reduces the Amount a Person owes and if they owe $0 the Person is automatically 
 <p>User requests to reduce the Person&#8217;s Amount when he/she has paid the user.</p>
 </li>
 <li>
-<p>EYLAH searches for the Person and reduces the Amount they owe the user, if Amount = $0 the Person is removed from the list.</p>
+<p>EYLAH searches for the Person and reduces the Amount they owe the user, if
+after paying the Person does not owe anything, they are deleted.</p>
 </li>
 <li>
-<p>EYLAH then displays the new Amount owed by the Person</p>
+<p>EYLAH then displays the new Amount owed by the Person.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2987,11 +3076,12 @@ Reduces the Amount a Person owes and if they owe $0 the Person is automatically 
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. EYLAH detects an empty PersonList.</p>
+<p>1a. EYLAH detects that the Person has paid more than what he owes.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a1. EYLAH displays an error message, saying that there is no Person in the list.</p>
+<p>1a1. EYLAH displays an error message, informing the user to key in an Amount lesser or equal to
+the amount the Person owes.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3004,11 +3094,11 @@ Reduces the Amount a Person owes and if they owe $0 the Person is automatically 
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1b. EYLAH detects invalid <a href="#syntax">syntax</a>.</p>
+<p>2a. EYLAH detects an empty PersonList.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1b1. EYLAH displays an error message and informs User to key in the correct syntax.</p>
+<p>2a1. EYLAH displays an error message, saying that there is no Person in the list.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3021,11 +3111,32 @@ Reduces the Amount a Person owes and if they owe $0 the Person is automatically 
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1c. EYLAH detects that the Person does not exist in the list.</p>
+<p>2b. EYLAH detects invalid IndexOfPersonPaid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1c1. EYLAH displays an error message, informing the user to key in the correct index of the Person. The user may use <code>listamount</code> to show the Person&#8217;s index.</p>
+<p>2b1. EYLAH displays an error message and informs User to key in the correct Index of the
+person who paid. EYLAH will prompt the user to use <code>listamount</code> to find the Index of Person who
+paid.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c. EYLAH detects that the Person does not exist in the list.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c1. EYLAH displays an error message, informing the user to key in the correct index of the Person.
+EYLAH will prompt the user to use <code>listamount</code> to find the Index of Person who
+paid.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -3241,17 +3352,17 @@ A static class used in Diet Tracker to represent the user in the splitterModel.<
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-i</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Item Name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Add-Item-Command"><strong>Add</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Add-Item-Command"><strong>Add Item</strong></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-p</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Item Price</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Add-Item-Command"><strong>Add</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Add-Item-Command"><strong>Add Item</strong></a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">-n</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name of Person</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Add-Item-Command"><strong>Add</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Add-Item-Command"><strong>Add Item</strong></a></p></td>
 </tr>
 </tbody>
 </table>
@@ -3261,10 +3372,7 @@ A static class used in Diet Tracker to represent the user in the splitterModel.<
 <h2 id="product-survey"><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Product Name</strong></p>
-</div>
-<div class="paragraph">
-<p>Author: &#8230;&#8203;</p>
+<p><a href="https://www.myfitnesspal.com/">My Fitness Pal</a></p>
 </div>
 <div class="paragraph">
 <p>Pros:</p>
@@ -3272,10 +3380,10 @@ A static class used in Diet Tracker to represent the user in the splitterModel.<
 <div class="ulist">
 <ul>
 <li>
-<p>&#8230;&#8203;</p>
+<p>Customizable according to the User&#8217;s demands.</p>
 </li>
 <li>
-<p>&#8230;&#8203;</p>
+<p>Able to monitor the User&#8217;s exercise and movement.</p>
 </li>
 </ul>
 </div>
@@ -3285,10 +3393,39 @@ A static class used in Diet Tracker to represent the user in the splitterModel.<
 <div class="ulist">
 <ul>
 <li>
-<p>&#8230;&#8203;</p>
+<p>Application was hacked and data was leaked.</p>
 </li>
 <li>
-<p>&#8230;&#8203;</p>
+<p>Unable to use it offline.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://www.splitwise.com/">Splitwise</a></p>
+</div>
+<div class="paragraph">
+<p>Pros:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Very user friendly.</p>
+</li>
+<li>
+<p>Easy track of expenses.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Cons:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Has a tendency of complicating splitting bills.</p>
+</li>
+<li>
+<p>Unable to use it offline.</p>
 </li>
 </ul>
 </div>
@@ -3324,7 +3461,7 @@ These instructions only provide a starting point for testers to work on; testers
 <p>Download the jar file and copy into an empty folder</p>
 </li>
 <li>
-<p>Double-click the jar file<br>
+<p>Navigate to that folder using Terminal and type <code>java -jar EYLAH.jar</code><br>
 Expected: Shows the CLI interface with welcome message. The window size may not be optimum.</p>
 </li>
 </ol>
@@ -3427,7 +3564,7 @@ Expected: Similar to previous.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Add Item Command format: <code>additem -i ITEMNAME -p ITEMPRICE -n PERSON [-n PERSON]</code></p>
+<p>Add Item Command format: <code>additem -i ITEMNAME -p ITEMPRICE -n PERSON [-n PERSON]&#8230;&#8203;</code></p>
 </li>
 <li>
 <p>Test case: <code>additem -i pasta -p 33.50 -n John -n Bob</code><br>
@@ -3458,7 +3595,7 @@ by the user.</p>
 <p>List Receipt command format: <code>listreceipt</code></p>
 </li>
 <li>
-<p>Test case: <code>listamount</code><br>
+<p>Test case: <code>listreceipt</code><br>
 Expected: List all items in the current receipt, its price and amount associated with each person involved
 in splitting that item.</p>
 </li>
@@ -3469,7 +3606,58 @@ in splitting that item.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.7. Saving data</a></h3>
+<h3 id="list-amount-in-expense-splitter"><a class="link" href="#list-amount-in-expense-splitter">G.7. List Amount In Expense Splitter</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>List all the Person(s) and the amount they owe.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>List Receipt command format: <code>listamount</code></p>
+</li>
+<li>
+<p>Test case: <code>listamount</code><br>
+Expected: List all Person that currently owe the User money. Those who do not owe any money will be
+deleted from the PersonList.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="paid-command-in-expense-splitter"><a class="link" href="#paid-command-in-expense-splitter">G.8. Paid Command In Expense Splitter</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Reduces the amount of money a Person owes.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Paid command format: <code>paid</code> <code>INDEX</code> <code>[AMOUNT]</code></p>
+</li>
+<li>
+<p>Test case: <code>paid 1 1.10</code><br>
+Expected: Reduces the amount of money the Person at Index 1 owes by $1.10.</p>
+</li>
+<li>
+<p>Test case: <code>paid 1</code><br>
+Expected: Reduces the entire amount of money the Person at Index 1 owes.</p>
+</li>
+<li>
+<p>Test case: <code>paid -1</code><br>
+Expected: EYLAH will inform the user that INDEX is incorrect.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">G.9. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3500,7 +3688,7 @@ with problems we all face while staying in Temasek Hall.</p>
 <div class="paragraph">
 <p>Hence, we decided to build EYLAH, a super application that has both a diet tracker and a expense splitter functionality.
 EYLAH is significantly different from Address Book 3 (AB3) in many aspects.
-We needed to add audience-specific features to satisfy the needs of our target audience:residents staying in Temasek
+We needed to add audience:specific features to satisfy the needs of our target audience:residents staying in Temasek
 Hall.</p>
 </div>
 <div class="paragraph">
@@ -3553,4 +3741,4 @@ help to ease the lives of the residents at Temasek Hall.
 Overall, we believe that EYLAH is a good testament to our hard work and the time spent on perfecting it.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 18:42:17 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 18:43:06 UTC</div></div></div></body></html>

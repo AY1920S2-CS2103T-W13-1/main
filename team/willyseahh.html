@@ -38,8 +38,8 @@ of an Item into the current Receipt.</p>
 </li>
 <li>
 <p><strong>Justification:</strong><br>
-These classes are crucial for Expense Splitter to work because this the User
-has to input an Item to split among his friends.</p>
+These classes are crucial for Expense Splitter to work because this allows the User
+to input an Item to split among his friends, the crux of Expense Splitter.</p>
 </li>
 <li>
 <p><strong>Highlights:</strong><br>
@@ -181,7 +181,7 @@ This reduces the chances of EYLAH crashing.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Adapted the given Address Book UI into EYLAH&#8217;s first draft UI.</p>
+<p>Adapted the given Address Book code into EYLAH&#8217;s.</p>
 </li>
 </ul>
 </div>
@@ -202,6 +202,9 @@ This reduces the chances of EYLAH crashing.</p>
 <li>
 <p>Updated Developer Guide to include Expense Splitter main activity diagram (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/252">#252</a>)</p>
 </li>
+<li>
+<p>Updated User Guide to include Paid, List Amount Command (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/349">#349</a>)</p>
+</li>
 </ul>
 </div>
 </li>
@@ -220,9 +223,6 @@ This reduces the chances of EYLAH crashing.</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Tools:</p>
 </li>
 </ul>
 </div>
@@ -307,6 +307,77 @@ and the <a href="#listamountexpectedoutcome">expected outcome</a> after using th
 <div class="paragraph">
 <p>Use <code>listamount</code> command to find the index of the person who paid you. The index is useful for commands
 such as <code>paid</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listreceipt"><a class="link" href="#listreceipt">Listing the current receipt: <code>listreceipt</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>listreceipt</code> command, <a href="#howtouselistreceiptcommand">how to use it</a>
+and the <a href="#listreceiptexpectedoutcome">expected outcome</a> after using the
+<code>listreceipt</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of List Receipt Command:</strong><br>
+<code>listreceipt</code> shows you all the entries in your current receipt.</p>
+</div>
+<div id="howtouselistreceiptcommand" class="paragraph">
+<p><strong>How to use the List Receipt Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>listreceipt</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>listreceipt</code></p>
+</div>
+<div id="listreceiptexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/expenseSplitterListAmountCommandSuccessPhoto.png" alt="expenseSplitterListAmountCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional notes and tips</strong><br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Each entry in the receipt has the item&#8217;s name, price and person(s) who is splitting that item with you thus you do
+not have to remember who you split this item with!</p>
+</li>
+<li>
+<p>When you enter <code>clearrreceipt</code> it deletes the old receipt&#8217;s data. Use it with caution!</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Use <code>listreceipt</code> command to find the index of the item in the receipt. The index is useful for commands
+such as <code>deleteitem</code> where you have to pass in the index of item to be deleted.</p>
 </div>
 </td>
 </tr>
@@ -417,47 +488,6 @@ empty is equivalent to the Person paying you the full amount he/she owes you.</p
 </div>
 </div>
 <div class="sect2">
-<h3 id="expense-splitter-code-split-code"><a class="link" href="#expense-splitter-code-split-code">Expense Splitter : <code>split</code></a></h3>
-<div class="paragraph">
-<p>Getting a headache from splitting <strong>that</strong> ever-so-complicated bill?</p>
-</div>
-<div class="paragraph">
-<p>With EYLAH, splitting a large receipt with friends has never been easier! All you have to do is add the item,
-it&#8217;s price and the names involved in splitting that item and EYLAH will calculate the rest for you!</p>
-</div>
-<div class="paragraph">
-<p>We have drawn some diagrams to help you visualize how Expense Splitter works, click <a href="#AppendixA">here</a> to find out more!</p>
-</div>
-<div class="paragraph">
-<p>Here are some of the prefixes used:</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Prefix</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Representation</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-i</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Item Name</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-p</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Item Price</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-n</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of Person</p></td>
-</tr>
-</tbody>
-</table>
-<hr>
-</div>
-<div class="sect2">
 <h3 id="for-expense-splitter"><a class="link" href="#for-expense-splitter">For Expense Splitter</a></h3>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -533,40 +563,6 @@ or<br>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>This user guide provides in-depth documentation on the EYLAH desktop application. It comprises of 6 main portions,
-including the introduction, getting started, features, FAQ, command summary, and glossary.</p>
-</div>
-<div class="paragraph">
-<p>Hello there! welcome to EYLAH&#8217;s User Guide.
-Are you someone who <strong>lives in Temasek hall</strong> in the National University of Singapore and
-have <strong>supper frequently with your hall mates?</strong> Do you dread the <strong>tedious and irritating portion of
-splitting large bills</strong>? Have you wished for a <strong>Command Line Interface</strong> (CLI) application that can solve the
-above mentioned issues?</p>
-</div>
-<div class="paragraph">
-<p>If you answered <strong>YES!!</strong>, Ease Your Life At Halls (EYLAH) is a revolutionary new super-application that
-developed just for you that will make your
-lives at halls much easier!</p>
-</div>
-<div class="paragraph">
-<p>EYLAH is an Expense Splitter and Diet Tracker rolled into one, for Temasek Hall residents who <strong>prefer to use a desktop
-app to solve issues.</strong> More importantly, EYLAH is optimized for residents who prefer to work with a <strong>Command Line Interface</strong>
-(CLI).</p>
-</div>
-<div class="paragraph">
-<p>EYLAH can solve your problems in halls by <strong>tracking your diet</strong> after those unhealthy suppers
-and <strong>splitting the cost</strong> after each outing or late-night party session with a few pokes of your keyboard.
-Interested? Jump to <a href="#Getting Started">[Getting Started]</a> to get started. Let&#8217;s go!</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/expense-splitter/Ui.png" alt="Ui" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p>Figure 1. Photo of EYLAH</p>
-</div>
 </div>
 </div>
 </div>
@@ -583,6 +579,45 @@ Interested? Jump to <a href="#Getting Started">[Getting Started]</a> to get star
 </tr>
 </tbody>
 </table>
+<div class="paragraph">
+<p>The Expense Splitter feature is designed to aid our users with the splitting of large bills that involves meany people.
+The feature comprises of six commands namely.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Add-Item-Command"><code>AddItemCommand</code></a> - Creates an Item with its ItemPrice, Person(s) involved in splitting that
+Item and adds it to Receipt.</p>
+</li>
+<li>
+<p><a href="#Delete-Item-Command"><code>DeleteItemCommand</code></a> - Deletes an Item from the current Receipt and reduces the
+Person&#8217;s amount accordingly.</p>
+</li>
+<li>
+<p><a href="#List-Receipt-Command"><code>ListReceiptCommand</code></a> - Lists the Item(s) in the current Receipt,
+its ItemPrice and Person(s) involved in splitting that Item.</p>
+</li>
+<li>
+<p><a href="#List-Amount-Command"><code>ListAmountCommand</code></a> - Lists the Person(s) Name and Amount they owe the user.</p>
+</li>
+<li>
+<p><a href="#Done-Receipt-Command"><code>DoneReceiptCommand</code></a> - Finalize the receipt, after which the Receipt
+will be immutable.</p>
+</li>
+<li>
+<p><a href="#Paid-Command"><code>PaidCommand</code></a> - Reduces the Amount a Person owes.</p>
+</li>
+<li>
+<p><a href="#Clear-Receipt-Command"><code>ClearReceipt</code></a> - Clear the current Receipt to start a new Receipt.</p>
+</li>
+<li>
+<p><a href="#Back-Command"><code>BackCommand</code></a> - Exits Expense Splitter portion to return to EYLAH&#8217;s Main Menu.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Below are some diagrams to explain how our team implemented this portion.</p>
+</div>
 <div class="paragraph">
 <p><strong>Activity Diagram of Expense Splitter:</strong><br></p>
 </div>
@@ -602,35 +637,6 @@ Interested? Jump to <a href="#Getting Started">[Getting Started]</a> to get star
 <div class="paragraph">
 <p>Figure : Add Item Activity Diagram</p>
 </div>
-<div class="paragraph">
-<p>The Expense Splitter feature is designed to aid our users with the splitting of large bills that involves meany people.
-The feature comprises of six commands namely.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#Add-Item-Command"><code>AddItemCommand</code></a> - Creates an Item with its ItemPrice, Person(s) involved in splitting that Item and adds it to Receipt.</p>
-</li>
-<li>
-<p><a href="#Delete-Item-Command"><code>DeleteItemCommand</code></a> - Deletes an Item from the current Receipt and reduces the Person&#8217;s amount accordingly.</p>
-</li>
-<li>
-<p><a href="#List-Receipt-Command"><code>ListReceiptCommand</code></a> - Lists the Item(s) in the current Receipt, its ItemPrice and Person(s) involved in splitting that Item.</p>
-</li>
-<li>
-<p><a href="#List-Amount-Command"><code>ListAmountCommand</code></a> - Lists the Person(s) Name and Amount they owe the user.</p>
-</li>
-<li>
-<p><a href="#Paid-Command"><code>PaidCommand</code></a> - Reduces the Amount a Person owes.</p>
-</li>
-<li>
-<p><a href="#Back-Command"><code>BackCommand</code></a> - Exits Expense Splitter portion to return to EYLAH&#8217;s Main Menu.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Below are some diagrams to explain how our team implemented this portion.</p>
-</div>
 <div class="sect3">
 <h4 id="List-Amount-Command"><a class="link" href="#List-Amount-Command">List Amount Command</a></h4>
 <div class="paragraph">
@@ -643,7 +649,7 @@ The feature comprises of six commands namely.</p>
 <p>The <code>listamount</code> command allows users to find out how much each Person owes them.<br></p>
 </div>
 <div class="paragraph">
-<p>The <code>listamount</code> command was implemented as a <code>ListAmountCommand</code> in the <code>expensesplitter/logic</code> package.</p>
+<p>The <code>listamount</code> command was implemented as a <code>ListAmountCommand</code> in the <code>expensesplitter/logic/commands</code> package.</p>
 </div>
 <div class="paragraph">
 <p>The <code>listamount</code> command has the following input format:</p>
@@ -682,6 +688,22 @@ The feature comprises of six commands namely.</p>
 <div class="title">Figure 1. List Amount Activity Diagram<br></div>
 </div>
 <div class="paragraph">
+<p><strong>Structure of List Amount Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>listamount</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterListAmountCommandClassDiagram.png" alt="ExpenseSplitterListAmountCommandClassDiagram">
+</div>
+<div class="title">Figure 2. List Amount Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>ListAmountCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>ListAmountCommand</code></p>
+</div>
+<div class="paragraph">
 <p><strong>Implementation of List Amount Command</strong></p>
 </div>
 <div class="paragraph">
@@ -693,7 +715,7 @@ The feature comprises of six commands namely.</p>
 <p>The <code>ListAmountCommand#execute(SplitterModel splitterModel)</code> method is executed.</p>
 </li>
 <li>
-<p>The method <code>splitterModel#listAmount()</code> will then be called to return the list of Person(s) with their amount.</p>
+<p>The method <code>SplitterModel#listAmount()</code> will then be called to return the list of Person(s) with their amount.</p>
 </li>
 <li>
 <p><code>PersonAmountBook#toString()</code> will convert list of person in the list to the expected format and return it to
@@ -711,7 +733,7 @@ SplitterModelManager where it will be printed out.</p>
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
 </div>
-<div class="title">Figure 2. List Amount Command Sequence Diagram</div>
+<div class="title">Figure 3. List Amount Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -723,10 +745,10 @@ SplitterModelManager where it will be printed out.</p>
 <p><strong>What is the List Receipt Command</strong></p>
 </div>
 <div class="paragraph">
-<p>The <code>listreceipt</code> command allows user to find out the current entries in the receipt.</p>
+<p>The <code>listreceipt</code> command allows user to find out the current Items in the receipt.</p>
 </div>
 <div class="paragraph">
-<p>The <code>listreceipt</code> command was implemented as a <code>ListReceiptCommand</code> in the <code>expensesplitter/logic</code> package.</p>
+<p>The <code>listreceipt</code> command was implemented as a <code>ListReceiptCommand</code> in the <code>expensesplitter/logic/commands</code> package.</p>
 </div>
 <div class="paragraph">
 <p>The <code>listreceipt</code> has the following input format:</p>
@@ -762,13 +784,13 @@ SplitterModelManager where it will be printed out.</p>
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterListReceiptCommandActivityDiagram.png" alt="ExpenseSplitterListReceiptCommandActivityDiagram">
 </div>
-<div class="title">Figure 3. List Receipt Activity Diagram</div>
+<div class="title">Figure 4. List Receipt Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of List Receipt Command</strong></p>
 </div>
 <div class="paragraph">
-<p>The following is a detailed explanation of the operations ListReceiptCommand performs.<br></p>
+<p>The following is a detailed explanation of the operations <code>ListReceiptCommand</code> performs.<br></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -776,11 +798,11 @@ SplitterModelManager where it will be printed out.</p>
 <p>The <code>ListReceiptCommand#execute(SplitterModel splitterModel)</code> method is executed.</p>
 </li>
 <li>
-<p>The method <code>splitterModel#listReceipt()</code> will then be called to return the list of entries currently in that Receipt.</p>
+<p>The method <code>SplitterModel#listReceipt()</code> will then be called to return the list of entries currently in that Receipt.</p>
 </li>
 <li>
-<p>The method <code>receipt#toString()</code> will use StringBuilder to build the string of the Items(s) currently in
-Receipt by calling <code>entry.toString()</code> for entry. After all entries are done, <code>receipt#toString()</code> would have
+<p>The method <code>Receipt#toString()</code> will use StringBuilder to build the string of the Items(s) currently in
+Receipt by calling <code>Entry.toString()</code> for entry. After all entries are done, <code>Receipt#toString()</code> would have
 finish building the string and will return to SplitterModelManager where it will be printed out.</p>
 </li>
 </ol>
@@ -795,7 +817,7 @@ finish building the string and will return to SplitterModelManager where it will
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterListReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterListReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 4. List Receipt Command Sequence Diagram</div>
+<div class="title">Figure 5. List Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -853,7 +875,23 @@ empty is equivalent to the Person paying the user the full amount he/she owes th
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterPaidCommandActivityDiagram.png" alt="ExpenseSplitterPaidCommandActivityDiagram">
 </div>
-<div class="title">Figure 5. Paid Command Activity Diagram</div>
+<div class="title">Figure 6. Paid Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>Structure of Paid Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>paid</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterPaidCommandClassDiagram.png" alt="ExpenseSplitterPaidCommandClassDiagram">
+</div>
+<div class="title">Figure 7. Paid Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>PaidCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>PaidCommand</code></p>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Paid Command</strong></p>
@@ -867,11 +905,11 @@ empty is equivalent to the Person paying the user the full amount he/she owes th
 <p>The <code>PaidCommand#execute(SplitterModel splitterModel)</code> method is executed.</p>
 </li>
 <li>
-<p>The <code>splitterModel#paidPerson(Person person, String amountPaid)</code> will be called.
+<p>The <code>SplitterModel#paidPerson(Person person, String amountPaid)</code> will be called.
 String amountPaid will be converted into an Amount by instantiating a new instance of Amount.</p>
 </li>
 <li>
-<p>The <code>personAmountBook#removeAmount(Person person, Amount amount)</code> is then called to remove Amount from Person.</p>
+<p>The <code>PersonAmountBook#removeAmount(Person person, Amount amount)</code> is then called to remove Amount from Person.</p>
 </li>
 <li>
 <p>This in turns calls <code>UniquePersonList#removeAmount(Person person, Amount amount)</code>.</p>
@@ -891,20 +929,18 @@ String amountPaid will be converted into an Amount by instantiating a new instan
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterPaidCommandSequenceDiagram.png" alt="ExpenseSplitterPaidCommandSequenceDiagram">
 </div>
-<div class="title">Figure 6. Paid Command Sequence Diagram</div>
+<div class="title">Figure 8. Paid Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterPaidCommandSequenceDiagram2.png" alt="ExpenseSplitterPaidCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 7. Execution of Paid Command Sequence Diagram</div>
+<div class="title">Figure 9. Execution of Paid Command Sequence Diagram</div>
 </div>
 <h3 id="use-case-uc10-listing-receipt" class="discrete">Use case: UC10 - Listing Receipt</h3>
 <div class="paragraph">
 <p><strong>Actor:</strong> User<br>
-<strong>Preconditions:</strong> User is logged in.<br>
-<strong>Guarantees:</strong><br>
-All Items in the current Receipt will be listed out.</p>
+<strong>Guarantees:</strong> All Items in the current Receipt will be listed out.</p>
 </div>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -915,7 +951,7 @@ All Items in the current Receipt will be listed out.</p>
 <p>User requests to list receipt containing Item(s) in the current Receipt.</p>
 </li>
 <li>
-<p>EYLAH displays the list of Item(s) in the current Receipt, its ItemPrice and Person(s) involved in spliting that Item.</p>
+<p>EYLAH displays the list of Item(s) in the current Receipt, its ItemPrice and Person(s) involved in splitting that Item.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -945,9 +981,7 @@ All Items in the current Receipt will be listed out.</p>
 <h3 id="use-case-uc11-listing-person-s-and-the-amount-they-owe" class="discrete">Use case: UC11 - Listing Person(s) and the Amount they owe</h3>
 <div class="paragraph">
 <p><strong>Actor:</strong> User<br>
-<strong>Preconditions:</strong> User is logged in.<br>
-<strong>Guarantees:</strong><br>
-All Person(s) and the amount they owe will be listed.</p>
+<strong>Guarantees:</strong> All Person(s) and the amount they owe will be listed.</p>
 </div>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -955,10 +989,10 @@ All Person(s) and the amount they owe will be listed.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list the Person(s) and the Amount they owe the user.</p>
+<p>User requests to list all the Person(s) and the Amount they owe the user.</p>
 </li>
 <li>
-<p>EYLAH displays the list of Person and its associated Amount.</p>
+<p>EYLAH displays the list of Person(s) and the associated Amount they owe they user.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -985,12 +1019,11 @@ All Person(s) and the amount they owe will be listed.</p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-uc12-amount-paid" class="discrete">Use case: UC12 - Amount paid</h3>
+<h3 id="use-case-uc12-paying-money" class="discrete">Use case: UC12 - Paying money</h3>
 <div class="paragraph">
 <p><strong>Actor:</strong> User<br>
-<strong>Preconditions:</strong> User is logged in.<br>
-<strong>Guarantees:</strong><br>
-Reduces the Amount a Person owes and if they owe $0 the Person is automatically deleted.</p>
+<strong>Guarantees:</strong> Reduces the Amount a Person owes and if they owe $0 the Person
+is automatically deleted.</p>
 </div>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
@@ -1001,10 +1034,11 @@ Reduces the Amount a Person owes and if they owe $0 the Person is automatically 
 <p>User requests to reduce the Person&#8217;s Amount when he/she has paid the user.</p>
 </li>
 <li>
-<p>EYLAH searches for the Person and reduces the Amount they owe the user, if Amount = $0 the Person is removed from the list.</p>
+<p>EYLAH searches for the Person and reduces the Amount they owe the user, if
+after paying the Person does not owe anything, they are deleted.</p>
 </li>
 <li>
-<p>EYLAH then displays the new Amount owed by the Person</p>
+<p>EYLAH then displays the new Amount owed by the Person.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1017,11 +1051,12 @@ Reduces the Amount a Person owes and if they owe $0 the Person is automatically 
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. EYLAH detects an empty PersonList.</p>
+<p>1a. EYLAH detects that the Person has paid more than what he owes.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a1. EYLAH displays an error message, saying that there is no Person in the list.</p>
+<p>1a1. EYLAH displays an error message, informing the user to key in an Amount lesser or equal to
+the amount the Person owes.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1034,11 +1069,11 @@ Reduces the Amount a Person owes and if they owe $0 the Person is automatically 
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1b. EYLAH detects invalid <a href="#syntax">syntax</a>.</p>
+<p>2a. EYLAH detects an empty PersonList.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1b1. EYLAH displays an error message and informs User to key in the correct syntax.</p>
+<p>2a1. EYLAH displays an error message, saying that there is no Person in the list.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1051,11 +1086,13 @@ Reduces the Amount a Person owes and if they owe $0 the Person is automatically 
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1c. EYLAH detects that the Person does not exist in the list.</p>
+<p>2b. EYLAH detects invalid IndexOfPersonPaid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1c1. EYLAH displays an error message, informing the user to key in the correct index of the Person. The user may use <code>listamount</code> to show the Person&#8217;s index.</p>
+<p>2b1. EYLAH displays an error message and informs User to key in the correct Index of the
+person who paid. EYLAH will prompt the user to use <code>listamount</code> to find the Index of Person who
+paid.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1065,163 +1102,25 @@ Reduces the Amount a Person owes and if they owe $0 the Person is automatically 
 </li>
 </ul>
 </div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c. EYLAH detects that the Person does not exist in the list.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2c1. EYLAH displays an error message, informing the user to key in the correct index of the Person.
+EYLAH will prompt the user to use <code>listamount</code> to find the Index of Person who
+paid.</p>
 <div class="paragraph">
-<p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low (unlikely to have) - <code>*</code></p>
+<p>Use case ends.</p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 59%;">
-<colgroup>
-<col style="width: 22%;">
-<col style="width: 23%;">
-<col style="width: 25%;">
-<col style="width: 30%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Priority</th>
-<th class="tableblock halign-left valign-top">As a &#8230;&#8203;</th>
-<th class="tableblock halign-left valign-top">I want to &#8230;&#8203;</th>
-<th class="tableblock halign-left valign-top">So that I can&#8230;&#8203;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall resident</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">want to keep track of my expenses accurately</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">calculate the exact amount I should collect from my friends after each time we split a meal</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">healthy hall resident who is trying to lose weight</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">check how many calories I took today</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of my calories intake and weight</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Temasek hall resident who frequents supper food spots</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">split the bill easily with fellow mates</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ensure that the amount is correctly accounted for</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall resident who wants to stay healthy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of my calories</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">more accurately watch my weight</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall leader</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of my committee events</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know if things are going according to schedule</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall exchange student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">have a translation for Singaporean lingo</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">better understand the language my friends speak in hall</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall sports captain</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the various attendances for my training</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know who usually attends training and who does not</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall leader</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of my committee events</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ensure things run smoothly</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall resident who actively participates in hall events</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">check the upcoming events</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep myself up-to-date</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall leader</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of when my meetings are</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ensure I do not keep my teammates or committee member waiting</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">forgetful Temasek Hall resident</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of the myriad of hall activities</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">attend all the fun and exciting events at hall</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">organised resident of Teamsek Hall</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">remind myself for the tasks i have</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">meet all deadlines</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">main person in-charge of fixing faults in Temasek Hall</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of all different faults that have been
-reported</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">fix is as soon as possible to reduce the disruptions to my fellow hall mates</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">international student who is new to Singapore&#8217;s culture</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of upcoming
-hall events</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">join all the fun activities in hall</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">hardworking Temasek Hall resident who wants to manage his schedule</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">to check
-module prerequisites</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">plan my modules</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">attentive resident who notices that the gym has many users</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">log the entry of users</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">track the entry and exit timings of all gym users</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">food-loving Temasek Hall resident who frequently uses Grab Food</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of my expenses</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">calculate my savings every month</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall resident who has many hall friends</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep track of my friends&#8217;s particulars, especially their room number</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find them easily in case I need help</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall resident who has to pay hall fees</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">record down my school payments</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">inform my parents about the necessary expenditures in school</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">swimming captain of Temasek Hall</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">plan my training sets</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">better prepare my team for the upcoming competition</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Temasek hall exchange student</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">have a translation for Singaporean lingo</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">better understand the language my friends speak in hall</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall Block Head who wants to remember all my block residents</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keep a list of all residents and their particulars</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">contact their next of kin in the case of an
-emergency</p></td>
-</tr>
-</tbody>
-</table>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 18:42:17 UTC</div></div></div></body></html>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 18:43:07 UTC</div></div></div></body></html>
