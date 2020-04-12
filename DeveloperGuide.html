@@ -128,7 +128,7 @@ Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how 
 </table>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has two classes called <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/Main.java"><code>Main</code></a> and <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+<p><a href="https://github.com/AY1920S2-CS2103T-W13-1/main/blob/master/src/main/java/seedu/eylah/Eylah.java"><code>EYLAH</code></a> contains the main class for the APP. It is responsible for,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -184,7 +184,7 @@ The following class plays an important role at the architecture level:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>For example, the <code>Logic</code> component (see the class diagram given below) defines it&#8217;s API in the <code>Logic.java</code> interface and exposes its functionality using the <code>LogicManager.java</code> class.</p>
+<p>For example, the <code>Logic</code> component (see the class diagram given below) defines it&#8217;s API in the <code>Logic.java</code> interface and <code>MODELogic.java</code> interface and exposes its functionality using the <code>MODELogicManager.java</code> class.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -194,11 +194,13 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
 <div class="paragraph">
-<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>delete 1</code>.</p>
+<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>deleteitem 1</code>.</p>
 </div>
-<div class="paragraph">
-<div class="title">Component interactions for <code>delete 1</code> command</div>
-<p>image::ArchitectureSequenceDiagram.png[]<br></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
+</div>
+<div class="title">Figure 3. Component interactions for <code>deleteitem 1</code> command</div>
 </div>
 <div class="sect3">
 <h4 id="eylah-comprehensive-class-diagram-for-both-diet-tracker-and-expense-spliter"><a class="link" href="#eylah-comprehensive-class-diagram-for-both-diet-tracker-and-expense-spliter">3.1.1. EYLAH comprehensive class diagram for both Diet Tracker and Expense Spliter</a></h4>
@@ -218,16 +220,14 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram">
 </div>
-<div class="title">Figure 3. Structure of the UI Component</div>
+<div class="title">Figure 4. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/blob/master/src/main/java/seedu/eylah/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
-</div>
-<div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>Th <code>UI Component</code> mainly deals with interactions with the user. It also plays a part in the initialisation of the program
+printing the logo, welcome message and main menu page to user. This component only has 2 classes, <code>Ui.java</code> and <code>UiManager.java</code>.</p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -235,10 +235,10 @@ The following class plays an important role at the architecture level:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Executes user commands using the <code>Logic</code> component.</p>
+<p>Reading the user input.</p>
 </li>
 <li>
-<p>Listens for changes to <code>Model</code> data so that the UI can be updated with the modified data.</p>
+<p>Displaying the result messages to the user.</p>
 </li>
 </ul>
 </div>
@@ -249,39 +249,18 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
 </div>
-<div class="title">Figure 4. Structure of the Logic Component</div>
+<div class="title">Figure 5. Structure of the Logic Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><code>Logic</code> uses the <code>AddressBookParser</code> class to parse the user command.</p>
-</li>
-<li>
-<p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
-</li>
-<li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a person).</p>
-</li>
-<li>
-<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
-</li>
-<li>
-<p>In addition, the <code>CommandResult</code> object can also instruct the <code>Ui</code> to perform certain actions, such as displaying help to the user.</p>
-</li>
-</ol>
+<a href="https://github.com/AY1920S2-CS2103T-W13-1/main/blob/master/src/main/java/seedu/eylah/commons/logic/Logic.java"><code>Logic.java</code></a>
+<a href="https://github.com/AY1920S2-CS2103T-W13-1/main/blob/master/src/main/java/seedu/eylah/diettracker/logic/DietLogic.java"><code>DietLogic.java</code></a>
+<a href="https://github.com/AY1920S2-CS2103T-W13-1/main/blob/master/src/main/java/seedu/eylah/expensesplitter/logic/SplitterLogic.java"><code>SplitterLogic.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>execute("delete 1")</code> API call.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DeleteSequenceDiagram.png" alt="DeleteSequenceDiagram">
-</div>
-<div class="title">Figure 5. Interactions Inside the Logic Component for the <code>delete 1</code> Command</div>
+<p>The <code>Logic Component</code> deals with the logic flows of the App. In each feature mode, the components to deal with the logic
+flow are different. In <code>Diet Tracker</code> mode, <code>DietLogic.java</code> and <code>DietLogicManager.java</code> are used to handle the logic operation of the APP.
+In <code>Expense Splitter</code> mode, <code>SplitterLogic.java</code> and <code>SplitterLogicManager.java</code> are used to handle the logic operation.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -290,7 +269,57 @@ The following class plays an important role at the architecture level:</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The lifeline for <code>DeleteCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+<div class="ulist">
+<ul>
+<li>
+<p><code>MODE</code> used in the given subsection refers to <code>Diet</code> when in <code>Diet Tracker</code> mode, <code>Splitter</code> when in
+<code>Expense Splitter</code> mode. For example, <code>MODELogic</code> given below refers to <code>SplitterLogic</code> when in <code>Expense Splitter</code> mode.</p>
+</li>
+<li>
+<p><code>MODEParser</code> is an exception, when in <code>Expense Splitter</code> mode refers to <code>ExpenseSplitterParser</code> while in <code>Diet Tracker</code> mode refers to <code>FoodBookParser</code>.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>MODELogic</code> uses the <code>MODEParser</code> class to parse the user command.</p>
+</li>
+<li>
+<p>This results in a <code>Command</code> object which is executed by the <code>MODELogicManager</code>.</p>
+</li>
+<li>
+<p>The command execution can affect the <code>Model</code> (e.g. deleting a entry).</p>
+</li>
+<li>
+<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
+</li>
+<li>
+<p>In addition, the <code>CommandResult</code> object can also instruct the <code>Eylah.java</code> to perform certain actions, such as go back to main menu or exit the App.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Given below is the Sequence Diagram for interactions within the <code>Logic Component</code> for the <code>execute("deleteitem 1")</code> API call.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ExpenseSplitterDeleteItemCommandSequenceDiagram.png" alt="ExpenseSplitterDeleteItemCommandSequenceDiagram">
+</div>
+<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>deleteitem 1</code> Command in Expense Splitter mode</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>DeleteItemCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
 </td>
 </tr>
 </table>
@@ -302,29 +331,15 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram">
 </div>
-<div class="title">Figure 6. Structure of the Model Component</div>
+<div class="title">Figure 7. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/splitterModel/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/blob/master/src/main/java/seedu/eylah/commons/model/Model.java"><code>Model.java</code></a>
+<a href="https://github.com/AY1920S2-CS2103T-W13-1/main/blob/master/src/main/java/seedu/eylah/expensesplitter/model/SplitterModel.java"><code>SplitterModel.java</code></a>
+<a href="https://github.com/AY1920S2-CS2103T-W13-1/main/blob/master/src/main/java/seedu/eylah/diettracker/model/DietModel.java"><code>DietModel.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The <code>Model</code>,</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
-</li>
-<li>
-<p>stores the Address Book data.</p>
-</li>
-<li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Person&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
-</li>
-<li>
-<p>does not depend on any of the other three components.</p>
-</li>
-</ul>
+<p>The <code>Model Component</code> deals with the modeling of the object.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -333,12 +348,32 @@ The lifeline for <code>DeleteCommandParser</code> should end at the destroy mark
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-As a more OOP splitterModel, we can store a <code>Tag</code> list in <code>Address Book</code>, which <code>person</code> can reference. This would allow <code>Address Book</code> to only require one <code>Tag</code> object per unique <code>Tag</code>, instead of each <code>person</code> needing their own <code>Tag</code> object. An example of how such a splitterModel may look like is given below.<br>
-<br>
-<span class="image"><img src="images/BetterModelClassDiagram.png" alt="BetterModelClassDiagram"></span>
+<div class="paragraph">
+<p><code>MODE</code> used in the given subsection refers to <code>Diet</code> when in <code>Diet Tracker</code> mode, <code>Splitter</code> when in
+<code>Expense Splitter</code> mode. For example, <code>MODEModel</code> given below refers to <code>SplitterModel</code> when in <code>Expense Splitter</code> mode.</p>
+</div>
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>The <code>MODEModel</code>,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
+</li>
+<li>
+<p>stores the Person Amount Book and Receipt Book data in <code>Expense Splitter</code> mode.</p>
+</li>
+<li>
+<p>stores the Food Book and Myself data in <code>Diet Tracker</code> mode.</p>
+</li>
+<li>
+<p>does not depend on any of the other three components.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -347,13 +382,33 @@ As a more OOP splitterModel, we can store a <code>Tag</code> list in <code>Addre
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
 </div>
-<div class="title">Figure 7. Structure of the Storage Component</div>
+<div class="title">Figure 8. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/src/main/java/seedu/address/splitterStorage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/blob/master/src/main/java/seedu/eylah/commons/storage/Storage.java"><code>Storage.java</code></a>
+<a href="https://github.com/AY1920S2-CS2103T-W13-1/main/blob/master/src/main/java/seedu/eylah/expensesplitter/storage/SplitterStorage.java"><code>SplitterStorage.java</code></a>
+<a href="https://github.com/AY1920S2-CS2103T-W13-1/main/blob/master/src/main/java/seedu/eylah/diettracker/storage/DietStorage.java"><code>DietStorage.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The <code>Storage</code> component,</p>
+<p>The <code>Storage Component</code> deals with the operations to write and read from the local files.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><code>MODE</code> used in the given subsection refers to <code>Diet</code> when in <code>Diet Tracker</code> mode, <code>Splitter</code> when in
+<code>Expense Splitter</code> mode. For example, <code>MODEStorage</code> given below refers to <code>SplitterStorage</code> when in <code>Expense Splitter</code> mode.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The <code>MODEStorage</code> component,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -361,7 +416,10 @@ As a more OOP splitterModel, we can store a <code>Tag</code> list in <code>Addre
 <p>can save <code>UserPref</code> objects in json format and read it back.</p>
 </li>
 <li>
-<p>can save the Address Book data in json format and read it back.</p>
+<p>can save the Person Amount Book and Receipt Book data in json format and read it back in <code>Expense Splitter</code> mode.</p>
+</li>
+<li>
+<p>can save the Food Book and MySelf data in json format and read it back in <code>Diet Tracker</code> mode.</p>
 </li>
 </ul>
 </div>
@@ -369,7 +427,7 @@ As a more OOP splitterModel, we can store a <code>Tag</code> list in <code>Addre
 <div class="sect2">
 <h3 id="Design-Commons"><a class="link" href="#Design-Commons">3.6. Common classes</a></h3>
 <div class="paragraph">
-<p>Classes used by multiple components are in the <code>seedu.addressbook.commons</code> package.</p>
+<p>Classes used by multiple components are in the <code>seedu.eylah.commons</code> package.</p>
 </div>
 </div>
 </div>
@@ -483,7 +541,7 @@ based on their user input.</p>
 <div class="content">
 <img src="images/DietTrackerAddCommandActivityDiagram.png" alt="DietTrackerAddCommandActivityDiagram">
 </div>
-<div class="title">Figure 8. Add Command Activity Diagram</div>
+<div class="title">Figure 9. Add Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Add Command</strong></p>
@@ -522,7 +580,7 @@ Amount into JSON format after serializing it using <code>JsonAdaptedFood</code>.
 <div class="content">
 <img src="images/DietTrackerAddCommandSequenceDiagram.png" alt="DietTrackerAddCommandSequenceDiagram">
 </div>
-<div class="title">Figure 9. Add Item Command Sequence Diagram</div>
+<div class="title">Figure 10. Add Item Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -573,7 +631,7 @@ Amount into JSON format after serializing it using <code>JsonAdaptedFood</code>.
 <div class="content">
 <img src="images/DietTrackerDeleteCommandActivityDiagram.png" alt="DietTrackerDeleteCommandActivityDiagram">
 </div>
-<div class="title">Figure 10. Delete Command Activity Diagram</div>
+<div class="title">Figure 11. Delete Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
@@ -616,7 +674,7 @@ into JSON format after serializing it using <code>JsonAdaptedFood</code>.</p>
 <div class="content">
 <img src="images/DietTrackerDeleteCommandSequenceDiagram.png" alt="DietTrackerDeleteCommandSequenceDiagram">
 </div>
-<div class="title">Figure 11. Delete Item Command Sequence Diagram</div>
+<div class="title">Figure 12. Delete Item Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -661,7 +719,7 @@ or a list of foods with the specified tag.</p>
 <div class="content">
 <img src="images/DietTrackerListCommandActivityDiagram.png" alt="DietTrackerListCommandActivityDiagram">
 </div>
-<div class="title">Figure 12. List Command Activity Diagram</div>
+<div class="title">Figure 13. List Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of List Command</strong></p>
@@ -708,19 +766,19 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerListCommandAllSequenceDiagram.png" alt="DietTrackerListCommandAllSequenceDiagram">
 </div>
-<div class="title">Figure 13. List Sequence Diagram for <code>-a</code> or No-Flag Input</div>
+<div class="title">Figure 14. List Sequence Diagram for <code>-a</code> or No-Flag Input</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DietTrackerListCommandDaySequenceDiagram.png" alt="DietTrackerListCommandDaySequenceDiagram">
 </div>
-<div class="title">Figure 14. List Sequence Diagram for <code>-d</code></div>
+<div class="title">Figure 15. List Sequence Diagram for <code>-d</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DietTrackerListCommandTagSequenceDiagram.png" alt="DietTrackerListCommandTagSequenceDiagram">
 </div>
-<div class="title">Figure 15. List Sequence Diagram for <code>-t</code></div>
+<div class="title">Figure 16. List Sequence Diagram for <code>-t</code></div>
 </div>
 </div>
 <div class="sect3">
@@ -774,7 +832,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerEditCommandActivityDiagram.png" alt="DietTrackerEditCommandActivityDiagram">
 </div>
-<div class="title">Figure 16. Edit Command Activity Diagram</div>
+<div class="title">Figure 17. Edit Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
@@ -817,7 +875,7 @@ into JSON format after serializing it using <code>JsonAdaptedFood</code>.</p>
 <div class="content">
 <img src="images/DietTrackerEditCommandSequenceDiagram.png" alt="DietTrackerEditCommandSequenceDiagram">
 </div>
-<div class="title">Figure 17. Edit Command Sequence Diagram</div>
+<div class="title">Figure 18. Edit Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -871,7 +929,7 @@ into JSON format after serializing it using <code>JsonAdaptedFood</code>.</p>
 <div class="content">
 <img src="images/DietTrackerBmiCommandActivityDiagram.png" alt="DietTrackerBmiCommandActivityDiagram">
 </div>
-<div class="title">Figure 18. Bmi Command Activity Diagram</div>
+<div class="title">Figure 19. Bmi Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Add Item Command</strong></p>
@@ -924,13 +982,13 @@ Self&#8217;s Height and Weight attributes.</p>
 <div class="content">
 <img src="images/DietTrackerBmiCommandNILSequenceDiagram.png" alt="DietTrackerBmiCommandNILSequenceDiagram">
 </div>
-<div class="title">Figure 19. Sequence Diagram Bmi Command Sequence Diagram without Input Arguments</div>
+<div class="title">Figure 20. Sequence Diagram Bmi Command Sequence Diagram without Input Arguments</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DietTrackerBmiCommandNILSequenceDiagram2.png" alt="DietTrackerBmiCommandNILSequenceDiagram2">
 </div>
-<div class="title">Figure 20. Sequence Diagram: Retrieval of stored Height and Weight from Model</div>
+<div class="title">Figure 21. Sequence Diagram: Retrieval of stored Height and Weight from Model</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -970,13 +1028,13 @@ Self&#8217;s Height and Weight attributes.</p>
 <div class="content">
 <img src="images/DietTrackerBmiCommandSequenceDiagram.png" alt="DietTrackerBmiCommandSequenceDiagram">
 </div>
-<div class="title">Figure 21. Bmi Command Sequence Diagram with Input Arguments</div>
+<div class="title">Figure 22. Bmi Command Sequence Diagram with Input Arguments</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DietTrackerBmiCommandSequenceDiagram2.png" alt="DietTrackerBmiCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 22. Creation of Height and Weight Objects for usage in Bmi Command</div>
+<div class="title">Figure 23. Creation of Height and Weight Objects for usage in Bmi Command</div>
 </div>
 <div class="paragraph">
 <p><strong>Design Considerations</strong></p>
@@ -1096,7 +1154,7 @@ Self&#8217;s Height and Weight attributes.</p>
 <div class="content">
 <img src="images/DietTrackerHeightCommandActivityDiagram.png" alt="DietTrackerHeightCommandActivityDiagram">
 </div>
-<div class="title">Figure 23. Height Command Activity Diagram</div>
+<div class="title">Figure 24. Height Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Height Command</strong></p>
@@ -1130,7 +1188,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerHeightCommandSequenceDiagram.png" alt="DietTrackerHeightCommandSequenceDiagram">
 </div>
-<div class="title">Figure 24. Height Command Sequence Diagram</div>
+<div class="title">Figure 25. Height Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1181,7 +1239,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerWeightCommandActivityDiagram.png" alt="DietTrackerWeightCommandActivityDiagram">
 </div>
-<div class="title">Figure 25. Weight Command Activity Diagram</div>
+<div class="title">Figure 26. Weight Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of weight Command</strong></p>
@@ -1215,7 +1273,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerWeightCommandSequenceDiagram.png" alt="DietTrackerWeightCommandSequenceDiagram">
 </div>
-<div class="title">Figure 26. Weight Command Sequence Diagram</div>
+<div class="title">Figure 27. Weight Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1259,7 +1317,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerModeCommandActivityDiagram.png" alt="DietTrackerModeCommandActivityDiagram">
 </div>
-<div class="title">Figure 27. Mode Command Activity Diagram</div>
+<div class="title">Figure 28. Mode Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Mode Command</strong></p>
@@ -1293,7 +1351,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerModeCommandSequenceDiagram.png" alt="DietTrackerModeCommandSequenceDiagram">
 </div>
-<div class="title">Figure 28. Mode Command Sequence Diagram</div>
+<div class="title">Figure 29. Mode Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1323,7 +1381,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerMetricsCommandActivityDiagram.png" alt="DietTrackerMetricsCommandActivityDiagram">
 </div>
-<div class="title">Figure 29. Metrics Command Activity Diagram</div>
+<div class="title">Figure 30. Metrics Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Metrics Command</strong></p>
@@ -1355,7 +1413,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerMetricsCommandSequenceDiagram.png" alt="DietTrackerMetricsCommandSequenceDiagram">
 </div>
-<div class="title">Figure 30. Metrics Command Sequence Diagram</div>
+<div class="title">Figure 31. Metrics Command Sequence Diagram</div>
 </div>
 </div>
 </div>
@@ -1668,7 +1726,7 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 <div class="content">
 <img src="images/ExpenseSplitterListReceiptCommandActivityDiagram.png" alt="ExpenseSplitterListReceiptCommandActivityDiagram">
 </div>
-<div class="title">Figure 31. List Receipt Activity Diagram</div>
+<div class="title">Figure 32. List Receipt Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of List Receipt Command</strong></p>
@@ -1701,7 +1759,7 @@ finish building the string and will return to SplitterModelManager where it will
 <div class="content">
 <img src="images/ExpenseSplitterListReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterListReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 32. List Receipt Command Sequence Diagram</div>
+<div class="title">Figure 33. List Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1752,7 +1810,7 @@ finish building the string and will return to SplitterModelManager where it will
 <div class="content">
 <img src="images/ExpenseSplitterListAmountCommandActivityDiagram.png" alt="ExpenseSplitterListAmountCommandActivityDiagram">
 </div>
-<div class="title">Figure 33. List Amount Activity Diagram<br></div>
+<div class="title">Figure 34. List Amount Activity Diagram<br></div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of List Amount Command</strong></p>
@@ -1784,7 +1842,7 @@ SplitterModelManager where it will be printed out.</p>
 <div class="content">
 <img src="images/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
 </div>
-<div class="title">Figure 34. List Amount Command Sequence Diagram</div>
+<div class="title">Figure 35. List Amount Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1895,7 +1953,7 @@ empty is equivalent to the Person paying the user the full amount he/she owes th
 <div class="content">
 <img src="images/ExpenseSplitterPaidCommandActivityDiagram.png" alt="ExpenseSplitterPaidCommandActivityDiagram">
 </div>
-<div class="title">Figure 35. Paid Command Activity Diagram</div>
+<div class="title">Figure 36. Paid Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Paid Command</strong></p>
@@ -1933,13 +1991,13 @@ String amountPaid will be converted into an Amount by instantiating a new instan
 <div class="content">
 <img src="images/ExpenseSplitterPaidCommandSequenceDiagram.png" alt="ExpenseSplitterPaidCommandSequenceDiagram">
 </div>
-<div class="title">Figure 36. Paid Command Sequence Diagram</div>
+<div class="title">Figure 37. Paid Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ExpenseSplitterPaidCommandSequenceDiagram2.png" alt="ExpenseSplitterPaidCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 37. Execution of Paid Command Sequence Diagram</div>
+<div class="title">Figure 38. Execution of Paid Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -3429,4 +3487,4 @@ EYLAH, will ease the lives of residents at Temasek Hall.
 Overall, we believe that EYLAH is a good testament to our hard work and time spent on perfecting it.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 13:42:10 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 13:45:59 UTC</div></div></div></body></html>
