@@ -729,20 +729,31 @@ The feature comprises of six commands namely.</p>
 <p>Below are some diagrams to explain how our team implemented this portion.</p>
 </div>
 <div class="paragraph">
-<p><strong>Activity Diagram</strong> of Expense Splitter:<br></p>
+<p><strong>Activity Diagram of Expense Splitter:</strong><br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterActivityDiagramV2.png" alt="ExpenseSplitterActivityDiagramV2">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure : Expense Splitter Activity Diagram</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterActivityDiagram.png" alt="ExpenseSplitterActivityDiagram">
 </div>
 </div>
+<div class="paragraph">
+<p>Figure : Add Item Activity Diagram</p>
+</div>
 <div class="sect3">
-<h4 id="Add-Item-Command"><a class="link" href="#Add-Item-Command">AddItem Command</a></h4>
+<h4 id="Add-Item-Command"><a class="link" href="#Add-Item-Command">Add Item Command</a></h4>
 <div class="paragraph">
 <p>In this section, we will learn more about how the <code>additem</code> command is implemented.</p>
 </div>
 <div class="paragraph">
-<p><strong>What is the AddItem Command</strong></p>
+<p><strong>What is the Add Item Command</strong></p>
 </div>
 <div class="paragraph">
 <p>The <code>additem</code> command allows the user to add an Item into the Receipt, along with the ItemPrice of the Item and the Persons
@@ -770,10 +781,10 @@ involved in splitting the cost of that Item.</p>
 <p><code>-i ITEMNAME</code> and <code>-p ITEMPRICE</code> are <strong>compulsory</strong> fields.</p>
 </li>
 <li>
-<p>There can be multiple <code>-n NAME</code>, however, a minimum of 1 is required.</p>
+<p>There can be multiple <code>-n NAME</code>, however, a <strong>minimum of 1</strong> is required.</p>
 </li>
 <li>
-<p><code>ITEMPRICE</code> can be up to 2 decimal places, i.e 7.99. There is no ened to add the dollar sign ($).</p>
+<p><code>ITEMPRICE</code> can be up to 2 decimal places, i.e 7.99. There is <strong>no need</strong> to add the dollar sign ($).</p>
 </li>
 </ul>
 </div>
@@ -790,10 +801,10 @@ involved in splitting the cost of that Item.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Figure : AddItem Command Activity Diagram</p>
+<p>Figure : Add Item Command Activity Diagram</p>
 </div>
 <div class="paragraph">
-<p><strong>Implementation of AddItem Command</strong></p>
+<p><strong>Implementation of Add Item Command</strong></p>
 </div>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations AddItemCommand performs.<br></p>
@@ -801,14 +812,15 @@ involved in splitting the cost of that Item.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>AddItemCommand#execute(SplitterModel splitterModel)</code> method is executed and it checks if the specified <code>ITEM</code>
-and <code>PERSONS</code> to be added are valid. If valid, a new <code>Entry</code> would be created with the specified <code>ITEM</code> and <code>PERSONS</code>.</p>
+<p>The <code>AddItemCommand#execute(SplitterModel splitterModel)</code> method is executed and it checks if the specified Item
+and list of Persons to be added are valid. If valid, a new Entry would be created with the specified Item and list of
+Persons.</p>
 </li>
 <li>
-<p>The <code>SplitterModel#addEntry(Entry entry)</code> method would then be called to add the <code>Entry</code> into the Receipt.</p>
+<p>The <code>SplitterModel#addEntry(Entry entry)</code> method would then be called to add the Entry into the Receipt.</p>
 </li>
 <li>
-<p>For each person in <code>PERSONS</code>, the person is first checked through the <code>PersonAmountBook#persons</code> using the
+<p>For each Person in the list of Persons, the Person is first checked through the <code>PersonAmountBook#persons</code> using the
 <code>SplitterModel#hasPerson(Person person)</code> method to check if the person already exists.</p>
 </li>
 <li>
@@ -816,14 +828,14 @@ and <code>PERSONS</code> to be added are valid. If valid, a new <code>Entry</cod
 person, together with the amount, into the <code>PersonAmountBook#persons</code>.</p>
 </li>
 <li>
-<p>If the person exists, the person would be retrieved from the <code>PersonAmountBook#persons</code> using the
+<p>If the Person exists, thePerson would be retrieved from the <code>PersonAmountBook#persons</code> using the
 <code>SplitterModel#getPerson(Person person)</code> method, and then the amount would be added to that person using the
 <code>SplitterModel#addAmount(Person person, Amount amount)</code> method.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p><strong>Sequence diagram for AddItem Command</strong><br></p>
+<p><strong>Sequence diagram for Add Item Command</strong><br></p>
 </div>
 <div class="paragraph">
 <p>The following sequence diagram summarizes what happens during the execution of <code>additem</code> command.</p>
@@ -834,7 +846,7 @@ person, together with the amount, into the <code>PersonAmountBook#persons</code>
 </div>
 </div>
 <div class="paragraph">
-<p>Figure: AddItem Command Sequence Diagram</p>
+<p>Figure: Add Item Command Sequence Diagram</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -842,16 +854,16 @@ person, together with the amount, into the <code>PersonAmountBook#persons</code>
 </div>
 </div>
 <div class="paragraph">
-<p>Figure: Execution of AddItem Command</p>
+<p>Figure: Execution of Add Item Command</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Delete-Item-Command"><a class="link" href="#Delete-Item-Command">DeleteItem Command</a></h4>
+<h4 id="Delete-Item-Command"><a class="link" href="#Delete-Item-Command">Delete Item Command</a></h4>
 <div class="paragraph">
 <p>In this section, we will learn more about how the <code>deleteitem</code> command is implemented.</p>
 </div>
 <div class="paragraph">
-<p><strong>What is the DeleteItem Command</strong><br></p>
+<p><strong>What is the Delete Item Command</strong><br></p>
 </div>
 <div class="paragraph">
 <p>The <code>deleteitem</code> command allows users to remove the Item from the Receipt via the Index.</p>
@@ -895,7 +907,7 @@ person, together with the amount, into the <code>PersonAmountBook#persons</code>
 </div>
 </div>
 <div class="paragraph">
-<p>Figure: DeleteItem Command Activity Diagram</p>
+<p>Figure: Delete Item Command Activity Diagram</p>
 </div>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
@@ -906,22 +918,25 @@ person, together with the amount, into the <code>PersonAmountBook#persons</code>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>DeleteItemCommand#execute(SplitterModel splitterModel)</code> method is executed and it validates that the specified <code>INDEX</code> to delete
-is within range. If valid, the item to be deleted will be retrieved from Receipt using its <code>Index</code>.</p>
+<p>The <code>DeleteItemCommand#execute(SplitterModel splitterModel)</code> method is executed and it validates that the specified
+Index to delete is within range. If valid, the Entry to be deleted will be retrieved from Receipt using its Index.</p>
 </li>
 <li>
 <p>The method <code>SplitterModel#getEntry(Index index)</code> is called to retrieve the current Entry, which subsequently retrieves the
 current Item using the <code>Entry#getItem()</code> method and the amountPerPerson associated with it via the
-<code>Item#getAmountPerPerson()</code> method. The list of persons are also retrieved via the <code>Entry#getPersonsList()</code> method.</p>
+<code>Item#getAmountPerPerson()</code> method. The list of Persons are also retrieved via the <code>Entry#getPersonsList()</code> method.</p>
 </li>
 <li>
 <p>For each Person in the list of Persons, the amount is subtracted from the current amount owed by the Person.</p>
 </li>
 <li>
-<p>The method <code>SplitterModel#deleteEntry(int index) will then be called to remove the Item from the Receipt.
-`Receipt#deleteEntry(int index)</code> is invoked which makes a call to its internal list to remove the specified Item.</p>
+<p>The method <code>SplitterModel#deleteEntry(int index)</code> will then be called to remove the Item from the Receipt.
+<code>Receipt#deleteEntry(int index)</code> is invoked which makes a call to its internal list to remove the specified Item.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p><strong>Sequence Diagram for Delete Item Command</strong></p>
 </div>
 <div class="paragraph">
 <p>The following sequence diagram summarizes what happens during the execution of <code>deleteitem</code> command.</p>
@@ -932,7 +947,7 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 </div>
 </div>
 <div class="paragraph">
-<p>Figure: DeleteItem Command Sequence Diagram</p>
+<p>Figure: Delete Item Command Sequence Diagram</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -940,13 +955,64 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 </div>
 </div>
 <div class="paragraph">
-<p>Figure: Execution of DeleteItem Command</p>
+<p>Figure: Execution of Delete Item Command</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="List-Receipt-Command"><a class="link" href="#List-Receipt-Command">List Receipt Command</a></h4>
 <div class="paragraph">
-<p><strong>Implementation</strong></p>
+<p>In this section, we will learn more about how the <code>listreceipt</code> command is implemented.</p>
+</div>
+<div class="paragraph">
+<p><strong>What is the List Receipt Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>listreceipt</code> command allows user to find out the current entries in the receipt.</p>
+</div>
+<div class="paragraph">
+<p>The <code>listreceipt</code> command was implemented as a <code>ListReceiptCommand</code> in the <code>expenseSplitterLogic</code> package.</p>
+</div>
+<div class="paragraph">
+<p>The <code>listreceipt</code> has the following input format:</p>
+</div>
+<div class="paragraph">
+<p><code>listreceipt</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Each entry in the receipt has the item’s name, price and person(s) who is splitting that item with you
+thus you do not have to remember who you split this item with!</p>
+</li>
+<li>
+<p>When you enter <code>clearrreceipt</code> it deletes the old receipt’s data. Use it with caution!</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates what happens when a user executes <code>listreceipt</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterListReceiptCommandActivityDiagram.png" alt="ExpenseSplitterListReceiptCommandActivityDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure : List Receipt Command Activity Diagram</p>
+</div>
+<div class="paragraph">
+<p><strong>Implementation of List Receipt Command</strong></p>
 </div>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>ListReceiptCommand</code> performs.<br></p>
@@ -954,29 +1020,83 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>ListReceiptCommand#execute(Model splitterModel)</code> method is executed.</p>
+<p>The <code>ListReceiptCommand#execute(SplitterModel splitterModel)</code> method is executed.</p>
 </li>
 <li>
-<p>The method <code>Model#listReceipt()</code> will then be called to return the list of Item(s) currently in that Receipt.</p>
+<p>The method <code>splitterModel#listReceipt()</code> will then be called to return the list of entries currently in that Receipt.</p>
 </li>
 <li>
-<p>The method <code>receipt.toString()</code> will use StringBuilder to print the Items(s) currently in Receipt by calling <code>entry.toString()</code>.</p>
+<p>The method <code>receipt.toString()</code> will use StringBuilder to print the Items(s) currently in
+Receipt by calling <code>entry.toString()</code>.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>The following is a sample sequence diagram of the ListReceiptCommand.</p>
+<p><strong>Sequence Diagram for List Receipt Command</strong></p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
+<img src="../images/expense-splitter/ExpenseSplitterListReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterListReceiptCommandSequenceDiagram">
 </div>
+</div>
+<div class="paragraph">
+<p>Figure : List Receipt Sequence Diagram</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="List-Amount-Command"><a class="link" href="#List-Amount-Command">List Amount Command</a></h4>
 <div class="paragraph">
-<p><strong>Implementation</strong></p>
+<p>In this section, we will learn more about how the <code>listamount</code> command is implemented.</p>
+</div>
+<div class="paragraph">
+<p><strong>What is the List Amount Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>listamount</code> command allows users to find out how much each Person owes them.<br></p>
+</div>
+<div class="paragraph">
+<p>The <code>listamount</code> command was implemented as a <code>ListAmountCommand</code> in the <code>expenseSplitterLogic</code> package.</p>
+</div>
+<div class="paragraph">
+<p>The <code>listamount</code> command has the following input format:</p>
+</div>
+<div class="paragraph">
+<p><code>listamount</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The Person and amount owed will be automatically saved after each command.</p>
+</li>
+<li>
+<p>A person is deleted after they have completely paid the amount they owe you.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates what happens when a user executes <code>listamount</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterListAmountCommandActivityDiagram.png" alt="ExpenseSplitterListAmountCommandActivityDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure : List Amount Command Activity Diagram</p>
+</div>
+<div class="paragraph">
+<p><strong>Implementation of List Amount Command</strong></p>
 </div>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>ListAmountCommand</code> performs.<br></p>
@@ -984,10 +1104,10 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>ListAmountCommand#execute(Model splitterModel)</code> method is executed.</p>
+<p>The <code>ListAmountCommand#execute(SplitterModel splitterModel)</code> method is executed.</p>
 </li>
 <li>
-<p>The method <code>Model#listAmount()</code> will then be called to return the list of person with amount.</p>
+<p>The method <code>splitterModel#listAmount()</code> will then be called to return the list of Person(s) with their amount.</p>
 </li>
 <li>
 <p><code>PersonAmountBook#toString()</code> will convert list of person in the list to the expected format.</p>
@@ -995,12 +1115,18 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 </ol>
 </div>
 <div class="paragraph">
-<p>The following is a sample sequence diagram of the ListAmountCommand.</p>
+<p><strong>Sequence Diagram for List Amount Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens during the execution of <code>listamount</code> command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
 </div>
+</div>
+<div class="paragraph">
+<p>Figure : List Amount Sequence Diagram</p>
 </div>
 </div>
 <div class="sect3">
@@ -1071,7 +1197,7 @@ empty is equivalent to the Person paying you the full amount he/she owes the use
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>PaidCommand#execute(Model splitterModel)</code> method is executed.</p>
+<p>The <code>PaidCommand#execute(SplitterModel splitterModel)</code> method is executed.</p>
 </li>
 <li>
 <p>The <code>splitterModel#paidPerson(Person person, String amountPaid)</code> will be called.
@@ -1109,6 +1235,97 @@ String amountPaid will be converted into an Amount by instantiating a new instan
 </div>
 <div class="paragraph">
 <p>Figure : Execution of Paid Command</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Clear-Receipt-Command"><a class="link" href="#Clear-Receipt-Command">Clear Receipt Command</a></h4>
+<div class="paragraph">
+<p>In this section, we will learn more about how the <code>clearreceipt</code> command is implemented.</p>
+</div>
+<div class="paragraph">
+<p><strong>What is the Clear Receipt Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>clearreceipt</code> command essentially deletes all the Entries in the Receipt and allows the user to input new Entries
+into a clean receipt.</p>
+</div>
+<div class="paragraph">
+<p>The <code>clearreceipt</code> command was implemented as <code>ClearReceiptCommand</code> in the <code>expenseSplitterLogic</code> package.</p>
+</div>
+<div class="paragraph">
+<p>The <code>clearreceipt</code> command has the following input format:</p>
+</div>
+<div class="paragraph">
+<p><code>clearreceipt</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Use this command only when you are very sure that you want to delete all entries and start a clean receipt.</p>
+</li>
+<li>
+<p>When you use the <code>clearreceipt</code> command, you are concurrently marking the new receipt as undone. As such, you would
+only be able to use the <code>additem</code> and <code>deleteitem</code> commands.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates what happens when a user executes the <code>clearreceipt</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterClearReceiptCommandActivityDiagram.png" alt="ExpenseSplitterClearReceiptCommandActivityDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure: Clear Receipt Command Activity Diagram</p>
+</div>
+<div class="paragraph">
+<p><strong>Implementation of Clear Receipt Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations ClearReceiptCommand performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>ClearReceiptCommand#execute(SplitterModel splitterModel)</code> method is executed.</p>
+</li>
+<li>
+<p>The <code>splitterModel#clearReceipt()</code> method will then be called.</p>
+</li>
+<li>
+<p>This will invoke the <code>Receipt#clearReceipt()</code> method which creates a new ArrayList and assigns it to the Receipt.</p>
+</li>
+<li>
+<p>At the same time, the boolean <code>Receipt#isDone</code> is assigned to <code>false</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Sequence Diagram for Clear Receipt Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens during the execution of the <code>clearreceipt</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterClearReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterClearReceiptCommandSequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure: Clear Receipt Command Sequence Diagram</p>
 </div>
 </div>
 <div class="sect3">
@@ -1390,6 +1607,19 @@ module prerequisites</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">swimming captain of Temasek Hall</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">plan my training sets</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">better prepare my team for the upcoming competition</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Temasek hall exchange student</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have a translation for Singaporean lingo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">better understand the language my friends speak in hall</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>*</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall Block Head who wants to remember all my block residents</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keep a list of all residents and their particulars</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">contact their next of kin in the case of an
+emergency</p></td>
 </tr>
 </tbody>
 </table>
@@ -2468,4 +2698,4 @@ will throw an exception? Because in AB3 everything there is assertFalse<br>
 3.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 14:24:14 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 03:54:57 UTC</div></div></div></body></html>

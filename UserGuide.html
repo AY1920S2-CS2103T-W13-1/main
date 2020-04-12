@@ -24,12 +24,13 @@
 <li><a href="#mode">3.2.1. Dieting Mode <code>mode</code></a></li>
 <li><a href="#height">3.2.2. Storing Height <code>height</code></a></li>
 <li><a href="#weight">3.2.3. Storing Weight <code>weight</code></a></li>
-<li><a href="#addfood">3.2.4. Adding food <code>add</code></a></li>
-<li><a href="#listfooditem">3.2.5. Listing items <code>list</code></a></li>
-<li><a href="#deletefooditem">3.2.6. Deleting a Food Item <code>delete</code></a></li>
-<li><a href="#editfooditem">3.2.7. Editing a Food Item <code>edit</code></a></li>
-<li><a href="#calculatebmi">3.2.8. Calculating Body Mass Index (BMI) <code>bmi</code></a></li>
-<li><a href="#diettrackerhelp">3.2.9. Displaying available commands for Diet Tracker <code>help</code></a></li>
+<li><a href="#metrics">3.2.4. Showing your Metrics <code>metrics</code></a></li>
+<li><a href="#calculatebmi">3.2.5. Calculating Body Mass Index (BMI) <code>bmi</code></a></li>
+<li><a href="#addfood">3.2.6. Adding food <code>add</code></a></li>
+<li><a href="#listfooditem">3.2.7. Listing items <code>list</code></a></li>
+<li><a href="#deletefooditem">3.2.8. Deleting a Food Item <code>delete</code></a></li>
+<li><a href="#editfooditem">3.2.9. Editing a Food Item <code>edit</code></a></li>
+<li><a href="#diettrackerhelp">3.2.10. Displaying available commands for Diet Tracker <code>help</code></a></li>
 </ul>
 </li>
 <li><a href="#expense-splitter-code-split-code">3.3. Expense Splitter : <code>split</code></a>
@@ -38,8 +39,8 @@
 <li><a href="#deleteitem">3.3.2. Deleting an item: <code>deleteitem</code></a></li>
 <li><a href="#listreceipt">3.3.3. Listing the current receipt: <code>listreceipt</code></a></li>
 <li><a href="#listamount">3.3.4. Listing amounts owed by each person: <code>listamount</code></a></li>
-<li><a href="#paid">3.3.5. Paying money: <code>paid</code></a></li>
-<li><a href="#donereceipt">3.3.6. Mark receipt as done <code>donereceipt</code></a></li>
+<li><a href="#donereceipt">3.3.5. Mark receipt as done <code>donereceipt</code></a></li>
+<li><a href="#paid">3.3.6. Paying money: <code>paid</code></a></li>
 <li><a href="#clearreceipt">3.3.7. Clears the receipt <code>clearreceipt</code></a></li>
 <li><a href="#expensesplitterhelp">3.3.8. Display the available commands <code>help</code></a></li>
 <li><a href="#back">3.3.9. Exiting split to go back to main menu <code>back</code></a></li>
@@ -138,13 +139,22 @@ consider to prevent unexpected behaviour you are using EYLAH.
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-This block of text with a yellow lightbulb indicate <strong>additional tips</strong> that will help you when using EYLAH.<br>
+This block of text with a yellow light bulb indicates <strong>additional tips</strong> that will help you when using EYLAH.
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>2+.^a - WARNING: This symbol indicates warnings.</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+This symbol indicates warnings.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p><kbd>Enter</kbd> - This symbol indicates the enter button on the keyboard.</p>
@@ -194,10 +204,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><code>1</code> : enters the Diet Tracker component of EYLAH.</p>
 </li>
 <li>
-<p><code>help</code> : shows the list of commands you can execute at each page.</p>
+<p><code>2</code> : enters the Expense Splitter component of EYLAH.</p>
 </li>
 <li>
-<p><code>2</code> : enters the Expense Splitter component of EYLAH.</p>
+<p><code>help</code> : shows the list of commands you can execute at each page.</p>
 </li>
 <li>
 <p><code>exit</code> : exits the app</p>
@@ -242,31 +252,39 @@ to to improve your user experience of EYLAH.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#listreceipt">listreceipt</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#addfood">add</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#metrics">metrics</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#listamount">listamount</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#listfooditem">list</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#paid">paid</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#deletefooditem">delete</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#calculatebmi">bmi</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#donereceipt">donereceipt</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#editfooditem">edit</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#addfood">add</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#paid">paid</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#listfooditem">list</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clearreceipt">clearreceipt</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#calculatebmi">bmi</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#deletefooditem">delete</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#expensesplitterhelp">help</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#diettrackerhelp">help</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#editfooditem">edit</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#back">back</a></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#diettrackerhelp">help</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#exit">exit</a></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#back">back</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#exit">exit</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -280,9 +298,9 @@ to to improve your user experience of EYLAH.</p>
 <ul>
 <li>
 <p>Words in <code>UPPER_CASE</code> are the parameters supplied by the user,
-e.g: in <code>additem -i ITEM -p PRICE -n NAME</code>.
-<code>NAME</code>, <code>ITEM</code> and <code>PRICE</code> are parameters which can decided by the user ,
-e.g: <code>additem -i beer tower -p 19.90 -n charlotte</code>.</p>
+e.g: in <code>additem -i ITEMNAME -p ITEMPRICE -n NAME</code>,
+<code>ITEMNAME</code>, <code>ITEMPRICE</code> and <code>NAME</code> are parameters which can decided by the user,
+e.g: <code>additem -i pizza -p 19.90 -n charlotte</code>.</p>
 </li>
 <li>
 <p>Items in square brackets are optional, e.g: <code>paid INDEX [AMOUNT]</code> can be used as <code>paid 1</code> or as
@@ -290,7 +308,7 @@ e.g: <code>additem -i beer tower -p 19.90 -n charlotte</code>.</p>
 </li>
 <li>
 <p>Parameters with <code>…</code>​ after them can be used multiple times including zero times, e.g: <code>[-n NAME]&#8230;&#8203;</code> can be used as <code>&#160;</code>
-(i.e. 0 times), <code>-n Charlotte</code>, <code>-n John Doe -n Daniel</code> etc.</p>
+(i.e. 0 times), <code>-n Charlotte</code>, <code>-n Alice -n Bob</code> etc.</p>
 </li>
 </ul>
 </div>
@@ -319,7 +337,13 @@ Format: <code>help</code></p>
 <div class="sect3">
 <h4 id="mode"><a class="link" href="#mode">3.2.1. Dieting Mode <code>mode</code></a></h4>
 <div class="paragraph">
-<p>You can use this command to switch the dieting mode, based on the following modes:<br></p>
+<p>In this section, you will learn more about the <code>mode</code> command, <a href="#howtousemodecommand">how to use it</a>
+and the <a href="#modeexpectedoutcome">expected outcome</a> after using the
+<code>mode</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Mode Command:</strong><br>
+<code>mode</code> to switch the dieting mode, based on the following modes:<br></p>
 </div>
 <div class="ulist">
 <ul>
@@ -334,32 +358,39 @@ Format: <code>help</code></p>
 </li>
 </ul>
 </div>
-<div class="admonitionblock note">
+<div id="howtousemodecommand" class="paragraph">
+<p><strong>How to use the List Receipt Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>mode [-l] [-g] [-m]</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>mode -l</code></p>
+</div>
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-You may only input one mode per mode command.
+You must only input one mode per mode command.
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>Format: <code>mode [-m, -l, -g]</code><br>
-Example: <code>mode -m</code></p>
+<div id="modeexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
 </div>
-<hr>
+<div class="imageblock">
+<div class="content">
+<img src="images/dietTrackerModeCommandSuccessPhoto.png" alt="dietTrackerModeCommandSuccessPhoto" width="890" height="200">
 </div>
-<div class="sect3">
-<h4 id="height"><a class="link" href="#height">3.2.2. Storing Height <code>height</code></a></h4>
-<div class="paragraph">
-<p>You can use this command to save your Height to the Diet Tracker.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>height HEIGHT</code><br>
-Example: <code>height 172</code></p>
+<p><strong>Additional notes and tips</strong><br></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -368,7 +399,197 @@ Example: <code>height 172</code></p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Height in centimetres (cm). Decimal places are accepted. I.e. <code>height 172.305</code> is accepted.
+<div class="ulist">
+<ul>
+<li>
+<p>The default mode for any individual who has chosen his/her Dieting Mode will be MAINTAIN.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Switch the mode to help yourself reach your diet targets better!</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>mode</code> command, <a href="#howtousemodecommand">how to use it</a>
+and the <a href="#modeexpectedoutcome">expected outcome</a> after using the
+<code>mode</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Mode Command:</strong><br>
+<code>mode</code> to switch the dieting mode, based on the following modes:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Lose Weight (-l)</p>
+</li>
+<li>
+<p>Gain Weight (-g)</p>
+</li>
+<li>
+<p>Maintain (-m)</p>
+</li>
+</ul>
+</div>
+<div id="howtousemodecommand" class="paragraph">
+<p><strong>How to use the Mode Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>mode [-l] [-g] [-m]</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>mode -l</code></p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+You must only input one mode per mode command.
+</td>
+</tr>
+</table>
+</div>
+<div id="modeexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/dietTrackerModeCommandSuccessPhoto.png" alt="dietTrackerModeCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional notes and tips</strong><br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The default mode for any individual who has chosen his/her Dieting Mode will be MAINTAIN.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Switch your Dieting Mode to help yourself reach your diet targets better!</p>
+</li>
+<li>
+<p>Check your currently chosen Dieting Mode with <code>metrics</code>.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="height"><a class="link" href="#height">3.2.2. Storing Height <code>height</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>height</code> command, <a href="#howtouseheightcommand">how to use it</a>
+and the <a href="#heightexpectedoutcome">expected outcome</a> after using the
+<code>height</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Height Command:</strong><br>
+<code>height</code> You can use this command to save your Height to the Diet Tracker.</p>
+</div>
+<div id="howtouseheightcommand" class="paragraph">
+<p><strong>How to use the Height Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>height HEIGHT</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>height 170.2</code></p>
+</div>
+<div id="heightexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/dietTrackerHeightCommandSuccessPhoto.png" alt="dietTrackerHeightCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional notes and tips</strong><br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Height in centimetres (cm). Decimal places are accepted. I.e. <code>height 172.305</code> is accepted.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Check your stored height with <code>metrics</code>.</p>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
@@ -378,11 +599,35 @@ Height in centimetres (cm). Decimal places are accepted. I.e. <code>height 172.3
 <div class="sect3">
 <h4 id="weight"><a class="link" href="#weight">3.2.3. Storing Weight <code>weight</code></a></h4>
 <div class="paragraph">
-<p>You can use this command to save your Weight to the Diet Tracker.</p>
+<p>In this section, you will learn more about the <code>weight</code> command, <a href="#howtouseweightcommand">how to use it</a>
+and the <a href="#weightexpectedoutcome">expected outcome</a> after using the
+<code>weight</code> command.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>weight WEIGHT</code><br>
-Example: <code>weight 65.7</code></p>
+<p><strong>Summary of Weight Command:</strong><br>
+<code>weight</code> You can use this command to save your Weight to the Diet Tracker.</p>
+</div>
+<div id="howtouseweightcommand" class="paragraph">
+<p><strong>How to use the Weight Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>weight WEIGHT</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>weight 65.7</code></p>
+</div>
+<div id="weightexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/dietTrackerWeightCommandSuccessPhoto.png" alt="dietTrackerWeightCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional notes and tips</strong><br></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -391,136 +636,16 @@ Example: <code>weight 65.7</code></p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Weight in kilograms (kg). Decimal places are accepted. I.e. <code>weight 65.77</code> is accepted.
-</td>
-</tr>
-</table>
-</div>
-<hr>
-</div>
-<div class="sect3">
-<h4 id="addfood"><a class="link" href="#addfood">3.2.4. Adding food <code>add</code></a></h4>
-<div class="paragraph">
-<p>You can use this command to add a food to the list.</p>
-</div>
-<div class="sidebarblock">
-<div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Adds food item with the given name, calories and tags.</p>
-</li>
-<li>
-<p>Name and Calories are compulsory.</p>
-</li>
-<li>
-<p>Tags are optional.</p>
+<p>Weight in kilograms (kg). Decimal places are accepted. I.e. <code>weight 65.77</code> is accepted.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Any food that you add will be added based on the time that you keyed in the food data. As of Diet Tracker&#8217;s current functionalities, you cannot add in foods that you have consumed the day before while also setting that food to appear for the previous day&#8217;s data.
 </td>
 </tr>
 </table>
-</div>
-<div class="paragraph">
-<p>Format: <code>add -n NAME -c CALORIES [-t TAG]&#8230;&#8203;</code><br>
-Example: <code>add -n Fishball Noodles -c 383 -t favourite -t noodles</code></p>
-</div>
-<hr>
-</div>
-<div class="sect3">
-<h4 id="listfooditem"><a class="link" href="#listfooditem">3.2.5. Listing items <code>list</code></a></h4>
-<div class="paragraph">
-<p>You can use this function to list out the different foods that you have consumed and their total calories.
-Different listing modes allow you to watch your overall diet during the period, and gives you a tip on your level of consumption based on your Dieting Mode.</p>
-</div>
-<div class="paragraph">
-<p>Displays different data based on the below flags:</p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Food consumed for the day (NO FLAG)</p>
-</li>
-<li>
-<p>All food ever consumed (-a)</p>
-</li>
-<li>
-<p>Food consumed for the past number of days (-d)</p>
-</li>
-<li>
-<p>All food with the given tag (-t)</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Default value of list is food consumed for the day.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-For the <code>-d</code> tag, the amount of days specified must be a positive Integer value.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Format: <code>list [-a] [-d NUMDAYS] [-t TAGNAME]</code><br>
-Example: <code>list</code>, <code>list -a</code>, <code>list -d 3</code>, <code>list -t healthy</code> ,</p>
-</div>
-<hr>
-</div>
-<div class="sect3">
-<h4 id="deletefooditem"><a class="link" href="#deletefooditem">3.2.6. Deleting a Food Item <code>delete</code></a></h4>
-<div class="paragraph">
-<p>You can delete a food item based on the previous list of Foods that you have listed.<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>delete INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Deletes the food item at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the displayed food list.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -529,51 +654,85 @@ Example: <code>list</code>, <code>list -a</code>, <code>list -d 3</code>, <code>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Use list to view your item indices before deletion.
+<div class="ulist">
+<ul>
+<li>
+<p>Check your stored weight with <code>metrics</code>.</p>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code><br>
-<code>delete 2</code><br>
-Deletes the 2nd row of food data from the past 7 days of food.</p>
-</li>
-</ul>
-</div>
 <hr>
 </div>
 <div class="sect3">
-<h4 id="editfooditem"><a class="link" href="#editfooditem">3.2.7. Editing a Food Item <code>edit</code></a></h4>
+<h4 id="metrics"><a class="link" href="#metrics">3.2.4. Showing your Metrics <code>metrics</code></a></h4>
 <div class="paragraph">
-<p>You can edit either the Food name, or the calories of the food at the specified index. <br></p>
+<p>In this section, you will learn more about the <code>metrics</code> command, <a href="#howtousemetricscommand">how to use it</a>
+and the <a href="#metricsexpectedoutcome">expected outcome</a> after using the
+<code>metrics</code> command.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>edit -i INDEX [-n NAME] [-c CALORIES]</code></p>
+<p><strong>Summary of Metrics Command:</strong><br>
+<code>metrics</code> You can print out your individual metrics (Height, Weight and Mode) to check them.</p>
 </div>
-<div class="sidebarblock">
-<div class="content">
+<div class="paragraph">
+<p>It will display the following data:<br></p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Edits the Food Item at the specified <code>INDEX</code>.
-The index refers to the index number shown in the displayed Food list.
-The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+<p>Your height</p>
 </li>
 <li>
-<p>At least one of the optional fields must be provided.</p>
+<p>Your weight</p>
 </li>
 <li>
-<p>Existing values will be updated to the input values.</p>
+<p>Your chosen Dieting Mode</p>
 </li>
 </ul>
 </div>
+<div id="howtousemetricscommand" class="paragraph">
+<p><strong>How to use the Metrics Command:</strong></p>
 </div>
+<div class="paragraph">
+<p>Format:<br>
+<code>metrics</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>metrics</code></p>
+</div>
+<div id="metricsexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/dietTrackerMetricsCommandSuccessPhoto.png" alt="dietTrackerMetricsCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional notes and tips</strong><br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Diet Tracker will prompt you if you did not have any previously stored Height, Weight.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -582,28 +741,29 @@ The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-Index has to be a valid index in the list of Foods. You can use <code>list</code> to check this out.
+<div class="ulist">
+<ul>
+<li>
+<p>Use this to check whether you have previously stored a Height, a Weight, or have chosen your Dieting Mode already.</p>
+</li>
+</ul>
+</div>
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>edit -i 2 -n Chicken Rice -c 585</code><br>
-Edits the name of the food item at index 2 to be 'Chicken Rice' and the calories to be '585'.</p>
-</li>
-</ul>
-</div>
 <hr>
 </div>
 <div class="sect3">
-<h4 id="calculatebmi"><a class="link" href="#calculatebmi">3.2.8. Calculating Body Mass Index (BMI) <code>bmi</code></a></h4>
+<h4 id="calculatebmi"><a class="link" href="#calculatebmi">3.2.5. Calculating Body Mass Index (BMI) <code>bmi</code></a></h4>
 <div class="paragraph">
-<p>You can calculate your BMI either through an input Height and Weight or your previously stored Height and Weight.<br></p>
+<p>In this section, you will learn more about the <code>bmi</code> command, <a href="#howtousebmicommand">how to use it</a>
+and the <a href="#bmiexpectedoutcome">expected outcome</a> after using the
+<code>bmi</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Bmi Command:</strong><br>
+<code>bmi</code> You can calculate your BMI either through an input Height and Weight or your previously stored Height and Weight.<br></p>
 </div>
 <div class="paragraph">
 <p>It will display the following data:<br></p>
@@ -615,8 +775,8 @@ Edits the name of the food item at index 2 to be 'Chicken Rice' and the calories
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>Format: <code>bmi [-h HEIGHT] [-w WEIGHT]</code></p>
+<div id="howtousebmicommand" class="paragraph">
+<p><strong>How to use the Bmi Command:</strong></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -641,20 +801,12 @@ to do the calculation instead.</p>
 </div>
 </div>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-If you are unsure whether you have already input your height and weight, you may <code>metrics</code> to check.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>Format:<br>
+<code>bmi [-h HEIGHT] [-w WEIGHT]</code><br></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Valid Examples:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -677,25 +829,367 @@ Calculate BMI based on the input height and weight values.</p>
 </li>
 </ul>
 </div>
+<div id="bmiexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/dietTrackerBmiCommandSuccessPhoto.png" alt="dietTrackerBmiCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional tips</strong><br></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>If you are unsure whether you have already input your height and weight, you may <code>metrics</code> to check.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <hr>
 </div>
 <div class="sect3">
-<h4 id="diettrackerhelp"><a class="link" href="#diettrackerhelp">3.2.9. Displaying available commands for Diet Tracker <code>help</code></a></h4>
+<h4 id="addfood"><a class="link" href="#addfood">3.2.6. Adding food <code>add</code></a></h4>
 <div class="paragraph">
-<p>You can use the <code>help</code> command, if you are uncertain, to see the list of available commands for Diet Tracker.</p>
+<p>In this section, you will learn more about the <code>add</code> command, <a href="#howtouseaddcommand">how to use it</a>
+and the <a href="#addexpectedoutcome">expected outcome</a> after using the
+<code>add</code> command.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>help</code></p>
+<p><strong>Summary of Add Command:</strong><br>
+<code>add</code> You can use this command to add a food to the list.</p>
+</div>
+<div id="howtouseaddcommand" class="paragraph">
+<p><strong>How to use the Add Command:</strong></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Format:<br>
+<code>add -n NAME -c CALORIES [-t TAG]&#8230;&#8203;</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>add -n Fishball Noodles -c 383 -t favourite -t noodles</code></p>
+</div>
+<div id="addexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/dietTrackerAddCommandSuccessPhoto.png" alt="dietTrackerAddCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional notes</strong><br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Name and Calories are compulsory.</p>
+</li>
+<li>
+<p>Tags are optional.</p>
+</li>
+<li>
+<p>Any food that you add will be added based on the time that you keyed in the food data. As of Diet Tracker&#8217;s current functionalities, you cannot add in foods that you have consumed the day before while also setting that food to appear for the previous day&#8217;s data.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="listfooditem"><a class="link" href="#listfooditem">3.2.7. Listing items <code>list</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>list</code> command, <a href="#howtouselistcommand">how to use it</a>
+and the <a href="#listexpectedoutcome">expected outcome</a> after using the
+<code>list</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of List Command:</strong><br>
+<code>list</code> You can use this function to list out the different foods that you have consumed and their total calories.
+Different listing modes allow you to watch your overall diet during the period, and gives you a tip on your level of consumption based on your Dieting Mode.</p>
+</div>
+<div class="paragraph">
+<p>Displays different data based on the below flags:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>help</code></p>
+<p>Food consumed for the day (NO FLAG)</p>
+</li>
+<li>
+<p>All food ever consumed (-a)</p>
+</li>
+<li>
+<p>Food consumed for the past number of days (-d)</p>
+</li>
+<li>
+<p>All food with the given tag (-t)</p>
 </li>
 </ul>
+</div>
+<div id="howtouselistcommand" class="paragraph">
+<p><strong>How to use the List Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>list [-a] [-d NUMDAYS] [-t TAGNAME]</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Examples:<br>
+<code>list</code><br>
+<code>list -a</code><br>
+<code>list -d 3</code><br>
+<code>list -t healthy</code></p>
+</div>
+<div id="listexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/dietTrackerListCommandSuccessPhoto.png" alt="dietTrackerListCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional notes</strong><br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Default value of list is food consumed for the day.</p>
+</li>
+<li>
+<p>For the <code>-d</code> tag, the amount of days specified must be a positive Integer value.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="deletefooditem"><a class="link" href="#deletefooditem">3.2.8. Deleting a Food Item <code>delete</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>delete</code> command, <a href="#howtousedeletecommand">how to use it</a>
+and the <a href="#deleteexpectedoutcome">expected outcome</a> after using the
+<code>delete</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Delete Command:</strong><br>
+<code>delete</code> You can delete a food item based on the previous list of Foods that you have listed.<br></p>
+</div>
+<div id="howtousedeletecommand" class="paragraph">
+<p><strong>How to use the Delete Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>delete INDEX</code><br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the food item at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed food list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>list</code><br>
+<code>delete 2</code><br>
+Deletes the 2nd row of food data from today&#8217;s list of food.</p>
+</div>
+<div id="deleteexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/dietTrackerDeleteCommandSuccessPhoto.png" alt="dietTrackerDeleteCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional notes and tips</strong><br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Index has to be a valid index in the list of Foods. You can use <code>list</code> to check this out.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Use list to view your item indices before deletion.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="editfooditem"><a class="link" href="#editfooditem">3.2.9. Editing a Food Item <code>edit</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>edit</code> command, <a href="#howtouseeditcommand">how to use it</a>
+and the <a href="#editexpectedoutcome">expected outcome</a> after using the
+<code>edit</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Edit Command:</strong><br>
+<code>edit</code> You can edit either the Food name, or the calories of the food at the specified index. <br></p>
+</div>
+<div id="howtouseeditcommand" class="paragraph">
+<p><strong>How to use the Edit Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>edit -i INDEX [-n NAME] [-c CALORIES]</code><br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the Food Item at the specified <code>INDEX</code>.
+The index refers to the index number shown in the displayed Food list.
+The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>edit -i 2 -n Chicken Rice -c 585</code><br>
+Edits the name of the food item at index 2 to be 'Chicken Rice' and the calories to be '585'.</p>
+</div>
+<div id="editexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/dietTrackerEditCommandSuccessPhoto.png" alt="dietTrackerEditCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional notes</strong><br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Index has to be a valid index in the list of Foods. You can use <code>list</code> to check this out.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="diettrackerhelp"><a class="link" href="#diettrackerhelp">3.2.10. Displaying available commands for Diet Tracker <code>help</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>help</code> command, <a href="#howtouseDThelpcommand">how to use it</a>
+and the <a href="#DThelpexpectedoutcome">expected outcome</a> after using the
+<code>help</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Help Command:</strong><br>
+<code>metrics</code> You can use the <code>help</code> command, if you are uncertain, to see the list of available commands for Diet Tracker.</p>
+</div>
+<div id="howtouseDTHelpcommand" class="paragraph">
+<p><strong>How to use the Help Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>help</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>help</code></p>
+</div>
+<div id="DThelpexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/dietTrackerHelpCommandSuccessPhoto.png" alt="dietTrackerHelpCommandSuccessPhoto" width="890" height="200">
+</div>
 </div>
 <hr>
 </div>
@@ -703,9 +1197,11 @@ Calculate BMI based on the input height and weight values.</p>
 <div class="sect2">
 <h3 id="expense-splitter-code-split-code"><a class="link" href="#expense-splitter-code-split-code">3.3. Expense Splitter : <code>split</code></a></h3>
 <div class="paragraph">
-<p>Splitting a large receipt with friends has never been easier with EYLAH! All you have to do is add the item,
-its price and the names involved in splitting that item and EYLAH will
-calculate the rest for you!</p>
+<p>Getting a headache from splitting <strong>that</strong> ever-so-complicated bill?</p>
+</div>
+<div class="paragraph">
+<p>With EYLAH, splitting a large receipt with friends has never been easier! All you have to do is add the item,
+it&#8217;s price and the names involved in splitting that item and EYLAH will calculate the rest for you!</p>
 </div>
 <div class="paragraph">
 <p>We have drawn some diagrams to help you visualize how Expense Splitter works, click <a href="#AppendixA">here</a> to find out more!</p>
@@ -713,7 +1209,15 @@ calculate the rest for you!</p>
 <div class="sect3">
 <h4 id="additem"><a class="link" href="#additem">3.3.1. Adding an item: <code>additem</code></a></h4>
 <div class="paragraph">
-<p>Adds an Item and the Person(s) involved in the splitting for that item.</p>
+<p>In this section, you will learn more about the <code>additem</code> command, <a href="#howtouseadditemcommand">how to use it</a>
+and the <a href="#additemexpectedoutcome">expected outcome</a> after using the <code>additem</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Add Item Command:</strong><br>
+<code>additem</code> allows you to add an item, it&#8217;s price and the persons involved in sharing the cost of that item.</p>
+</div>
+<div id="howtouseadditemcommand" class="paragraph">
+<p><strong>How to use the Add Item Command:</strong></p>
 </div>
 <div class="paragraph">
 <p>Format:<br>
@@ -723,7 +1227,15 @@ calculate the rest for you!</p>
 <div class="paragraph">
 <p>Example:<br>
 <code>additem -i pizza -p 30 -n bob</code><br>
-<code>additem -i pasta -p 19.90 -n alice -n bob -n daniel</code></p>
+<code>additem -i pasta -p 19.90 -n alice -n bob -n charlie</code></p>
+</div>
+<div id="additemexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/placeholder.png" alt="placeholder">
+</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -743,11 +1255,31 @@ There is no need to add the dollar sign ($).
 <div class="sect3">
 <h4 id="deleteitem"><a class="link" href="#deleteitem">3.3.2. Deleting an item: <code>deleteitem</code></a></h4>
 <div class="paragraph">
-<p>Delete the item(s) in a receipt:</p>
+<p>In this section, you will learn more about the <code>deleteitem</code> command, <a href="#howtousedeleteitemcommand">how to use it</a>
+and the <a href="#deleteitemexpectedoutcome">expected outcome</a> after using the <code>deleteitem</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Delete Item Command:</strong><br>
+<code>deleteitem</code> allows you to delete an item from the receipt.</p>
+</div>
+<div id="howtousedeleteitemcommand" class="paragraph">
+<p><strong>How to use the Delete Item Command:</strong></p>
 </div>
 <div class="paragraph">
 <p>Format:<br>
 <code>deleteitem INDEX</code><br></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>deleteitem 3</code></p>
+</div>
+<div id="deleteitemexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/placeholder.png" alt="placeholder">
+</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -761,10 +1293,6 @@ Use <code>listreceipt</code> to view your item indices before deletion.
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>Example:<br>
-<code>deleteitem 3</code></p>
-</div>
 <hr>
 </div>
 <div class="sect3">
@@ -775,7 +1303,8 @@ and the <a href="#listreceiptexpectedoutcome">expected outcome</a> after using t
 <code>listreceipt</code> command.</p>
 </div>
 <div class="paragraph">
-<p><strong>Summary of List Receipt Command:</strong> <code>listreceipt</code> <strong>shows you all the entries in your current receipt</strong>.</p>
+<p><strong>Summary of List Receipt Command:</strong><br>
+<code>listreceipt</code> shows you all the entries in your current receipt.</p>
 </div>
 <div id="howtouselistreceiptcommand" class="paragraph">
 <p><strong>How to use the List Receipt Command:</strong></p>
@@ -917,7 +1446,47 @@ such as <code>paid</code>.</p>
 <hr>
 </div>
 <div class="sect3">
-<h4 id="paid"><a class="link" href="#paid">3.3.5. Paying money: <code>paid</code></a></h4>
+<h4 id="donereceipt"><a class="link" href="#donereceipt">3.3.5. Mark receipt as done <code>donereceipt</code></a></h4>
+<div class="paragraph">
+<p>Use this command to mark the receipt as done when you have completed entering all the items.</p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>donereceipt</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>donereceipt</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Use this command only after all Items have been correctly added to the Receipt.</p>
+</li>
+<li>
+<p>After you use this command, you will be unable to add any new items using the <code>additem</code> command
+or delete any items using the <code>deleteitem</code> command.</p>
+</li>
+<li>
+<p>However, you are now able to use the <code>paid</code> command.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="paid"><a class="link" href="#paid">3.3.6. Paying money: <code>paid</code></a></h4>
 <div class="paragraph">
 <p>In this section, you will learn more about the <code>paid</code> command, <a href="#howtousepaidcommand">how to use it</a> and the
 <a href="#paidcommandexpectedoutcome">expected outcome</a> after using the
@@ -1025,49 +1594,17 @@ empty is equivalent to the Person paying you the full amount he/she owes you.</p
 <hr>
 </div>
 <div class="sect3">
-<h4 id="donereceipt"><a class="link" href="#donereceipt">3.3.6. Mark receipt as done <code>donereceipt</code></a></h4>
-<div class="paragraph">
-<p>Use this command to mark the receipt as done when you have completed entering all the items.</p>
-</div>
-<div class="paragraph">
-<p>Format:<br>
-<code>donereceipt</code></p>
-</div>
-<div class="paragraph">
-<p>Example:<br>
-<code>donereceipt</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Use this command only after all Items have been correctly added to the Receipt.</p>
-</li>
-<li>
-<p>After you use this command, you will be unable to add any new items using the <code>additem</code> command
-or delete any items using the <code>deleteitem</code> command.</p>
-</li>
-<li>
-<p>However, you are now able to use the <code>paid</code> command.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<hr>
-</div>
-<div class="sect3">
 <h4 id="clearreceipt"><a class="link" href="#clearreceipt">3.3.7. Clears the receipt <code>clearreceipt</code></a></h4>
 <div class="paragraph">
-<p>Use this command when you want to clear the receipt and start a new receipt.</p>
+<p>In this section, you will learn more about the <code>clearreceipt</code> command, <a href="#howtouseclearreceiptcommand">how to use it</a>
+and the <a href="#clearreceipt">expected outcome</a> after using the <code>clearreceipt</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Clear Receipt Command:</strong><br>
+<code>clearreceipt</code> allows you to remove all items from the receipt and start with a clean receipt.</p>
+</div>
+<div id="howtouseclearreceiptcommand" class="paragraph">
+<p><strong>How to use the Clear Receipt Command:</strong></p>
 </div>
 <div class="paragraph">
 <p>Format:<br>
@@ -1076,6 +1613,14 @@ or delete any items using the <code>deleteitem</code> command.</p>
 <div class="paragraph">
 <p>Example:<br>
 <code>clearreceipt</code></p>
+</div>
+<div id="clearreceiptexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/placeholder.png" alt="placeholder">
+</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1087,7 +1632,7 @@ or delete any items using the <code>deleteitem</code> command.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>After you use this command, you will be able to add new items by using the <code>additem</code> command
+<p>After you use this command, you will be able to add new items using the <code>additem</code> command
 and delete items using the <code>deleteitem</code> command.</p>
 </li>
 <li>
@@ -1197,6 +1742,10 @@ e.g. <code>height 169</code></p>
 e.g. <code>weight 56</code></p>
 </li>
 <li>
+<p><strong>Showing Your Metrics</strong> <code>metrics</code><br>
+e.g. <code>metrics</code></p>
+</li>
+<li>
 <p><strong>Calculating BMI</strong> <code>bmi</code><br>
 e.g. <code>bmi -h 172 -w 65.5</code></p>
 </li>
@@ -1207,6 +1756,10 @@ e.g. <code>help</code></p>
 <li>
 <p><strong>Going Back</strong> <code>back</code><br>
 e.g. <code>back</code></p>
+</li>
+<li>
+<p><strong>Exiting the Application</strong> <code>exit</code><br>
+e.g <code>exit</code></p>
 </li>
 </ul>
 </div>
@@ -1227,8 +1780,8 @@ e.g. <code>back</code></p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#addfood"><strong>Adding Food</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>add -n NAME -c CALORIES [-t TAGS]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>insert -n salad -c 235</code><br>
-<code>insert -n fries -c 195 -t fastfood</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add -n salad -c 235</code><br>
+<code>add -n fries -c 195 -t fastfood</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#deletefooditem"><strong>Deleting Food</strong></a></p></td>
@@ -1246,44 +1799,65 @@ e.g. <code>back</code></p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#listfooditem"><strong>Listing Food</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>list [-a] [-d NUMDAYS] [-t TAG]</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>list</code><br>
+or<br>
 <code>list -a</code><br>
+or<br>
 <code>list -d 6</code><br>
+or<br>
 <code>list -t healthy</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#mode"><strong>Setting Mode</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mode MODE</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>mode -l</code><br>
+or<br>
 <code>mode -g</code><br>
+or<br>
 <code>mode -h</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#height"><strong>Storing Height</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>height HEIGHT</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete 1</code><br>
-<code>delete 2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>height 165</code><br>
+<code>height 172.5</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#weight"><strong>Storing Weight</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>weight WEIGHT</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete 1</code><br>
-<code>delete 2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>weight 69</code><br>
+<code>weight 67.3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#metrics"><strong>Showing Metrics</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>metrics</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>metrics</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#calculatebmi"><strong>Calculating BMI</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>bmi [-h HEIGHT] [-w WEIGHT]</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>bmi</code><br>
-<code>bmi -h 172 -w 65.5</code></p></td>
+or<br>
+<code>bmi -h 172 -w 65.5</code><br>
+or<br>
+<code>bmi -h 172</code><br>
+or
++
+<code>bmi -w 65.7</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#exit"><strong>Exit</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#help"><strong>Getting Help</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#help"><strong>Help</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#back"><strong>Going Back</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>back</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>back</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#exit"><strong>Exiting the Application</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -1293,28 +1867,44 @@ e.g. <code>back</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Add Item</strong> <code>additem</code><br>
+<p><strong>Adding Item</strong> <code>additem</code><br>
 e.g <code>additem -i pasta -p 19.20 -n charlotte -n bob</code></p>
 </li>
 <li>
-<p><strong>Delete Item</strong> <code>deleteitem</code><br>
+<p><strong>Deleting Item</strong> <code>deleteitem</code><br>
 e.g <code>deleteitem 3</code></p>
 </li>
 <li>
-<p><strong>List Amount</strong> <code>listamount</code><br>
+<p><strong>Listing Receipt</strong> <code>listreceipt</code><br>
+e.g. <code>listreceipt</code></p>
+</li>
+<li>
+<p><strong>Listing Amount</strong> <code>listamount</code><br>
 e.g <code>listamount</code></p>
 </li>
 <li>
-<p><strong>List Receipt</strong> <code>listreceipt</code><br>
-e.g. <code>removefood -f fries</code></p>
+<p><strong>Marking Receipt as Done</strong> <code>donereceipt</code><br>
+e.g <code>donereceipt</code></p>
 </li>
 <li>
-<p><strong>Paid</strong> : <code>paid INDEX</code><br>
+<p><strong>Getting Paid by Someone</strong> <code>paid INDEX</code><br>
 e.g. <code>paid 3</code></p>
 </li>
 <li>
-<p><strong>Back</strong> <code>back</code><br>
+<p><strong>Clear Receipt</strong> <code>clearreceipt</code><br>
+e.g <code>clearreceipt</code></p>
+</li>
+<li>
+<p><strong>Getting Help</strong> <code>help</code><br>
+e.g <code>help</code></p>
+</li>
+<li>
+<p><strong>Going Back</strong> <code>back</code><br>
 e.g. <code>back</code></p>
+</li>
+<li>
+<p><strong>Exiting the Application</strong> <code>exit</code><br>
+e.g <code>exit</code></p>
 </li>
 </ul>
 </div>
@@ -1333,40 +1923,36 @@ e.g. <code>back</code></p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#additem"><strong>Add Item</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>additem</code> <code>-i ITEMNAME</code> <code>-p ITEMPRICE</code> <code>-n PERSON</code> <code>[-n PERSON]&#8230;&#8203;</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>insert</code> <code>-i pasta</code> <code>-p 32</code> <code>-n John</code><br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#additem"><strong>Adding Item</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>additem</code> <code>-i ITEMNAME</code> <code>-p ITEMPRICE</code> <code>-n NAME</code> <code>[-n NAME]&#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>additem</code> <code>-i pasta</code> <code>-p 5</code> <code>-n John</code><br>
 or<br>
-<code>insert</code> <code>-i pasta</code> <code>-p 32</code> <code>-n John</code> <code>-n Carl</code> <code>-n Jasmine</code></p></td>
+<code>additem</code> <code>-i pasta</code> <code>-p 32</code> <code>-n John</code> <code>-n Carl</code> <code>-n Jasmine</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#deleteitem"><strong>Delete Item</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#deleteitem"><strong>Deleting Item</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>deleteitem</code> <code>INDEX</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>deleteitem</code> <code>1</code><br>
+or<br>
 <code>deleteitem</code> <code>2</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#listreceipt"><strong>List Receipt</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#listreceipt"><strong>Listing Receipt</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>listreceipt</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>listreceipt</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#listamount"><strong>List Amount</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#listamount"><strong>Listing Amount</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>listamount</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>listamount</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#donereceipt"><strong>Done Receipt</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#donereceipt"><strong>Marking Receipt as Done</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>donereceipt</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>donereceipt</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clearreceipt"><strong>Clear Receipt</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clearreceipt</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clearreceipt</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#paid"><strong>Paid</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#paid"><strong>Getting Paid by Someone</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>paid</code> <code>INDEX</code> <code>[AMOUNT]</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>paid</code> <code>3</code> <br>
 or<br>
@@ -1375,14 +1961,24 @@ or<br>
 <code>paid</code> <code>2</code> <code>10.0</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#exit"><strong>Exit</strong></a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#clearreceipt"><strong>Clearing Receipt</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clearreceipt</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>clearreceipt</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#help"><strong>Help</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#expensesplitterhelp"><strong>Getting Help</strong></a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>help</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#back"><strong>Going Back</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>back</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>back</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#exit"><strong>Exiting the Application</strong></a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exit</code></p></td>
 </tr>
 </tbody>
 </table>
@@ -1408,7 +2004,7 @@ or<br>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Temasek Hall</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This refers the one of the Halls of Residences at the National University of Singapore</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This refers the one of the Halls of Residences in the National University of Singapore</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1418,7 +2014,7 @@ or<br>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NUS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This is the short form of National Univeristy of Singapore.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is the short form of National University of Singapore.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1463,4 +2059,4 @@ item in a list.</p></td>
 at the bottom represents the end point.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 14:24:14 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 03:54:57 UTC</div></div></div></body></html>
