@@ -1384,7 +1384,7 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 <p>The <code>listreceipt</code> command allows user to find out the current entries in the receipt.</p>
 </div>
 <div class="paragraph">
-<p>The <code>listreceipt</code> command was implemented as a <code>ListReceiptCommand</code> in the <code>expenseSplitterLogic</code> package.</p>
+<p>The <code>listreceipt</code> command was implemented as a <code>ListReceiptCommand</code> in the <code>expensesplitter/logic</code> package.</p>
 </div>
 <div class="paragraph">
 <p>The <code>listreceipt</code> has the following input format:</p>
@@ -1402,8 +1402,7 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 <div class="ulist">
 <ul>
 <li>
-<p>Each entry in the receipt has the item’s name, price and person(s) who is splitting that item with you
-thus you do not have to remember who you split this item with!</p>
+<p>Each entry in the receipt has the item’s name, price and person(s) involved in splitting that item.</p>
 </li>
 <li>
 <p>When you enter <code>clearrreceipt</code> it deletes the old receipt’s data. Use it with caution!</p>
@@ -1421,15 +1420,13 @@ thus you do not have to remember who you split this item with!</p>
 <div class="content">
 <img src="../images/ExpenseSplitterListReceiptCommandActivityDiagram.png" alt="ExpenseSplitterListReceiptCommandActivityDiagram">
 </div>
-</div>
-<div class="paragraph">
-<p>Figure : List Receipt Command Activity Diagram</p>
+<div class="title">Figure 24. List Receipt Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of List Receipt Command</strong></p>
 </div>
 <div class="paragraph">
-<p>The following is a detailed explanation of the operations <code>ListReceiptCommand</code> performs.<br></p>
+<p>The following is a detailed explanation of the operations ListReceiptCommand performs.<br></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1440,21 +1437,23 @@ thus you do not have to remember who you split this item with!</p>
 <p>The method <code>splitterModel#listReceipt()</code> will then be called to return the list of entries currently in that Receipt.</p>
 </li>
 <li>
-<p>The method <code>receipt.toString()</code> will use StringBuilder to print the Items(s) currently in
-Receipt by calling <code>entry.toString()</code>.</p>
+<p>The method <code>receipt#toString()</code> will use StringBuilder to build the string of the Items(s) currently in
+Receipt by calling <code>entry.toString()</code> for entry. After all entries are done, <code>receipt#toString()</code> would have
+finish building the string and will return to SplitterModelManager where it will be printed out.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
 <p><strong>Sequence Diagram for List Receipt Command</strong></p>
 </div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens during the execution of <code>listreceipt</code> command.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/ExpenseSplitterListReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterListReceiptCommandSequenceDiagram">
 </div>
-</div>
-<div class="paragraph">
-<p>Figure : List Receipt Sequence Diagram</p>
+<div class="title">Figure 25. List Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1469,7 +1468,7 @@ Receipt by calling <code>entry.toString()</code>.</p>
 <p>The <code>listamount</code> command allows users to find out how much each Person owes them.<br></p>
 </div>
 <div class="paragraph">
-<p>The <code>listamount</code> command was implemented as a <code>ListAmountCommand</code> in the <code>expenseSplitterLogic</code> package.</p>
+<p>The <code>listamount</code> command was implemented as a <code>ListAmountCommand</code> in the <code>expensesplitter/logic</code> package.</p>
 </div>
 <div class="paragraph">
 <p>The <code>listamount</code> command has the following input format:</p>
@@ -1490,7 +1489,7 @@ Receipt by calling <code>entry.toString()</code>.</p>
 <p>The Person and amount owed will be automatically saved after each command.</p>
 </li>
 <li>
-<p>A person is deleted after they have completely paid the amount they owe you.</p>
+<p>A person is deleted after they have completely paid the amount they owe.</p>
 </li>
 </ul>
 </div>
@@ -1505,15 +1504,13 @@ Receipt by calling <code>entry.toString()</code>.</p>
 <div class="content">
 <img src="../images/ExpenseSplitterListAmountCommandActivityDiagram.png" alt="ExpenseSplitterListAmountCommandActivityDiagram">
 </div>
-</div>
-<div class="paragraph">
-<p>Figure : List Amount Command Activity Diagram</p>
+<div class="title">Figure 26. List Amount Activity Diagram<br></div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of List Amount Command</strong></p>
 </div>
 <div class="paragraph">
-<p>The following is a detailed explanation of the operations <code>ListAmountCommand</code> performs.<br></p>
+<p>The following is a detailed explanation of the operations ListAmountCommand performs.<br></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1524,7 +1521,8 @@ Receipt by calling <code>entry.toString()</code>.</p>
 <p>The method <code>splitterModel#listAmount()</code> will then be called to return the list of Person(s) with their amount.</p>
 </li>
 <li>
-<p><code>PersonAmountBook#toString()</code> will convert list of person in the list to the expected format.</p>
+<p><code>PersonAmountBook#toString()</code> will convert list of person in the list to the expected format and return it to
+SplitterModelManager where it will be printed out.</p>
 </li>
 </ol>
 </div>
@@ -1538,9 +1536,60 @@ Receipt by calling <code>entry.toString()</code>.</p>
 <div class="content">
 <img src="../images/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
 </div>
+<div class="title">Figure 27. List Amount Command Sequence Diagram</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="done-receipt-command"><a class="link" href="#done-receipt-command">Done Receipt Command</a></h4>
+<div class="paragraph">
+<p>In this section, we will learn more about how the <code>donereceipt</code> command is implemented.</p>
 </div>
 <div class="paragraph">
-<p>Figure : List Amount Sequence Diagram</p>
+<p><strong>What is the Done Receipt Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>donereceipt</code> command allows user to finalize the entries in the receipt. After this command is executed, the
+entries in the receipt are immutable.</p>
+</div>
+<div class="paragraph">
+<p>The <code>donereceipt</code> command was implemented as a <code>DoneReceiptCommand</code> in the <code>expensespliter/logic</code> package.</p>
+</div>
+<div class="paragraph">
+<p>The <code>donereceipt</code> has the following input format:</p>
+</div>
+<div class="paragraph">
+<p><code>donereceipt</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The receipt will not be editable after this command is executed thus ensuring all entries are inputted correctly.
+The User can use <code>listreceipt</code> to check current entries in the receipt, <code>deleteitem</code> and <code>additem</code> to delete and add
+the correct item back.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates what happens when a user executes <code>donereceipt</code> command:</p>
+</div>
+<div class="paragraph">
+<p><strong>Implementation of Done Receipt Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations DoneReceiptCommand performs.</p>
+</div>
+<div class="paragraph">
+<p><strong>Sequence Diagram for Done Receipt Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens during the execution of <code>donereceipt</code> command.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1556,7 +1605,7 @@ Receipt by calling <code>entry.toString()</code>.</p>
 have paid.</p>
 </div>
 <div class="paragraph">
-<p>The <code>paid</code> command was implemented as a <code>PaidCommand</code> in the <code>expenseSplitterLogic</code> package.</p>
+<p>The <code>paid</code> command was implemented as a <code>PaidCommand</code> in the <code>expensesplitter/logic</code> package.</p>
 </div>
 <div class="paragraph">
 <p>The <code>paid</code> command has the following input format:</p>
@@ -1580,7 +1629,7 @@ can type their index. To find out his/her index, use the command
 </li>
 <li>
 <p><code>AMOUNT</code> is an <strong>optional</strong> field. It refers to the amount paid by that Person. Leaving this field
-empty is equivalent to the Person paying you the full amount he/she owes the user.</p>
+empty is equivalent to the Person paying the user the full amount he/she owes the user.</p>
 </li>
 <li>
 <p><code>AMOUNT</code> can be up to 2 decimal places, i.e. 7.99.  There is no need to add the dollar sign ($).</p>
@@ -1598,9 +1647,7 @@ empty is equivalent to the Person paying you the full amount he/she owes the use
 <div class="content">
 <img src="../images/ExpenseSplitterPaidCommandActivityDiagram.png" alt="ExpenseSplitterPaidCommandActivityDiagram">
 </div>
-</div>
-<div class="paragraph">
-<p>Figure : Paid Command Activity Diagram</p>
+<div class="title">Figure 28. Paid Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Paid Command</strong></p>
@@ -1621,10 +1668,10 @@ String amountPaid will be converted into an Amount by instantiating a new instan
 <p>The <code>personAmountBook#removeAmount(Person person, Amount amount)</code> is then called to remove Amount from Person.</p>
 </li>
 <li>
-<p>Thus calling <code>UniquePersonList#removeAmount(Person person, Amount amount)</code>.</p>
+<p>This in turns calls <code>UniquePersonList#removeAmount(Person person, Amount amount)</code>.</p>
 </li>
 <li>
-<p>Lastly, <code>Person#removeAmount(Amount amount)</code> is called to subtract the amount.</p>
+<p>Lastly, <code>Person#removeAmount(Amount amount)</code> is called to subtract the amount from the person.</p>
 </li>
 </ol>
 </div>
@@ -1638,17 +1685,13 @@ String amountPaid will be converted into an Amount by instantiating a new instan
 <div class="content">
 <img src="../images/ExpenseSplitterPaidCommandSequenceDiagram.png" alt="ExpenseSplitterPaidCommandSequenceDiagram">
 </div>
-</div>
-<div class="paragraph">
-<p>Figure : Paid Command Sequence Diagram</p>
+<div class="title">Figure 29. Paid Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/ExpenseSplitterPaidCommandSequenceDiagram2.png" alt="ExpenseSplitterPaidCommandSequenceDiagram2">
 </div>
-</div>
-<div class="paragraph">
-<p>Figure : Execution of Paid Command</p>
+<div class="title">Figure 30. Execution of Paid Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -2724,10 +2767,7 @@ Reduces the Amount a Person owes and if they owe $0 the Person is automatically 
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
 </li>
 <li>
-<p>An Item should not have a Item Price more than $10,000.</p>
-</li>
-<li>
-<p>The amount owed by a Person should not exceed $10,000.
+<p>An Item should not have a Item Price more than $10,000.
 <em>{More to be added}</em></p>
 </li>
 </ol>
@@ -3091,9 +3131,54 @@ in splitting that item.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="effort"><a class="link" href="#effort">Appendix H: Effort</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Overview</strong><br>
+After studying a survey conducted by a resident in Temasek Hall, our team wanted
+to make an application that could help students with problems they face while staying in Temasek Hall.
+We decided to build EYLAH, a super app that has both diet tracker and expense splitter functionality.
+EYLAH is significantly different from Address Book 3 (AB3).
+In addition to the existing basic features of AB3,
+we needed to add additional features to satisfy the needs of our target audience, residents staying in Temasek Hall.</p>
+</div>
+<div class="paragraph">
+<p><strong>Challenges</strong><br>
+The team encountered a few issues during the development process of Sharkie. The more notable ones are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Initial brainstorming and filtering of ideas</strong><br>
+At the start of the project, ideation and brainstorming came up with a bunch of features that we wanted to implement in Sharkie. We came up with many different ideas and ways to implement our commands and features, however, it was messy as we were unsure and unclear of how each of us wanted to implement our features. We sat down for a few meetings to discuss our implementation and our thought processes, ensuring that everyone was on the same page before starting the development process.</p>
+</li>
+<li>
+<p><strong>Wallet model</strong><br>
+Since we wanted an expense tracker for Sharkie, we required some proper way of storing our data. We decided to adapt from AB3&#8217;s address book system, following their saving of data and storing of user details, implementing it in our <code>Wallet</code> model.</p>
+</li>
+<li>
+<p><strong>Commands</strong><br>
+We also adapted AB3&#8217;s command system using their <code>XYZParser</code> and <code>XYZCommand</code> implementations, making our application easier to develop since we were using the same implementation as their <code>Logic</code>.</p>
+</li>
+<li>
+<p><strong>Reminder feature</strong><br>
+One of the more prominent features that we added that was completely not part of AB3 was our reminder feature. This feature had nothing similar to it in AB3, and had to be implemented from scratch in order to make it work with our program.</p>
+</li>
+<li>
+<p><strong>User interface</strong><br>
+We decided early on that we wanted to redo the user interface from AB3, as it would not only be more asthetically pleasing, but also tie in well to the features that we wanted to be implemented. Daniel did the main UI implementation using JavaFX and CSS, and along the way the entire team chipped in to fix the many different bugs that arose due to the UI. Threading errors, wrong values being displayed etc. were all fixed after careful testing and fixing by the team.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Conclusion</strong><br>
+In conclusion, our team had a great time working with each another and we hope our application,
+EYLAH, will ease the lives of residents at Temasek Hall.
+Overall, we believe that EYLAH is a good testament to our hard work and time spent on perfecting it.</p>
 </div>
 </div>
 </div>
@@ -3105,4 +3190,4 @@ in splitting that item.</p>
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 12:36:19 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 13:42:11 UTC</div></div></div></body></html>
