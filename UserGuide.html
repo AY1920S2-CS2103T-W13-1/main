@@ -326,7 +326,7 @@ and the <a href="#helpexpectedoutcome">expected outcome</a> after using the <cod
 <code>help</code> You can use this command to view help everywhere in the application.</p>
 </div>
 <div id="howtousehelpcommand" class="paragraph">
-<p><strong>How to use the Weight Command:</strong></p>
+<p><strong>How to use the Help Command:</strong></p>
 </div>
 <div class="paragraph">
 <p>Format:<br>
@@ -389,22 +389,22 @@ and the <a href="#helpexpectedoutcome">expected outcome</a> after using the <cod
 <h3 id="exiting-application-code-exit-code"><a class="link" href="#exiting-application-code-exit-code">3.2. Exiting Application : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>In this section, you will learn more about <code>exit</code> command, <a href="#howtouseexitcommand">how to use it</a>
-and the <a href="#helpexpectedoutcome">expected outcome</a> after using the <code>help</code> command.</p>
+and the <a href="#exitexpectedoutcome">expected outcome</a> after using the <code>help</code> command.</p>
 </div>
 <div class="paragraph">
-<p><strong>Summary of Help Command:</strong><br>
-<code>help</code> You can use this command to view help everywhere in the application.</p>
+<p><strong>Summary of Exit Command:</strong><br>
+<code>exit</code> You can use this command to exit the application from anywhere in the application.</p>
 </div>
-<div id="howtousehelpcommand" class="paragraph">
-<p><strong>How to use the Weight Command:</strong></p>
+<div id="howtouseexitcommand" class="paragraph">
+<p><strong>How to use the exit Command:</strong></p>
 </div>
 <div class="paragraph">
 <p>Format:<br>
-<code>help</code><br></p>
+<code>exit</code><br></p>
 </div>
 <div class="paragraph">
 <p>Valid Example:<br>
-<code>help</code></p>
+<code>exit</code></p>
 </div>
 <div id="helpexpectedoutcome" class="paragraph">
 <p><strong>Expected outcome:</strong></p>
@@ -1223,6 +1223,34 @@ it&#8217;s price and the names involved in splitting that item and EYLAH will ca
 <div class="paragraph">
 <p>We have drawn some diagrams to help you visualize how Expense Splitter works, click <a href="#AppendixA">here</a> to find out more!</p>
 </div>
+<div class="paragraph">
+<p>Here are some of the prefixes used:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Prefix</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Representation</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-i</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item Name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-p</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Item Price</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-n</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of Person</p></td>
+</tr>
+</tbody>
+</table>
+<hr>
 <div class="sect3">
 <h4 id="additem"><a class="link" href="#additem">3.4.1. Adding an item: <code>additem</code></a></h4>
 <div class="paragraph">
@@ -1740,62 +1768,6 @@ There is no need to save manually.</p>
 </div>
 <div class="sect2">
 <h3 id="for-diet-tracker"><a class="link" href="#for-diet-tracker">5.1. For Diet Tracker</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Changing Mode</strong> <code>mode</code><br>
-e.g <code>mode -l</code></p>
-</li>
-<li>
-<p><strong>Adding Food</strong> <code>add</code><br>
-e.g <code>add -n salad -c 235 -t healthy</code></p>
-</li>
-<li>
-<p><strong>Deleting Food</strong> <code>delete</code><br>
-e.g <code>delete 3</code></p>
-</li>
-<li>
-<p><strong>Editing Food</strong> <code>edit</code><br>
-e.g <code>edit -i 2 -n chips -c 230</code></p>
-</li>
-<li>
-<p><strong>Listing Food</strong> <code>list [-a] [-d numDays] [-t tagName]</code><br>
-e.g <code>list</code></p>
-</li>
-<li>
-<p><strong>Setting Mode</strong> <code>mode MODE</code><br>
-e.g. <code>mode -m</code></p>
-</li>
-<li>
-<p><strong>Setting Height</strong> : <code>height HEIGHT</code><br>
-e.g. <code>height 169</code></p>
-</li>
-<li>
-<p><strong>Setting Weight</strong> <code>weight WEIGHT</code><br>
-e.g. <code>weight 56</code></p>
-</li>
-<li>
-<p><strong>Showing Your Metrics</strong> <code>metrics</code><br>
-e.g. <code>metrics</code></p>
-</li>
-<li>
-<p><strong>Calculating BMI</strong> <code>bmi</code><br>
-e.g. <code>bmi -h 172 -w 65.5</code></p>
-</li>
-<li>
-<p><strong>Getting Help</strong> <code>help</code><br>
-e.g. <code>help</code></p>
-</li>
-<li>
-<p><strong>Going Back</strong> <code>back</code><br>
-e.g. <code>back</code></p>
-</li>
-<li>
-<p><strong>Exiting the Application</strong> <code>exit</code><br>
-e.g <code>exit</code></p>
-</li>
-</ul>
-</div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 33.3333%;">
@@ -1897,50 +1869,6 @@ or
 </div>
 <div class="sect2">
 <h3 id="for-expense-splitter"><a class="link" href="#for-expense-splitter">5.2. For Expense Splitter</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Adding Item</strong> <code>additem</code><br>
-e.g <code>additem -i pasta -p 19.20 -n charlotte -n bob</code></p>
-</li>
-<li>
-<p><strong>Deleting Item</strong> <code>deleteitem</code><br>
-e.g <code>deleteitem 3</code></p>
-</li>
-<li>
-<p><strong>Listing Receipt</strong> <code>listreceipt</code><br>
-e.g. <code>listreceipt</code></p>
-</li>
-<li>
-<p><strong>Listing Amount</strong> <code>listamount</code><br>
-e.g <code>listamount</code></p>
-</li>
-<li>
-<p><strong>Marking Receipt as Done</strong> <code>donereceipt</code><br>
-e.g <code>donereceipt</code></p>
-</li>
-<li>
-<p><strong>Getting Paid by Someone</strong> <code>paid INDEX</code><br>
-e.g. <code>paid 3</code></p>
-</li>
-<li>
-<p><strong>Clear Receipt</strong> <code>clearreceipt</code><br>
-e.g <code>clearreceipt</code></p>
-</li>
-<li>
-<p><strong>Getting Help</strong> <code>help</code><br>
-e.g <code>help</code></p>
-</li>
-<li>
-<p><strong>Going Back</strong> <code>back</code><br>
-e.g. <code>back</code></p>
-</li>
-<li>
-<p><strong>Exiting the Application</strong> <code>exit</code><br>
-e.g <code>exit</code></p>
-</li>
-</ul>
-</div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 33.3333%;">
@@ -2092,4 +2020,4 @@ item in a list.</p></td>
 at the bottom represents the end point.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 13:45:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 15:02:23 UTC</div></div></div></body></html>
