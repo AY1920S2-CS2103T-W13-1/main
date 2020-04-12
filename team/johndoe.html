@@ -1150,7 +1150,7 @@ will be immutable.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Below are some diagrams to explain how our team implemented this portion.</p>
+<p>Below is the activity diagram of the entire Expense Splitter.</p>
 </div>
 <div class="paragraph">
 <p><strong>Activity Diagram of Expense Splitter:</strong><br></p>
@@ -1159,17 +1159,28 @@ will be immutable.</p>
 <div class="content">
 <img src="../images/ExpenseSplitterActivityDiagramV2.png" alt="ExpenseSplitterActivityDiagramV2">
 </div>
-</div>
-<div class="paragraph">
-<p>Figure : Expense Splitter Activity Diagram</p>
+<div class="title">Figure 24. ExpenseSplitterActivityDiagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/ExpenseSplitterActivityDiagram.png" alt="ExpenseSplitterActivityDiagram">
 </div>
+<div class="title">Figure 25. SimplifiedAddItemActivityDiagram</div>
 </div>
-<div class="paragraph">
-<p>Figure : Add Item Activity Diagram</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+SimplifiedAddItemActivityDiagram is not the actual AddItem Activity Diagram. It has been
+simplified to provide just enough information
+for the user to know about the rough workflow of Expense Splitter. A more detailed
+diagram of Add Item can be found in <a href="#Add-Item-Command">AddItemCommand</a>.
+</td>
+</tr>
+</table>
 </div>
 <div class="sect3">
 <h4 id="Add-Item-Command"><a class="link" href="#Add-Item-Command">Add Item Command</a></h4>
@@ -1223,7 +1234,7 @@ involved in splitting the cost of that Item.</p>
 <div class="content">
 <img src="../images/ExpenseSplitterAddItemCommandActivityDiagram.png" alt="ExpenseSplitterAddItemCommandActivityDiagram">
 </div>
-<div class="title">Figure 24. Add Item Command Activity Diagram</div>
+<div class="title">Figure 26. Add Item Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Add Item Command</strong></p>
@@ -1266,13 +1277,13 @@ person, together with the amount, into the <code>PersonAmountBook#persons</code>
 <div class="content">
 <img src="../images/ExpenseSplitterAddItemCommandSequenceDiagram.png" alt="ExpenseSplitterAddItemCommandSequenceDiagram">
 </div>
-<div class="title">Figure 25. Add Item Command Sequence Diagram</div>
+<div class="title">Figure 27. Add Item Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/ExpenseSplitterAddItemCommandSequenceDiagram2.png" alt="ExpenseSplitterAddItemCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 26. Execution of Add Item Command</div>
+<div class="title">Figure 28. Execution of Add Item Command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1323,7 +1334,7 @@ person, together with the amount, into the <code>PersonAmountBook#persons</code>
 <div class="content">
 <img src="../images/ExpenseSplitterDeleteItemCommandActivityDiagram.png" alt="ExpenseSplitterDeleteItemCommandActivityDiagram">
 </div>
-<div class="title">Figure 27. Delete Item Command Activity Diagram</div>
+<div class="title">Figure 29. Delete Item Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
@@ -1361,13 +1372,13 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 <div class="content">
 <img src="../images/ExpenseSplitterDeleteItemCommandSequenceDiagram.png" alt="ExpenseSplitterDeleteItemCommandSequenceDiagram">
 </div>
-<div class="title">Figure 28. Delete Item Command Sequence Diagram</div>
+<div class="title">Figure 30. Delete Item Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/ExpenseSplitterDeleteItemCommandSequenceDiagram2.png" alt="ExpenseSplitterDeleteItemCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 29. Execution of Delete Item Command</div>
+<div class="title">Figure 31. Execution of Delete Item Command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1418,7 +1429,7 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 <div class="content">
 <img src="../images/ExpenseSplitterListReceiptCommandActivityDiagram.png" alt="ExpenseSplitterListReceiptCommandActivityDiagram">
 </div>
-<div class="title">Figure 30. List Receipt Activity Diagram</div>
+<div class="title">Figure 32. List Receipt Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of List Receipt Command</strong></p>
@@ -1437,7 +1448,11 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 <li>
 <p>The method <code>Receipt#toString()</code> will use StringBuilder to build the string of the Items(s) currently in
 Receipt by calling <code>Entry.toString()</code> for entry. After all entries are done, <code>Receipt#toString()</code> would have
-finish building the string and will return to SplitterModelManager where it will be printed out.</p>
+finish building the string and will return to SplitterModelManager.</p>
+</li>
+<li>
+<p>4. SplitterModelManager will then pass the String into CommandResult where it will be printed under the UI
+component.</p>
 </li>
 </ol>
 </div>
@@ -1451,7 +1466,7 @@ finish building the string and will return to SplitterModelManager where it will
 <div class="content">
 <img src="../images/ExpenseSplitterListReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterListReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 31. List Receipt Command Sequence Diagram</div>
+<div class="title">Figure 33. List Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1502,7 +1517,7 @@ finish building the string and will return to SplitterModelManager where it will
 <div class="content">
 <img src="../images/ExpenseSplitterListAmountCommandActivityDiagram.png" alt="ExpenseSplitterListAmountCommandActivityDiagram">
 </div>
-<div class="title">Figure 32. List Amount Activity Diagram<br></div>
+<div class="title">Figure 34. List Amount Activity Diagram<br></div>
 </div>
 <div class="paragraph">
 <p><strong>Structure of List Amount Command</strong><br></p>
@@ -1514,7 +1529,7 @@ finish building the string and will return to SplitterModelManager where it will
 <div class="content">
 <img src="../images/ExpenseSplitterListAmountCommandClassDiagram.png" alt="ExpenseSplitterListAmountCommandClassDiagram">
 </div>
-<div class="title">Figure 33. List Amount Command Class Diagram</div>
+<div class="title">Figure 35. List Amount Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>ListAmountCommand</code> and its associated classes and
@@ -1536,7 +1551,11 @@ interfaces. Some methods and fields are left out because they are not of concern
 </li>
 <li>
 <p><code>PersonAmountBook#toString()</code> will convert list of person in the list to the expected format and return it to
-SplitterModelManager where it will be printed out.</p>
+SplitterModelManager.</p>
+</li>
+<li>
+<p>SplitterModelManager will then pass the String into CommandResult where it will be printed under the UI
+component.</p>
 </li>
 </ol>
 </div>
@@ -1550,7 +1569,7 @@ SplitterModelManager where it will be printed out.</p>
 <div class="content">
 <img src="../images/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
 </div>
-<div class="title">Figure 34. List Amount Command Sequence Diagram</div>
+<div class="title">Figure 36. List Amount Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1597,7 +1616,7 @@ the correct item back.</p>
 <div class="content">
 <img src="../images/ExpenseSplitterDoneReceiptCommandActivityDiagram.png" alt="ExpenseSplitterDoneReceiptCommandActivityDiagram">
 </div>
-<div class="title">Figure 35. Done Receipt Command Activity Diagram</div>
+<div class="title">Figure 37. Done Receipt Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Structure of Done Receipt Command</strong><br></p>
@@ -1609,7 +1628,7 @@ the correct item back.</p>
 <div class="content">
 <img src="../images/ExpenseSplitterDoneReceiptCommandClassDiagram.png" alt="ExpenseSplitterDoneReceiptCommandClassDiagram">
 </div>
-<div class="title">Figure 36. Done Receipt Command Class Diagram</div>
+<div class="title">Figure 38. Done Receipt Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>DoneReceiptCommand</code> and its associated classes and
@@ -1647,7 +1666,7 @@ interfaces. Some methods and fields are left out because they are not of concern
 <div class="content">
 <img src="../images/ExpenseSplitterDoneReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterDoneReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 37. Done Receipt Command Sequence Diagram</div>
+<div class="title">Figure 39. Done Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1705,7 +1724,7 @@ empty is equivalent to the Person paying the user the full amount he/she owes th
 <div class="content">
 <img src="../images/ExpenseSplitterPaidCommandActivityDiagram.png" alt="ExpenseSplitterPaidCommandActivityDiagram">
 </div>
-<div class="title">Figure 38. Paid Command Activity Diagram</div>
+<div class="title">Figure 40. Paid Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Structure of Paid Command</strong><br></p>
@@ -1717,7 +1736,7 @@ empty is equivalent to the Person paying the user the full amount he/she owes th
 <div class="content">
 <img src="../images/ExpenseSplitterPaidCommandClassDiagram.png" alt="ExpenseSplitterPaidCommandClassDiagram">
 </div>
-<div class="title">Figure 39. Paid Command Class Diagram</div>
+<div class="title">Figure 41. Paid Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>PaidCommand</code> and its associated classes and
@@ -1759,13 +1778,13 @@ String amountPaid will be converted into an Amount by instantiating a new instan
 <div class="content">
 <img src="../images/ExpenseSplitterPaidCommandSequenceDiagram.png" alt="ExpenseSplitterPaidCommandSequenceDiagram">
 </div>
-<div class="title">Figure 40. Paid Command Sequence Diagram</div>
+<div class="title">Figure 42. Paid Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/ExpenseSplitterPaidCommandSequenceDiagram2.png" alt="ExpenseSplitterPaidCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 41. Execution of Paid Command Sequence Diagram</div>
+<div class="title">Figure 43. Execution of Paid Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1818,7 +1837,7 @@ only be able to use the <code>additem</code> and <code>deleteitem</code> command
 <div class="content">
 <img src="../images/ExpenseSplitterClearReceiptCommandActivityDiagram.png" alt="ExpenseSplitterClearReceiptCommandActivityDiagram">
 </div>
-<div class="title">Figure 42. Clear Receipt Command Activity Diagram</div>
+<div class="title">Figure 44. Clear Receipt Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Clear Receipt Command</strong></p>
@@ -1852,7 +1871,7 @@ only be able to use the <code>additem</code> and <code>deleteitem</code> command
 <div class="content">
 <img src="../images/ExpenseSplitterClearReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterClearReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 43. Clear Receipt Command Sequence Diagram</div>
+<div class="title">Figure 45. Clear Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -3420,4 +3439,4 @@ Overall, we believe that EYLAH is a good testament to our hard work and the time
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 20:20:42 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 21:30:59 UTC</div></div></div></body></html>

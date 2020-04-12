@@ -57,7 +57,7 @@
 </ul>
 </li>
 <li><a href="#glossary">6. Glossary</a></li>
-<li><a href="#AppendixA">7. Appendix A: Simple activity diagram to aid user with using Expense Splitter</a></li>
+<li><a href="#AppendixA">7. Appendix: Simple activity diagram to aid you with using Expense Splitter<br></a></li>
 </ul>
 </div>
 </div>
@@ -65,8 +65,8 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This user guide provides in-depth documentation on the EYLAH desktop application. It comprises of 6 main portions,
-including the introduction, getting started, features, FAQ, command summary, and glossary.</p>
+<p>This user guide provides in-depth documentation on the EYLAH desktop application. It comprises of 7 main portions,
+the introduction, getting started, features, FAQ, command summary, glossary and appendix.</p>
 </div>
 <div class="paragraph">
 <p>Hello there! welcome to EYLAH&#8217;s User Guide.
@@ -1349,17 +1349,8 @@ and the <a href="#listreceiptexpectedoutcome">expected outcome</a> after using t
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Each entry in the receipt has the item&#8217;s name, price and person(s) who is splitting that item with you thus you do
-not have to remember who you split this item with!</p>
-</li>
-<li>
-<p>When you enter <code>clearrreceipt</code> it deletes the old receipt&#8217;s data. Use it with caution!</p>
-</li>
-</ul>
-</div>
+Each entry in the receipt has the item&#8217;s name, price and person(s) who is splitting that item with you thus you do
+not have to remember who you split this item with!
 </td>
 </tr>
 </table>
@@ -1371,10 +1362,8 @@ not have to remember who you split this item with!</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p>Use <code>listreceipt</code> command to find the index of the item in the receipt. The index is useful for commands
-such as <code>deleteitem</code> where you have to pass in the index of item to be deleted.</p>
-</div>
+Use <code>listreceipt</code> command to find the index of the item in the receipt. The index is useful for commands
+such as <code>deleteitem</code> where you have to pass in the index of item to be deleted.
 </td>
 </tr>
 </table>
@@ -1441,15 +1430,13 @@ and the <a href="#listamountexpectedoutcome">expected outcome</a> after using th
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p>Use <code>listamount</code> command to find the index of the person who paid you. The index is useful for commands
-such as <code>paid</code>.</p>
-</div>
+Use <code>listamount</code> command to find the index of the person who paid you. The index is useful for commands
+such as <code>paid</code>.
+'''
 </td>
 </tr>
 </table>
 </div>
-<hr>
 </div>
 <div class="sect3">
 <h4 id="donereceipt"><a class="link" href="#donereceipt">3.4.5. Mark receipt as done <code>donereceipt</code></a></h4>
@@ -1602,14 +1589,12 @@ empty is equivalent to the Person paying you the full amount he/she owes you.</p
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p>Use <code>listamount</code> command to find the index of the person who paid you.</p>
-</div>
+Use <code>listamount</code> command to find the index of the person who paid you.
+'''
 </td>
 </tr>
 </table>
 </div>
-<hr>
 </div>
 <div class="sect3">
 <h4 id="clearreceipt"><a class="link" href="#clearreceipt">3.4.7. Clears the receipt <code>clearreceipt</code></a></h4>
@@ -1953,29 +1938,42 @@ TA-Tracker in the form of lines of text</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Index of 1 refers to the first
 item in a list.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Activity Diagram</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This refers to the workflow of a software.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#AppendixA">Appendix</a></p></td>
+</tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="sect1">
-<h2 id="AppendixA"><a class="link" href="#AppendixA">7. Appendix A: Simple activity diagram to aid user with using Expense Splitter</a></h2>
+<h2 id="AppendixA"><a class="link" href="#AppendixA">7. Appendix: Simple activity diagram to aid you with using Expense Splitter<br></a></h2>
 <div class="sectionbody">
-<div class="imageblock">
-<div class="content">
-<img src="images/ExpenseSplitterActivityDiagramV2.png" alt="ExpenseSplitterActivityDiagramV2" width="790">
-</div>
-</div>
 <div class="paragraph">
-<p><strong>Add Item Activity Diagram</strong> <br></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/ExpenseSplitterActivityDiagram.png" alt="ExpenseSplitterActivityDiagram" width="790">
-</div>
+<p>This diagram will help you understand the flow of Expense Splitter thus improving your user experience.</p>
 </div>
 <div class="paragraph">
 <p>The fully blackened circle at the top represents the start point while the circle
 at the bottom represents the end point.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ExpenseSplitterActivityDiagramV2.png" alt="ExpenseSplitterActivityDiagramV2" width="790">
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 20:20:42 UTC</div></div></div></body></html>
+<div class="title">Figure 1. Expense Splitter Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>Simplified Add Item Activity Diagram</strong> <br></p>
+</div>
+<div class="paragraph">
+<p>This diagram below is used in conjunction with the diagram directly above this.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ExpenseSplitterActivityDiagram.png" alt="ExpenseSplitterActivityDiagram" width="790">
+</div>
+<div class="title">Figure 2. SimplifiedAddItemActivityDiagram</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 21:30:59 UTC</div></div></div></body></html>
