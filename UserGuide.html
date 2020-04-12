@@ -343,23 +343,28 @@ and the <a href="#modeexpectedoutcome">expected outcome</a> after using the
 </div>
 <div class="paragraph">
 <p><strong>Summary of Mode Command:</strong><br>
-<code>mode</code> to switch the dieting mode, based on the following modes:<br></p>
+<code>mode</code> You can set your desired dieting goal with the different modes that set a limit on your daily
+calorie intake. The calorie limits are calculated based on that of an average human. Your daily calories intake status
+can be monitored with the <code>list</code> command.</p>
+</div>
+<div class="paragraph">
+<p>Switch the dieting mode, based on the following modes:<br></p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Lose Weight (-l)</p>
+<p>Lose Weight (-l) (2000 calorie limit)</p>
 </li>
 <li>
-<p>Gain Weight (-g)</p>
+<p>Gain Weight (-g) (3000 calorie limit)</p>
 </li>
 <li>
-<p>Maintain (-m)</p>
+<p>Maintain (-m) (2500 calorie limit)</p>
 </li>
 </ul>
 </div>
 <div id="howtousemodecommand" class="paragraph">
-<p><strong>How to use the List Receipt Command:</strong></p>
+<p><strong>How to use the Mode Command:</strong></p>
 </div>
 <div class="paragraph">
 <p>Format:<br>
@@ -400,92 +405,7 @@ You must only input <strong>EXACTLY ONE</strong> mode per mode command.
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The default mode for any individual who has chosen his/her Dieting Mode will be MAINTAIN.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Switch the mode to help yourself reach your diet targets better!</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<hr>
-<div class="paragraph">
-<p>In this section, you will learn more about the <code>mode</code> command, <a href="#howtousemodecommand">how to use it</a>
-and the <a href="#modeexpectedoutcome">expected outcome</a> after using the
-<code>mode</code> command.</p>
-</div>
-<div class="paragraph">
-<p><strong>Summary of Mode Command:</strong><br>
-<code>mode</code> to switch the dieting mode, based on the following modes:<br></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Lose Weight (-l)</p>
-</li>
-<li>
-<p>Gain Weight (-g)</p>
-</li>
-<li>
-<p>Maintain (-m)</p>
-</li>
-</ul>
-</div>
-<div id="howtousemodecommand" class="paragraph">
-<p><strong>How to use the Mode Command:</strong></p>
-</div>
-<div class="paragraph">
-<p>Format:<br>
-<code>mode [-l] [-g] [-m]</code><br></p>
-</div>
-<div class="paragraph">
-<p>Valid Example:<br>
-<code>mode -l</code></p>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-You must only input one mode per mode command.
-</td>
-</tr>
-</table>
-</div>
-<div id="modeexpectedoutcome" class="paragraph">
-<p><strong>Expected outcome:</strong></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/dietTrackerModeCommandSuccessPhoto.png" alt="dietTrackerModeCommandSuccessPhoto" width="890" height="200">
-</div>
-</div>
-<div class="paragraph">
-<p><strong>Additional notes and tips</strong><br></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The default mode for any individual who has chosen his/her Dieting Mode will be MAINTAIN.</p>
+<p>The default mode is MAINTAIN if you have not set your mode.</p>
 </div>
 </td>
 </tr>
@@ -783,7 +703,7 @@ BMI is calculated based off the stored height and weight in this instance.</p>
 </li>
 <li>
 <p><code>height 173.5</code><br>
-<code>bmi -w 59.9</code>
+<code>bmi -w 59.9</code><br>
 Change your height to your current measurements before calculating you BMI.
 BMI is calculated based off the stored height and input weight in this instance.</p>
 </li>
@@ -889,7 +809,8 @@ and the <a href="#listexpectedoutcome">expected outcome</a> after using the
 <div class="paragraph">
 <p><strong>Summary of List Command:</strong><br>
 <code>list</code> You can use this function to list out the different foods that you have consumed and their total calories.
-Different listing modes allow you to watch your overall diet during the period, and gives you a tip on your level of consumption based on your Dieting Mode.</p>
+Different listing modes allow you to watch your overall diet during the period, or how much you can/should eat based
+on your daily intake.</p>
 </div>
 <div class="paragraph">
 <p>Displays different data based on the below flags:</p>
@@ -950,6 +871,9 @@ Different listing modes allow you to watch your overall diet during the period, 
 <li>
 <p>For the <code>-d</code> tag, the amount of days specified must be a positive Integer value.</p>
 </li>
+<li>
+<p>Calorie intake based on mode is only shown when listing food for the day.</p>
+</li>
 </ul>
 </div>
 </td>
@@ -981,7 +905,7 @@ and the <a href="#deleteexpectedoutcome">expected outcome</a> after using the
 <div class="ulist">
 <ul>
 <li>
-<p>Deletes the food item at the specified <code>INDEX</code>.</p>
+<p>Deletes the food item at the specified <code>INDEX</code> of the list.</p>
 </li>
 <li>
 <p>The index refers to the index number shown in the displayed food list.</p>
@@ -999,6 +923,19 @@ and the <a href="#deleteexpectedoutcome">expected outcome</a> after using the
 <code>delete 2</code><br>
 Deletes the 2nd row of food data from today&#8217;s list of food.</p>
 </div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+You <strong>MUST</strong> use <code>list</code> to check the list of items to identify a target to edit. This would ensure that you get the
+correct index of the item.
+</td>
+</tr>
+</table>
+</div>
 <div id="deleteexpectedoutcome" class="paragraph">
 <p><strong>Expected outcome:</strong></p>
 </div>
@@ -1010,20 +947,6 @@ Deletes the 2nd row of food data from today&#8217;s list of food.</p>
 <div class="paragraph">
 <p><strong>Additional notes and tips</strong><br></p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Index has to be a valid index in the list of Foods. You can use <code>list</code> to check this out.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -1032,7 +955,7 @@ Deletes the 2nd row of food data from today&#8217;s list of food.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Use list to view your item indices before deletion.</p>
+<p>You can list based on time period or tags to find the item that you want to delete.</p>
 </div>
 </td>
 </tr>
@@ -1089,7 +1012,8 @@ Edits the name of the food item at index 2 to be 'Chicken Rice' and the calories
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-You <strong>MUST</strong> use <code>list</code> to check the lists of items to identify a target to edit. Failure to do so might cause unintended consequences to the Diet Tracker&#8217;s Food List.
+You <strong>MUST</strong> use <code>list</code> to check the list of items to identify a target to edit. This would ensure that you get the
+correct index of the item.
 </td>
 </tr>
 </table>
@@ -1103,17 +1027,17 @@ You <strong>MUST</strong> use <code>list</code> to check the lists of items to i
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Additional notes</strong><br></p>
+<p><strong>Additional notes and tips</strong><br></p>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Index has to be a valid index in the list of Foods. You can use <code>list</code> to check this out.</p>
+<p>You can list based on time period or tags to find the item that you want to edit.</p>
 </div>
 </td>
 </tr>
@@ -1130,7 +1054,7 @@ and the <a href="#DThelpexpectedoutcome">expected outcome</a> after using the
 </div>
 <div class="paragraph">
 <p><strong>Summary of Help Command:</strong><br>
-<code>metrics</code> You can use the <code>help</code> command, if you are uncertain, to see the list of available commands for Diet Tracker.</p>
+<code>help</code> You can use the <code>help</code> command, if you are uncertain, to see the list of available commands for Diet Tracker.</p>
 </div>
 <div id="howtouseDTHelpcommand" class="paragraph">
 <p><strong>How to use the Help Command:</strong></p>
@@ -2019,4 +1943,4 @@ item in a list.</p></td>
 at the bottom represents the end point.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 12:08:58 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 12:29:48 UTC</div></div></div></body></html>
