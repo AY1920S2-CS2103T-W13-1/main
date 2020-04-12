@@ -376,7 +376,7 @@ and the <a href="#modeexpectedoutcome">expected outcome</a> after using the
 <i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
-You must only input one mode per mode command.
+You must only input <strong>EXACTLY ONE</strong> mode per mode command.
 </td>
 </tr>
 </table>
@@ -399,12 +399,8 @@ You must only input one mode per mode command.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>The default mode for any individual who has chosen his/her Dieting Mode will be MAINTAIN.</p>
-</li>
-</ul>
 </div>
 </td>
 </tr>
@@ -417,12 +413,8 @@ You must only input one mode per mode command.
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>Switch the mode to help yourself reach your diet targets better!</p>
-</li>
-</ul>
 </div>
 </td>
 </tr>
@@ -492,12 +484,8 @@ You must only input one mode per mode command.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>The default mode for any individual who has chosen his/her Dieting Mode will be MAINTAIN.</p>
-</li>
-</ul>
 </div>
 </td>
 </tr>
@@ -565,12 +553,8 @@ and the <a href="#heightexpectedoutcome">expected outcome</a> after using the
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>Height in centimetres (cm). Decimal places are accepted. I.e. <code>height 172.305</code> is accepted.</p>
-</li>
-</ul>
 </div>
 </td>
 </tr>
@@ -583,12 +567,8 @@ and the <a href="#heightexpectedoutcome">expected outcome</a> after using the
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>Check your stored height with <code>metrics</code>.</p>
-</li>
-</ul>
 </div>
 </td>
 </tr>
@@ -636,12 +616,8 @@ and the <a href="#weightexpectedoutcome">expected outcome</a> after using the
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>Weight in kilograms (kg). Decimal places are accepted. I.e. <code>weight 65.77</code> is accepted.</p>
-</li>
-</ul>
 </div>
 </td>
 </tr>
@@ -654,12 +630,8 @@ and the <a href="#weightexpectedoutcome">expected outcome</a> after using the
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>Check your stored weight with <code>metrics</code>.</p>
-</li>
-</ul>
 </div>
 </td>
 </tr>
@@ -723,12 +695,8 @@ and the <a href="#metricsexpectedoutcome">expected outcome</a> after using the
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>Diet Tracker will prompt you if you did not have any previously stored Height, Weight.</p>
-</li>
-</ul>
 </div>
 </td>
 </tr>
@@ -741,12 +709,8 @@ and the <a href="#metricsexpectedoutcome">expected outcome</a> after using the
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>Use this to check whether you have previously stored a Height, a Weight, or have chosen your Dieting Mode already.</p>
-</li>
-</ul>
 </div>
 </td>
 </tr>
@@ -847,12 +811,8 @@ Calculate BMI based on the input height and weight values.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>If you are unsure whether you have already input your height and weight, you may <code>metrics</code> to check.</p>
-</li>
-</ul>
 </div>
 </td>
 </tr>
@@ -1057,12 +1017,8 @@ Deletes the 2nd row of food data from today&#8217;s list of food.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>Index has to be a valid index in the list of Foods. You can use <code>list</code> to check this out.</p>
-</li>
-</ul>
 </div>
 </td>
 </tr>
@@ -1075,12 +1031,8 @@ Deletes the 2nd row of food data from today&#8217;s list of food.</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>Use list to view your item indices before deletion.</p>
-</li>
-</ul>
 </div>
 </td>
 </tr>
@@ -1130,6 +1082,18 @@ The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p
 <code>edit -i 2 -n Chicken Rice -c 585</code><br>
 Edits the name of the food item at index 2 to be 'Chicken Rice' and the calories to be '585'.</p>
 </div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+You <strong>MUST</strong> use <code>list</code> to check the lists of items to identify a target to edit. Failure to do so might cause unintended consequences to the Diet Tracker&#8217;s Food List.
+</td>
+</tr>
+</table>
+</div>
 <div id="editexpectedoutcome" class="paragraph">
 <p><strong>Expected outcome:</strong></p>
 </div>
@@ -1148,12 +1112,8 @@ Edits the name of the food item at index 2 to be 'Chicken Rice' and the calories
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>Index has to be a valid index in the list of Foods. You can use <code>list</code> to check this out.</p>
-</li>
-</ul>
 </div>
 </td>
 </tr>
@@ -1357,13 +1317,9 @@ not have to remember who you split this item with!</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>Use <code>listreceipt</code> command to find the index of the item in the receipt. The index is useful for commands
 such as <code>deleteitem</code> where you have to pass in the index of item to be deleted.</p>
-</li>
-</ul>
 </div>
 </td>
 </tr>
@@ -1431,13 +1387,9 @@ and the <a href="#listamountexpectedoutcome">expected outcome</a> after using th
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>Use <code>listamount</code> command to find the index of the person who paid you. The index is useful for commands
 such as <code>paid</code>.</p>
-</li>
-</ul>
 </div>
 </td>
 </tr>
@@ -1580,12 +1532,8 @@ empty is equivalent to the Person paying you the full amount he/she owes you.</p
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-<div class="ulist">
-<ul>
-<li>
+<div class="paragraph">
 <p>Use <code>listamount</code> command to find the index of the person who paid you.</p>
-</li>
-</ul>
 </div>
 </td>
 </tr>
@@ -2059,4 +2007,4 @@ item in a list.</p></td>
 at the bottom represents the end point.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 07:53:50 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 07:59:31 UTC</div></div></div></body></html>
