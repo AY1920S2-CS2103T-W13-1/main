@@ -233,16 +233,19 @@ based on their user input.</p>
 <p><a href="#Edit-Command"><code>EditCommand</code></a> - Allows the user to edit an of the Food in Storage.</p>
 </li>
 <li>
-<p><a href="#Bmi-Command"><code>BmiCommand</code></a> - Calculates the BMI.</p>
-</li>
-<li>
 <p><a href="#Height-Command"><code>HeightCommand</code></a> - Allows users to log their Height in centimeters.</p>
 </li>
 <li>
 <p><a href="#Weight-Command"><code>WeightCommand</code></a> - Allows users to log their Weight in kilograms.</p>
 </li>
 <li>
+<p><a href="#Bmi-Command"><code>BmiCommand</code></a> - Calculates the BMI.</p>
+</li>
+<li>
 <p><a href="#Mode-Command"><code>ModeCommand</code></a> - Allows users to toggle between different modes of the diet tracker.</p>
+</li>
+<li>
+<p><a href="#Metrics-Command"><code>MetricsCommand</code></a> - Allows users to check their health metrics, like their Height, Weight and Dieting Mode.</p>
 </li>
 <li>
 <p><a href="#Help-Command"><code>HelpCommand</code></a> - Provides a help guide for users based on what commands are available.</p>
@@ -694,6 +697,116 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="../images/expense-splitter/DietTrackerModeCommandSequenceDiagram.png" alt="DietTrackerModeCommandSequenceDiagram">
 </div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Metrics-Command"><a class="link" href="#Metrics-Command">Metrics Command</a></h4>
+<div class="paragraph">
+<p>In this section, we will learn more about how the <code>metrics</code> command is implemented.</p>
+</div>
+<div class="paragraph">
+<p><strong>What is the Metrics Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>additem</code> command allows the user to add an Item into the Receipt, along with the ItemPrice of the Item and the Persons
+involved in splitting the cost of that Item.</p>
+</div>
+<div class="paragraph">
+<p>The <code>additem</code> command was implemented as <code>AddItemCommand</code> in the <code>expenseSplitterLogic</code> package.</p>
+</div>
+<div class="paragraph">
+<p>The <code>additem</code> command has the following input format:</p>
+</div>
+<div class="paragraph">
+<p><code>additem</code> <code>-i ITEMNAME</code> <code>-p ITEMPRICE</code> <code>-n NAME</code> <code>[-n NAME]&#8230;&#8203;</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>-i ITEMNAME</code> and <code>-p ITEMPRICE</code> are <strong>compulsory</strong> fields.</p>
+</li>
+<li>
+<p>There can be multiple <code>-n NAME</code>, however, a <strong>minimum of 1</strong> is required.</p>
+</li>
+<li>
+<p><code>ITEMPRICE</code> can be up to 2 decimal places, i.e 7.99. There is <strong>no need</strong> to add the dollar sign ($).</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates what happens when a user executes the <code>additem</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/DietTrackerMetricsCommandActivityDiagram.png" alt="DietTrackerMetricsCommandActivityDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure : Add Item Command Activity Diagram</p>
+</div>
+<div class="paragraph">
+<p><strong>Implementation of Add Item Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations AddItemCommand performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>AddItemCommand#execute(SplitterModel splitterModel)</code> method is executed and it checks if the specified Item
+and list of Persons to be added are valid. If valid, a new Entry would be created with the specified Item and list of
+Persons.</p>
+</li>
+<li>
+<p>The <code>SplitterModel#addEntry(Entry entry)</code> method would then be called to add the Entry into the Receipt.</p>
+</li>
+<li>
+<p>For each Person in the list of Persons, the Person is first checked through the <code>PersonAmountBook#persons</code> using the
+<code>SplitterModel#hasPerson(Person person)</code> method to check if the person already exists.</p>
+</li>
+<li>
+<p>If the person does not already exist, the method <code>SplitterModel#addPerson(Person person)</code> would be called to add the
+person, together with the amount, into the <code>PersonAmountBook#persons</code>.</p>
+</li>
+<li>
+<p>If the Person exists, thePerson would be retrieved from the <code>PersonAmountBook#persons</code> using the
+<code>SplitterModel#getPerson(Person person)</code> method, and then the amount would be added to that person using the
+<code>SplitterModel#addAmount(Person person, Amount amount)</code> method.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Sequence diagram for Add Item Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens during the execution of <code>additem</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/DietTrackerMetricsCommandSequenceDiagram.png" alt="DietTrackerMetricsCommandSequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure: Add Item Command Sequence Diagram</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterAddItemCommandSequenceDiagram2.png" alt="ExpenseSplitterAddItemCommandSequenceDiagram2">
+</div>
+</div>
+<div class="paragraph">
+<p>Figure: Execution of Add Item Command</p>
 </div>
 </div>
 </div>
@@ -2698,4 +2811,4 @@ will throw an exception? Because in AB3 everything there is assertFalse<br>
 3.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 03:54:57 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 04:23:33 UTC</div></div></div></body></html>
