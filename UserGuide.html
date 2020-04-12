@@ -18,8 +18,8 @@
 <li><a href="#getting-started">2. Getting Started</a></li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
-<li><a href="#viewing-help-code-help-code">3.1. Viewing Help : <code>help</code></a></li>
-<li><a href="#exiting-application-code-exit-code">3.2. Exiting Application : <code>exit</code></a></li>
+<li><a href="#display-the-available-commands-code-help-code">3.1. Display the available commands : <code>help</code></a></li>
+<li><a href="#exiting-the-application-code-exit-code">3.2. Exiting the Application : <code>exit</code></a></li>
 <li><a href="#diet-tracker-code-diet-code">3.3. Diet Tracker : <code>diet</code></a>
 <ul class="sectlevel3">
 <li><a href="#mode">3.3.1. Dieting Mode <code>mode</code></a></li>
@@ -31,7 +31,7 @@
 <li><a href="#listfooditem">3.3.7. Listing items <code>list</code></a></li>
 <li><a href="#deletefooditem">3.3.8. Deleting a Food Item <code>delete</code></a></li>
 <li><a href="#editfooditem">3.3.9. Editing a Food Item <code>edit</code></a></li>
-<li><a href="#diettrackerhelp">3.3.10. Displaying available commands for Diet Tracker <code>help</code></a></li>
+<li><a href="#dietback">3.3.10. Exiting Diet Tracker to go back to main menu <code>back</code></a></li>
 </ul>
 </li>
 <li><a href="#expense-splitter-code-split-code">3.4. Expense Splitter : <code>split</code></a>
@@ -43,11 +43,10 @@
 <li><a href="#donereceipt">3.4.5. Mark receipt as done <code>donereceipt</code></a></li>
 <li><a href="#paid">3.4.6. Paying money: <code>paid</code></a></li>
 <li><a href="#clearreceipt">3.4.7. Clears the receipt <code>clearreceipt</code></a></li>
-<li><a href="#expensesplitterhelp">3.4.8. Display the available commands <code>help</code></a></li>
-<li><a href="#back">3.4.9. Exiting split to go back to main menu <code>back</code></a></li>
-<li><a href="#saving-the-data">3.4.10. Saving the data</a></li>
+<li><a href="#splitback">3.4.8. Exiting Expense Splitter to go back to main menu <code>back</code></a></li>
 </ul>
 </li>
+<li><a href="#saving-the-data">3.5. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -316,14 +315,15 @@ e.g: <code>additem -i pizza -p 19.90 -n charlotte</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing Help : <code>help</code></a></h3>
+<h3 id="display-the-available-commands-code-help-code"><a class="link" href="#display-the-available-commands-code-help-code">3.1. Display the available commands : <code>help</code></a></h3>
 <div class="paragraph">
 <p>In this section, you will learn more about <code>help</code> command, <a href="#howtousehelpcommand">how to use it</a>
 and the <a href="#helpexpectedoutcome">expected outcome</a> after using the <code>help</code> command.</p>
 </div>
 <div class="paragraph">
 <p><strong>Summary of Help Command:</strong><br>
-<code>help</code> You can use this command to view help everywhere in the application.</p>
+<code>help</code> You can use the <code>help</code> command, if you are uncertain, to see the list of available commands.
+This command can be used everywhere in the application.</p>
 </div>
 <div id="howtousehelpcommand" class="paragraph">
 <p><strong>How to use the Help Command:</strong></p>
@@ -380,23 +380,20 @@ and the <a href="#helpexpectedoutcome">expected outcome</a> after using the <cod
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>Format: <code>help</code></p>
-</div>
 <hr>
 </div>
 <div class="sect2">
-<h3 id="exiting-application-code-exit-code"><a class="link" href="#exiting-application-code-exit-code">3.2. Exiting Application : <code>exit</code></a></h3>
+<h3 id="exiting-the-application-code-exit-code"><a class="link" href="#exiting-the-application-code-exit-code">3.2. Exiting the Application : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>In this section, you will learn more about <code>exit</code> command, <a href="#howtouseexitcommand">how to use it</a>
-and the <a href="#exitexpectedoutcome">expected outcome</a> after using the <code>help</code> command.</p>
+and the <a href="#exitexpectedoutcome">expected outcome</a> after using the <code>exit</code> command.</p>
 </div>
 <div class="paragraph">
 <p><strong>Summary of Exit Command:</strong><br>
-<code>exit</code> You can use this command to exit the application from anywhere in the application.</p>
+<code>exit</code> You can use this command everywhere in the application to exit.</p>
 </div>
 <div id="howtouseexitcommand" class="paragraph">
-<p><strong>How to use the exit Command:</strong></p>
+<p><strong>How to use the Exit Command:</strong></p>
 </div>
 <div class="paragraph">
 <p>Format:<br>
@@ -406,52 +403,13 @@ and the <a href="#exitexpectedoutcome">expected outcome</a> after using the <cod
 <p>Valid Example:<br>
 <code>exit</code></p>
 </div>
-<div id="helpexpectedoutcome" class="paragraph">
+<div id="exitexpectedoutcome" class="paragraph">
 <p><strong>Expected outcome:</strong></p>
 </div>
-<div class="paragraph">
-<p><strong>Main Menu:</strong></p>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/dietTrackerWeightCommandSuccessPhoto.png" alt="dietTrackerWeightCommandSuccessPhoto" width="890" height="200">
 </div>
-</div>
-<div class="paragraph">
-<p><strong>Diet Tracker Mode:</strong></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/dietTrackerWeightCommandSuccessPhoto.png" alt="dietTrackerWeightCommandSuccessPhoto" width="890" height="200">
-</div>
-</div>
-<div class="paragraph">
-<p><strong>Expense Splitter Mode:</strong></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/dietTrackerWeightCommandSuccessPhoto.png" alt="dietTrackerWeightCommandSuccessPhoto" width="890" height="200">
-</div>
-</div>
-<div class="paragraph">
-<p><strong>Additional notes and tips</strong><br></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Help in main menu and different mode will give different help information.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Format: <code>help</code></p>
 </div>
 <hr>
 </div>
@@ -1179,33 +1137,32 @@ correct index of the item.
 <hr>
 </div>
 <div class="sect3">
-<h4 id="diettrackerhelp"><a class="link" href="#diettrackerhelp">3.3.10. Displaying available commands for Diet Tracker <code>help</code></a></h4>
+<h4 id="dietback"><a class="link" href="#dietback">3.3.10. Exiting Diet Tracker to go back to main menu <code>back</code></a></h4>
 <div class="paragraph">
-<p>In this section, you will learn more about the <code>help</code> command, <a href="#howtouseDThelpcommand">how to use it</a>
-and the <a href="#DThelpexpectedoutcome">expected outcome</a> after using the
-<code>help</code> command.</p>
+<p>In this section, you will learn more about the <code>back</code> command, <a href="#howtousedietbackcommand">how to use it</a>
+and the <a href="#dietbackexpectedoutcome">expected outcome</a> after using the <code>back</code> command.</p>
 </div>
 <div class="paragraph">
-<p><strong>Summary of Help Command:</strong><br>
-<code>help</code> You can use the <code>help</code> command, if you are uncertain, to see the list of available commands for Diet Tracker.</p>
+<p><strong>Summary of Back Command:</strong><br>
+<code>back</code> allows you to exits Diet Tracker mode to go back to main menu of the application.</p>
 </div>
-<div id="howtouseDTHelpcommand" class="paragraph">
-<p><strong>How to use the Help Command:</strong></p>
+<div id="howtousedietbackcommand" class="paragraph">
+<p><strong>How to use the Back Command:</strong></p>
 </div>
 <div class="paragraph">
 <p>Format:<br>
-<code>help</code><br></p>
+<code>back</code></p>
 </div>
 <div class="paragraph">
 <p>Valid Example:<br>
-<code>help</code></p>
+<code>back</code></p>
 </div>
-<div id="DThelpexpectedoutcome" class="paragraph">
+<div id="dietbackexpectedoutcome" class="paragraph">
 <p><strong>Expected outcome:</strong></p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/dietTrackerHelpCommandSuccessPhoto.png" alt="dietTrackerHelpCommandSuccessPhoto" width="890" height="200">
+<img src="images/placeholder.png" alt="placeholder">
 </div>
 </div>
 <hr>
@@ -1501,8 +1458,8 @@ such as <code>paid</code>.</p>
 and the <a href="#donereceiptexpectedoutcome">expected outcome</a> after using the <code>donereceipt</code> command.</p>
 </div>
 <div class="paragraph">
-<p><strong>Summary of Done Receipt Command:</strong> <code>donereceipt</code> <strong>marks the receipt as done when you have completed entering
-all the items</strong>.</p>
+<p><strong>Summary of Done Receipt Command:</strong> <code>donereceipt</code> *marks the receipt as done when you have completed entering
+all the items.</p>
 </div>
 <div id="howtousedonereceiptcommand" class="paragraph">
 <p><strong>How to use the Done Receipt Command:</strong></p>
@@ -1708,42 +1665,43 @@ and delete items using the <code>deleteitem</code> command.</p>
 <hr>
 </div>
 <div class="sect3">
-<h4 id="expensesplitterhelp"><a class="link" href="#expensesplitterhelp">3.4.8. Display the available commands <code>help</code></a></h4>
+<h4 id="splitback"><a class="link" href="#splitback">3.4.8. Exiting Expense Splitter to go back to main menu <code>back</code></a></h4>
 <div class="paragraph">
-<p>Use this command to view the available commands.</p>
+<p>In this section, you will learn more about the <code>back</code> command, <a href="#howtousesplitbackcommand">how to use it</a>
+and the <a href="#splitbackexpectedoutcome">expected outcome</a> after using the <code>back</code> command.</p>
 </div>
 <div class="paragraph">
-<p>Format:<br>
-<code>help</code></p>
+<p><strong>Summary of Back Command:</strong><br>
+<code>back</code> allows you to exits Expense Splitter mode to go back to main menu of the application.</p>
 </div>
-<div class="paragraph">
-<p>Example:<br>
-<code>help</code></p>
-</div>
-<hr>
-</div>
-<div class="sect3">
-<h4 id="back"><a class="link" href="#back">3.4.9. Exiting split to go back to main menu <code>back</code></a></h4>
-<div class="paragraph">
-<p>You can exits <code>split</code> mode to go back to the main menu of the application.</p>
+<div id="howtousesplitbackcommand" class="paragraph">
+<p><strong>How to use the Back Command:</strong></p>
 </div>
 <div class="paragraph">
 <p>Format:<br>
 <code>back</code></p>
 </div>
 <div class="paragraph">
-<p>Example:<br>
+<p>Valid Example:<br>
 <code>back</code></p>
 </div>
+<div id="splitbackexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/placeholder.png" alt="placeholder">
+</div>
+</div>
 <hr>
 </div>
-<div class="sect3">
-<h4 id="saving-the-data"><a class="link" href="#saving-the-data">3.4.10. Saving the data</a></h4>
+</div>
+<div class="sect2">
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.5. Saving the data</a></h3>
 <div class="paragraph">
-<p>EYLAH data are saved in the hard disk automatically after any command that changes the data.<br>
-There is no need to save manually.</p>
-</div>
-<hr>
+<p>In this section, you will learn more about the saving mechanism of the application. EYLAH will automatically
+helps you store the data in the hard disk after any command that changes the data.<br>
+You <strong>do not</strong> need to save manually.</p>
 </div>
 </div>
 </div>
@@ -2020,4 +1978,4 @@ item in a list.</p></td>
 at the bottom represents the end point.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 18:28:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 18:42:17 UTC</div></div></div></body></html>

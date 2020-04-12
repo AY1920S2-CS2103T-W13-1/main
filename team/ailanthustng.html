@@ -1729,17 +1729,45 @@ the correct item back.</p>
 <div class="paragraph">
 <p>The following activity diagram illustrates what happens when a user executes <code>donereceipt</code> command:</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterDoneReceiptCommandActivityDiagram.png" alt="ExpenseSplitterDoneReceiptCommandActivityDiagram">
+</div>
+<div class="title">Figure 34. Done Receipt Command Activity Diagram</div>
+</div>
 <div class="paragraph">
 <p><strong>Implementation of Done Receipt Command</strong></p>
 </div>
 <div class="paragraph">
-<p>The following is a detailed explanation of the operations DoneReceiptCommand performs.</p>
+<p>The following is a detailed explanation of the operations <code>DoneReceiptCommand</code> performs.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>DoneReceiptCommand#execute(SplitterModel splitterModel)</code> method is executed.</p>
+</li>
+<li>
+<p>The <code>SplitterModel#getReceipt()</code> method is executed and get the current <code>Receipt</code>.</p>
+</li>
+<li>
+<p>Then <code>Receipt#markDone()</code> method is called.</p>
+</li>
+<li>
+<p>This will invoke the boolean <code>Receipt#isDone</code> variable changed to true.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p><strong>Sequence Diagram for Done Receipt Command</strong></p>
 </div>
 <div class="paragraph">
 <p>The following sequence diagram summarizes what happens during the execution of <code>donereceipt</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterDoneReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterDoneReceiptCommandSequenceDiagram">
+</div>
+<div class="title">Figure 35. Done Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1797,7 +1825,7 @@ empty is equivalent to the Person paying the user the full amount he/she owes th
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterPaidCommandActivityDiagram.png" alt="ExpenseSplitterPaidCommandActivityDiagram">
 </div>
-<div class="title">Figure 34. Paid Command Activity Diagram</div>
+<div class="title">Figure 36. Paid Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Paid Command</strong></p>
@@ -1835,13 +1863,13 @@ String amountPaid will be converted into an Amount by instantiating a new instan
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterPaidCommandSequenceDiagram.png" alt="ExpenseSplitterPaidCommandSequenceDiagram">
 </div>
-<div class="title">Figure 35. Paid Command Sequence Diagram</div>
+<div class="title">Figure 37. Paid Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterPaidCommandSequenceDiagram2.png" alt="ExpenseSplitterPaidCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 36. Execution of Paid Command Sequence Diagram</div>
+<div class="title">Figure 38. Execution of Paid Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1894,7 +1922,7 @@ only be able to use the <code>additem</code> and <code>deleteitem</code> command
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterClearReceiptCommandActivityDiagram.png" alt="ExpenseSplitterClearReceiptCommandActivityDiagram">
 </div>
-<div class="title">Figure 37. Clear Receipt Command Activity Diagram</div>
+<div class="title">Figure 39. Clear Receipt Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Clear Receipt Command</strong></p>
@@ -1928,7 +1956,7 @@ only be able to use the <code>additem</code> and <code>deleteitem</code> command
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterClearReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterClearReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 38. Clear Receipt Command Sequence Diagram</div>
+<div class="title">Figure 40. Clear Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -3401,4 +3429,4 @@ Overall, we believe that EYLAH is a good testament to our hard work and the time
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 18:28:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 18:42:17 UTC</div></div></div></body></html>
