@@ -10,9 +10,9 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>EYLAH is a desktop application specifically programmed for university students staying on NUS Campus. It aims to ease their lives
-at halls/residential colleges by providing them with an application to split bills easily and help
-them track their diet. The user interacts with it using a CLI and it is programmed using JAVA 11.</p>
+<p>EYLAH is a desktop application programmed specifically for students staying in Temasek Hall at the National University
+of Singapore. It aims to ease their lives in hall by providing them with an application that split bills easily and help
+them keep track of their diet. The user interacts with the application using a CLI and it is programmed using <code>Java 11</code>.</p>
 </div>
 </div>
 </div>
@@ -220,6 +220,9 @@ from being thrown. In addition, I also did the formatting of the BigDecimal to b
 <li>
 <p>Enhanced ParserUtil to be able to handle more inputted texts and output the required Objects.</p>
 </li>
+<li>
+<p>Adapted the given Address Book 3 code into EYLAH.</p>
+</li>
 </ul>
 </div>
 </li>
@@ -228,7 +231,29 @@ from being thrown. In addition, I also did the formatting of the BigDecimal to b
 <div class="ulist">
 <ul>
 <li>
-<p>To be added</p>
+<p>Updated the Developer Guide to include AddItemCommand and DeleteItemCommand
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/164">#164</a>,
+<a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/171">#171</a>,
+<a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/353">#353</a>,
+<a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/409">#409</a>)</p>
+</li>
+<li>
+<p>Updated the Developer Guide to include ClearReceiptCommand
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/359">#359</a>,
+<a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/409">#409</a>)</p>
+</li>
+<li>
+<p>Updated the User Guide to include DoneReceiptCommand and ClearReceipt Command
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/241">#241</a>)</p>
+</li>
+<li>
+<p>Updated the User Guide to include Appendix H: Effort
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/384">#384</a>)</p>
+</li>
+<li>
+<p>Updated the User Guide with minor changes with regards to the use of English and to maintain consistency throughout
+the document
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/411">#411</a>)</p>
 </li>
 </ul>
 </div>
@@ -238,19 +263,13 @@ from being thrown. In addition, I also did the formatting of the BigDecimal to b
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments):</p>
+<p>PRs reviewed (with non-trivial review comments): Pull requests <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/397">#397</a></p>
 </li>
 <li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/52">1</a>, <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/48">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
+<p>Reported bugs and suggestions for other teams in the class: <a href="https://github.com/ailanthustng/ped/issues">ped</a></p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Tools:</p>
 </li>
 </ul>
 </div>
@@ -279,6 +298,162 @@ from being thrown. In addition, I also did the formatting of the BigDecimal to b
 </tr>
 </tbody>
 </table>
+<div class="sect3">
+<h4 id="additem"><a class="link" href="#additem">Adding an item: <code>additem</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>additem</code> command, <a href="#howtouseadditemcommand">how to use it</a>
+and the <a href="#additemexpectedoutcome">expected outcome</a> after using the <code>additem</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Add Item Command:</strong><br>
+<code>additem</code> allows you to add an item, it&#8217;s price and the persons involved in sharing the cost of that item.</p>
+</div>
+<div id="howtouseadditemcommand" class="paragraph">
+<p><strong>How to use the Add Item Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>additem -i ITEMNAME -p PRICE -n NAME</code><br>
+<code>additem -i ITEMNAME -p PRICE -n NAME [-n NAME]&#8230;&#8203;</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>additem -i pizza -p 30 -n bob</code><br>
+<code>additem -i pasta -p 19.90 -n alice -n bob -n charlie</code></p>
+</div>
+<div id="additemexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/placeholder.png" alt="placeholder">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Price can be up to 2 decimal places, i.e. 7.99.
+There is no need to add the dollar sign ($).</p>
+</li>
+<li>
+<p>The maximum price of an item is 10,000.</p>
+</li>
+<li>
+<p>All names inputted will automatically be converted to lowercase. (e.g: Bob &#8594; bob)</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="deleteitem"><a class="link" href="#deleteitem">Deleting an item: <code>deleteitem</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>deleteitem</code> command, <a href="#howtousedeleteitemcommand">how to use it</a>
+and the <a href="#deleteitemexpectedoutcome">expected outcome</a> after using the <code>deleteitem</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Delete Item Command:</strong><br>
+<code>deleteitem</code> allows you to delete an item from the receipt.</p>
+</div>
+<div id="howtousedeleteitemcommand" class="paragraph">
+<p><strong>How to use the Delete Item Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>deleteitem INDEX</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>deleteitem 3</code></p>
+</div>
+<div id="deleteitemexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/placeholder.png" alt="placeholder">
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use <code>listreceipt</code> to view your item indices before deletion.
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="clearreceipt"><a class="link" href="#clearreceipt">Clears the receipt <code>clearreceipt</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>clearreceipt</code> command, <a href="#howtouseclearreceiptcommand">how to use it</a>
+and the <a href="#clearreceiptexpectedoutcome">expected outcome</a> after using the <code>clearreceipt</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Clear Receipt Command:</strong><br>
+<code>clearreceipt</code> allows you to remove all items from the receipt and start with a clean receipt.</p>
+</div>
+<div id="howtouseclearreceiptcommand" class="paragraph">
+<p><strong>How to use the Clear Receipt Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>clearreceipt</code></p>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>clearreceipt</code></p>
+</div>
+<div id="clearreceiptexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/placeholder.png" alt="placeholder">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>After you use this command, you will be able to add new items using the <code>additem</code> command and delete items using the
+<code>deleteitem</code> command.</p>
+</li>
+<li>
+<p>However, you will be unable to use the <code>paid</code> command.</p>
+</li>
+<li>
+<p>The existing list of people who owe you money will still be accessible by using the <code>listamount</code> command.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -294,14 +469,493 @@ from being thrown. In addition, I also did the formatting of the BigDecimal to b
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
-<div class="sectionbody">
-<hr>
+<div class="sect3">
+<h4 id="Add-Item-Command"><a class="link" href="#Add-Item-Command">Add Item Command</a></h4>
 <div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+<p>In this section, we will learn more about how the <code>additem</code> command is implemented.</p>
+</div>
+<div class="paragraph">
+<p><strong>What is the Add Item Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>additem</code> command allows the user to add an Item into the Receipt, along with the ItemPrice of the Item and the Persons
+involved in splitting the cost of that Item.</p>
+</div>
+<div class="paragraph">
+<p>The <code>additem</code> command was implemented as <code>AddItemCommand</code> in the <code>expensesplitter/logic/commands</code> package.</p>
+</div>
+<div class="paragraph">
+<p>The <code>additem</code> command has the following input format:</p>
+</div>
+<div class="paragraph">
+<p><code>additem</code> <code>-i ITEMNAME</code> <code>-p ITEMPRICE</code> <code>-n NAME</code> <code>[-n NAME]&#8230;&#8203;</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>-i ITEMNAME</code> and <code>-p ITEMPRICE</code> are <strong>compulsory</strong> fields.</p>
+</li>
+<li>
+<p>There can be multiple <code>-n NAME</code>, however, a <strong>minimum of 1</strong> is required.</p>
+</li>
+<li>
+<p><code>ITEMPRICE</code> can be up to 2 decimal places, i.e 7.99. There is <strong>no need</strong> to add the dollar sign ($).</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates what happens when a user executes the <code>additem</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterAddItemCommandActivityDiagram.png" alt="ExpenseSplitterAddItemCommandActivityDiagram">
+</div>
+<div class="title">Figure 1. Add Item Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+<div class="paragraph">
+<p><strong>Structure of Add Item Command</strong></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>AddItemCommand</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterAddItemCommandClassDiagram.png" alt="ExpenseSplitterAddItemCommandClassDiagram">
+</div>
+<div class="title">Figure 2. Add Item Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>AddItemCommand</code> and it&#8217;s associated classes and interfaces. Some
+methods and fields have been left out because they are not of concern in the <code>AddItemCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Implementation of Add Item Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>AddItemCommand</code> performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>AddItemCommand#execute(SplitterModel splitterModel)</code> method is executed and it checks if the specified Item
+and list of Persons to be added are valid. If valid, a new Entry would be created with the specified Item and list of
+Persons.</p>
+</li>
+<li>
+<p>The <code>SplitterModel#addEntry(Entry entry)</code> method would then be called to add the Entry into the Receipt.</p>
+</li>
+<li>
+<p>For each Person in the list of Persons, the Person is first checked through the <code>PersonAmountBook#persons</code> using the
+<code>SplitterModel#hasPerson(Person person)</code> method to check if the person already exists.</p>
+</li>
+<li>
+<p>If the person does not already exist, the method <code>SplitterModel#addPerson(Person person)</code> would be called to add the
+person, together with the amount, into the <code>PersonAmountBook#persons</code>.</p>
+</li>
+<li>
+<p>If the Person exists, thePerson would be retrieved from the <code>PersonAmountBook#persons</code> using the
+<code>SplitterModel#getPerson(Person person)</code> method, and then the amount would be added to that person using the
+<code>SplitterModel#addAmount(Person person, Amount amount)</code> method.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Sequence diagram for Add Item Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens during the execution of <code>additem</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterAddItemCommandSequenceDiagram.png" alt="ExpenseSplitterAddItemCommandSequenceDiagram">
+</div>
+<div class="title">Figure 3. Add Item Command Sequence Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterAddItemCommandSequenceDiagram2.png" alt="ExpenseSplitterAddItemCommandSequenceDiagram2">
+</div>
+<div class="title">Figure 4. Execution of Add Item Command</div>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="Delete-Item-Command"><a class="link" href="#Delete-Item-Command">Delete Item Command</a></h4>
+<div class="paragraph">
+<p>In this section, we will learn more about how the <code>deleteitem</code> command is implemented.</p>
+</div>
+<div class="paragraph">
+<p><strong>What is the Delete Item Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>The <code>deleteitem</code> command allows users to remove the Item from the Receipt via the Index.</p>
+</div>
+<div class="paragraph">
+<p>The <code>deleteitem</code> command was implemented as <code>DeleteItemCommand</code> in the <code>expensesplitter/logic/commands</code> package.</p>
+</div>
+<div class="paragraph">
+<p>The <code>deleteitem</code> command has the following input format:</p>
+</div>
+<div class="paragraph">
+<p><code>deleteitem</code> <code>INDEX</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> is a compulsory field.</p>
+</li>
+<li>
+<p>The Index of the Item can be retrieved by using the <code>listreceipt</code> command.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates what happens when a user executes the <code>deleteitem</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterDeleteItemCommandActivityDiagram.png" alt="ExpenseSplitterDeleteItemCommandActivityDiagram">
+</div>
+<div class="title">Figure 5. Delete Item Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+<div class="paragraph">
+<p><strong>Structure of Delete Item Command</strong></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>DeleteItemCommand</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterDeleteItemCommandClassDiagram.png" alt="ExpenseSplitterDeleteItemCommandClassDiagram">
+</div>
+<div class="title">Figure 6. Delete Item Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>DeleteItemCommand</code> and it&#8217;s associated classes and interfaces. Some
+methods and fields have been left out because they are not of concern in the <code>DeleteItemCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Implementation</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>DeleteItemCommand</code> performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>DeleteItemCommand#execute(SplitterModel splitterModel)</code> method is executed and it validates that the specified
+Index to delete is within range. If valid, the Entry to be deleted will be retrieved from Receipt using its Index.</p>
+</li>
+<li>
+<p>The method <code>SplitterModel#getEntry(Index index)</code> is called to retrieve the current Entry, which subsequently retrieves the
+current Item using the <code>Entry#getItem()</code> method and the amountPerPerson associated with it via the
+<code>Item#getAmountPerPerson()</code> method. The list of Persons are also retrieved via the <code>Entry#getPersonsList()</code> method.</p>
+</li>
+<li>
+<p>For each Person in the list of Persons, the amount is subtracted from the current amount owed by the Person.</p>
+</li>
+<li>
+<p>The method <code>SplitterModel#deleteEntry(int index)</code> will then be called to remove the Item from the Receipt.
+<code>Receipt#deleteEntry(int index)</code> is invoked which makes a call to its internal list to remove the specified Item.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Sequence Diagram for Delete Item Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens during the execution of <code>deleteitem</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterDeleteItemCommandSequenceDiagram.png" alt="ExpenseSplitterDeleteItemCommandSequenceDiagram">
+</div>
+<div class="title">Figure 7. Delete Item Command Sequence Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterDeleteItemCommandSequenceDiagram2.png" alt="ExpenseSplitterDeleteItemCommandSequenceDiagram2">
+</div>
+<div class="title">Figure 8. Execution of Delete Item Command</div>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="Clear-Receipt-Command"><a class="link" href="#Clear-Receipt-Command">Clear Receipt Command</a></h4>
+<div class="paragraph">
+<p>In this section, we will learn more about how the <code>clearreceipt</code> command is implemented.</p>
+</div>
+<div class="paragraph">
+<p><strong>What is the Clear Receipt Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>clearreceipt</code> command essentially deletes all the Entries in the Receipt and allows the user to input new Entries
+into a clean receipt.</p>
+</div>
+<div class="paragraph">
+<p>The <code>clearreceipt</code> command was implemented as <code>ClearReceiptCommand</code> in the <code>expensesplitter/logic/commands</code> package.</p>
+</div>
+<div class="paragraph">
+<p>The <code>clearreceipt</code> command has the following input format:</p>
+</div>
+<div class="paragraph">
+<p><code>clearreceipt</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Use this command only when you are very sure that you want to delete all entries and start a clean receipt.</p>
+</li>
+<li>
+<p>When you use the <code>clearreceipt</code> command, you are concurrently marking the new receipt as undone. As such, you would
+only be able to use the <code>additem</code> and <code>deleteitem</code> commands.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates what happens when a user executes the <code>clearreceipt</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterClearReceiptCommandActivityDiagram.png" alt="ExpenseSplitterClearReceiptCommandActivityDiagram">
+</div>
+<div class="title">Figure 9. Clear Receipt Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+<div class="paragraph">
+<p><strong>Structure of Clear Receipt Command</strong></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>ClearReceiptCommand</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterClearReceiptCommandClassDiagram.png" alt="ExpenseSplitterClearReceiptCommandClassDiagram">
+</div>
+<div class="title">Figure 10. Clear Receipt Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>ClearReceiptCommand</code> and it&#8217;s associated classes and interfaces. Some
+methods and fields have been left out because they are not of concern in the <code>ClearReceiptCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Implementation of Clear Receipt Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>ClearReceiptCommand</code> performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>ClearReceiptCommand#execute(SplitterModel splitterModel)</code> method is executed.</p>
+</li>
+<li>
+<p>The <code>splitterModel#clearReceipt()</code> method will then be called.</p>
+</li>
+<li>
+<p>This will invoke the <code>Receipt#clearReceipt()</code> method which creates a new ArrayList and assigns it to the Receipt.</p>
+</li>
+<li>
+<p>At the same time, the boolean <code>Receipt#isDone</code> is assigned to <code>false</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Sequence Diagram for Clear Receipt Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens during the execution of the <code>clearreceipt</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterClearReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterClearReceiptCommandSequenceDiagram">
+</div>
+<div class="title">Figure 11. Clear Receipt Command Sequence Diagram</div>
+</div>
+<hr>
+<h4 id="use-case-uc08-adding-an-item" class="discrete">Use case: UC08 - Adding an Item</h4>
+<div class="paragraph">
+<p><strong>Actor:</strong> User<br>
+<strong>Guarantees:</strong><br>
+Item will be added into the Receipt.</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User keys in the ItemName, it&#8217;s ItemPrice and Person(s) involved in the splitting of the Item.</p>
+</li>
+<li>
+<p>EYLAH adds the Item and Persons into a Entry.</p>
+</li>
+<li>
+<p>EYLAH adds the Entry into a Receipt.</p>
+</li>
+<li>
+<p>EYLAH displays the Item and Person(s) involved in the splitting of the item, as well as the Amount owed per Person.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. EYLAH detects empty ItemName, ItemPrice or Person(s)</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. EYLAH displays an error message and displays an example of a correct <code>additem</code> function.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. Eylah detects invalid <a href="#syntax">syntax</a>.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. EYLAH displays an error message and displays an example of a correct <code>additem</code> function.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+<h4 id="use-case-uc09-deleting-an-item" class="discrete">Use case: UC09 - Deleting an Item</h4>
+<div class="paragraph">
+<p><strong>Actor:</strong> User<br>
+<strong>Preconditions:</strong> Item user wants to delete is present in the Receipt.<br>
+<strong>Guarantees:</strong><br>
+Item will be deleted from Receipt.</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User keys in request to delete an Item in the current Receipt via it&#8217;s Index.</p>
+</li>
+<li>
+<p>EYLAH deletes that Item and deducts the appropriate amount associated with each Person(s) involved in splitting that
+Item.</p>
+</li>
+<li>
+<p>EYLAH displays a MESSAGE_SUCCESS informing the user that Item has been successfully deleted.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. User did not input the Index of the Item. (Inserting <code>deleteitem</code> instead of  <code>deleteitem 1</code>)</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. EYLAH displays an error message and displays an example of a correct <code>deleteitem</code> function.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+<h3 id="use-case-uc13-clearing-the-receipt" class="discrete">Use case: UC13 - Clearing the Receipt</h3>
+<div class="paragraph">
+<p><strong>Actor:</strong> User<br>
+<strong>Guarantees:</strong><br>
+Deletes all the Entries in the Receipt. It also marks the Receipt as undone.</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to clear the receipt after he/she decides to start a clean Receipt.</p>
+</li>
+<li>
+<p>EYLAH removes all the Entries from the Receipt.</p>
+</li>
+<li>
+<p>EYLAH marks the Receipt as undone.</p>
+</li>
+<li>
+<p>EYLAH display a MESSAGE_SUCCESS informing the user that the Receipt has been successfully cleared.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 08:44:28 UTC</div></div></div></body></html>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 10:10:02 UTC</div></div></div></body></html>
