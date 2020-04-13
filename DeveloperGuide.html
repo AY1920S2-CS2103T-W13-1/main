@@ -2417,13 +2417,19 @@ methods and fields have been left out because they are not of concern in the <co
 <p>The <code>ClearReceiptCommand#execute(SplitterModel splitterModel)</code> method is executed.</p>
 </li>
 <li>
-<p>The <code>splitterModel#clearReceipt()</code> method will then be called.</p>
+<p>If the Receipt is marked as undone via the <code>SplitterModel#isReceiptDone()</code> method, the <code>SplitterModel#deleteAllEntires()</code>
+method is called, which calls the <code>PersonAmountBook#deleteAllEntries()</code> method. What does method does is that it first
+retrieves the ArrayList&lt;Entry&gt; from the Receipt via the <code>Receipt#getReceipt()</code> method, then for each Entry, it gets the
+Item and the Amount owed my each person via the <code>Entry#getItem()</code> and <code>Item#getAmountPerPerson()</code> methods respectively.
+The Amount is then removed from each Person in the Entry via the <code>Entry#getPersonsList()</code> method. After which, the
+<code>splitterModel#clearReceipt()</code> method will then be called. This will invoke the <code>Receipt#clearReceipt()</code> method which
+creates a new ArrayList and assigns it to the Receipt. At the same time, the boolean <code>Receipt#isDone</code> is assigned to
+<code>false</code>.</p>
 </li>
 <li>
-<p>This will invoke the <code>Receipt#clearReceipt()</code> method which creates a new ArrayList and assigns it to the Receipt.</p>
-</li>
-<li>
-<p>At the same time, the boolean <code>Receipt#isDone</code> is assigned to <code>false</code>.</p>
+<p>If the Receipt is marked as done, the <code>splitterModel#clearReceipt()</code> method will then be called. This will invoke
+the <code>Receipt#clearReceipt()</code> method which creates a new ArrayList and assigns it to the Receipt. At the same time, the
+boolean <code>Receipt#isDone</code> is assigned to <code>false</code>.</p>
 </li>
 </ol>
 </div>
@@ -2438,6 +2444,12 @@ methods and fields have been left out because they are not of concern in the <co
 <img src="images/ExpenseSplitterClearReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterClearReceiptCommandSequenceDiagram">
 </div>
 <div class="title">Figure 66. Clear Receipt Command Sequence Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ExpenseSplitterClearReceiptCommandSequenceDiagram2.png" alt="ExpenseSplitterClearReceiptCommandSequenceDiagram2">
+</div>
+<div class="title">Figure 67. Execution of Clear Receipt Command</div>
 </div>
 </div>
 </div>
@@ -4357,4 +4369,4 @@ help to ease the lives of the residents at Temasek Hall.
 Overall, we believe that EYLAH is a good testament to our hard work and the time spent on perfecting it.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 10:55:51 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 11:04:36 UTC</div></div></div></body></html>
