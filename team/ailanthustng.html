@@ -589,7 +589,7 @@ Persons.</p>
 person, together with the amount, into the <code>PersonAmountBook#persons</code>.</p>
 </li>
 <li>
-<p>If the Person exists, thePerson would be retrieved from the <code>PersonAmountBook#persons</code> using the
+<p>If the Person exists, the Person would be retrieved from the <code>PersonAmountBook#persons</code> using the
 <code>SplitterModel#getPerson(Person person)</code> method, and then the amount would be added to that person using the
 <code>SplitterModel#addAmount(Person person, Amount amount)</code> method.</p>
 </li>
@@ -883,8 +883,8 @@ Item will be added into the Receipt.</p>
 <ul class="none">
 <li>
 <p>1a. EYLAH detects empty ItemName, ItemPrice or Person(s)</p>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
 <p>1a1. EYLAH displays an error message and displays an example of a correct <code>additem</code> function.</p>
 <div class="paragraph">
@@ -894,10 +894,6 @@ Item will be added into the Receipt.</p>
 </ul>
 </div>
 </li>
-</ul>
-</div>
-<div class="ulist none">
-<ul class="none">
 <li>
 <p>1b. Eylah detects invalid <a href="#syntax">syntax</a>.</p>
 <div class="ulist none">
@@ -944,12 +940,12 @@ Item.</p>
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
 </div>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
 <p>1a. User did not input the Index of the Item. (Inserting <code>deleteitem</code> instead of  <code>deleteitem 1</code>)</p>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
 <p>1a1. EYLAH displays an error message and displays an example of a correct <code>deleteitem</code> function.</p>
 <div class="paragraph">
@@ -962,9 +958,10 @@ Item.</p>
 </ul>
 </div>
 <hr>
-<h3 id="use-case-uc13-clearing-the-receipt" class="discrete">Use case: UC13 - Clearing the Receipt</h3>
+<h3 id="use-case-uc13-clearing-the-receipt-when-receipt-is-done" class="discrete">Use case: UC13 - Clearing the Receipt when Receipt is done</h3>
 <div class="paragraph">
 <p><strong>Actor:</strong> User<br>
+<strong>Preconditions:</strong> Receipt is marked as done.<br>
 <strong>Guarantees:</strong><br>
 Deletes all the Entries in the Receipt. It also marks the Receipt as undone.</p>
 </div>
@@ -991,5 +988,36 @@ Deletes all the Entries in the Receipt. It also marks the Receipt as undone.</p>
 </ol>
 </div>
 </div>
+<div class="sect2">
+<h3 id="use-case-uc14-clearing-the-receipt-when-receipt-is-undone"><a class="link" href="#use-case-uc14-clearing-the-receipt-when-receipt-is-undone">Use case: UC14 - Clearing the Receipt when Receipt is undone</a></h3>
+<div class="paragraph">
+<p><strong>Actor:</strong> User<br>
+<strong>Preconditions:</strong> Receipt is marked as undone.<br>
+<strong>Guarantees:</strong><br>
+Deletes all the Entries in the Receipt. It also marks the Receipt as undone.</p>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:36:17 UTC</div></div></div></body></html>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to clear the receipt after he/she decides to start a clean Receipt.</p>
+</li>
+<li>
+<p>EYLAH removes Amount owed per Person from the PersonAmountBook.</p>
+</li>
+<li>
+<p>EYLAH removes all the Entries from the Receipt.</p>
+</li>
+<li>
+<p>EYLAH display a MESSAGE_SUCCESS informing the user that the Receipt has been successfully cleared.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:45:31 UTC</div></div></div></body></html>
