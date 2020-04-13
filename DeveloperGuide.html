@@ -482,7 +482,7 @@ The lifeline for <code>DeleteItemCommandParser</code> should end at the destroy 
 <h3 id="diettracker-feature"><a class="link" href="#diettracker-feature">4.1. DietTracker feature</a></h3>
 <div class="paragraph">
 <p>The Diet Tracker feature is designed to aid our users in maintaining a healthy lifestyle. The feature comprises
-of 9 Commands.</p>
+of 10 Commands.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -518,9 +518,6 @@ based on their user input.</p>
 <p><a href="#Help-Command"><code>HelpCommand</code></a> - Provides a help guide for users based on what commands are available.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>Below are some diagrams to explain how our team implemented this portion.</p>
 </div>
 <div class="paragraph">
 <p><strong>Activity Diagram</strong> of Diet Tracker:<br></p>
@@ -972,6 +969,22 @@ into JSON format after serializing it using <code>JsonAdaptedFood</code>.</p>
 <div class="title">Figure 19. Bmi Command Activity Diagram</div>
 </div>
 <div class="paragraph">
+<p><strong>Structure of Bmi Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>bmi</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DietTrackerBmiCommandClassDiagram.png" alt="DietTrackerBmiCommandClassDiagram">
+</div>
+<div class="title">Figure 20. Bmi Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>BmiCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>BmiCommand</code></p>
+</div>
+<div class="paragraph">
 <p><strong>Implementation of Bmi Command</strong></p>
 </div>
 <div class="paragraph">
@@ -1022,13 +1035,13 @@ Self&#8217;s Height and Weight attributes.</p>
 <div class="content">
 <img src="images/DietTrackerBmiCommandNILSequenceDiagram.png" alt="DietTrackerBmiCommandNILSequenceDiagram">
 </div>
-<div class="title">Figure 20. Sequence Diagram Bmi Command Sequence Diagram without Input Arguments</div>
+<div class="title">Figure 21. Sequence Diagram Bmi Command Sequence Diagram without Input Arguments</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DietTrackerBmiCommandNILSequenceDiagram2.png" alt="DietTrackerBmiCommandNILSequenceDiagram2">
 </div>
-<div class="title">Figure 21. Sequence Diagram: Retrieval of stored Height and Weight from Model</div>
+<div class="title">Figure 22. Sequence Diagram: Retrieval of stored Height and Weight from Model</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1068,13 +1081,13 @@ Self&#8217;s Height and Weight attributes.</p>
 <div class="content">
 <img src="images/DietTrackerBmiCommandSequenceDiagram.png" alt="DietTrackerBmiCommandSequenceDiagram">
 </div>
-<div class="title">Figure 22. Bmi Command Sequence Diagram with Input Arguments</div>
+<div class="title">Figure 23. Bmi Command Sequence Diagram with Input Arguments</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DietTrackerBmiCommandSequenceDiagram2.png" alt="DietTrackerBmiCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 23. Creation of Height and Weight Objects for usage in Bmi Command</div>
+<div class="title">Figure 24. Creation of Height and Weight Objects for usage in Bmi Command</div>
 </div>
 <div class="paragraph">
 <p><strong>Design Considerations</strong></p>
@@ -1194,7 +1207,23 @@ Self&#8217;s Height and Weight attributes.</p>
 <div class="content">
 <img src="images/DietTrackerHeightCommandActivityDiagram.png" alt="DietTrackerHeightCommandActivityDiagram">
 </div>
-<div class="title">Figure 24. Height Command Activity Diagram</div>
+<div class="title">Figure 25. Height Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>Structure of Height Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>height</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DietTrackerHeightCommandClassDiagram.png" alt="DietTrackerHeightCommandClassDiagram">
+</div>
+<div class="title">Figure 26. Height Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>HeightCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>HeightCommand</code></p>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Height Command</strong></p>
@@ -1228,7 +1257,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerHeightCommandSequenceDiagram.png" alt="DietTrackerHeightCommandSequenceDiagram">
 </div>
-<div class="title">Figure 25. Height Command Sequence Diagram</div>
+<div class="title">Figure 27. Height Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1279,10 +1308,26 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerWeightCommandActivityDiagram.png" alt="DietTrackerWeightCommandActivityDiagram">
 </div>
-<div class="title">Figure 26. Weight Command Activity Diagram</div>
+<div class="title">Figure 28. Weight Command Activity Diagram</div>
 </div>
 <div class="paragraph">
-<p><strong>Implementation of weight Command</strong></p>
+<p><strong>Structure of Weight Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>weight</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DietTrackerWeightCommandClassDiagram.png" alt="DietTrackerWeightCommandClassDiagram">
+</div>
+<div class="title">Figure 29. Weight Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>WeightCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>WeightCommand</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Implementation of Weight Command</strong></p>
 </div>
 <div class="paragraph">
 <p>The following is a detailed explanation of the operations <code>WeightCommand</code> performs.<br></p>
@@ -1313,7 +1358,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerWeightCommandSequenceDiagram.png" alt="DietTrackerWeightCommandSequenceDiagram">
 </div>
-<div class="title">Figure 27. Weight Command Sequence Diagram</div>
+<div class="title">Figure 30. Weight Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1357,7 +1402,23 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerModeCommandActivityDiagram.png" alt="DietTrackerModeCommandActivityDiagram">
 </div>
-<div class="title">Figure 28. Mode Command Activity Diagram</div>
+<div class="title">Figure 31. Mode Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>Structure of Mode Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>mode</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DietTrackerModeCommandClassDiagram.png" alt="DietTrackerModeCommandClassDiagram">
+</div>
+<div class="title">Figure 32. Mode Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>ModeCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>ModeCommand</code></p>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Mode Command</strong></p>
@@ -1391,7 +1452,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerModeCommandSequenceDiagram.png" alt="DietTrackerModeCommandSequenceDiagram">
 </div>
-<div class="title">Figure 29. Mode Command Sequence Diagram</div>
+<div class="title">Figure 33. Mode Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1421,7 +1482,23 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerMetricsCommandActivityDiagram.png" alt="DietTrackerMetricsCommandActivityDiagram">
 </div>
-<div class="title">Figure 30. Metrics Command Activity Diagram</div>
+<div class="title">Figure 34. Metrics Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>Structure of Metrics Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>metrics</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DietTrackerMetricsCommandClassDiagram.png" alt="DietTrackerMetricsCommandClassDiagram">
+</div>
+<div class="title">Figure 35. Metrics Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>MetricsCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>MetricsCommand</code></p>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Metrics Command</strong></p>
@@ -1453,7 +1530,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerMetricsCommandSequenceDiagram.png" alt="DietTrackerMetricsCommandSequenceDiagram">
 </div>
-<div class="title">Figure 31. Metrics Command Sequence Diagram</div>
+<div class="title">Figure 36. Metrics Command Sequence Diagram</div>
 </div>
 </div>
 </div>
@@ -1505,13 +1582,13 @@ will be immutable.</p>
 <div class="content">
 <img src="images/ExpenseSplitterActivityDiagramV2.png" alt="ExpenseSplitterActivityDiagramV2">
 </div>
-<div class="title">Figure 32. ExpenseSplitterActivityDiagram</div>
+<div class="title">Figure 37. ExpenseSplitterActivityDiagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ExpenseSplitterActivityDiagram.png" alt="ExpenseSplitterActivityDiagram">
 </div>
-<div class="title">Figure 33. SimplifiedAddItemActivityDiagram</div>
+<div class="title">Figure 38. SimplifiedAddItemActivityDiagram</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1580,7 +1657,7 @@ involved in splitting the cost of that Item.</p>
 <div class="content">
 <img src="images/ExpenseSplitterAddItemCommandActivityDiagram.png" alt="ExpenseSplitterAddItemCommandActivityDiagram">
 </div>
-<div class="title">Figure 34. Add Item Command Activity Diagram</div>
+<div class="title">Figure 39. Add Item Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Add Item Command</strong></p>
@@ -1623,13 +1700,13 @@ person, together with the amount, into the <code>PersonAmountBook#persons</code>
 <div class="content">
 <img src="images/ExpenseSplitterAddItemCommandSequenceDiagram.png" alt="ExpenseSplitterAddItemCommandSequenceDiagram">
 </div>
-<div class="title">Figure 35. Add Item Command Sequence Diagram</div>
+<div class="title">Figure 40. Add Item Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ExpenseSplitterAddItemCommandSequenceDiagram2.png" alt="ExpenseSplitterAddItemCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 36. Execution of Add Item Command</div>
+<div class="title">Figure 41. Execution of Add Item Command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1680,7 +1757,7 @@ person, together with the amount, into the <code>PersonAmountBook#persons</code>
 <div class="content">
 <img src="images/ExpenseSplitterDeleteItemCommandActivityDiagram.png" alt="ExpenseSplitterDeleteItemCommandActivityDiagram">
 </div>
-<div class="title">Figure 37. Delete Item Command Activity Diagram</div>
+<div class="title">Figure 42. Delete Item Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
@@ -1718,13 +1795,13 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 <div class="content">
 <img src="images/ExpenseSplitterDeleteItemCommandSequenceDiagram.png" alt="ExpenseSplitterDeleteItemCommandSequenceDiagram">
 </div>
-<div class="title">Figure 38. Delete Item Command Sequence Diagram</div>
+<div class="title">Figure 43. Delete Item Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ExpenseSplitterDeleteItemCommandSequenceDiagram2.png" alt="ExpenseSplitterDeleteItemCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 39. Execution of Delete Item Command</div>
+<div class="title">Figure 44. Execution of Delete Item Command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1775,7 +1852,7 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 <div class="content">
 <img src="images/ExpenseSplitterListReceiptCommandActivityDiagram.png" alt="ExpenseSplitterListReceiptCommandActivityDiagram">
 </div>
-<div class="title">Figure 40. List Receipt Activity Diagram</div>
+<div class="title">Figure 45. List Receipt Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Structure of List Receipt Command</strong><br></p>
@@ -1787,7 +1864,7 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 <div class="content">
 <img src="images/ExpenseSplitterListReceiptCommandClassDiagram.png" alt="ExpenseSplitterListReceiptCommandClassDiagram">
 </div>
-<div class="title">Figure 41. List Receipt Command Class Diagram</div>
+<div class="title">Figure 46. List Receipt Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>ListReceiptCommand</code> and its associated classes and
@@ -1828,7 +1905,7 @@ component.</p>
 <div class="content">
 <img src="images/ExpenseSplitterListReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterListReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 42. List Receipt Command Sequence Diagram</div>
+<div class="title">Figure 47. List Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1879,7 +1956,7 @@ component.</p>
 <div class="content">
 <img src="images/ExpenseSplitterListAmountCommandActivityDiagram.png" alt="ExpenseSplitterListAmountCommandActivityDiagram">
 </div>
-<div class="title">Figure 43. List Amount Activity Diagram<br></div>
+<div class="title">Figure 48. List Amount Activity Diagram<br></div>
 </div>
 <div class="paragraph">
 <p><strong>Structure of List Amount Command</strong><br></p>
@@ -1891,7 +1968,7 @@ component.</p>
 <div class="content">
 <img src="images/ExpenseSplitterListAmountCommandClassDiagram.png" alt="ExpenseSplitterListAmountCommandClassDiagram">
 </div>
-<div class="title">Figure 44. List Amount Command Class Diagram</div>
+<div class="title">Figure 49. List Amount Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>ListAmountCommand</code> and its associated classes and
@@ -1931,7 +2008,7 @@ component.</p>
 <div class="content">
 <img src="images/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
 </div>
-<div class="title">Figure 45. List Amount Command Sequence Diagram</div>
+<div class="title">Figure 50. List Amount Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1978,7 +2055,7 @@ the correct item back.</p>
 <div class="content">
 <img src="images/ExpenseSplitterDoneReceiptCommandActivityDiagram.png" alt="ExpenseSplitterDoneReceiptCommandActivityDiagram">
 </div>
-<div class="title">Figure 46. Done Receipt Command Activity Diagram</div>
+<div class="title">Figure 51. Done Receipt Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Structure of Done Receipt Command</strong><br></p>
@@ -1990,7 +2067,7 @@ the correct item back.</p>
 <div class="content">
 <img src="images/ExpenseSplitterDoneReceiptCommandClassDiagram.png" alt="ExpenseSplitterDoneReceiptCommandClassDiagram">
 </div>
-<div class="title">Figure 47. Done Receipt Command Class Diagram</div>
+<div class="title">Figure 52. Done Receipt Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>DoneReceiptCommand</code> and its associated classes and
@@ -2028,7 +2105,7 @@ interfaces. Some methods and fields are left out because they are not of concern
 <div class="content">
 <img src="images/ExpenseSplitterDoneReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterDoneReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 48. Done Receipt Command Sequence Diagram</div>
+<div class="title">Figure 53. Done Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -2086,7 +2163,7 @@ empty is equivalent to the Person paying the user the full amount he/she owes th
 <div class="content">
 <img src="images/ExpenseSplitterPaidCommandActivityDiagram.png" alt="ExpenseSplitterPaidCommandActivityDiagram">
 </div>
-<div class="title">Figure 49. Paid Command Activity Diagram</div>
+<div class="title">Figure 54. Paid Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Structure of Paid Command</strong><br></p>
@@ -2098,7 +2175,7 @@ empty is equivalent to the Person paying the user the full amount he/she owes th
 <div class="content">
 <img src="images/ExpenseSplitterPaidCommandClassDiagram.png" alt="ExpenseSplitterPaidCommandClassDiagram">
 </div>
-<div class="title">Figure 50. Paid Command Class Diagram</div>
+<div class="title">Figure 55. Paid Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>PaidCommand</code> and its associated classes and
@@ -2140,13 +2217,13 @@ String amountPaid will be converted into an Amount by instantiating a new instan
 <div class="content">
 <img src="images/ExpenseSplitterPaidCommandSequenceDiagram.png" alt="ExpenseSplitterPaidCommandSequenceDiagram">
 </div>
-<div class="title">Figure 51. Paid Command Sequence Diagram</div>
+<div class="title">Figure 56. Paid Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ExpenseSplitterPaidCommandSequenceDiagram2.png" alt="ExpenseSplitterPaidCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 52. Execution of Paid Command Sequence Diagram</div>
+<div class="title">Figure 57. Execution of Paid Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -2199,7 +2276,7 @@ only be able to use the <code>additem</code> and <code>deleteitem</code> command
 <div class="content">
 <img src="images/ExpenseSplitterClearReceiptCommandActivityDiagram.png" alt="ExpenseSplitterClearReceiptCommandActivityDiagram">
 </div>
-<div class="title">Figure 53. Clear Receipt Command Activity Diagram</div>
+<div class="title">Figure 58. Clear Receipt Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Clear Receipt Command</strong></p>
@@ -2233,7 +2310,7 @@ only be able to use the <code>additem</code> and <code>deleteitem</code> command
 <div class="content">
 <img src="images/ExpenseSplitterClearReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterClearReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 54. Clear Receipt Command Sequence Diagram</div>
+<div class="title">Figure 59. Clear Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -3792,4 +3869,4 @@ help to ease the lives of the residents at Temasek Hall.
 Overall, we believe that EYLAH is a good testament to our hard work and the time spent on perfecting it.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 06:24:07 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 06:38:18 UTC</div></div></div></body></html>
