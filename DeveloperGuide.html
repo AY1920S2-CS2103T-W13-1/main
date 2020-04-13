@@ -1066,7 +1066,7 @@ depending on the user input.<br></p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>BmiCommand#execute(Model splitterModel)</code> method is executed and it will return the output of the calculated BMI
+<p>The <code>BmiCommand#execute(Model dietModel)</code> method is executed and it will return the output of the calculated BMI
 based on user arguments.</p>
 </li>
 <li>
@@ -1084,21 +1084,25 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="paragraph">
 <p><strong>Usage 1: No Height and Weight input</strong></p>
 </div>
-<div class="paragraph">
-<p>Step 1. User launches application and enters <code>Diet</code> mode. The user then enters <code>bmi</code> as the command.</p>
-</div>
-<div class="paragraph">
-<p>Step 2. The FoodBook parser validates this command and sets up the <code>BmiCommandParser</code>, which checks for the input.</p>
-</div>
-<div class="paragraph">
-<p>Step 3. Since there are no arguments, the <code>BmiCommandParser</code> will call the empty constructor <code>BmiCommand()</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 4. <code>BmiCommand</code> would then refer to the internal state of the splitterModel under Self, and retrieve the values stored in
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User launches application and enters <code>Diet</code> mode. The user then enters <code>bmi</code> as the command.</p>
+</li>
+<li>
+<p>The FoodBook parser validates this command and sets up the <code>BmiCommandParser</code>, which checks for the input.</p>
+</li>
+<li>
+<p>Since there are no arguments, the <code>BmiCommandParser</code> will call the empty constructor <code>BmiCommand()</code>.</p>
+</li>
+<li>
+<p><code>BmiCommand</code> would then refer to the internal state of the splitterModel under Self, and retrieve the values stored in
 Self&#8217;s Height and Weight attributes.</p>
-</div>
-<div class="paragraph">
-<p>Step 5. <code>BmiCommand()</code> will then proceed to calculate the BMI based on the current values of height and weight.</p>
+</li>
+<li>
+<p><code>BmiCommand()</code> will then proceed to calculate the BMI based on the current values of height and weight.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p>The following is a sample sequence diagram of the <code>BmiCommand</code> with no additional user input.</p>
@@ -1130,21 +1134,25 @@ There is a need to ensure that there are stored values in <code>Height</code> an
 <div class="paragraph">
 <p><strong>Usage 2: With Height and Weight input</strong></p>
 </div>
-<div class="paragraph">
-<p>Step 1. User launches application and enters <code>Diet</code> mode. The user then enters <code>bmi</code> as the command.</p>
-</div>
-<div class="paragraph">
-<p>Step 2. The FoodBook parser validates this command and sets up the <code>BmiCommandParser</code>, which checks for the input.</p>
-</div>
-<div class="paragraph">
-<p>Step 3. Since there are no arguments, the <code>BmiCommandParser</code> will call the empty constructor <code>BmiCommand()</code>.</p>
-</div>
-<div class="paragraph">
-<p>Step 4. <code>BmiCommand</code> would then refer to the internal state of the splitterModel under Self, and retrieve the values stored in
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User launches application and enters <code>Diet</code> mode. The user then enters <code>bmi</code> as the command.</p>
+</li>
+<li>
+<p>The FoodBook parser validates this command and sets up the <code>BmiCommandParser</code>, which checks for the input.</p>
+</li>
+<li>
+<p>Since there are no arguments, the <code>BmiCommandParser</code> will call the empty constructor <code>BmiCommand()</code>.</p>
+</li>
+<li>
+<p><code>BmiCommand</code> would then refer to the internal state of the splitterModel under Self, and retrieve the values stored in
 Self&#8217;s Height and Weight attributes.</p>
-</div>
-<div class="paragraph">
-<p>Step 5. <code>BmiCommand()</code> will then proceed to calculate the BMI based on the current values of height and weight.</p>
+</li>
+<li>
+<p><code>BmiCommand()</code> will then proceed to calculate the BMI based on the current values of height and weight.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p>The following is a sample sequence diagram of the <code>BmiCommand</code> with additional user input.</p>
@@ -4415,4 +4423,4 @@ help to ease the lives of the residents at Temasek Hall.
 Overall, we believe that EYLAH is a good testament to our hard work and the time spent on perfecting it.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:53:58 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:57:49 UTC</div></div></div></body></html>
