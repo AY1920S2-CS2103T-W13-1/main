@@ -22,7 +22,7 @@ them track their diet. The user interacts with it using a CLI and it is programm
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>:</p>
+<p><strong>Major Enhancements</strong>:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -117,162 +117,67 @@ Shee Xiong, the our Team&#8217;s Integrations IC, went ahead and implemented it 
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>:</p>
+<p><strong>Minor Enhancements</strong>:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Modified the <code>paid</code> command to allow a Person to pay his debt fully<br>
-(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/209">#209</a>)</p>
+<p>Modified the <code>bmi</code> command to allow a user to calculate BMI with missing input arguments of Height and Weight<br>
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/209">#INSERT PRS</a>)</p>
 <div class="ulist">
 <ul>
 <li>
 <p><strong>What it does:</strong><br>
-Expanded the <code>paid</code> command to accept empty amount field, which meant that the Person paid his debt fully.<br>
-Previously: <code>paid 1 3</code> meant that person at INDEX 1 paid $3.<br>
-Now: <code>paid 1</code> meant that person at INDEX 1 paid the full amount he owes.</p>
+Expanded the <code>bmi</code> command to accept empty Height and Weight fields, which meant that the BmiCommand would retrieve the user&#8217;s stored Height and Weight for use to
+calculate BMI instead. Also added the functionality if users wanted to only check with one input argument, either Height or Weight.<br>
+Previously: Command format was <code>bmi -h HEIGHT -w WEIGHT</code><br>
+Now: Command format is <code>bmi [-h HEIGHT] [-w WEIGHT]</code></p>
 </li>
 <li>
 <p><strong>Justification:</strong><br>
-This allows the user to conveniently clear a Person debt fully.</p>
+This allows the user to conveniently check their personal BMI, while giving them the option to also check
+the BMI for their friends. They could use the single input format to check what weight would allow them to
+hit their target BMI category.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Performed defensive coding for <code>additem</code> command and <code>paid</code> command<br>
-(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/352">#352</a>)</p>
+<p>Performed defensive coding for <code>bmi</code>, <code>height</code>, and <code>weight</code> commands.<br>
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/352">#INSERT PR HERE</a>)</p>
 <div class="ulist">
 <ul>
 <li>
 <p><strong>What it does:</strong><br>
-<code>additem</code> and <code>paid</code> commands are commands in expense splitter
+<code>bmi</code>, <code>height</code> and <code>weight</code> commands are commands in Diet Tracker,
 which includes numerical digits and multiple parameters. As a result, these commands may be exploited
-when discovering bugs in EYLAH. Common issues includes passing a huge numerical number which causes Integer Overflow
-or passing a negative index which causes ArrayOutOfBounds Exceptions. Thus I handled these rouge commands by
-including try-catch statement to catch these exceptions.</p>
+when discovering bugs in EYLAH. The most common exploits that could break the program was with Integer Overflow
+values. Especially since these huge numbers would have been parsed and stored as 'Infinity' in the JSON format,
+which completely destroyed the functionality of the bmi command. I combat these errorneous commands by either using
+try-catch blocks or by including limits on their values by checking them through BigDecimal inputs.</p>
 </li>
 <li>
 <p><strong>Justification:</strong><br>
-This reduces the chances of EYLAH crashing.</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p><strong>Major enhancement</strong>: [In Process]</p>
-<div class="ulist">
-<ul>
-<li>
-<p>What it does:</p>
-</li>
-<li>
-<p>Justification:</p>
-</li>
-<li>
-<p>Highlights:</p>
-</li>
-<li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
-</li>
-<li>
-<p><strong>Adding of Height, Weight, Mode, Bmi and Self classes for the Diet Tracker portion of EYLAH</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>What it does:</p>
-</li>
-<li>
-<p>Justification:</p>
-</li>
-<li>
-<p>Highlights:</p>
-</li>
-<li>
-<p>Credits:</p>
+Significantly reduces the chances of breaking Diet Tracker and crashing EYLAH.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Adding of HeightCommand, WeightCommand, BmiCommand, ModeCommand for the Diet Tracker portion of EYLAH</strong></p>
+<p>Fixed the Calories bug that occurs when Calories are not in the desired range.<br>
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/352">#INSERT PR HERE</a>)</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: HeightCommand, WeightCommand and BmiCommand are all health metric commands that are essential for any diet tracking app to help the User. BmiCommand is a simple function to allow the user to gauge their current health status.</p>
+<p><strong>What it does:</strong><br>
+Properly validates the user&#8217;s Calories input for any of the Diet Tracker Commands which involve Calories.</p>
 </li>
 <li>
-<p>Justification: Without this, a user would not have any realistic goal to aim for.</p>
+<p><strong>Justification:</strong><br>
+Otherwise, the previously poor implementation would cause the application to crash.</p>
 </li>
 <li>
-<p>Highlights: Height and Weight, which are taken in as Floating Point numbers, are interesting in that they can be exploited by putting a very large number like '100000000000000000000000' which would then cause permanent damage to the application as it is stored as 'Infinity'.
-In order to fix this, I set a cap on the value which could be input into the height field. I injected some fun facts so the user would feel more affection for the application.</p>
-</li>
-<li>
-<p>Credits: For the bug on Floating Point and Storage, I would like to thank my team mate Shee Xiong, who actually brought the bug issues to light.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Adapted most of the beginning classes for the DietModel class from Addressbook 3</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>What it does: The Model and Parsers are extremely important in order to ensure a functioning pre-product.</p>
-</li>
-<li>
-<p>Justification:</p>
-</li>
-<li>
-<p>Highlights:</p>
-</li>
-<li>
-<p>Credits: AddressBook Level 3 "https://github.com/se-edu/addressbook-level3"</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Suggested for the renaming of same sounding class components across both DietTracker and ExpenseSplitter for EYLAH</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>What it does:</p>
-</li>
-<li>
-<p>Justification:</p>
-</li>
-<li>
-<p>Highlights:</p>
-</li>
-<li>
-<p>Credits:</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Minor enhancement</strong>: [In Process]</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Fixed the Calories bug that occurs when Calories are not in the desired range.</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>What it does: Properly validates the user&#8217;s Calories input for any of the Diet Tracker Commands which involve Calories.</p>
-</li>
-<li>
-<p>Justification: Otherwise, the previously poor implementation would cause the application to crash.</p>
-</li>
-<li>
-<p>Highlights: This was brought up during internal testing within the team and also by others during the Mock PE Testing.
+<p><strong>Highlights</strong><br>
+ This was brought up during internal testing within the team and also by others during the Mock PE Testing.
 It was important to fix this bug. I found that the cause of this overall bug was due to a few lapses in terms of the original implementation.
 The original implementation had failed to consider a VALIDATION_REGEX for the Calories String itself, since Calories was built using a long instead of directly from a String.
 This caused problems when typing unknown characters that were not longs. Another issue was that you could exceed in the input long for Calories which would crash the program also.
@@ -282,65 +187,197 @@ This was circumvented using BigInteger when validating the long.</p>
 </div>
 </li>
 <li>
-<p><strong>Drew Diet Tracker component of UML Class diagram</strong></p>
-<div class="imageblock">
-<div class="content">
-<img src="../images/diet_tracker_uml_class_diagram.png" alt="diet tracker uml class diagram">
-</div>
-</div>
+<p>Added tests for <code>HeightCommand</code>, <code>WeightCommand</code>, <code>BmiCommand</code>, <code>ModeCommand</code>, <code>MetricsCommand</code> and some of the tests for <code>EditCommand</code></p>
 </li>
 <li>
-<p><strong>Added tests for HeightCommand, WeightCommand, BmiCommand, ModeCommand, MetricsCommand and some of the tests for EditCommand</strong></p>
-</li>
-<li>
-<p><strong>Added tests for the FoodBookParser and Parser classes.</strong></p>
-</li>
+<p>Added tests for the <code>FoodBookParser</code> and <code>Parser</code> classes.</p>
+<div class="ulist">
+<ul>
 <li>
 <p><strong>Drew Activity Diagrams for various Diet Tracker functions.</strong></p>
 <div class="imageblock">
 <div class="content">
-<img src="../images/BmiActivityDiagram.png" alt="BmiActivityDiagram">
+<img src="../images/DietTrackerBmiCommandActivityDiagram.png" alt="DietTrackerBmiCommandActivityDiagram">
 </div>
+<div class="title">Figure 1. Bmi Command Activity Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/BmiNILSequenceDiagram.png" alt="BmiNILSequenceDiagram">
+<img src="../images/DietTrackerDeleteCommandActivityDiagram.png" alt="DietTrackerDeleteCommandActivityDiagram">
 </div>
+<div class="title">Figure 2. Delete Command Activity Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerAddCommandActivityDiagram.png" alt="DietTrackerAddCommandActivityDiagram">
+</div>
+<div class="title">Figure 3. Add Command Activity Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerListCommandActivityDiagram.png" alt="DietTrackerListCommandActivityDiagram">
+</div>
+<div class="title">Figure 4. List Command Activity Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerEditCommandActivityDiagram.png" alt="DietTrackerEditCommandActivityDiagram">
+</div>
+<div class="title">Figure 5. Edit Command Activity Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerHeightCommandActivityDiagram.png" alt="DietTrackerHeightCommandActivityDiagram">
+</div>
+<div class="title">Figure 6. Height Command Activity Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerWeightCommandActivityDiagram.png" alt="DietTrackerWeightCommandActivityDiagram">
+</div>
+<div class="title">Figure 7. Weight Command Activity Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerModeCommandActivityDiagram.png" alt="DietTrackerModeCommandActivityDiagram">
+</div>
+<div class="title">Figure 8. Mode Command Activity Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerMetricsCommandActivityDiagram.png" alt="DietTrackerMetricsCommandActivityDiagram">
+</div>
+<div class="title">Figure 9. Metrics Command Activity Diagram</div>
 </div>
 </li>
 <li>
 <p><strong>Drew Sequence Diagrams for various Diet Tracker functions.</strong></p>
 <div class="imageblock">
 <div class="content">
-<img src="../images/BmiNILSequenceDiagram.png" alt="BmiNILSequenceDiagram">
+<img src="../images/DietTrackerBmiCommandNILSequenceDiagram.png" alt="DietTrackerBmiCommandNILSequenceDiagram">
 </div>
+<div class="title">Figure 10. Bmi Command Sequence Diagram for no input arguments</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/BmiSequenceDiagram.png" alt="BmiSequenceDiagram">
+<img src="../images/DietTrackerBmiCommandNILSequenceDiagram2.png" alt="DietTrackerBmiCommandNILSequenceDiagram2">
 </div>
+<div class="title">Figure 11. Bmi Command Activity Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerBmiCommandSequenceDiagram.png" alt="DietTrackerBmiCommandSequenceDiagram">
+</div>
+<div class="title">Figure 12. Bmi Command Sequence Diagram for input arguments</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerBmiCommandSequenceDiagram2.png" alt="DietTrackerBmiCommandSequenceDiagram2">
+</div>
+<div class="title">Figure 13. Create Height and Weight Objects for usage in BmiCommand</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/DietTrackerHeightCommandSequenceDiagram.png" alt="DietTrackerHeightCommandSequenceDiagram">
 </div>
+<div class="title">Figure 14. Height Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/DietTrackerWeightCommandSequenceDiagram.png" alt="DietTrackerWeightCommandSequenceDiagram">
 </div>
+<div class="title">Figure 15. Weight Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/DietTrackerModeCommandSequenceDiagram.png" alt="DietTrackerModeCommandSequenceDiagram">
 </div>
+<div class="title">Figure 16. Mode Command Sequence Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerMetricsCommandSequenceDiagram.png" alt="DietTrackerMetricsCommandSequenceDiagram">
+</div>
+<div class="title">Figure 17. Metrics Command Sequence Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerEditCommandSequenceDiagram.png" alt="DietTrackerEditCommandSequenceDiagram">
+</div>
+<div class="title">Figure 18. Edit Command Sequence Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerDeleteCommandSequenceDiagram.png" alt="DietTrackerDeleteCommandSequenceDiagram">
+</div>
+<div class="title">Figure 19. Delete Command Sequence Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerAddCommandSequenceDiagram.png" alt="DietTrackerAddCommandSequenceDiagram">
+</div>
+<div class="title">Figure 20. Add Command Sequence Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerListCommandAllSequenceDiagram.png" alt="DietTrackerListCommandAllSequenceDiagram">
+</div>
+<div class="title">Figure 21. List Command Sequence Diagram for <code>-a</code> and No-Flag Input</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerListCommandDaySequenceDiagram.png" alt="DietTrackerListCommandDaySequenceDiagram">
+</div>
+<div class="title">Figure 22. List Command Sequence Diagram for <code>-d</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerListCommandTagSequenceDiagram.png" alt="DietTrackerListCommandTagSequenceDiagram">
+</div>
+<div class="title">Figure 23. List Command Sequence Diagram for <code>-t</code></div>
+</div>
+</li>
+<li>
+<p><strong>Drew Class Diagrams for various Diet Tracker functions.</strong></p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerBmiCommandClassDiagram.png" alt="DietTrackerBmiCommandClassDiagram">
+</div>
+<div class="title">Figure 24. Bmi Command Class Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerHeightCommandClassDiagram.png" alt="DietTrackerHeightCommandClassDiagram">
+</div>
+<div class="title">Figure 25. Height Command Class Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerWeightCommandClassDiagram.png" alt="DietTrackerWeightCommandClassDiagram">
+</div>
+<div class="title">Figure 26. Weight Command Class Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerModeCommandClassDiagram.png" alt="DietTrackerModeCommandClassDiagram">
+</div>
+<div class="title">Figure 27. Mode Command Class Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerMetricsCommandClassDiagram.png" alt="DietTrackerMetricsCommandClassDiagram">
+</div>
+<div class="title">Figure 28. Metrics Command Class Diagram</div>
 </div>
 </li>
 </ul>
 </div>
 </li>
+</ol>
+</div>
+</li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p><strong>Code contributed</strong>: [<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=jarrod-bob&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=true&amp;tabOpen=false">Functional code and Test Code</a>]</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -377,7 +414,25 @@ This was circumvented using BigInteger when validating the long.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>To be added</p>
+<p>Updated Developer Guide to include Bmi Command (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/352">#Change</a>)</p>
+</li>
+<li>
+<p>Updated Developer Guide to include Height Amount Command (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/355">#change</a>)</p>
+</li>
+<li>
+<p>Updated Developer Guide to include Weight Receipt Command (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/355">#change</a>)</p>
+</li>
+<li>
+<p>Updated Developer Guide to include Mode Receipt Command (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/355">#change</a>)</p>
+</li>
+<li>
+<p>Updated Developer Guide to include Metrics Receipt Command (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/355">#change</a>)</p>
+</li>
+<li>
+<p>Updated Developer Guide Template for Diet Tracker overall (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/252">#change</a>)</p>
+</li>
+<li>
+<p>Updated User Guide to include Bmi, Height, Weight, Bmi Command (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/349">#change</a>)</p>
 </li>
 </ul>
 </div>
@@ -387,13 +442,11 @@ This was circumvented using BigInteger when validating the long.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments):</p>
+<p>PRs reviewed (with non-trivial review comments): (Pull requests: <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/128">#128</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/134">#134</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/135">#135</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/217">#217)</a>,
+)</p>
 </li>
 <li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/52">1</a>, <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/48">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
+<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com/jarrod-bob/ped/issues" class="bare">https://github.com/jarrod-bob/ped/issues</a>)</p>
 </li>
 </ul>
 </div>
@@ -428,6 +481,508 @@ This was circumvented using BigInteger when validating the long.</p>
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="diet-tracker-code-diet-code"><a class="link" href="#diet-tracker-code-diet-code">Diet Tracker : <code>diet</code></a></h3>
+<div class="paragraph">
+<p>Using a Dieting App has never been easier! You can easily achieve the functionalities of a standard Dieting App with Diet Tracker.</p>
+</div>
+<div class="paragraph">
+<p>Diet Tracker will help you achieve your ideal weight and body mass!</p>
+</div>
+<div class="paragraph">
+<p>You can store all your food intake everyday and calculate useful information.</p>
+</div>
+<hr>
+<hr>
+<div class="sect3">
+<h4 id="calculatebmi"><a class="link" href="#calculatebmi">Calculating Body Mass Index (BMI) <code>bmi</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>bmi</code> command, <a href="#howtousebmicommand">how to use it</a>
+and the <a href="#bmiexpectedoutcome">expected outcome</a> after using the
+<code>bmi</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Bmi Command:</strong><br>
+<code>bmi</code> You can calculate your BMI either through an input height and weight or your previously stored Height and Weight.<br></p>
+</div>
+<div class="paragraph">
+<p>It will display the following data:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>BMI value</p>
+</li>
+</ul>
+</div>
+<div id="howtousebmicommand" class="paragraph">
+<p><strong>How to use the Bmi Command:</strong></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>There are 3 ways to use <code>bmi</code>.</p>
+</li>
+<li>
+<p>The first is if there is no input height and weight. This will use
+the height and weight that is stored in the Self object.</p>
+</li>
+<li>
+<p>The second is if there is either no input height or input weight. This will use the
+stored Height (in the case of missing input height) or stored Weight (in the case of missing input weight)
+to do the calculation instead.</p>
+</li>
+<li>
+<p>The third is to calculate bmi with an input height and weight.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>bmi [-h HEIGHT] [-w WEIGHT]</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>height 172</code><br>
+<code>weight 65</code><br>
+<code>bmi</code><br>
+Change your height and your weight to your current measurements before calculating your BMI.
+BMI is calculated based off the stored height and weight in this instance.</p>
+</li>
+<li>
+<p><code>height 173.5</code><br>
+<code>bmi -w 59.9</code><br>
+Change your height to your current measurements before calculating you BMI.
+BMI is calculated based off the stored height and input weight in this instance.</p>
+</li>
+<li>
+<p><code>bmi -h 172 -w 65.5</code><br>
+Calculate BMI based on the input height and weight values.</p>
+</li>
+</ul>
+</div>
+<div id="bmiexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/dietTrackerBmiCommandSuccessPhoto.png" alt="dietTrackerBmiCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional tips</strong><br></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you are unsure whether you have already input your height and weight, you may <code>metrics</code> to check.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="height"><a class="link" href="#height">Storing Height <code>height</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>height</code> command, <a href="#howtouseheightcommand">how to use it</a>
+and the <a href="#heightexpectedoutcome">expected outcome</a> after using the
+<code>height</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Height Command:</strong><br>
+<code>height</code> You can use this command to save your Height to the Diet Tracker.</p>
+</div>
+<div id="howtouseheightcommand" class="paragraph">
+<p><strong>How to use the Height Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>height HEIGHT</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>height 170.2</code></p>
+</div>
+<div id="heightexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/dietTrackerHeightCommandSuccessPhoto.png" alt="dietTrackerHeightCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional notes and tips</strong><br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Height in centimetres (cm). Decimal places are accepted. I.e. <code>height 172.305</code> is accepted.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Check your stored height with <code>metrics</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="weight"><a class="link" href="#weight">Storing Weight <code>weight</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>weight</code> command, <a href="#howtouseweightcommand">how to use it</a>
+and the <a href="#weightexpectedoutcome">expected outcome</a> after using the
+<code>weight</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Weight Command:</strong><br>
+<code>weight</code> You can use this command to save your Weight to the Diet Tracker.</p>
+</div>
+<div id="howtouseweightcommand" class="paragraph">
+<p><strong>How to use the Weight Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>weight WEIGHT</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>weight 65.7</code></p>
+</div>
+<div id="weightexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/dietTrackerWeightCommandSuccessPhoto.png" alt="dietTrackerWeightCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional notes and tips</strong><br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Weight in kilograms (kg). Decimal places are accepted. I.e. <code>weight 65.77</code> is accepted.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Check your stored weight with <code>metrics</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="mode"><a class="link" href="#mode">Dieting Mode <code>mode</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>mode</code> command, <a href="#howtousemodecommand">how to use it</a>
+and the <a href="#modeexpectedoutcome">expected outcome</a> after using the
+<code>mode</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Mode Command:</strong><br>
+<code>mode</code> You can set your desired dieting goal with the different modes that set a limit on your daily
+calorie intake. The calorie limits are calculated based on that of an average human. Your daily calories intake status
+can be monitored with the <code>list</code> command.</p>
+</div>
+<div class="paragraph">
+<p>Switch the dieting mode, based on the following modes:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Lose Weight (-l) (2000 calorie limit)</p>
+</li>
+<li>
+<p>Gain Weight (-g) (3000 calorie limit)</p>
+</li>
+<li>
+<p>Maintain (-m) (2500 calorie limit)</p>
+</li>
+</ul>
+</div>
+<div id="howtousemodecommand" class="paragraph">
+<p><strong>How to use the Mode Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>mode [-l] [-g] [-m]</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>mode -l</code></p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+You must only input <strong>EXACTLY ONE</strong> mode per mode command.
+</td>
+</tr>
+</table>
+</div>
+<div id="modeexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/dietTrackerModeCommandSuccessPhoto.png" alt="dietTrackerModeCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional notes and tips</strong><br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The default mode is MAINTAIN if you have not set your mode.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Switch your Dieting Mode to help yourself reach your diet targets better!</p>
+</li>
+<li>
+<p>Check your currently chosen Dieting Mode with <code>metrics</code>.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="metrics"><a class="link" href="#metrics">Showing your Metrics <code>metrics</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>metrics</code> command, <a href="#howtousemetricscommand">how to use it</a>
+and the <a href="#metricsexpectedoutcome">expected outcome</a> after using the
+<code>metrics</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Metrics Command:</strong><br>
+<code>metrics</code> You can print out your individual metrics (Height, Weight and Mode) to check them.</p>
+</div>
+<div class="paragraph">
+<p>It will display the following data:<br></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Your height</p>
+</li>
+<li>
+<p>Your weight</p>
+</li>
+<li>
+<p>Your chosen Dieting Mode</p>
+</li>
+</ul>
+</div>
+<div id="howtousemetricscommand" class="paragraph">
+<p><strong>How to use the Metrics Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>metrics</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>metrics</code></p>
+</div>
+<div id="metricsexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/dietTrackerMetricsCommandSuccessPhoto.png" alt="dietTrackerMetricsCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional notes and tips</strong><br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Diet Tracker will prompt you if you did not have any previously stored Height, Weight.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Use this to check whether you have previously stored a Height, a Weight, or have chosen your Dieting Mode already.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="editfooditem"><a class="link" href="#editfooditem">Editing a Food Item <code>edit</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>edit</code> command, <a href="#howtouseeditcommand">how to use it</a>
+and the <a href="#editexpectedoutcome">expected outcome</a> after using the
+<code>edit</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Edit Command:</strong><br>
+<code>edit</code> You can edit either the Food name, or the calories of the food at the specified index. <br></p>
+</div>
+<div id="howtouseeditcommand" class="paragraph">
+<p><strong>How to use the Edit Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>edit -i INDEX [-n NAME] [-c CALORIES]</code><br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the Food Item at the specified <code>INDEX</code>.
+The index refers to the index number shown in the displayed Food list.
+The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>edit -i 2 -n Chicken Rice -c 585</code><br>
+Edits the name of the food item at index 2 to be 'Chicken Rice' and the calories to be '585'.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+You <strong>MUST</strong> use <code>list</code> to check the list of items to identify a target to edit. This would ensure that you get the
+correct index of the item.
+</td>
+</tr>
+</table>
+</div>
+<div id="editexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/dietTrackerEditCommandSuccessPhoto.png" alt="dietTrackerEditCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional notes and tips</strong><br></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can list based on time period or tags to find the item that you want to edit.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -443,6 +998,798 @@ This was circumvented using BigInteger when validating the long.</p>
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="diet-tracker-feature"><a class="link" href="#diet-tracker-feature">Diet Tracker feature</a></h3>
+<div class="paragraph">
+<p>The Diet Tracker feature is designed to aid our users in maintaining a healthy lifestyle. The feature comprises
+of 10 Commands.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Add-Command"><code>AddCommand</code></a> - Creates a new Food object with its attributes (Name, Calories) and adds it to the FoodBook Storage.</p>
+</li>
+<li>
+<p><a href="#Delete-Command"><code>DeleteCommand</code></a> - Deletes the Food specified by the input index from FoodBook Storage.</p>
+</li>
+<li>
+<p><a href="#List-Command"><code>ListCommand</code></a> - Lists the Foods and its attributes (Name, Calories) for the timeframe specified by users
+based on their user input.</p>
+</li>
+<li>
+<p><a href="#Edit-Command"><code>EditCommand</code></a> - Allows the user to edit an of the Food in Storage.</p>
+</li>
+<li>
+<p><a href="#Height-Command"><code>HeightCommand</code></a> - Allows users to log their Height in centimeters.</p>
+</li>
+<li>
+<p><a href="#Weight-Command"><code>WeightCommand</code></a> - Allows users to log their Weight in kilograms.</p>
+</li>
+<li>
+<p><a href="#Bmi-Command"><code>BmiCommand</code></a> - Calculates the BMI.</p>
+</li>
+<li>
+<p><a href="#Mode-Command"><code>ModeCommand</code></a> - Allows users to toggle between different modes of the diet tracker.</p>
+</li>
+<li>
+<p><a href="#Metrics-Command"><code>MetricsCommand</code></a> - Allows users to check their health metrics, like their Height, Weight and Dieting Mode.
+'''</p>
+<div id="Edit-Command" class="paragraph">
+<p>==== Edit Command</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In this section, we will learn more about how the <code>edit</code> command is implemented.</p>
+</div>
+<div class="paragraph">
+<p><strong>What is the Edit Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>The <code>edit</code> command allows users to edit the Name of the Food or the Calories of the Food from the FoodBook via the Index.</p>
+</div>
+<div class="paragraph">
+<p>The <code>edit</code> command was implemented as <code>EditCommand</code> in the <code>diettracker/logic/commands</code> package.</p>
+</div>
+<div class="paragraph">
+<p>The <code>edit</code> command has the following input format:</p>
+</div>
+<div class="paragraph">
+<p><code>edit</code> <code>-i INDEX</code> <code>[-n NAME]</code> <code>[-c CALORIES]</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> is a compulsory field.</p>
+</li>
+<li>
+<p>The Index of the Food to be edited <strong>MUST</strong> be retrieved by using the <code>list</code> command.</p>
+</li>
+<li>
+<p>At least one of <code>NAME</code> or <code>CALORIES</code> must be included in the command input.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates what happens when a user executes the <code>edit</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerEditCommandActivityDiagram.png" alt="DietTrackerEditCommandActivityDiagram">
+</div>
+<div class="title">Figure 29. Edit Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>Structure of Edit Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>edit</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerEditCommandClassDiagram.png" alt="DietTrackerEditCommandClassDiagram">
+</div>
+<div class="title">Figure 30. Edit Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>EditCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>EditCommand</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Implementation</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>EditCommand</code> performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>EditCommand#execute(DietModel dietModel)</code> method is executed and it validates that the specified <code>INDEX</code> to edit
+is within range. If valid, the item to be edited will be retrieved from Storage using its <code>Index</code>.</p>
+</li>
+<li>
+<p>The method <code>DietModel#getFilteredFoodList() will then be called to retrieve the List of Foods from Storage.
+`List#get(int Index)</code> is then invoked which retrieves the specified Food to be edited.</p>
+</li>
+<li>
+<p>The method <code>DietModel#setFood(Food toBeEdited, Food editedFood)</code> will then be called to replace the Food toBeEdited with the
+Food editedFood in the List of Foods.</p>
+</li>
+<li>
+<p>If successful, a success message will be generated by <code>CommandResult</code> and it will be returned with the generated
+success message. Otherwise, an error message showing the correct command syntax is thrown as <code>CommandException</code>.</p>
+</li>
+<li>
+<p>If the command syntax was valid and Food was edited in FoodBook, <code>LogicManager</code> calls
+<code>FoodBookStorage#saveFoodBook(ReadOnlyFoodBook foodBook)</code> which saves the new Foods
+into JSON format after serializing it using <code>JsonAdaptedFood</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Sequence Diagram for Edit Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens during the execution of <code>edit</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerEditCommandSequenceDiagram.png" alt="DietTrackerEditCommandSequenceDiagram">
+</div>
+<div class="title">Figure 31. Edit Command Sequence Diagram</div>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="Bmi-Command"><a class="link" href="#Bmi-Command">Bmi Command</a></h4>
+<div class="paragraph">
+<p>In this section, we will learn more about how the <code>bmi</code> command is implemented.</p>
+</div>
+<div class="paragraph">
+<p><strong>What is the Bmi Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>bmi</code> command allows the user to calculate their Body Mass Index (BMI).</p>
+</div>
+<div class="paragraph">
+<p>The <code>bmi</code> command was implemented as <code>BmiCommand</code> in the <code>diettracker/logic/commands</code> package.</p>
+</div>
+<div class="paragraph">
+<p>The <code>bmi</code> command has the following input format:</p>
+</div>
+<div class="paragraph">
+<p><code>bmi</code> <code>[-h HEIGHT]</code> <code>[-w WEIGHT]</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>[-h HEIGHT]</code> and <code>[-w WEIGHT]</code> may be omitted if the user has already stored their Height and Weight.</p>
+</li>
+<li>
+<p>If Users have one of Height or Weight stored, they may use just the missing metric to calculate their BMI.</p>
+</li>
+<li>
+<p><code>HEIGHT</code> and <code>WEIGHT</code> can range from &gt;0 to &#8656;1000.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates what happens when a user executes the <code>bmi</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerBmiCommandActivityDiagram.png" alt="DietTrackerBmiCommandActivityDiagram">
+</div>
+<div class="title">Figure 32. Bmi Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>Structure of Bmi Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>bmi</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerBmiCommandClassDiagram.png" alt="DietTrackerBmiCommandClassDiagram">
+</div>
+<div class="title">Figure 33. Bmi Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>BmiCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>BmiCommand</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Implementation of Bmi Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>BmiCommand</code> performs. <code>BmiCommand</code> has two different usages
+depending on the user input.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>BmiCommand#execute(Model splitterModel)</code> method is executed and it will return the output of the calculated BMI
+based on user arguments.</p>
+</li>
+<li>
+<p>If successful, a success message will be generated by <code>CommandResult</code> and it will be returned with the generated
+success message. Otherwise, an error message showing the correct command syntax is thrown as <code>CommandException</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Sequence diagram for Bmi Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>Given below are 2 example usages of <code>BmiCommand</code> based on different user input.</p>
+</div>
+<div class="paragraph">
+<p><strong>Usage 1: No Height and Weight input</strong></p>
+</div>
+<div class="paragraph">
+<p>Step 1. User launches application and enters <code>Diet</code> mode. The user then enters <code>bmi</code> as the command.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The FoodBook parser validates this command and sets up the <code>BmiCommandParser</code>, which checks for the input.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. Since there are no arguments, the <code>BmiCommandParser</code> will call the empty constructor <code>BmiCommand()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. <code>BmiCommand</code> would then refer to the internal state of the splitterModel under Self, and retrieve the values stored in
+Self&#8217;s Height and Weight attributes.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. <code>BmiCommand()</code> will then proceed to calculate the BMI based on the current values of height and weight.</p>
+</div>
+<div class="paragraph">
+<p>The following is a sample sequence diagram of the <code>BmiCommand</code> with no additional user input.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerBmiCommandNILSequenceDiagram.png" alt="DietTrackerBmiCommandNILSequenceDiagram">
+</div>
+<div class="title">Figure 34. Sequence Diagram Bmi Command Sequence Diagram without Input Arguments</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerBmiCommandNILSequenceDiagram2.png" alt="DietTrackerBmiCommandNILSequenceDiagram2">
+</div>
+<div class="title">Figure 35. Sequence Diagram: Retrieval of stored Height and Weight from Model</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+There is a need to ensure that there are stored values in <code>Height</code> and <code>Weight</code> attributes in the <code>Self</code> class.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Usage 2: With Height and Weight input</strong></p>
+</div>
+<div class="paragraph">
+<p>Step 1. User launches application and enters <code>Diet</code> mode. The user then enters <code>bmi</code> as the command.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The FoodBook parser validates this command and sets up the <code>BmiCommandParser</code>, which checks for the input.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. Since there are no arguments, the <code>BmiCommandParser</code> will call the empty constructor <code>BmiCommand()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. <code>BmiCommand</code> would then refer to the internal state of the splitterModel under Self, and retrieve the values stored in
+Self&#8217;s Height and Weight attributes.</p>
+</div>
+<div class="paragraph">
+<p>Step 5. <code>BmiCommand()</code> will then proceed to calculate the BMI based on the current values of height and weight.</p>
+</div>
+<div class="paragraph">
+<p>The following is a sample sequence diagram of the <code>BmiCommand</code> with additional user input.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerBmiCommandSequenceDiagram.png" alt="DietTrackerBmiCommandSequenceDiagram">
+</div>
+<div class="title">Figure 36. Bmi Command Sequence Diagram with Input Arguments</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerBmiCommandSequenceDiagram2.png" alt="DietTrackerBmiCommandSequenceDiagram2">
+</div>
+<div class="title">Figure 37. Creation of Height and Weight Objects for usage in Bmi Command</div>
+</div>
+<div class="paragraph">
+<p><strong>Design Considerations</strong></p>
+</div>
+<div class="paragraph">
+<p>Aspect: How <code>BmiCommand</code> executes</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Alternative 1 (current choice): Executes with other without arguments</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: More flexible use of the Command, better user experience overall.</p>
+</li>
+<li>
+<p>Cons: Harder to implement, as there needs to be multiple BmiCommand constructors.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alternative 2: Executes separately with arguments input and without arguments input</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to implement, less potential bugs as Command uses a single constructor.</p>
+</li>
+<li>
+<p>Cons:  We must ensure that the implementation of each individual command are correct.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Aspect: Storage of BMI</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Alternative 1 (current choice): No splitterStorage of BMI value, simply prints when user requests.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Less memory used; reduces complexity of the Command and objects involved.</p>
+</li>
+<li>
+<p>Cons: Users may want to access it elsewhere from Self.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Alternative 2: Storage of BMI value in Self class in Model.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Users have access to it anytime.</p>
+</li>
+<li>
+<p>Cons: Coding complexity.
+'''</p>
+<div id="Height-Command" class="paragraph">
+<p>==== Height Command</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In this section, we will learn more about how the <code>height</code> command is implemented.</p>
+</div>
+<div class="paragraph">
+<p><strong>What is the Height Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>height</code> command allows the user to store their Height into the Diet Tracker.</p>
+</div>
+<div class="paragraph">
+<p>The <code>height</code> command was implemented as <code>HeightCommand</code> in the <code>diettracker/logic/commands</code> package.</p>
+</div>
+<div class="paragraph">
+<p>The <code>height</code> command has the following input format:</p>
+</div>
+<div class="paragraph">
+<p><code>height</code> <code>HEIGHT</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>HEIGHT</code> is a <strong>compulsory</strong> field.</p>
+</li>
+<li>
+<p><code>HEIGHT</code> can range from &gt;0 to &lt;1000. <code>HEIGHT</code> can be input as a decimal.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates what happens when a user executes the <code>height</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerHeightCommandActivityDiagram.png" alt="DietTrackerHeightCommandActivityDiagram">
+</div>
+<div class="title">Figure 38. Height Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>Structure of Height Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>height</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerHeightCommandClassDiagram.png" alt="DietTrackerHeightCommandClassDiagram">
+</div>
+<div class="title">Figure 39. Height Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>HeightCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>HeightCommand</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Implementation of Height Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>HeightCommand</code> performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>HeightCommand#execute(DietModel dietModel)</code> method is executed and it validates that the specified <code>HEIGHT</code> to store
+is a valid Height. If valid, the height will be stored in the <code>Self</code> class.</p>
+</li>
+<li>
+<p>The method <code>DietModel#setHeight(Height height)</code> will then be called to set the Height of the <code>Self</code> class.
+<code>Self#setHeight(Height height)</code> is invoked which makes a call to its internal Height to replace the value stored.</p>
+</li>
+<li>
+<p>If successful, a success message will be generated by <code>CommandResult</code> and it will be returned with the generated
+success message. Otherwise, an error message showing the correct command syntax is thrown as <code>CommandException</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Sequence diagram for Height Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens during the execution of <code>height</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerHeightCommandSequenceDiagram.png" alt="DietTrackerHeightCommandSequenceDiagram">
+</div>
+<div class="title">Figure 40. Height Command Sequence Diagram</div>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="Weight-Command"><a class="link" href="#Weight-Command">Weight Command</a></h4>
+<div class="paragraph">
+<p>In this section, we will learn more about how the <code>weight</code> command is implemented.</p>
+</div>
+<div class="paragraph">
+<p><strong>What is the Weight Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>weight</code> command allows the user to store their Weight into the Diet Tracker.</p>
+</div>
+<div class="paragraph">
+<p>The <code>weight</code> command was implemented as <code>WeightCommand</code> in the <code>diettracker/logic/commands</code> package.</p>
+</div>
+<div class="paragraph">
+<p>The <code>weight</code> command has the following input format:</p>
+</div>
+<div class="paragraph">
+<p><code>weight</code> <code>WEIGHT</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>WEIGHT</code> is a <strong>compulsory</strong> field.</p>
+</li>
+<li>
+<p><code>WEIGHT</code> can range from &gt;0 to &lt;1000. <code>WEIGHT</code> can be input as a decimal.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates what happens when a user executes the <code>weight</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerWeightCommandActivityDiagram.png" alt="DietTrackerWeightCommandActivityDiagram">
+</div>
+<div class="title">Figure 41. Weight Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>Structure of Weight Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>weight</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerWeightCommandClassDiagram.png" alt="DietTrackerWeightCommandClassDiagram">
+</div>
+<div class="title">Figure 42. Weight Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>WeightCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>WeightCommand</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Implementation of Weight Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>WeightCommand</code> performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>WeightCommand#execute(DietModel dietModel)</code> method is executed and it validates that the specified <code>WEIGHT</code> to store
+is a valid Weight. If valid, the Weight will be stored in the <code>Self</code> class.</p>
+</li>
+<li>
+<p>The method <code>DietModel#setWeight(Weight weight)</code> will then be called to set the Weight of the <code>Self</code> class.
+<code>Self#setWeight(Weight weight)</code> is invoked which makes a call to its internal Height to replace the value stored.</p>
+</li>
+<li>
+<p>If successful, a success message will be generated by <code>CommandResult</code> and it will be returned with the generated
+success message. Otherwise, an error message showing the correct command syntax is thrown as <code>CommandException</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Sequence diagram for Weight Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens during the execution of <code>weight</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerWeightCommandSequenceDiagram.png" alt="DietTrackerWeightCommandSequenceDiagram">
+</div>
+<div class="title">Figure 43. Weight Command Sequence Diagram</div>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="Mode-Command"><a class="link" href="#Mode-Command">Mode Command</a></h4>
+<div class="paragraph">
+<p>In this section, we will learn more about how the <code>mode</code> command is implemented.</p>
+</div>
+<div class="paragraph">
+<p><strong>What is the Mode Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>mode</code> command allows the user to store their Dieting Mode into the Diet Tracker.</p>
+</div>
+<div class="paragraph">
+<p>The <code>mode</code> command was implemented as <code>ModeCommand</code> in the <code>diettracker/logic/commands</code> package.</p>
+</div>
+<div class="paragraph">
+<p>The <code>mode</code> command has the following input format:</p>
+</div>
+<div class="paragraph">
+<p><code>mode</code> <code>[-l]</code> <code>[-g]</code> <code>[-m]</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Users must only enter <strong>EXACTLY ONE</strong> of the given flags for the mode.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates what happens when a user executes the <code>mode</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerModeCommandActivityDiagram.png" alt="DietTrackerModeCommandActivityDiagram">
+</div>
+<div class="title">Figure 44. Mode Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>Structure of Mode Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>mode</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerModeCommandClassDiagram.png" alt="DietTrackerModeCommandClassDiagram">
+</div>
+<div class="title">Figure 45. Mode Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>ModeCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>ModeCommand</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Implementation of Mode Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations ModeCommand performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>ModeCommand#execute(DietModel dietModel)</code> method is executed and it validates that the specified <code>MODE</code> (based on the input flag) to store
+is a valid flag. If valid, the corresponding mode to the flag will be stored in the <code>Self</code> class.</p>
+</li>
+<li>
+<p>The method <code>DietModel#setMode(Mode mode) will then be called to set the Mode of the `Self</code> class.
+<code>Self#setMode(Mode mode)</code> is invoked which makes a call to its internal Mode to replace the value stored.</p>
+</li>
+<li>
+<p>If successful, a success message will be generated by <code>CommandResult</code> and it will be returned with the generated
+success message. Otherwise, an error message showing the correct command syntax is thrown as <code>CommandException</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Sequence diagram for Mode Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens during the execution of <code>mode</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerModeCommandSequenceDiagram.png" alt="DietTrackerModeCommandSequenceDiagram">
+</div>
+<div class="title">Figure 46. Mode Command Sequence Diagram</div>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="Metrics-Command"><a class="link" href="#Metrics-Command">Metrics Command</a></h4>
+<div class="paragraph">
+<p>In this section, we will learn more about how the <code>metrics</code> command is implemented.</p>
+</div>
+<div class="paragraph">
+<p><strong>What is the Metrics Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>metrics</code> command allows the user to check their health metrics. These include their Height, Weight and Dieting Mode.</p>
+</div>
+<div class="paragraph">
+<p>The <code>metrics</code> command was implemented as <code>MetricsCommand</code> in the <code>diettracker/logic/commands</code> package.</p>
+</div>
+<div class="paragraph">
+<p>The <code>metrics</code> command has the following input format:</p>
+</div>
+<div class="paragraph">
+<p><code>metrics</code></p>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates what happens when a user executes the <code>metrics</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerMetricsCommandActivityDiagram.png" alt="DietTrackerMetricsCommandActivityDiagram">
+</div>
+<div class="title">Figure 47. Metrics Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>Structure of Metrics Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>metrics</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerMetricsCommandClassDiagram.png" alt="DietTrackerMetricsCommandClassDiagram">
+</div>
+<div class="title">Figure 48. Metrics Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>MetricsCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>MetricsCommand</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Implementation of Metrics Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations MetricsCommand performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>MetricsCommand#execute(DietModel dietModel)</code> method is executed.</p>
+</li>
+<li>
+<p>The <code>DietModel#printMetrics()</code> method would then be called to print the User&#8217;s Metrics.</p>
+</li>
+<li>
+<p>If successful, a success message will be generated by <code>CommandResult</code> and it will be returned with the generated
+success message. Otherwise, an error message showing the correct command syntax is thrown as <code>CommandException</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Sequence diagram for Metrics Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens during the execution of <code>metrics</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerMetricsCommandSequenceDiagram.png" alt="DietTrackerMetricsCommandSequenceDiagram">
+</div>
+<div class="title">Figure 49. Metrics Command Sequence Diagram</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="testing"><a class="link" href="#testing">Testing</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Refer to the guide <a href="Testing.html">here</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dev-ops"><a class="link" href="#dev-ops">Dev Ops</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Refer to the guide <a href="DevOps.html">here</a>.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -454,10 +1801,9 @@ This was circumvented using BigInteger when validating the long.</p>
 </div>
 <div class="paragraph">
 <p>Questions to ask:<br>
-1. is BigDecimal the best way to represent currency?<br>
-2. under ItemPriceTest, instead of assertFalse can I assertThrows because BigDecimal
-will throw an exception? Because in AB3 everything there is assertFalse<br>
+1. Should users be able to use BMI without input, or even with just a single (Height/Weight) input?<br>
+2.
 3.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 08:19:35 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 08:23:14 UTC</div></div></div></body></html>
