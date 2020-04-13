@@ -1511,6 +1511,22 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 <div class="title">Figure 32. List Receipt Activity Diagram</div>
 </div>
 <div class="paragraph">
+<p><strong>Structure of List Receipt Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>listreceipt</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterListReceiptCommandClassDiagram.png" alt="ExpenseSplitterListReceiptCommandClassDiagram">
+</div>
+<div class="title">Figure 33. List Receipt Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>ListReceiptCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>ListReceiptCommand</code></p>
+</div>
+<div class="paragraph">
 <p><strong>Implementation of List Receipt Command</strong></p>
 </div>
 <div class="paragraph">
@@ -1545,7 +1561,7 @@ component.</p>
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterListReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterListReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 33. List Receipt Command Sequence Diagram</div>
+<div class="title">Figure 34. List Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1596,7 +1612,7 @@ component.</p>
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterListAmountCommandActivityDiagram.png" alt="ExpenseSplitterListAmountCommandActivityDiagram">
 </div>
-<div class="title">Figure 34. List Amount Activity Diagram<br></div>
+<div class="title">Figure 35. List Amount Activity Diagram<br></div>
 </div>
 <div class="paragraph">
 <p><strong>Structure of List Amount Command</strong><br></p>
@@ -1608,7 +1624,7 @@ component.</p>
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterListAmountCommandClassDiagram.png" alt="ExpenseSplitterListAmountCommandClassDiagram">
 </div>
-<div class="title">Figure 35. List Amount Command Class Diagram</div>
+<div class="title">Figure 36. List Amount Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>ListAmountCommand</code> and its associated classes and
@@ -1648,7 +1664,7 @@ component.</p>
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
 </div>
-<div class="title">Figure 36. List Amount Command Sequence Diagram</div>
+<div class="title">Figure 37. List Amount Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1695,7 +1711,7 @@ the correct item back.</p>
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterDoneReceiptCommandActivityDiagram.png" alt="ExpenseSplitterDoneReceiptCommandActivityDiagram">
 </div>
-<div class="title">Figure 37. Done Receipt Command Activity Diagram</div>
+<div class="title">Figure 38. Done Receipt Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Structure of Done Receipt Command</strong><br></p>
@@ -1707,7 +1723,7 @@ the correct item back.</p>
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterDoneReceiptCommandClassDiagram.png" alt="ExpenseSplitterDoneReceiptCommandClassDiagram">
 </div>
-<div class="title">Figure 38. Done Receipt Command Class Diagram</div>
+<div class="title">Figure 39. Done Receipt Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>DoneReceiptCommand</code> and its associated classes and
@@ -1745,7 +1761,7 @@ interfaces. Some methods and fields are left out because they are not of concern
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterDoneReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterDoneReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 39. Done Receipt Command Sequence Diagram</div>
+<div class="title">Figure 40. Done Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1803,7 +1819,7 @@ empty is equivalent to the Person paying the user the full amount he/she owes th
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterPaidCommandActivityDiagram.png" alt="ExpenseSplitterPaidCommandActivityDiagram">
 </div>
-<div class="title">Figure 40. Paid Command Activity Diagram</div>
+<div class="title">Figure 41. Paid Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Structure of Paid Command</strong><br></p>
@@ -1815,7 +1831,7 @@ empty is equivalent to the Person paying the user the full amount he/she owes th
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterPaidCommandClassDiagram.png" alt="ExpenseSplitterPaidCommandClassDiagram">
 </div>
-<div class="title">Figure 41. Paid Command Class Diagram</div>
+<div class="title">Figure 42. Paid Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>PaidCommand</code> and its associated classes and
@@ -1857,13 +1873,13 @@ String amountPaid will be converted into an Amount by instantiating a new instan
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterPaidCommandSequenceDiagram.png" alt="ExpenseSplitterPaidCommandSequenceDiagram">
 </div>
-<div class="title">Figure 42. Paid Command Sequence Diagram</div>
+<div class="title">Figure 43. Paid Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterPaidCommandSequenceDiagram2.png" alt="ExpenseSplitterPaidCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 43. Execution of Paid Command Sequence Diagram</div>
+<div class="title">Figure 44. Execution of Paid Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1916,7 +1932,7 @@ only be able to use the <code>additem</code> and <code>deleteitem</code> command
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterClearReceiptCommandActivityDiagram.png" alt="ExpenseSplitterClearReceiptCommandActivityDiagram">
 </div>
-<div class="title">Figure 44. Clear Receipt Command Activity Diagram</div>
+<div class="title">Figure 45. Clear Receipt Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Clear Receipt Command</strong></p>
@@ -1950,7 +1966,7 @@ only be able to use the <code>additem</code> and <code>deleteitem</code> command
 <div class="content">
 <img src="../images/expense-splitter/ExpenseSplitterClearReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterClearReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 45. Clear Receipt Command Sequence Diagram</div>
+<div class="title">Figure 46. Clear Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -3525,4 +3541,4 @@ will throw an exception? Because in AB3 everything there is assertFalse<br>
 3.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 05:21:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 06:24:07 UTC</div></div></div></body></html>

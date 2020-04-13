@@ -1778,6 +1778,22 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 <div class="title">Figure 40. List Receipt Activity Diagram</div>
 </div>
 <div class="paragraph">
+<p><strong>Structure of List Receipt Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>listreceipt</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ExpenseSplitterListReceiptCommandClassDiagram.png" alt="ExpenseSplitterListReceiptCommandClassDiagram">
+</div>
+<div class="title">Figure 41. List Receipt Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>ListReceiptCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>ListReceiptCommand</code></p>
+</div>
+<div class="paragraph">
 <p><strong>Implementation of List Receipt Command</strong></p>
 </div>
 <div class="paragraph">
@@ -1812,7 +1828,7 @@ component.</p>
 <div class="content">
 <img src="images/ExpenseSplitterListReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterListReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 41. List Receipt Command Sequence Diagram</div>
+<div class="title">Figure 42. List Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1863,7 +1879,7 @@ component.</p>
 <div class="content">
 <img src="images/ExpenseSplitterListAmountCommandActivityDiagram.png" alt="ExpenseSplitterListAmountCommandActivityDiagram">
 </div>
-<div class="title">Figure 42. List Amount Activity Diagram<br></div>
+<div class="title">Figure 43. List Amount Activity Diagram<br></div>
 </div>
 <div class="paragraph">
 <p><strong>Structure of List Amount Command</strong><br></p>
@@ -1875,7 +1891,7 @@ component.</p>
 <div class="content">
 <img src="images/ExpenseSplitterListAmountCommandClassDiagram.png" alt="ExpenseSplitterListAmountCommandClassDiagram">
 </div>
-<div class="title">Figure 43. List Amount Command Class Diagram</div>
+<div class="title">Figure 44. List Amount Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>ListAmountCommand</code> and its associated classes and
@@ -1915,7 +1931,7 @@ component.</p>
 <div class="content">
 <img src="images/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
 </div>
-<div class="title">Figure 44. List Amount Command Sequence Diagram</div>
+<div class="title">Figure 45. List Amount Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1962,7 +1978,7 @@ the correct item back.</p>
 <div class="content">
 <img src="images/ExpenseSplitterDoneReceiptCommandActivityDiagram.png" alt="ExpenseSplitterDoneReceiptCommandActivityDiagram">
 </div>
-<div class="title">Figure 45. Done Receipt Command Activity Diagram</div>
+<div class="title">Figure 46. Done Receipt Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Structure of Done Receipt Command</strong><br></p>
@@ -1974,7 +1990,7 @@ the correct item back.</p>
 <div class="content">
 <img src="images/ExpenseSplitterDoneReceiptCommandClassDiagram.png" alt="ExpenseSplitterDoneReceiptCommandClassDiagram">
 </div>
-<div class="title">Figure 46. Done Receipt Command Class Diagram</div>
+<div class="title">Figure 47. Done Receipt Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>DoneReceiptCommand</code> and its associated classes and
@@ -2012,7 +2028,7 @@ interfaces. Some methods and fields are left out because they are not of concern
 <div class="content">
 <img src="images/ExpenseSplitterDoneReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterDoneReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 47. Done Receipt Command Sequence Diagram</div>
+<div class="title">Figure 48. Done Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -2070,7 +2086,7 @@ empty is equivalent to the Person paying the user the full amount he/she owes th
 <div class="content">
 <img src="images/ExpenseSplitterPaidCommandActivityDiagram.png" alt="ExpenseSplitterPaidCommandActivityDiagram">
 </div>
-<div class="title">Figure 48. Paid Command Activity Diagram</div>
+<div class="title">Figure 49. Paid Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Structure of Paid Command</strong><br></p>
@@ -2082,7 +2098,7 @@ empty is equivalent to the Person paying the user the full amount he/she owes th
 <div class="content">
 <img src="images/ExpenseSplitterPaidCommandClassDiagram.png" alt="ExpenseSplitterPaidCommandClassDiagram">
 </div>
-<div class="title">Figure 49. Paid Command Class Diagram</div>
+<div class="title">Figure 50. Paid Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>PaidCommand</code> and its associated classes and
@@ -2124,13 +2140,13 @@ String amountPaid will be converted into an Amount by instantiating a new instan
 <div class="content">
 <img src="images/ExpenseSplitterPaidCommandSequenceDiagram.png" alt="ExpenseSplitterPaidCommandSequenceDiagram">
 </div>
-<div class="title">Figure 50. Paid Command Sequence Diagram</div>
+<div class="title">Figure 51. Paid Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ExpenseSplitterPaidCommandSequenceDiagram2.png" alt="ExpenseSplitterPaidCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 51. Execution of Paid Command Sequence Diagram</div>
+<div class="title">Figure 52. Execution of Paid Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -2183,7 +2199,7 @@ only be able to use the <code>additem</code> and <code>deleteitem</code> command
 <div class="content">
 <img src="images/ExpenseSplitterClearReceiptCommandActivityDiagram.png" alt="ExpenseSplitterClearReceiptCommandActivityDiagram">
 </div>
-<div class="title">Figure 52. Clear Receipt Command Activity Diagram</div>
+<div class="title">Figure 53. Clear Receipt Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of Clear Receipt Command</strong></p>
@@ -2217,7 +2233,7 @@ only be able to use the <code>additem</code> and <code>deleteitem</code> command
 <div class="content">
 <img src="images/ExpenseSplitterClearReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterClearReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 53. Clear Receipt Command Sequence Diagram</div>
+<div class="title">Figure 54. Clear Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -3776,4 +3792,4 @@ help to ease the lives of the residents at Temasek Hall.
 Overall, we believe that EYLAH is a good testament to our hard work and the time spent on perfecting it.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 05:21:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 06:24:07 UTC</div></div></div></body></html>
