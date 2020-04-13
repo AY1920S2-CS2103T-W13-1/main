@@ -328,7 +328,7 @@ and the <a href="#additemexpectedoutcome">expected outcome</a> after using the <
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/placeholder.png" alt="placeholder">
+<img src="../images/expense-splitter/expensesplitteradditemexpectedoutcome.png" alt="][width=&quot;890&quot;" height="200">
 </div>
 </div>
 <div class="admonitionblock note">
@@ -384,7 +384,7 @@ and the <a href="#deleteitemexpectedoutcome">expected outcome</a> after using th
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/placeholder.png" alt="placeholder">
+<img src="../images/expense-splitter/expensesplitterdeleteitemexpectedoutcome.png" alt="][width=&quot;890&quot;" height="200">
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -427,7 +427,7 @@ and the <a href="#clearreceiptexpectedoutcome">expected outcome</a> after using 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/placeholder.png" alt="placeholder">
+<img src="../images/expense-splitter/expensesplitterclearreceiptexpectedoutcome.png" alt="][width=&quot;890&quot;" height="200">
 </div>
 </div>
 <div class="admonitionblock warning">
@@ -1018,6 +1018,105 @@ Deletes all the Entries in the Receipt. It also marks the Receipt as undone.</p>
 </li>
 </ol>
 </div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="add-item-in-expense-splitter"><a class="link" href="#add-item-in-expense-splitter">Add Item In Expense Splitter</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding an Item into the current Receipt.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Add Item Command format: <code>additem -i ITEMNAME -p ITEMPRICE -n PERSON [-n PERSON]&#8230;&#8203;</code></p>
+</li>
+<li>
+<p>Test case: <code>additem -i pasta -p 33.50 -n John -n Bob</code><br>
+Expected: Adds an item with the above details to current receipt and increase the person amount equal to dividing the price
+with the number of person splitting that item.</p>
+</li>
+<li>
+<p>Test case: <code>Invalid Syntax</code><br>
+Expected: No item is added to the current receipt and no change to person amount.
+An error message will be displayed.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="delete-item-in-expense-splitter"><a class="link" href="#delete-item-in-expense-splitter">Delete Item In Expense Splitter</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting an Item from the current Receipt.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Delete Item Command format: <code>deleteitem INDEX</code></p>
+</li>
+<li>
+<p>Test case: <code>delete 1</code><br>
+Expected: Removes the item of the specified index from the receipt.</p>
+</li>
+<li>
+<p>Test case: <code>Invalid Syntax</code><br>
+Expected: No item will be deleted from the current receipt.
+An error message will be displayed.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="done-receipt-in-expense-splitter"><a class="link" href="#done-receipt-in-expense-splitter">Done Receipt In Expense Splitter</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Marks the current receipt as done.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Done Receipt Command format: <code>donereceipt</code></p>
+</li>
+<li>
+<p>Test case: <code>donereceipt</code><br>
+Expected: The receipt is marked as done. A success message will be displayed.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="clear-receipt-in-expense-splitter"><a class="link" href="#clear-receipt-in-expense-splitter">Clear Receipt In Expense Splitter</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Clears the receipt and marks the receipt as undone.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Clear Receipt Command format: <code>clearreceipt</code></p>
+</li>
+<li>
+<p>Test case: <code>clearreceipt</code><br>
+Expected: The receipt is cleared and is marked as undone. A success message will be displayed.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:08:09 UTC</div></div></div></body></html>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:10:17 UTC</div></div></div></body></html>
