@@ -169,7 +169,7 @@ This symbol indicates warnings.
 <div class="title">Figure 1. Architecture Diagram</div>
 </div>
 <div class="paragraph">
-<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App. Given below is a quick overview of each component.</p>
+<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the application. Given below is a quick overview of each component.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -185,7 +185,7 @@ Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how 
 </table>
 </div>
 <div class="paragraph">
-<p><a href="https://github.com/AY1920S2-CS2103T-W13-1/main/blob/master/src/main/java/seedu/eylah/Eylah.java"><code>EYLAH</code></a> contains the main class for the APP. It is responsible for,</p>
+<p><a href="https://github.com/AY1920S2-CS2103T-W13-1/main/blob/master/src/main/java/seedu/eylah/Eylah.java"><code>EYLAH</code></a> contains the main class for the application. It is responsible for,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -322,7 +322,8 @@ In <code>Expense Splitter</code> mode, <code>SplitterLogic.java</code> and <code
 <code>Expense Splitter</code> mode. For example, <code>MODELogic</code> given below refers to <code>SplitterLogic</code> when in <code>Expense Splitter</code> mode.</p>
 </li>
 <li>
-<p><code>MODEParser</code> is an exception, when in <code>Expense Splitter</code> mode refers to <code>ExpenseSplitterParser</code> while in <code>Diet Tracker</code> mode refers to <code>FoodBookParser</code>.</p>
+<p><code>MODEParser</code> is an exception. When in <code>Expense Splitter</code> mode it refers to <code>ExpenseSplitterParser</code>
+while in <code>Diet Tracker</code> mode it refers to <code>FoodBookParser</code>.</p>
 </li>
 </ul>
 </div>
@@ -339,13 +340,13 @@ In <code>Expense Splitter</code> mode, <code>SplitterLogic.java</code> and <code
 <p>This results in a <code>Command</code> object which is executed by the <code>MODELogicManager</code>.</p>
 </li>
 <li>
-<p>The command execution can affect the <code>Model</code> (e.g. deleting a entry).</p>
+<p>The command execution can affect the <code>Model</code> (e.g. deleting AN entry).</p>
 </li>
 <li>
 <p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
 </li>
 <li>
-<p>In addition, the <code>CommandResult</code> object can also instruct the <code>Eylah.java</code> to perform certain actions, such as go back to main menu or exit the App.</p>
+<p>In addition, the <code>CommandResult</code> object can also instruct the <code>Eylah.java</code> application to perform certain actions, such as to go back to main menu or exit the App.</p>
 </li>
 </ol>
 </div>
@@ -411,10 +412,10 @@ The lifeline for <code>DeleteItemCommandParser</code> should end at the destroy 
 <p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
-<p>stores the Person Amount Book and Receipt Book data in <code>Expense Splitter</code> mode.</p>
+<p>stores the PersonAmountBook and ReceiptBook data in <code>Expense Splitter</code> mode.</p>
 </li>
 <li>
-<p>stores the Food Book and Myself data in <code>Diet Tracker</code> mode.</p>
+<p>stores the FoodBook and Myself data in <code>Diet Tracker</code> mode.</p>
 </li>
 <li>
 <p>does not depend on any of the other three components.</p>
@@ -447,7 +448,7 @@ The lifeline for <code>DeleteItemCommandParser</code> should end at the destroy 
 <td class="content">
 <div class="paragraph">
 <p><code>MODE</code> used in the given subsection refers to <code>Diet</code> when in <code>Diet Tracker</code> mode, <code>Splitter</code> when in
-<code>Expense Splitter</code> mode. For example, <code>MODEStorage</code> given below refers to <code>SplitterStorage</code> when in <code>Expense Splitter</code> mode.</p>
+<code>Expense Splitter</code> mode.For example, <code>MODEStorage</code> given below refers to <code>SplitterStorage</code> when in <code>Expense Splitter</code> mode.</p>
 </div>
 </td>
 </tr>
@@ -462,10 +463,10 @@ The lifeline for <code>DeleteItemCommandParser</code> should end at the destroy 
 <p>can save <code>UserPref</code> objects in json format and read it back.</p>
 </li>
 <li>
-<p>can save the Person Amount Book and Receipt Book data in json format and read it back in <code>Expense Splitter</code> mode.</p>
+<p>can save the PersonAmountBook and ReceiptBook data in json format and read it back in <code>Expense Splitter</code> mode.</p>
 </li>
 <li>
-<p>can save the Food Book and MySelf data in json format and read it back in <code>Diet Tracker</code> mode.</p>
+<p>can save the FoodBook and MySelf data in json format and read it back in <code>Diet Tracker</code> mode.</p>
 </li>
 </ul>
 </div>
@@ -3668,7 +3669,7 @@ Displays the confirmation message to user. It also marks the Receipt as done.</p
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>11</code> or above installed.</p>
+<p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has <code>Java 11</code> or above installed.</p>
 </li>
 <li>
 <p>Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.</p>
@@ -3689,8 +3690,7 @@ Displays the confirmation message to user. It also marks the Receipt as done.</p
 <p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
 </li>
 <li>
-<p>An Item should not have a Item Price more than $10,000.
-<em>{More to be added}</em></p>
+<p>An Item should not have a Item Price more than $10,000.</p>
 </li>
 </ol>
 </div>
@@ -3727,10 +3727,6 @@ Displays the confirmation message to user. It also marks the Receipt as done.</p
 or obese based on tissue mass (muscle, fat, and bone) and height</p>
 </dd>
 </dl>
-</div>
-<div class="paragraph">
-<p><a id="self"></a> Self:
-A static class used in Diet Tracker to represent the user in the splitterModel.</p>
 </div>
 <div class="paragraph">
 <p><em>Table 1. Diet Tracker Command Prefix</em><br></p>
@@ -4334,7 +4330,7 @@ with problems we all face while staying in Temasek Hall.</p>
 <div class="paragraph">
 <p>Hence, we decided to build EYLAH, a super application that has both a diet tracker and a expense splitter functionality.
 EYLAH is significantly different from Address Book 3 (AB3) in many aspects.
-We needed to add audience:specific features to satisfy the needs of our target audience:residents staying in Temasek
+We needed to add audience-specific features to satisfy the needs of our target audience-residents staying in Temasek
 Hall.</p>
 </div>
 <div class="paragraph">
@@ -4387,4 +4383,4 @@ help to ease the lives of the residents at Temasek Hall.
 Overall, we believe that EYLAH is a good testament to our hard work and the time spent on perfecting it.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 11:16:23 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:36:17 UTC</div></div></div></body></html>
