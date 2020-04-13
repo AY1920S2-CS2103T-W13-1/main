@@ -37,9 +37,7 @@ Ensure both of the features integrated in the main application.</p>
 </li>
 <li>
 <p><strong>Justification:</strong><br>
-There are a lot of duplicate code in both features due to the initial plan of splitting team into 2 different group and each group work on their own features.
-Both group follow existing <code>AddressBook Level-3</code> code and thus create a lot of duplicate class with exact same code.
-The integration process will help to generalise the duplicate code to common code which can reduce the duplicate code in the whole application.</p>
+The integration can help to reduce the duplicate code in the <code>EYLAH</code> which cased by the features done by different sub group.</p>
 </li>
 <li>
 <p><strong>Highlights:</strong><br>
@@ -82,63 +80,6 @@ N.A.</p>
 </ul>
 </div>
 </li>
-<li>
-<p>Create main entry class of the application <code>Elyah.java</code>, which use to initialise the required components and handle the overall operations of the application.
-(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/232">#232</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/357">#357</a>)</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>What it does:</strong><br>
-This is the main entry of whole application. It handle the overall operations of the application and
-also initialise the required components such as storage, model, logic and config of the application.</p>
-</li>
-<li>
-<p><strong>Justification:</strong><br>
-Due to our team decide to create a pure CLI application instead of JavaFX GUI application, I cannot just simply follow the <code>AddressBook Level-3</code> code
-structure to create the main entry of the application. The <code>Eylah.java</code> is used to replace <code>Main.java</code> in <code>AddressBook Level-3</code> as the main entry to the application.
-This class also handling all the initialisation of storage, model and logic component.</p>
-</li>
-<li>
-<p><strong>Highlights:</strong><br>
-The modification from the existing <code>AddressBook Level-3</code> code to the new entry point <code>Eylah.java</code> required a lot of effort.
-The existing <code>AddressBook Level-3</code> code using multiple class to handle the initialisation and operations flow of the application.
-The migration of initialisation code from existing code cost me a lot of effort to handle the dependency issue regarding to GUI component.
-The new operations flow using in the current implementation partially refers to the <code>AddressBook Level-2</code> operations flow structure.</p>
-</li>
-<li>
-<p><strong>Credits:</strong><br>
-Operation flows reference:
-<a href="https://github.com/se-edu/addressbook-level2" class="bare">https://github.com/se-edu/addressbook-level2</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Create new UI component for the application
-(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/140">#140</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/380">#380</a>)</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>What it does:</strong><br>
-This is the UI component of the application. It used to handle the getting input and display result to user.</p>
-</li>
-<li>
-<p><strong>Justification:</strong><br>
-Due to the removing GUI component from existing code, I am required to create a new UI component to handle the user interaction.
-This UI component will handle the every printing statement and input operation of the application.</p>
-</li>
-<li>
-<p><strong>Highlights:</strong><br>
-The UI component interact with Logic component by handle the <code>CommandResult</code>. It will use the <code>CommandResult#getFeedbackToUser</code> to get the
-result string and print it to console for user.</p>
-</li>
-<li>
-<p><strong>Credits:</strong><br>
-N.A.</p>
-</li>
-</ul>
-</div>
-</li>
 </ol>
 </div>
 </li>
@@ -172,30 +113,6 @@ N.A.</p>
 </ul>
 </div>
 </li>
-<li>
-<p>Create <code>HelpCommand</code> for main menu and Expense Splitter.
-(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/254">#254</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/380">#380</a>)</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>What it does:</strong><br>
-Allows user to get the available commands when they forget or unsure how to use certain function.</p>
-</li>
-<li>
-<p><strong>Justification:</strong><br>
-This can help user to clarify the usage of the application. The <code>HelpCommand</code> in Diet Tracker has been implemented by my teammate, Jarrod-Bob.</p>
-</li>
-<li>
-<p><strong>Highlights:</strong><br>
-The <code>HelpCommand</code> in different features and main menu will display different information.</p>
-</li>
-<li>
-<p><strong>Credits:</strong><br>
-N.A.</p>
-</li>
-</ul>
-</div>
-</li>
 </ol>
 </div>
 </li>
@@ -212,9 +129,6 @@ N.A.</p>
 <ul>
 <li>
 <p>In charge of project repository management and ensure the weekly task achievement.</p>
-</li>
-<li>
-<p>Setup auto repository check for repository such as travis, appveyor, coveralls and netlify.</p>
 </li>
 <li>
 <p>Participated in planning the project timeline for EYLAH.</p>
@@ -243,16 +157,7 @@ N.A.</p>
 <p>Updated Developer Guide for whole Design Section (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/369">#369</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/380">#380</a>)</p>
 </li>
 <li>
-<p>Updated User Guide for Help Command (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/380">#380</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/386">#386</a>)</p>
-</li>
-<li>
-<p>Updated User Guide for Back Command (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/386">#386</a>)</p>
-</li>
-<li>
-<p>Updated User Guide for Exit Command (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/386">#386</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/394">#394</a>)</p>
-</li>
-<li>
-<p>Updated User Guide for Done Receipt Command (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/380">#380</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/386">#386</a>)</p>
+<p>Updated User Guide for Back, Exit, Help and Done Receipt Command (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/380">#380</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/386">#386</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/394">#394</a>)</p>
 </li>
 </ul>
 </div>
@@ -323,24 +228,27 @@ This command can be used everywhere in the application.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/main_help.png" alt="main help" width="890" height="200">
+<img src="../images/main_help.png" alt="main help" width="890">
 </div>
+<div class="title">Figure 1. Main Menu Help</div>
 </div>
 <div class="paragraph">
 <p><strong>Diet Tracker Mode:</strong></p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/diethelp.png" alt="diethelp" width="890" height="200">
+<img src="../images/diethelp.png" alt="diethelp" width="890">
 </div>
+<div class="title">Figure 2. Diet Tracker Help</div>
 </div>
 <div class="paragraph">
 <p><strong>Expense Splitter Mode:</strong></p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/splithelp.png" alt="splithelp" width="890" height="200">
+<img src="../images/splithelp.png" alt="splithelp" width="890">
 </div>
+<div class="title">Figure 3. Expense Splitter Help</div>
 </div>
 <div class="paragraph">
 <p><strong>Additional notes and tips</strong><br></p>
@@ -385,8 +293,9 @@ all the items.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/donereceipt.png" alt="donereceipt" width="890" height="200">
+<img src="../images/donereceipt.png" alt="donereceipt" width="890">
 </div>
+<div class="title">Figure 4. Expense Splitter Done Receipt Command</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -440,8 +349,9 @@ and the <a href="#splitbackexpectedoutcome">expected outcome</a> after using the
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/expenseback.png" alt="expenseback" width="890" height="200">
+<img src="../images/expenseback.png" alt="expenseback" width="890">
 </div>
+<div class="title">Figure 5. Expense Splitter Back Command</div>
 </div>
 </div>
 </div>
@@ -471,8 +381,9 @@ and the <a href="#exitexpectedoutcome">expected outcome</a> after using the <cod
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/exit.png" alt="exit" width="890" height="200">
+<img src="../images/exit.png" alt="exit" width="890">
 </div>
+<div class="title">Figure 6. Exit Command</div>
 </div>
 </div>
 </div>
@@ -494,9 +405,9 @@ and the <a href="#exitexpectedoutcome">expected outcome</a> after using the <cod
 <h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">Architecture</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/ArchitectureDiagram.png" alt="ArchitectureDiagram">
+<img src="../images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
 </div>
-<div class="title">Figure 1. Architecture Diagram</div>
+<div class="title">Figure 7. Architecture Diagram</div>
 </div>
 <div class="paragraph">
 <p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the application. Given below is a quick overview of each component.</p>
@@ -575,9 +486,9 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/LogicClassDiagram.png" alt="LogicClassDiagram">
+<img src="../images/LogicClassDiagram.png" alt="LogicClassDiagram">
 </div>
-<div class="title">Figure 2. Class Diagram of the Logic Component</div>
+<div class="title">Figure 8. Class Diagram of the Logic Component</div>
 </div>
 <h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
 <div class="paragraph">
@@ -585,18 +496,18 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
+<img src="../images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
 </div>
-<div class="title">Figure 3. Component interactions for <code>deleteitem 1</code> command</div>
+<div class="title">Figure 9. Component interactions for <code>deleteitem 1</code> command</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="Design-Ui"><a class="link" href="#Design-Ui">UI component</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/UiClassDiagram.png" alt="UiClassDiagram">
+<img src="../images/UiClassDiagram.png" alt="UiClassDiagram">
 </div>
-<div class="title">Figure 4. Structure of the UI Component</div>
+<div class="title">Figure 10. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="{repoURL}/blob/master/src/main/java/seedu/eylah/ui/Ui.java"><code>Ui.java</code></a></p>
@@ -623,9 +534,9 @@ printing the logo, welcome message and main menu page to user. This component on
 <h3 id="Design-Logic"><a class="link" href="#Design-Logic">Logic component</a></h3>
 <div id="fig-LogicClassDiagram" class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/LogicClassDiagram.png" alt="LogicClassDiagram">
+<img src="../images/LogicClassDiagram.png" alt="LogicClassDiagram">
 </div>
-<div class="title">Figure 5. Structure of the Logic Component</div>
+<div class="title">Figure 11. Structure of the Logic Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
@@ -685,9 +596,9 @@ while in <code>Diet Tracker</code> mode it refers to <code>FoodBookParser</code>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/ExpenseSplitterDeleteItemCommandSequenceDiagram.png" alt="ExpenseSplitterDeleteItemCommandSequenceDiagram">
+<img src="../images/ExpenseSplitterDeleteItemCommandSequenceDiagram.png" alt="ExpenseSplitterDeleteItemCommandSequenceDiagram">
 </div>
-<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>deleteitem 1</code> Command in Expense Splitter mode</div>
+<div class="title">Figure 12. Interactions Inside the Logic Component for the <code>deleteitem 1</code> Command in Expense Splitter mode</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -706,9 +617,9 @@ The lifeline for <code>DeleteItemCommandParser</code> should end at the destroy 
 <h3 id="Design-Model"><a class="link" href="#Design-Model">Model component</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/ModelClassDiagram.png" alt="ModelClassDiagram">
+<img src="../images/ModelClassDiagram.png" alt="ModelClassDiagram">
 </div>
-<div class="title">Figure 7. Structure of the Model Component</div>
+<div class="title">Figure 13. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="{repoURL}/blob/master/src/main/java/seedu/eylah/commons/model/Model.java"><code>Model.java</code></a>
@@ -757,9 +668,9 @@ The lifeline for <code>DeleteItemCommandParser</code> should end at the destroy 
 <h3 id="Design-Storage"><a class="link" href="#Design-Storage">Storage component</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/StorageClassDiagram.png" alt="StorageClassDiagram">
+<img src="../images/StorageClassDiagram.png" alt="StorageClassDiagram">
 </div>
-<div class="title">Figure 8. Structure of the Storage Component</div>
+<div class="title">Figure 14. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="{repoURL}/blob/master/src/main/java/seedu/eylah/commons/storage/Storage.java"><code>Storage.java</code></a>
@@ -848,9 +759,9 @@ the correct item back.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/ExpenseSplitterDoneReceiptCommandActivityDiagram.png" alt="ExpenseSplitterDoneReceiptCommandActivityDiagram">
+<img src="../images/ExpenseSplitterDoneReceiptCommandActivityDiagram.png" alt="ExpenseSplitterDoneReceiptCommandActivityDiagram">
 </div>
-<div class="title">Figure 9. Done Receipt Command Activity Diagram</div>
+<div class="title">Figure 15. Done Receipt Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>&#160;</p>
@@ -863,9 +774,9 @@ the correct item back.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/ExpenseSplitterDoneReceiptCommandClassDiagram.png" alt="ExpenseSplitterDoneReceiptCommandClassDiagram">
+<img src="../images/ExpenseSplitterDoneReceiptCommandClassDiagram.png" alt="ExpenseSplitterDoneReceiptCommandClassDiagram">
 </div>
-<div class="title">Figure 10. Done Receipt Command Class Diagram</div>
+<div class="title">Figure 16. Done Receipt Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>DoneReceiptCommand</code> and its associated classes and
@@ -901,11 +812,11 @@ interfaces. Some methods and fields are left out because they are not of concern
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/ExpenseSplitterDoneReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterDoneReceiptCommandSequenceDiagram">
+<img src="../images/ExpenseSplitterDoneReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterDoneReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 11. Done Receipt Command Sequence Diagram</div>
-</div>
-</div>
+<div class="title">Figure 17. Done Receipt Command Sequence Diagram</div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:40:02 UTC</div></div></div></body></html>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:50:55 UTC</div></div></div></body></html>
