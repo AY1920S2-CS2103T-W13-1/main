@@ -22,96 +22,185 @@ them track their diet. The user interacts with it using a CLI and it is programm
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: Integrating 2 main features of EYLAH. [In Process]</p>
+<p><strong>Major enhancement</strong>:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Integrating</strong> 2 main features of EYLAH by common generic class.
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/140">#140</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/232">#232</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/357">#357</a>
+<a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/367">#367</a>)</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: Ensure both of the features integrated with proper Object-Oriented Programing concept.</p>
+<p><strong>What it does:</strong><br>
+Ensure both of the features integrated in the main application.</p>
 </li>
 <li>
-<p>Justification: This is to ensure the code quality of the project and remove the duplicate part in both features.</p>
+<p><strong>Justification:</strong><br>
+There are a lot of duplicate code in both features due to the initial plan of splitting team into 2 different group and each group work on their own features.
+Both group follow existing <code>AddressBook Level-3</code> code and thus create a lot of duplicate class with exact same code.
+The integration process will help to generalise the duplicate code to common code which can reduce the duplicate code in the whole application.</p>
 </li>
 <li>
-<p>Highlights: During the implementation, I faced a lot of difficulty as we working on the existing <code>addressbook level-3</code>, the code base given does not give any hints of how to integrate 2 different features.</p>
+<p><strong>Highlights:</strong><br>
+During the implementation, I faced a lot of difficulty as we working on the existing <code>AddressBook Level-3</code>, the code base given does not show how to integrate 2 different features.
+I have decided to modify some common use class to generic version in order can be implemented by both features.</p>
 </li>
 <li>
-<p>Credits: -</p>
-</li>
-<li>
-<p><strong>Adding Amount field of the Person object for the Expense Splitter portion of EYLAH</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>What it does: Person&#8217;s amount is used for both price per person for each item and total price for each person.</p>
-</li>
-<li>
-<p>Justification: Each person in the EYLAH will required to have a price associate with them, so the amount is use to fulfil this purpose.</p>
-</li>
-<li>
-<p>Highlights: This amount is using the BigDecimal to store the decimal value, this way was recommended by my teammate, Willy. After he doing the research about the ItemPrice, he decide to go with BigDecimal to store the price.</p>
-</li>
-<li>
-<p>Credits: Online links where I researched on: "https://stackoverflow.com/questions/1359817/using-bigdecimal-to-work-with-currencies"</p>
+<p><strong>Credits:</strong><br>
+N.A.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Adding Storage for the receipt portion into Expense Splitter portion of EYLAH</strong></p>
+<p>Added the expense splitter storage component to allowed the application to automatically save the <strong>Receipt</strong> in local file.
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/197">#197</a>)</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: This storage is used to store the receipt details into the local files.</p>
+<p><strong>What it does:</strong><br>
+Allow EYLAH to save the receipt details into a local files after execution of each command.</p>
 </li>
 <li>
-<p>Justification: The reason of storing the receipt is for the user able to still viewing the receipt details even they accidentally close the application or the application crashing.</p>
+<p><strong>Justification:</strong><br>
+This will allow the user to be able to view the receipt details even they accidentally close the application
+or the application crashing. The receipt details will store in the local file after each command to ensure the updated data
+in the local storage.</p>
 </li>
 <li>
-<p>Highlights: The structure of the receipt storage is much more complicated from the original <code>AddressBook Level-3</code> storage. So when I implementing this storage, I am required to understand how the Json file store the value and how to modify the current code to achieve the storage purpose.</p>
+<p><strong>Highlights:</strong><br>
+The structure of the receipt storage is much more complicated from the original <code>AddressBook Level-3</code> storage.
+So when I implementing this storage, I am required to understand how the Json file store the value. The receipt storage has much
+more complicated structure compare to other storage structure. It contains nested json structure to store the different entry of
+item and person involved.</p>
 </li>
 <li>
-<p>Credits:</p>
+<p><strong>Credits:</strong><br>
+N.A.</p>
 </li>
 </ul>
 </div>
 </li>
-</ul>
-</div>
-</li>
 <li>
-<p><strong>Minor enhancement</strong>: [In Process]</p>
+<p>Create main entry class of the application <code>Elyah.java</code>, which use to initialise the required components and handle the overall operations of the application.
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/232">#232</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/357">#357</a>)</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Drew UML Class diagram for the overall EYLAH project</strong></p>
-<div class="imageblock">
-<div class="content">
-<img src="../images/expense-splitter/expense_splitter_uml_class_diagram.png" alt="expense splitter uml class diagram">
-</div>
-</div>
-<div class="paragraph">
-<p>(Excluding the Height Class)</p>
-</div>
+<p><strong>What it does:</strong><br>
+This is the main entry of whole application. It handle the overall operations of the application and
+also initialise the required components such as storage, model, logic and config of the application.</p>
 </li>
 <li>
-<p><strong>Added tests for Person related class</strong></p>
+<p><strong>Justification:</strong><br>
+Due to our team decide to create a pure CLI application instead of JavaFX GUI application, I cannot just simply follow the <code>AddressBook Level-3</code> code
+structure to create the main entry of the application. The <code>Eylah.java</code> is used to replace <code>Main.java</code> in <code>AddressBook Level-3</code> as the main entry to the application.
+This class also handling all the initialisation of storage, model and logic component.</p>
 </li>
 <li>
-<p><strong>Assisted in downscaling of AddressBook3 by removing Email object</strong></p>
+<p><strong>Highlights:</strong><br>
+The modification from the existing <code>AddressBook Level-3</code> code to the new entry point <code>Eylah.java</code> required a lot of effort.
+The existing <code>AddressBook Level-3</code> code using multiple class to handle the initialisation and operations flow of the application.
+The migration of initialisation code from existing code cost me a lot of effort to handle the dependency issue regarding to GUI component.
+The new operations flow using in the current implementation partially refers to the <code>AddressBook Level-2</code> operations flow structure.</p>
 </li>
 <li>
-<p><strong>Drew Activity Diagram for Expense Spliter portion of EYLAH</strong></p>
-<div class="imageblock">
-<div class="content">
-<img src="../images/expense-splitter/activityDiagram_for_expensesplitter.png" alt="activityDiagram for expensesplitter">
-</div>
-</div>
+<p><strong>Credits:</strong><br>
+Operation flows reference:
+<a href="https://github.com/se-edu/addressbook-level2" class="bare">https://github.com/se-edu/addressbook-level2</a></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p>Create new UI component for the application
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/140">#140</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/380">#380</a>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong><br>
+This is the UI component of the application. It used to handle the getting input and display result to user.</p>
+</li>
+<li>
+<p><strong>Justification:</strong><br>
+Due to the removing GUI component from existing code, I am required to create a new UI component to handle the user interaction.
+This UI component will handle the every printing statement and input operation of the application.</p>
+</li>
+<li>
+<p><strong>Highlights:</strong><br>
+The UI component interact with Logic component by handle the <code>CommandResult</code>. It will use the <code>CommandResult#getFeedbackToUser</code> to get the
+result string and print it to console for user.</p>
+</li>
+<li>
+<p><strong>Credits:</strong><br>
+N.A.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create <code>ExitCommand</code> and <code>BackCommand</code> for the application
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/357">#357</a>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong><br>
+Allows user to go back to main menu when in either one of the feature mode and exit the application at any point of time.</p>
+</li>
+<li>
+<p><strong>Justification:</strong><br>
+The user now have the option to go back main menu if want to use another feature. They also able to exit the application through the command
+instead of close the app through the mouse curser to click the exit button.</p>
+</li>
+<li>
+<p><strong>Highlights:</strong><br>
+The <code>ExitCommand</code> in the main menu handle differently as it directly handle by <code>Eylah.java</code> instead of going through the
+<code>ModelManager#execute()</code> to create the <code>ExitCommand</code> object.</p>
+</li>
+<li>
+<p><strong>Credits:</strong><br>
+N.A.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Create <code>HelpCommand</code> for main menu and Expense Splitter.
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/254">#254</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/380">#380</a>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong><br>
+Allows user to get the available commands when they forget or unsure how to use certain function.</p>
+</li>
+<li>
+<p><strong>Justification:</strong><br>
+This can help user to clarify the usage of the application. The <code>HelpCommand</code> in Diet Tracker has been implemented by my teammate, Jarrod-Bob.</p>
+</li>
+<li>
+<p><strong>Highlights:</strong><br>
+The <code>HelpCommand</code> in different features and main menu will display different information.</p>
+</li>
+<li>
+<p><strong>Credits:</strong><br>
+N.A.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>:[<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=sheexiong&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">Functional code and Test Code</a>]</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -125,6 +214,9 @@ them track their diet. The user interacts with it using a CLI and it is programm
 <p>In charge of project repository management and ensure the weekly task achievement.</p>
 </li>
 <li>
+<p>Setup auto repository check for repository such as travis, appveyor, coveralls and netlify.</p>
+</li>
+<li>
 <p>Participated in planning the project timeline for EYLAH.</p>
 </li>
 </ul>
@@ -135,7 +227,7 @@ them track their diet. The user interacts with it using a CLI and it is programm
 <div class="ulist">
 <ul>
 <li>
-<p>Adapted the given Address Book UI into EYLAH&#8217;s first draft UI. <a href="https://github.com/" class="bare">https://github.com/</a></p>
+<p>Adapted the given Address Book Storage into EYLAH&#8217;s Storage.</p>
 </li>
 </ul>
 </div>
@@ -145,7 +237,22 @@ them track their diet. The user interacts with it using a CLI and it is programm
 <div class="ulist">
 <ul>
 <li>
-<p>To be added</p>
+<p>Updated Developer Guide for Done Receipt Command (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/386">#386</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/388">#388</a>)</p>
+</li>
+<li>
+<p>Updated Developer Guide for whole Design Section (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/369">#369</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/380">#380</a>)</p>
+</li>
+<li>
+<p>Updated User Guide for Help Command (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/380">#380</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/386">#386</a>)</p>
+</li>
+<li>
+<p>Updated User Guide for Back Command (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/386">#386</a>)</p>
+</li>
+<li>
+<p>Updated User Guide for Exit Command (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/386">#386</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/394">#394</a>)</p>
+</li>
+<li>
+<p>Updated User Guide for Done Receipt Command (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/380">#380</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/386">#386</a>)</p>
 </li>
 </ul>
 </div>
@@ -155,31 +262,21 @@ them track their diet. The user interacts with it using a CLI and it is programm
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments):</p>
+<p>PRs reviewed (with non-trivial review comments): (Pull requests: <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/306">#306</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/176">#176</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/177">#177</a>)</p>
 </li>
 <li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/52">1</a>, <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/48">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
+<p>Contributed to forum discussions (examples: <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/48">1</a>, <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/69">2</a>)</p>
 </li>
 <li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Tools:</p>
+<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com/sheexiong/ped/issues" class="bare">https://github.com/sheexiong/ped/issues</a>)</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
-<div class="sect3">
-<h4 id="code-contributed"><a class="link" href="#code-contributed">Code contributed</a></h4>
-<div class="paragraph">
-<p>Please click the following link to see my code contributions dashboard.<br>
-<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#=undefined&amp;search=sheexiong" class="bare">https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#=undefined&amp;search=sheexiong</a></p>
-</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -196,6 +293,188 @@ them track their diet. The user interacts with it using a CLI and it is programm
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="help"><a class="link" href="#help">Display the available commands : <code>help</code></a></h3>
+<div class="paragraph">
+<p>In this section, you will learn more about <code>help</code> command, <a href="#howtousehelpcommand">how to use it</a>
+and the <a href="#helpexpectedoutcome">expected outcome</a> after using the <code>help</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Help Command:</strong><br>
+<code>help</code> You can use the <code>help</code> command, if you are uncertain, to see the list of available commands.
+This command can be used everywhere in the application.</p>
+</div>
+<div id="howtousehelpcommand" class="paragraph">
+<p><strong>How to use the Help Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>help</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>help</code></p>
+</div>
+<div id="helpexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>Main Menu:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/dietTrackerWeightCommandSuccessPhoto.png" alt="dietTrackerWeightCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Diet Tracker Mode:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/dietTrackerWeightCommandSuccessPhoto.png" alt="dietTrackerWeightCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Expense Splitter Mode:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/dietTrackerWeightCommandSuccessPhoto.png" alt="dietTrackerWeightCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional notes and tips</strong><br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Help in main menu and different mode will give different help information.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="donereceipt"><a class="link" href="#donereceipt">Mark receipt as done <code>donereceipt</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>donereceipt</code> command, <a href="#howtousedonereceiptcommand">how to use it</a>
+and the <a href="#donereceiptexpectedoutcome">expected outcome</a> after using the <code>donereceipt</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Done Receipt Command:</strong> <code>donereceipt</code> *marks the receipt as done when you have completed entering
+all the items.</p>
+</div>
+<div id="howtousedonereceiptcommand" class="paragraph">
+<p><strong>How to use the Done Receipt Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>donereceipt</code></p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+<code>donereceipt</code></p>
+</div>
+<div id="donereceiptexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/expenseSplitterListAmountCommandSuccessPhoto.png" alt="expenseSplitterListAmountCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Use this command only after all Items have been correctly added to the Receipt.</p>
+</li>
+<li>
+<p>After you use this command, you will be unable to add any new items using the <code>additem</code> command
+or delete any items using the <code>deleteitem</code> command.</p>
+</li>
+<li>
+<p>However, you are now able to use the <code>paid</code> command.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="splitback"><a class="link" href="#splitback">Exiting Expense Splitter to go back to main menu <code>back</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>back</code> command, <a href="#howtousesplitbackcommand">how to use it</a>
+and the <a href="#splitbackexpectedoutcome">expected outcome</a> after using the <code>back</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Back Command:</strong><br>
+<code>back</code> allows you to exits Expense Splitter mode to go back to main menu of the application.</p>
+</div>
+<div id="howtousesplitbackcommand" class="paragraph">
+<p><strong>How to use the Back Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>back</code></p>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>back</code></p>
+</div>
+<div id="splitbackexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/placeholder.png" alt="placeholder">
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exit"><a class="link" href="#exit">Exiting the Application : <code>exit</code></a></h3>
+<div class="paragraph">
+<p>In this section, you will learn more about <code>exit</code> command, <a href="#howtouseexitcommand">how to use it</a>
+and the <a href="#exitexpectedoutcome">expected outcome</a> after using the <code>exit</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Exit Command:</strong><br>
+<code>exit</code> You can use this command everywhere in the application to exit.</p>
+</div>
+<div id="howtouseexitcommand" class="paragraph">
+<p><strong>How to use the Exit Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>exit</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>exit</code></p>
+</div>
+<div id="exitexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/dietTrackerWeightCommandSuccessPhoto.png" alt="dietTrackerWeightCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -211,21 +490,422 @@ them track their diet. The user interacts with it using a CLI and it is programm
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">Architecture</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ArchitectureDiagram.png" alt="ArchitectureDiagram">
 </div>
+<div class="title">Figure 1. Architecture Diagram</div>
 </div>
-<div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
-<div class="sectionbody">
-<hr>
 <div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the application. Given below is a quick overview of each component.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The <code>.puml</code> files used to create diagrams in this document can be found in the <a href="{repoURL}/tree/master/docs/diagrams/">diagrams</a> folder.
+Refer to the <a href="UsingPlantUml.html">Using PlantUML guide</a> to learn how to create and edit diagrams.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Questions to ask:<br>
-1. is BigDecimal the best way to represent currency?<br>
-2. under ItemPriceTest, instead of assertFalse can I assertThrows because BigDecimal
-will throw an exception? Because in AB3 everything there is assertFalse<br>
-3.</p>
+<p><a href="{repoURL}/blob/master/src/main/java/seedu/eylah/Eylah.java"><code>EYLAH</code></a> contains the main class for the application. It is responsible for,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>At app launch: Initializes the components in the correct sequence, and connects them up with each other.</p>
+</li>
+<li>
+<p>At shut down: Shuts down the components and invokes cleanup method where necessary.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="#Design-Commons"><strong><code>Commons</code></strong></a> represents a collection of classes used by multiple other components.
+The following class plays an important role at the architecture level:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>LogsCenter</code> : Used by many classes to write log messages to the App&#8217;s log file.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The rest of the App consists of four components.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#Design-Ui"><strong><code>UI</code></strong></a>: The UI of the App.</p>
+</li>
+<li>
+<p><a href="#Design-Logic"><strong><code>Logic</code></strong></a>: The command executor.</p>
+</li>
+<li>
+<p><a href="#Design-Model"><strong><code>Model</code></strong></a>: Holds the data of the App in-memory.</p>
+</li>
+<li>
+<p><a href="#Design-Storage"><strong><code>Storage</code></strong></a>: Reads data from, and writes data to, the hard disk.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each of the four components</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Defines its <em>API</em> in an <code>interface</code> with the same name as the Component.</p>
+</li>
+<li>
+<p>Exposes its functionality using a <code>{Component Name}Manager</code> class.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example, the <code>Logic</code> component (see the class diagram given below) defines it&#8217;s API in the <code>Logic.java</code> interface and <code>MODELogic.java</code> interface and exposes its functionality using the <code>MODELogicManager.java</code> class.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/LogicClassDiagram.png" alt="LogicClassDiagram">
+</div>
+<div class="title">Figure 2. Class Diagram of the Logic Component</div>
+</div>
+<h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
+<div class="paragraph">
+<p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>deleteitem 1</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
+</div>
+<div class="title">Figure 3. Component interactions for <code>deleteitem 1</code> command</div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:45:31 UTC</div></div></div></body></html>
+<div class="sect2">
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">UI component</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/UiClassDiagram.png" alt="UiClassDiagram">
+</div>
+<div class="title">Figure 4. Structure of the UI Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/blob/master/src/main/java/seedu/eylah/ui/Ui.java"><code>Ui.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>Th <code>UI Component</code> mainly deals with interactions with the user. It also plays a part in the initialisation of the program
+printing the logo, welcome message and main menu page to user. This component only has 2 classes, <code>Ui.java</code> and <code>UiManager.java</code>.</p>
+</div>
+<div class="paragraph">
+<p>The <code>UI</code> component,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Reading the user input.</p>
+</li>
+<li>
+<p>Displaying the result messages to the user.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">Logic component</a></h3>
+<div id="fig-LogicClassDiagram" class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/LogicClassDiagram.png" alt="LogicClassDiagram">
+</div>
+<div class="title">Figure 5. Structure of the Logic Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> :
+<a href="{repoURL}/blob/master/src/main/java/seedu/eylah/commons/logic/Logic.java"><code>Logic.java</code></a>
+<a href="{repoURL}/blob/master/src/main/java/seedu/eylah/diettracker/logic/DietLogic.java"><code>DietLogic.java</code></a>
+<a href="{repoURL}/blob/master/src/main/java/seedu/eylah/expensesplitter/logic/SplitterLogic.java"><code>SplitterLogic.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Logic Component</code> deals with the logic flows of the App. In each feature mode, the components to deal with the logic
+flow are different. In <code>Diet Tracker</code> mode, <code>DietLogic.java</code> and <code>DietLogicManager.java</code> are used to handle the logic operation of the APP.
+In <code>Expense Splitter</code> mode, <code>SplitterLogic.java</code> and <code>SplitterLogicManager.java</code> are used to handle the logic operation.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>MODE</code> used in the given subsection refers to <code>Diet</code> when in <code>Diet Tracker</code> mode, <code>Splitter</code> when in
+<code>Expense Splitter</code> mode. For example, <code>MODELogic</code> given below refers to <code>SplitterLogic</code> when in <code>Expense Splitter</code> mode.</p>
+</li>
+<li>
+<p><code>MODEParser</code> is an exception. When in <code>Expense Splitter</code> mode it refers to <code>ExpenseSplitterParser</code>
+while in <code>Diet Tracker</code> mode it refers to <code>FoodBookParser</code>.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>MODELogic</code> uses the <code>MODEParser</code> class to parse the user command.</p>
+</li>
+<li>
+<p>This results in a <code>Command</code> object which is executed by the <code>MODELogicManager</code>.</p>
+</li>
+<li>
+<p>The command execution can affect the <code>Model</code> (e.g. deleting AN entry).</p>
+</li>
+<li>
+<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
+</li>
+<li>
+<p>In addition, the <code>CommandResult</code> object can also instruct the <code>Eylah.java</code> application to perform certain actions, such as to go back to main menu or exit the App.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Given below is the Sequence Diagram for interactions within the <code>Logic Component</code> for the <code>execute("deleteitem 1")</code> API call.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterDeleteItemCommandSequenceDiagram.png" alt="ExpenseSplitterDeleteItemCommandSequenceDiagram">
+</div>
+<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>deleteitem 1</code> Command in Expense Splitter mode</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline for <code>DeleteItemCommandParser</code> should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Model"><a class="link" href="#Design-Model">Model component</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ModelClassDiagram.png" alt="ModelClassDiagram">
+</div>
+<div class="title">Figure 7. Structure of the Model Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/blob/master/src/main/java/seedu/eylah/commons/model/Model.java"><code>Model.java</code></a>
+<a href="{repoURL}/blob/master/src/main/java/seedu/eylah/expensesplitter/model/SplitterModel.java"><code>SplitterModel.java</code></a>
+<a href="{repoURL}/blob/master/src/main/java/seedu/eylah/diettracker/model/DietModel.java"><code>DietModel.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Model Component</code> deals with the modeling of the object.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><code>MODE</code> used in the given subsection refers to <code>Diet</code> when in <code>Diet Tracker</code> mode, <code>Splitter</code> when in
+<code>Expense Splitter</code> mode. For example, <code>MODEModel</code> given below refers to <code>SplitterModel</code> when in <code>Expense Splitter</code> mode.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The <code>MODEModel</code>,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
+</li>
+<li>
+<p>stores the PersonAmountBook and ReceiptBook data in <code>Expense Splitter</code> mode.</p>
+</li>
+<li>
+<p>stores the FoodBook and Myself data in <code>Diet Tracker</code> mode.</p>
+</li>
+<li>
+<p>does not depend on any of the other three components.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">Storage component</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/StorageClassDiagram.png" alt="StorageClassDiagram">
+</div>
+<div class="title">Figure 8. Structure of the Storage Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> : <a href="{repoURL}/blob/master/src/main/java/seedu/eylah/commons/storage/Storage.java"><code>Storage.java</code></a>
+<a href="{repoURL}/blob/master/src/main/java/seedu/eylah/expensesplitter/storage/SplitterStorage.java"><code>SplitterStorage.java</code></a>
+<a href="{repoURL}/blob/master/src/main/java/seedu/eylah/diettracker/storage/DietStorage.java"><code>DietStorage.java</code></a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Storage Component</code> deals with the operations to write and read from the local files.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><code>MODE</code> used in the given subsection refers to <code>Diet</code> when in <code>Diet Tracker</code> mode, <code>Splitter</code> when in
+<code>Expense Splitter</code> mode.For example, <code>MODEStorage</code> given below refers to <code>SplitterStorage</code> when in <code>Expense Splitter</code> mode.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The <code>MODEStorage</code> component,</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>can save <code>UserPref</code> objects in json format and read it back.</p>
+</li>
+<li>
+<p>can save the PersonAmountBook and ReceiptBook data in json format and read it back in <code>Expense Splitter</code> mode.</p>
+</li>
+<li>
+<p>can save the FoodBook and MySelf data in json format and read it back in <code>Diet Tracker</code> mode.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Commons"><a class="link" href="#Design-Commons">Common classes</a></h3>
+<div class="paragraph">
+<p>Classes used by multiple components are in the <code>seedu.eylah.commons</code> package.</p>
+</div>
+<div class="sect3">
+<h4 id="Done-Receipt-Command"><a class="link" href="#Done-Receipt-Command">Done Receipt Command</a></h4>
+<div class="paragraph">
+<p>In this section, we will learn more about how the <code>donereceipt</code> command is implemented.</p>
+</div>
+<div class="paragraph">
+<p><strong>What is the Done Receipt Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>donereceipt</code> command allows user to finalize the entries in the receipt. After this command is executed, the
+entries in the receipt are immutable.</p>
+</div>
+<div class="paragraph">
+<p>The <code>donereceipt</code> command was implemented as a <code>DoneReceiptCommand</code> in the <code>expensespliter/logic</code> package.</p>
+</div>
+<div class="paragraph">
+<p>The <code>donereceipt</code> has the following input format:</p>
+</div>
+<div class="paragraph">
+<p><code>donereceipt</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The receipt will not be editable after this command is executed thus ensuring all entries are inputted correctly.
+The User can use <code>listreceipt</code> to check current entries in the receipt, <code>deleteitem</code> and <code>additem</code> to delete and add
+the correct item back.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates what happens when a user executes <code>donereceipt</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterDoneReceiptCommandActivityDiagram.png" alt="ExpenseSplitterDoneReceiptCommandActivityDiagram">
+</div>
+<div class="title">Figure 9. Done Receipt Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+<div class="paragraph">
+<p><strong>Structure of Done Receipt Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>donereceipt</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterDoneReceiptCommandClassDiagram.png" alt="ExpenseSplitterDoneReceiptCommandClassDiagram">
+</div>
+<div class="title">Figure 10. Done Receipt Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>DoneReceiptCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>DoneReceiptCommand</code>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Implementation of Done Receipt Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>DoneReceiptCommand</code> performs.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>DoneReceiptCommand#execute(SplitterModel splitterModel)</code> method is executed.</p>
+</li>
+<li>
+<p>The <code>SplitterModel#getReceipt()</code> method is executed and get the current <code>Receipt</code>.</p>
+</li>
+<li>
+<p>Then <code>Receipt#markDone()</code> method is called.</p>
+</li>
+<li>
+<p>This will invoke the boolean <code>Receipt#isDone</code> variable changed to true.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Sequence Diagram for Done Receipt Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens during the execution of <code>donereceipt</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expense-splitter/ExpenseSplitterDoneReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterDoneReceiptCommandSequenceDiagram">
+</div>
+<div class="title">Figure 11. Done Receipt Command Sequence Diagram</div>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:53:58 UTC</div></div></div></body></html>
