@@ -579,6 +579,22 @@ based on their user input.</p>
 <div class="title">Figure 9. Add Command Activity Diagram</div>
 </div>
 <div class="paragraph">
+<p><strong>Structure of Add Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>add</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DietTrackerAddCommandClassDiagram.png" alt="DietTrackerAddCommandClassDiagram">
+</div>
+<div class="title">Figure 10. Add Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>AddCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>AddCommand</code></p>
+</div>
+<div class="paragraph">
 <p><strong>Implementation of Add Command</strong></p>
 </div>
 <div class="paragraph">
@@ -615,7 +631,7 @@ Amount into JSON format after serializing it using <code>JsonAdaptedFood</code>.
 <div class="content">
 <img src="images/DietTrackerAddCommandSequenceDiagram.png" alt="DietTrackerAddCommandSequenceDiagram">
 </div>
-<div class="title">Figure 10. Add Item Command Sequence Diagram</div>
+<div class="title">Figure 11. Add Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -666,13 +682,29 @@ Amount into JSON format after serializing it using <code>JsonAdaptedFood</code>.
 <div class="content">
 <img src="images/DietTrackerDeleteCommandActivityDiagram.png" alt="DietTrackerDeleteCommandActivityDiagram">
 </div>
-<div class="title">Figure 11. Delete Command Activity Diagram</div>
+<div class="title">Figure 12. Delete Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>Structure of Delete Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>delete</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DietTrackerDeleteCommandClassDiagram.png" alt="DietTrackerDeleteCommandClassDiagram">
+</div>
+<div class="title">Figure 13. Delete Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>DeleteCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>DeleteCommand</code></p>
 </div>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
 </div>
 <div class="paragraph">
-<p>The following is a detailed explanation of the operations DeleteItemCommand performs.<br></p>
+<p>The following is a detailed explanation of the operations DeleteCommand performs.<br></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -709,7 +741,7 @@ into JSON format after serializing it using <code>JsonAdaptedFood</code>.</p>
 <div class="content">
 <img src="images/DietTrackerDeleteCommandSequenceDiagram.png" alt="DietTrackerDeleteCommandSequenceDiagram">
 </div>
-<div class="title">Figure 12. Delete Item Command Sequence Diagram</div>
+<div class="title">Figure 14. Delete Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -754,7 +786,23 @@ or a list of foods with the specified tag.</p>
 <div class="content">
 <img src="images/DietTrackerListCommandActivityDiagram.png" alt="DietTrackerListCommandActivityDiagram">
 </div>
-<div class="title">Figure 13. List Command Activity Diagram</div>
+<div class="title">Figure 15. List Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>Structure of List Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>list</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DietTrackerListCommandClassDiagram.png" alt="DietTrackerListCommandClassDiagram">
+</div>
+<div class="title">Figure 16. List Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>ListCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>ListCommand</code></p>
 </div>
 <div class="paragraph">
 <p><strong>Implementation of List Command</strong></p>
@@ -795,25 +843,25 @@ success message. Otherwise, an error message showing the correct command syntax 
 </ol>
 </div>
 <div class="paragraph">
-<p><strong>Sequence Diagram for List Receipt Command</strong></p>
+<p><strong>Sequence Diagram for List Command</strong></p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DietTrackerListCommandAllSequenceDiagram.png" alt="DietTrackerListCommandAllSequenceDiagram">
 </div>
-<div class="title">Figure 14. List Sequence Diagram for <code>-a</code> or No-Flag Input</div>
+<div class="title">Figure 17. List Sequence Diagram for <code>-a</code> or No-Flag Input</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DietTrackerListCommandDaySequenceDiagram.png" alt="DietTrackerListCommandDaySequenceDiagram">
 </div>
-<div class="title">Figure 15. List Sequence Diagram for <code>-d</code></div>
+<div class="title">Figure 18. List Sequence Diagram for <code>-d</code></div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DietTrackerListCommandTagSequenceDiagram.png" alt="DietTrackerListCommandTagSequenceDiagram">
 </div>
-<div class="title">Figure 16. List Sequence Diagram for <code>-t</code></div>
+<div class="title">Figure 19. List Sequence Diagram for <code>-t</code></div>
 </div>
 </div>
 <div class="sect3">
@@ -822,7 +870,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <p>In this section, we will learn more about how the <code>edit</code> command is implemented.</p>
 </div>
 <div class="paragraph">
-<p><strong>What is the Delete Item Command</strong><br></p>
+<p><strong>What is the Edit Command</strong><br></p>
 </div>
 <div class="paragraph">
 <p>The <code>edit</code> command allows users to edit the Name of the Food or the Calories of the Food from the FoodBook via the Index.</p>
@@ -867,7 +915,23 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerEditCommandActivityDiagram.png" alt="DietTrackerEditCommandActivityDiagram">
 </div>
-<div class="title">Figure 17. Edit Command Activity Diagram</div>
+<div class="title">Figure 20. Edit Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>Structure of Edit Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>edit</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/DietTrackerEditCommandClassDiagram.png" alt="DietTrackerEditCommandClassDiagram">
+</div>
+<div class="title">Figure 21. Edit Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>EditCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>EditCommand</code></p>
 </div>
 <div class="paragraph">
 <p><strong>Implementation</strong></p>
@@ -901,7 +965,7 @@ into JSON format after serializing it using <code>JsonAdaptedFood</code>.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p><strong>Sequence Diagram for Delete Item Command</strong></p>
+<p><strong>Sequence Diagram for Edit Command</strong></p>
 </div>
 <div class="paragraph">
 <p>The following sequence diagram summarizes what happens during the execution of <code>edit</code> command.</p>
@@ -910,7 +974,7 @@ into JSON format after serializing it using <code>JsonAdaptedFood</code>.</p>
 <div class="content">
 <img src="images/DietTrackerEditCommandSequenceDiagram.png" alt="DietTrackerEditCommandSequenceDiagram">
 </div>
-<div class="title">Figure 18. Edit Command Sequence Diagram</div>
+<div class="title">Figure 22. Edit Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -964,7 +1028,7 @@ into JSON format after serializing it using <code>JsonAdaptedFood</code>.</p>
 <div class="content">
 <img src="images/DietTrackerBmiCommandActivityDiagram.png" alt="DietTrackerBmiCommandActivityDiagram">
 </div>
-<div class="title">Figure 19. Bmi Command Activity Diagram</div>
+<div class="title">Figure 23. Bmi Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Structure of Bmi Command</strong><br></p>
@@ -976,7 +1040,7 @@ into JSON format after serializing it using <code>JsonAdaptedFood</code>.</p>
 <div class="content">
 <img src="images/DietTrackerBmiCommandClassDiagram.png" alt="DietTrackerBmiCommandClassDiagram">
 </div>
-<div class="title">Figure 20. Bmi Command Class Diagram</div>
+<div class="title">Figure 24. Bmi Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>BmiCommand</code> and its associated classes and
@@ -1033,13 +1097,13 @@ Self&#8217;s Height and Weight attributes.</p>
 <div class="content">
 <img src="images/DietTrackerBmiCommandNILSequenceDiagram.png" alt="DietTrackerBmiCommandNILSequenceDiagram">
 </div>
-<div class="title">Figure 21. Sequence Diagram Bmi Command Sequence Diagram without Input Arguments</div>
+<div class="title">Figure 25. Sequence Diagram Bmi Command Sequence Diagram without Input Arguments</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DietTrackerBmiCommandNILSequenceDiagram2.png" alt="DietTrackerBmiCommandNILSequenceDiagram2">
 </div>
-<div class="title">Figure 22. Sequence Diagram: Retrieval of stored Height and Weight from Model</div>
+<div class="title">Figure 26. Sequence Diagram: Retrieval of stored Height and Weight from Model</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1079,13 +1143,13 @@ Self&#8217;s Height and Weight attributes.</p>
 <div class="content">
 <img src="images/DietTrackerBmiCommandSequenceDiagram.png" alt="DietTrackerBmiCommandSequenceDiagram">
 </div>
-<div class="title">Figure 23. Bmi Command Sequence Diagram with Input Arguments</div>
+<div class="title">Figure 27. Bmi Command Sequence Diagram with Input Arguments</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/DietTrackerBmiCommandSequenceDiagram2.png" alt="DietTrackerBmiCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 24. Creation of Height and Weight Objects for usage in Bmi Command</div>
+<div class="title">Figure 28. Creation of Height and Weight Objects for usage in Bmi Command</div>
 </div>
 <div class="paragraph">
 <p><strong>Design Considerations</strong></p>
@@ -1205,7 +1269,7 @@ Self&#8217;s Height and Weight attributes.</p>
 <div class="content">
 <img src="images/DietTrackerHeightCommandActivityDiagram.png" alt="DietTrackerHeightCommandActivityDiagram">
 </div>
-<div class="title">Figure 25. Height Command Activity Diagram</div>
+<div class="title">Figure 29. Height Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Structure of Height Command</strong><br></p>
@@ -1217,7 +1281,7 @@ Self&#8217;s Height and Weight attributes.</p>
 <div class="content">
 <img src="images/DietTrackerHeightCommandClassDiagram.png" alt="DietTrackerHeightCommandClassDiagram">
 </div>
-<div class="title">Figure 26. Height Command Class Diagram</div>
+<div class="title">Figure 30. Height Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>HeightCommand</code> and its associated classes and
@@ -1255,7 +1319,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerHeightCommandSequenceDiagram.png" alt="DietTrackerHeightCommandSequenceDiagram">
 </div>
-<div class="title">Figure 27. Height Command Sequence Diagram</div>
+<div class="title">Figure 31. Height Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1306,7 +1370,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerWeightCommandActivityDiagram.png" alt="DietTrackerWeightCommandActivityDiagram">
 </div>
-<div class="title">Figure 28. Weight Command Activity Diagram</div>
+<div class="title">Figure 32. Weight Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Structure of Weight Command</strong><br></p>
@@ -1318,7 +1382,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerWeightCommandClassDiagram.png" alt="DietTrackerWeightCommandClassDiagram">
 </div>
-<div class="title">Figure 29. Weight Command Class Diagram</div>
+<div class="title">Figure 33. Weight Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>WeightCommand</code> and its associated classes and
@@ -1356,7 +1420,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerWeightCommandSequenceDiagram.png" alt="DietTrackerWeightCommandSequenceDiagram">
 </div>
-<div class="title">Figure 30. Weight Command Sequence Diagram</div>
+<div class="title">Figure 34. Weight Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1400,7 +1464,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerModeCommandActivityDiagram.png" alt="DietTrackerModeCommandActivityDiagram">
 </div>
-<div class="title">Figure 31. Mode Command Activity Diagram</div>
+<div class="title">Figure 35. Mode Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Structure of Mode Command</strong><br></p>
@@ -1412,7 +1476,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerModeCommandClassDiagram.png" alt="DietTrackerModeCommandClassDiagram">
 </div>
-<div class="title">Figure 32. Mode Command Class Diagram</div>
+<div class="title">Figure 36. Mode Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>ModeCommand</code> and its associated classes and
@@ -1450,7 +1514,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerModeCommandSequenceDiagram.png" alt="DietTrackerModeCommandSequenceDiagram">
 </div>
-<div class="title">Figure 33. Mode Command Sequence Diagram</div>
+<div class="title">Figure 37. Mode Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1480,7 +1544,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerMetricsCommandActivityDiagram.png" alt="DietTrackerMetricsCommandActivityDiagram">
 </div>
-<div class="title">Figure 34. Metrics Command Activity Diagram</div>
+<div class="title">Figure 38. Metrics Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Structure of Metrics Command</strong><br></p>
@@ -1492,7 +1556,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerMetricsCommandClassDiagram.png" alt="DietTrackerMetricsCommandClassDiagram">
 </div>
-<div class="title">Figure 35. Metrics Command Class Diagram</div>
+<div class="title">Figure 39. Metrics Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>MetricsCommand</code> and its associated classes and
@@ -1528,7 +1592,7 @@ success message. Otherwise, an error message showing the correct command syntax 
 <div class="content">
 <img src="images/DietTrackerMetricsCommandSequenceDiagram.png" alt="DietTrackerMetricsCommandSequenceDiagram">
 </div>
-<div class="title">Figure 36. Metrics Command Sequence Diagram</div>
+<div class="title">Figure 40. Metrics Command Sequence Diagram</div>
 </div>
 </div>
 </div>
@@ -1577,13 +1641,13 @@ will be immutable.</p>
 <div class="content">
 <img src="images/ExpenseSplitterActivityDiagramV2.png" alt="ExpenseSplitterActivityDiagramV2">
 </div>
-<div class="title">Figure 37. ExpenseSplitterActivityDiagram</div>
+<div class="title">Figure 41. ExpenseSplitterActivityDiagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ExpenseSplitterActivityDiagram.png" alt="ExpenseSplitterActivityDiagram">
 </div>
-<div class="title">Figure 38. SimplifiedAddItemActivityDiagram</div>
+<div class="title">Figure 42. SimplifiedAddItemActivityDiagram</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1652,7 +1716,7 @@ involved in splitting the cost of that Item.</p>
 <div class="content">
 <img src="images/ExpenseSplitterAddItemCommandActivityDiagram.png" alt="ExpenseSplitterAddItemCommandActivityDiagram">
 </div>
-<div class="title">Figure 39. Add Item Command Activity Diagram</div>
+<div class="title">Figure 43. Add Item Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>&#160;</p>
@@ -1667,7 +1731,7 @@ involved in splitting the cost of that Item.</p>
 <div class="content">
 <img src="images/ExpenseSplitterAddItemCommandClassDiagram.png" alt="ExpenseSplitterAddItemCommandClassDiagram">
 </div>
-<div class="title">Figure 40. Add Item Command Class Diagram</div>
+<div class="title">Figure 44. Add Item Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>AddItemCommand</code> and it&#8217;s associated classes and interfaces. Some
@@ -1714,13 +1778,13 @@ person, together with the amount, into the <code>PersonAmountBook#persons</code>
 <div class="content">
 <img src="images/ExpenseSplitterAddItemCommandSequenceDiagram.png" alt="ExpenseSplitterAddItemCommandSequenceDiagram">
 </div>
-<div class="title">Figure 41. Add Item Command Sequence Diagram</div>
+<div class="title">Figure 45. Add Item Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ExpenseSplitterAddItemCommandSequenceDiagram2.png" alt="ExpenseSplitterAddItemCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 42. Execution of Add Item Command</div>
+<div class="title">Figure 46. Execution of Add Item Command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1771,7 +1835,7 @@ person, together with the amount, into the <code>PersonAmountBook#persons</code>
 <div class="content">
 <img src="images/ExpenseSplitterDeleteItemCommandActivityDiagram.png" alt="ExpenseSplitterDeleteItemCommandActivityDiagram">
 </div>
-<div class="title">Figure 43. Delete Item Command Activity Diagram</div>
+<div class="title">Figure 47. Delete Item Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>&#160;</p>
@@ -1786,7 +1850,7 @@ person, together with the amount, into the <code>PersonAmountBook#persons</code>
 <div class="content">
 <img src="images/ExpenseSplitterDeleteItemCommandClassDiagram.png" alt="ExpenseSplitterDeleteItemCommandClassDiagram">
 </div>
-<div class="title">Figure 44. Delete Item Command Class Diagram</div>
+<div class="title">Figure 48. Delete Item Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>DeleteItemCommand</code> and it&#8217;s associated classes and interfaces. Some
@@ -1828,13 +1892,13 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 <div class="content">
 <img src="images/ExpenseSplitterDeleteItemCommandSequenceDiagram.png" alt="ExpenseSplitterDeleteItemCommandSequenceDiagram">
 </div>
-<div class="title">Figure 45. Delete Item Command Sequence Diagram</div>
+<div class="title">Figure 49. Delete Item Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ExpenseSplitterDeleteItemCommandSequenceDiagram2.png" alt="ExpenseSplitterDeleteItemCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 46. Execution of Delete Item Command</div>
+<div class="title">Figure 50. Execution of Delete Item Command</div>
 </div>
 </div>
 <div class="sect3">
@@ -1885,7 +1949,7 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 <div class="content">
 <img src="images/ExpenseSplitterListReceiptCommandActivityDiagram.png" alt="ExpenseSplitterListReceiptCommandActivityDiagram">
 </div>
-<div class="title">Figure 47. List Receipt Activity Diagram</div>
+<div class="title">Figure 51. List Receipt Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p><strong>Structure of List Receipt Command</strong><br></p>
@@ -1897,7 +1961,7 @@ current Item using the <code>Entry#getItem()</code> method and the amountPerPers
 <div class="content">
 <img src="images/ExpenseSplitterListReceiptCommandClassDiagram.png" alt="ExpenseSplitterListReceiptCommandClassDiagram">
 </div>
-<div class="title">Figure 48. List Receipt Command Class Diagram</div>
+<div class="title">Figure 52. List Receipt Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>ListReceiptCommand</code> and its associated classes and
@@ -1938,7 +2002,7 @@ component.</p>
 <div class="content">
 <img src="images/ExpenseSplitterListReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterListReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 49. List Receipt Command Sequence Diagram</div>
+<div class="title">Figure 53. List Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1989,7 +2053,7 @@ component.</p>
 <div class="content">
 <img src="images/ExpenseSplitterListAmountCommandActivityDiagram.png" alt="ExpenseSplitterListAmountCommandActivityDiagram">
 </div>
-<div class="title">Figure 50. List Amount Activity Diagram<br></div>
+<div class="title">Figure 54. List Amount Activity Diagram<br></div>
 </div>
 <div class="paragraph">
 <p><strong>Structure of List Amount Command</strong><br></p>
@@ -2001,7 +2065,7 @@ component.</p>
 <div class="content">
 <img src="images/ExpenseSplitterListAmountCommandClassDiagram.png" alt="ExpenseSplitterListAmountCommandClassDiagram">
 </div>
-<div class="title">Figure 51. List Amount Command Class Diagram</div>
+<div class="title">Figure 55. List Amount Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>ListAmountCommand</code> and its associated classes and
@@ -2041,7 +2105,7 @@ component.</p>
 <div class="content">
 <img src="images/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
 </div>
-<div class="title">Figure 52. List Amount Command Sequence Diagram</div>
+<div class="title">Figure 56. List Amount Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -2088,7 +2152,7 @@ the correct item back.</p>
 <div class="content">
 <img src="images/ExpenseSplitterDoneReceiptCommandActivityDiagram.png" alt="ExpenseSplitterDoneReceiptCommandActivityDiagram">
 </div>
-<div class="title">Figure 53. Done Receipt Command Activity Diagram</div>
+<div class="title">Figure 57. Done Receipt Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>&#160;</p>
@@ -2103,7 +2167,7 @@ the correct item back.</p>
 <div class="content">
 <img src="images/ExpenseSplitterDoneReceiptCommandClassDiagram.png" alt="ExpenseSplitterDoneReceiptCommandClassDiagram">
 </div>
-<div class="title">Figure 54. Done Receipt Command Class Diagram</div>
+<div class="title">Figure 58. Done Receipt Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>DoneReceiptCommand</code> and its associated classes and
@@ -2141,7 +2205,7 @@ interfaces. Some methods and fields are left out because they are not of concern
 <div class="content">
 <img src="images/ExpenseSplitterDoneReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterDoneReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 55. Done Receipt Command Sequence Diagram</div>
+<div class="title">Figure 59. Done Receipt Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -2199,7 +2263,7 @@ empty is equivalent to the Person paying the user the full amount he/she owes th
 <div class="content">
 <img src="images/ExpenseSplitterPaidCommandActivityDiagram.png" alt="ExpenseSplitterPaidCommandActivityDiagram">
 </div>
-<div class="title">Figure 56. Paid Command Activity Diagram</div>
+<div class="title">Figure 60. Paid Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>&#160;</p>
@@ -2214,7 +2278,7 @@ empty is equivalent to the Person paying the user the full amount he/she owes th
 <div class="content">
 <img src="images/ExpenseSplitterPaidCommandClassDiagram.png" alt="ExpenseSplitterPaidCommandClassDiagram">
 </div>
-<div class="title">Figure 57. Paid Command Class Diagram</div>
+<div class="title">Figure 61. Paid Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>PaidCommand</code> and its associated classes and
@@ -2256,13 +2320,13 @@ String amountPaid will be converted into an Amount by instantiating a new instan
 <div class="content">
 <img src="images/ExpenseSplitterPaidCommandSequenceDiagram.png" alt="ExpenseSplitterPaidCommandSequenceDiagram">
 </div>
-<div class="title">Figure 58. Paid Command Sequence Diagram</div>
+<div class="title">Figure 62. Paid Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/ExpenseSplitterPaidCommandSequenceDiagram2.png" alt="ExpenseSplitterPaidCommandSequenceDiagram2">
 </div>
-<div class="title">Figure 59. Execution of Paid Command Sequence Diagram</div>
+<div class="title">Figure 63. Execution of Paid Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -2315,7 +2379,7 @@ only be able to use the <code>additem</code> and <code>deleteitem</code> command
 <div class="content">
 <img src="images/ExpenseSplitterClearReceiptCommandActivityDiagram.png" alt="ExpenseSplitterClearReceiptCommandActivityDiagram">
 </div>
-<div class="title">Figure 60. Clear Receipt Command Activity Diagram</div>
+<div class="title">Figure 64. Clear Receipt Command Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>&#160;</p>
@@ -2330,7 +2394,7 @@ only be able to use the <code>additem</code> and <code>deleteitem</code> command
 <div class="content">
 <img src="images/ExpenseSplitterClearReceiptCommandClassDiagram.png" alt="ExpenseSplitterClearReceiptCommandClassDiagram">
 </div>
-<div class="title">Figure 61. Clear Receipt Command Class Diagram</div>
+<div class="title">Figure 65. Clear Receipt Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>ClearReceiptCommand</code> and it&#8217;s associated classes and interfaces. Some
@@ -2368,7 +2432,7 @@ methods and fields have been left out because they are not of concern in the <co
 <div class="content">
 <img src="images/ExpenseSplitterClearReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterClearReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 62. Clear Receipt Command Sequence Diagram</div>
+<div class="title">Figure 66. Clear Receipt Command Sequence Diagram</div>
 </div>
 </div>
 </div>
@@ -2691,7 +2755,7 @@ emergency</p></td>
 <li>
 <p>1a2. User enters command with flag<br>
 Steps 1a1-1a2 are repeated until the correct entered is correct.<br>
-Use case resumes from step 3.</p>
+Use case resumes from step 2.</p>
 </li>
 </ul>
 </div>
@@ -2706,7 +2770,22 @@ Use case resumes from step 3.</p>
 <li>
 <p>3a2. User enters command with height in correct format<br>
 Steps 3a1-3a2 are repeated until the correct  entered is correct.<br>
-Use case resumes from step 5.</p>
+Use case resumes from step 4.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3b. Height value is too large and beyond the limit.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3b1. EYLAH tells user the limit for the height value and prompts to re-enter command.</p>
+</li>
+<li>
+<p>3b2. User will input values within the specified range.<br>
+Steps 3b1-3b2 are repeated until the command entered is correct.<br>
+Use case resumes from step 4.</p>
 </li>
 </ul>
 </div>
@@ -2721,6 +2800,32 @@ Use case resumes from step 5.</p>
 <li>
 <p>5a2. User enters command with weight in correct format<br>
 Steps 5a1-5a2 are repeated until the correct  entered is correct.<br>
+Use case resumes from step 6.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>5b. Weight value is too large and beyond the limit.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>5b1. EYLAH tells user the limit for the weight value and prompts to re-enter command.</p>
+</li>
+<li>
+<p>5b2. User will input values within the specified range.<br>
+Steps 5b1-5b2 are repeated until the command entered is correct.<br>
+Use case resumes from step 6.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>*a. At any time, User chooses to not proceed after inputting in invalid command.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>*a1. EYLAH will not make any changes<br>
 Use case ends.</p>
 </li>
 </ul>
@@ -2760,6 +2865,17 @@ Use case ends.</p>
 <li>
 <p>1a2. User enters command in the correct format as requested by EYLAH<br>
 Steps 1a1-1a2 are repeated until the correct entered is correct.<br>
+Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>*a. At any time, User chooses to not proceed after inputting in invalid command.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>*a1. EYLAH will not make any changes<br>
 Use case ends.</p>
 </li>
 </ul>
@@ -2800,7 +2916,12 @@ Use case ends.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>1a1. EYLAH prints out default list which contains food logged for the day</p>
+<p>1a1. EYLAH will show proper usage of the command and the valid flags.</p>
+</li>
+<li>
+<p>1a2. User will re-enter the command with a valid flag.<br>
+Steps 1a1-1a2 are repeated until the command entered is correct.
+Use case resumes from step 2.</p>
 </li>
 </ul>
 </div>
@@ -2813,8 +2934,20 @@ Use case ends.</p>
 <p>3a1. EYLAH requests user to re-enter index in correct format</p>
 </li>
 <li>
-<p>3a2. User enters delete item in  correct format<br>
-Steps 3a1-3a2 are repeated until the correct  entered is correct.<br>
+<p>3a2. User enters edit in  correct format<br>
+Steps 3a1-3a2 are repeated until the command entered is correct.<br>
+Use case ends.
+Use case resumes from step 4.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>*a. At any time, User chooses to not proceed after inputting in invalid command.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>*a1. EYLAH will not make any changes<br>
 Use case ends.</p>
 </li>
 </ul>
@@ -2855,7 +2988,12 @@ Use case ends.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>1a1. EYLAH prints out default list which contains food logged for the day</p>
+<p>1a1. EYLAH will show proper usage of the command and the valid flags.</p>
+</li>
+<li>
+<p>1a2. User will re-enter the command with a valid flag.<br>
+Steps 1a1-1a2 are repeated until the command entered is correct.
+Use case resumes from step 2.</p>
 </li>
 </ul>
 </div>
@@ -2868,9 +3006,9 @@ Use case ends.</p>
 <p>3a1. EYLAH requests user to re-enter index in correct format</p>
 </li>
 <li>
-<p>3a2. User enters delete item in  correct format<br>
-Steps 2a1-2a2 are repeated until the correct  entered is correct.<br>
-Use case ends.</p>
+<p>3a2. User enters edit in  correct format<br>
+Steps 3a1-3a2 are repeated until the command entered is correct.<br>
+Use case resumes from step 4.</p>
 </li>
 </ul>
 </div>
@@ -2884,7 +3022,18 @@ Use case ends.</p>
 </li>
 <li>
 <p>3b2. User enters command with flag and data<br>
-Steps 3b1-3b2 are repeated until the correct  entered is correct.<br>
+Steps 3b1-3b2 are repeated until the command entered is correct.<br>
+Use case resumes from step 4.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>*a. At any time, User chooses to not proceed after inputting in invalid command.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>*a1. EYLAH will not make any changes<br>
 Use case ends.</p>
 </li>
 </ul>
@@ -2915,34 +3064,44 @@ Use case ends.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. List command contains invalid flag.</p>
+<p>1a. Invalid flag or additional arguments are entered into the command.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>1a1. EYLAH prints out default list which contains food logged for the day</p>
-<div class="paragraph">
-<p>Use case ends.</p>
+<p>1a1. EYLAH will show proper usage of the command and the valid flags.</p>
+</li>
+<li>
+<p>1a2. User will re-enter the command with a valid flag.<br>
+Steps 1a1-1a2 are repeated until the command entered is correct.
+Use case resumes from step 2.</p>
+</li>
+</ul>
 </div>
+</li>
+<li>
+<p>*a. At any time, User chooses to not proceed after inputting in invalid command.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>*a1. EYLAH will not make any changes<br>
+Use case ends.</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
-<h4 id="use-case-uc06-calories-count" class="discrete">Use case: UC06 Calories count</h4>
+<h4 id="use-case-uc06-track-daily-calories" class="discrete">Use case: UC06 Track Daily Calories</h4>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User calls the command</p>
+<p>User calls <code>list</code> command</p>
 </li>
 <li>
-<p>EYLAH shows the list food, their calories, as well as the total calories consumed for the day</p>
-</li>
-<li>
-<p>User can track their remaining calories via the interface, based on their input height and weight</p>
+<p>EYLAH shows food intake for the day, calories intake for the day, and calories left to consume</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -2955,14 +3114,23 @@ Use case ends.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. Invalid argument keyed into command.</p>
+<p>1a. Additional valid flags entered with the list command.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>1a1. EYLAH would raise a <strong>"errorneous argument"</strong> message</p>
+<p>1a1. EYLAH would generate and display the appropriate list according to the flag<br>
+User case ends.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>1a2. EYLAH would run the command and calculate the outputs ignoring additional arguments</p>
+<p>*a. At any time, User chooses to not proceed after inputting in invalid command.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>*a1. EYLAH will not make any changes<br>
+Use case ends.</p>
 </li>
 </ul>
 </div>
@@ -2992,14 +3160,87 @@ Use case ends.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>1a. BMI command contains invalid flag.</p>
+<p>1a. BMI command contains invalid flags.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>1a1. EYLAH suggests to user the correct format to use</p>
 </li>
 <li>
-<p>1a2. User will key in the correct format</p>
+<p>1a2. User will key in the correct format<br>
+Steps 1a1-1a2 are repeated until the command entered is correct.<br>
+Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. Both height and weight are not provided as input and there is no stored height and weight.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1b1. EYLAH tells user to provide both height and weight as there are no stored values</p>
+</li>
+<li>
+<p>1b2. User will input both height and weight values.<br>
+Steps 1b1-1b2 are repeated until the command entered is correct.<br>
+Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1c. Height is not provided as input and there is no stored height.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1c1. EYLAH tells user to provide height as there are no stored value.</p>
+</li>
+<li>
+<p>1c2. User will input height value with the bmi command.<br>
+Steps 1c1-1c2 are repeated until the command entered is correct.<br>
+Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1d. Weight is not provided as input and there is no stored weight.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1d1. EYLAH tells user to provide weight as there are no stored value.</p>
+</li>
+<li>
+<p>1d2. User will input Weight value with the bmi command.<br>
+Steps 1d1-1d2 are repeated until the command entered is correct.<br>
+Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1e. Height and weight values are extremely large and beyond the limit.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1e1. EYLAH tells user the limit for the values and prompts to re-enter command.</p>
+</li>
+<li>
+<p>1e2. User will input values within the specified range.<br>
+Steps 1e1-1e2 are repeated until the command entered is correct.<br>
+Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>*a. At any time, User chooses to not proceed after inputting in invalid command.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>*a1. EYLAH will not make any changes<br>
+Use case ends.</p>
 </li>
 </ul>
 </div>
@@ -3942,4 +4183,4 @@ help to ease the lives of the residents at Temasek Hall.
 Overall, we believe that EYLAH is a good testament to our hard work and the time spent on perfecting it.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 08:15:23 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 08:19:35 UTC</div></div></div></body></html>
