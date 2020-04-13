@@ -245,6 +245,66 @@ This reduces the chances of EYLAH crashing.</p>
 </tbody>
 </table>
 <div class="sect3">
+<h4 id="listreceipt"><a class="link" href="#listreceipt">Listing the current receipt: <code>listreceipt</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>listreceipt</code> command, <a href="#howtouselistreceiptcommand">how to use it</a>
+and the <a href="#listreceiptexpectedoutcome">expected outcome</a> after using the
+<code>listreceipt</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of List Receipt Command:</strong><br>
+<code>listreceipt</code> shows you all the entries in your current receipt.</p>
+</div>
+<div id="howtouselistreceiptcommand" class="paragraph">
+<p><strong>How to use the List Receipt Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>listreceipt</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>listreceipt</code></p>
+</div>
+<div id="listreceiptexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/expenseSplitterListAmountCommandSuccessPhoto.png" alt="expenseSplitterListAmountCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional notes and tips</strong><br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Each entry in the receipt has the item&#8217;s name, price and person(s) who is splitting that item with you thus you do
+not have to remember who you split this item with!
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use <code>listreceipt</code> command to find the index of the item in the receipt. The index is useful for commands
+such as <code>deleteitem</code> where you have to pass in the index of item to be deleted.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
 <h4 id="listamount"><a class="link" href="#listamount">Listing amounts owed by each person: <code>listamount</code></a></h4>
 <div class="paragraph">
 <p>In this section, you will learn more about the <code>listamount</code> command, <a href="#howtouselistamountcommand">how to use it</a>
@@ -270,7 +330,7 @@ and the <a href="#listamountexpectedoutcome">expected outcome</a> after using th
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/expenseSplitterListAmountCommandSuccessPhoto.png" alt="expenseSplitterListAmountCommandSuccessPhoto" width="890" height="200">
+<img src="../images/expenseSplitterListAmountCommandSuccessPhoto.png" alt="expenseSplitterListAmountCommandSuccessPhoto" width="890" height="200">
 </div>
 </div>
 <div class="paragraph">
@@ -306,66 +366,6 @@ and the <a href="#listamountexpectedoutcome">expected outcome</a> after using th
 <td class="content">
 Use <code>listamount</code> command to find the index of the person who paid you. The index is useful for commands
 such as <code>paid</code>.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="listreceipt"><a class="link" href="#listreceipt">Listing the current receipt: <code>listreceipt</code></a></h4>
-<div class="paragraph">
-<p>In this section, you will learn more about the <code>listreceipt</code> command, <a href="#howtouselistreceiptcommand">how to use it</a>
-and the <a href="#listreceiptexpectedoutcome">expected outcome</a> after using the
-<code>listreceipt</code> command.</p>
-</div>
-<div class="paragraph">
-<p><strong>Summary of List Receipt Command:</strong><br>
-<code>listreceipt</code> shows you all the entries in your current receipt.</p>
-</div>
-<div id="howtouselistreceiptcommand" class="paragraph">
-<p><strong>How to use the List Receipt Command:</strong></p>
-</div>
-<div class="paragraph">
-<p>Format:<br>
-<code>listreceipt</code><br></p>
-</div>
-<div class="paragraph">
-<p>Valid Example:<br>
-<code>listreceipt</code></p>
-</div>
-<div id="listreceiptexpectedoutcome" class="paragraph">
-<p><strong>Expected outcome:</strong></p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/expense-splitter/expenseSplitterListAmountCommandSuccessPhoto.png" alt="expenseSplitterListAmountCommandSuccessPhoto" width="890" height="200">
-</div>
-</div>
-<div class="paragraph">
-<p><strong>Additional notes and tips</strong><br></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Each entry in the receipt has the item&#8217;s name, price and person(s) who is splitting that item with you thus you do
-not have to remember who you split this item with!
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Use <code>listreceipt</code> command to find the index of the item in the receipt. The index is useful for commands
-such as <code>deleteitem</code> where you have to pass in the index of item to be deleted.
 </td>
 </tr>
 </table>
@@ -431,7 +431,7 @@ empty is equivalent to the Person paying you the full amount he/she owes you.</p
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/expenseSplitterPaidCommandSuccessPhoto.png" alt="expenseSplitterPaidCommandSuccessPhoto" width="890" height="200">
+<img src="../images/expenseSplitterPaidCommandSuccessPhoto.png" alt="expenseSplitterPaidCommandSuccessPhoto" width="890" height="200">
 </div>
 </div>
 <div class="paragraph">
@@ -565,39 +565,6 @@ or<br>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The Expense Splitter feature is designed to aid our users with the splitting of large bills that involves meany people.
-The feature comprises of six commands namely.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#Add-Item-Command"><code>AddItemCommand</code></a> - Creates an Item with its ItemPrice, Person(s) involved in splitting that
-Item and adds it to Receipt.</p>
-</li>
-<li>
-<p><a href="#Delete-Item-Command"><code>DeleteItemCommand</code></a> - Deletes an Item from the current Receipt and reduces the
-Person&#8217;s amount accordingly.</p>
-</li>
-<li>
-<p><a href="#List-Receipt-Command"><code>ListReceiptCommand</code></a> - Lists the Item(s) in the current Receipt,
-its ItemPrice and Person(s) involved in splitting that Item.</p>
-</li>
-<li>
-<p><a href="#List-Amount-Command"><code>ListAmountCommand</code></a> - Lists the Person(s) Name and Amount they owe the user.</p>
-</li>
-<li>
-<p><a href="#Done-Receipt-Command"><code>DoneReceiptCommand</code></a> - Finalize the receipt, after which the Receipt
-will be immutable.</p>
-</li>
-<li>
-<p><a href="#Paid-Command"><code>PaidCommand</code></a> - Reduces the Amount a Person owes.</p>
-</li>
-<li>
-<p><a href="#Clear-Receipt-Command"><code>ClearReceipt</code></a> - Clear the current Receipt to start a new Receipt.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
 <p>Below is the activity diagram of the entire Expense Splitter.</p>
 </div>
 <div class="paragraph">
@@ -605,13 +572,13 @@ will be immutable.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/ExpenseSplitterActivityDiagramV2.png" alt="ExpenseSplitterActivityDiagramV2">
+<img src="../images/ExpenseSplitterActivityDiagramV2.png" alt="ExpenseSplitterActivityDiagramV2">
 </div>
 <div class="title">Figure 1. ExpenseSplitterActivityDiagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/ExpenseSplitterActivityDiagram.png" alt="ExpenseSplitterActivityDiagram">
+<img src="../images/ExpenseSplitterActivityDiagram.png" alt="ExpenseSplitterActivityDiagram">
 </div>
 <div class="title">Figure 2. SimplifiedAddItemActivityDiagram</div>
 </div>
@@ -629,109 +596,6 @@ diagram of Add Item can be found in <a href="#Add-Item-Command">AddItemCommand</
 </td>
 </tr>
 </table>
-</div>
-<div class="sect3">
-<h4 id="List-Amount-Command"><a class="link" href="#List-Amount-Command">List Amount Command</a></h4>
-<div class="paragraph">
-<p>In this section, we will learn more about how the <code>listamount</code> command is implemented.</p>
-</div>
-<div class="paragraph">
-<p><strong>What is the List Amount Command</strong></p>
-</div>
-<div class="paragraph">
-<p>The <code>listamount</code> command allows users to find out how much each Person owes them.<br></p>
-</div>
-<div class="paragraph">
-<p>The <code>listamount</code> command was implemented as a <code>ListAmountCommand</code> in the <code>expensesplitter/logic/commands</code> package.</p>
-</div>
-<div class="paragraph">
-<p>The <code>listamount</code> command has the following input format:</p>
-</div>
-<div class="paragraph">
-<p><code>listamount</code></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The Person and amount owed will be automatically saved after each command.</p>
-</li>
-<li>
-<p>A person is deleted after they have completely paid the amount they owe.</p>
-</li>
-</ul>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>The following activity diagram illustrates what happens when a user executes <code>listamount</code> command:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/expense-splitter/ExpenseSplitterListAmountCommandActivityDiagram.png" alt="ExpenseSplitterListAmountCommandActivityDiagram">
-</div>
-<div class="title">Figure 3. List Amount Activity Diagram<br></div>
-</div>
-<div class="paragraph">
-<p><strong>Structure of List Amount Command</strong><br></p>
-</div>
-<div class="paragraph">
-<p>In this section, you will learn more about the relationships between objects related to the <code>listamount</code> command.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/expense-splitter/ExpenseSplitterListAmountCommandClassDiagram.png" alt="ExpenseSplitterListAmountCommandClassDiagram">
-</div>
-<div class="title">Figure 4. List Amount Command Class Diagram</div>
-</div>
-<div class="paragraph">
-<p>The above class diagram shows the structure of the <code>ListAmountCommand</code> and its associated classes and
-interfaces. Some methods and fields are left out because they are not of concern in <code>ListAmountCommand</code></p>
-</div>
-<div class="paragraph">
-<p><strong>Implementation of List Amount Command</strong></p>
-</div>
-<div class="paragraph">
-<p>The following is a detailed explanation of the operations ListAmountCommand performs.<br></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The <code>ListAmountCommand#execute(SplitterModel splitterModel)</code> method is executed.</p>
-</li>
-<li>
-<p>The method <code>SplitterModel#listAmount()</code> will then be called to return the list of Person(s) with their amount.</p>
-</li>
-<li>
-<p><code>PersonAmountBook#toString()</code> will convert list of person in the list to the expected format and return it to
-SplitterModelManager.</p>
-</li>
-<li>
-<p>SplitterModelManager will then pass the String into CommandResult where it will be printed under the UI
-component.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Sequence Diagram for List Amount Command</strong></p>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram summarizes what happens during the execution of <code>listamount</code> command.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/expense-splitter/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
-</div>
-<div class="title">Figure 5. List Amount Command Sequence Diagram</div>
-</div>
 </div>
 <div class="sect3">
 <h4 id="List-Receipt-Command"><a class="link" href="#List-Receipt-Command">List Receipt Command</a></h4>
@@ -779,21 +643,24 @@ component.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/ExpenseSplitterListReceiptCommandActivityDiagram.png" alt="ExpenseSplitterListReceiptCommandActivityDiagram">
+<img src="../images/ExpenseSplitterListReceiptCommandActivityDiagram.png" alt="ExpenseSplitterListReceiptCommandActivityDiagram">
 </div>
-<div class="title">Figure 6. List Receipt Activity Diagram</div>
+<div class="title">Figure 3. List Receipt Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>&#160;</p>
 </div>
 <div class="paragraph">
 <p><strong>Structure of List Receipt Command</strong><br></p>
 </div>
 <div class="paragraph">
-<p>In this section, you will learn more about the relationships between objects related to the <code>listreceipt</code> command.</p>
+<p>In this section, you will learn more about the relationships between objects related to the <code>ListReceiptCommand</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/ExpenseSplitterListReceiptCommandClassDiagram.png" alt="ExpenseSplitterListReceiptCommandClassDiagram">
+<img src="../images/ExpenseSplitterListReceiptCommandClassDiagram.png" alt="ExpenseSplitterListReceiptCommandClassDiagram">
 </div>
-<div class="title">Figure 7. List Receipt Command Class Diagram</div>
+<div class="title">Figure 4. List Receipt Command Class Diagram</div>
 </div>
 <div class="paragraph">
 <p>The above class diagram shows the structure of the <code>ListReceiptCommand</code> and its associated classes and
@@ -832,9 +699,115 @@ component.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/ExpenseSplitterListReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterListReceiptCommandSequenceDiagram">
+<img src="../images/ExpenseSplitterListReceiptCommandSequenceDiagram.png" alt="ExpenseSplitterListReceiptCommandSequenceDiagram">
 </div>
-<div class="title">Figure 8. List Receipt Command Sequence Diagram</div>
+<div class="title">Figure 5. List Receipt Command Sequence Diagram</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="List-Amount-Command"><a class="link" href="#List-Amount-Command">List Amount Command</a></h4>
+<div class="paragraph">
+<p>In this section, we will learn more about how the <code>listamount</code> command is implemented.</p>
+</div>
+<div class="paragraph">
+<p><strong>What is the List Amount Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>listamount</code> command allows users to find out how much each Person owes them.<br></p>
+</div>
+<div class="paragraph">
+<p>The <code>listamount</code> command was implemented as a <code>ListAmountCommand</code> in the <code>expensesplitter/logic/commands</code> package.</p>
+</div>
+<div class="paragraph">
+<p>The <code>listamount</code> command has the following input format:</p>
+</div>
+<div class="paragraph">
+<p><code>listamount</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The Person and amount owed will be automatically saved after each command.</p>
+</li>
+<li>
+<p>A person is deleted after they have completely paid the amount they owe.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates what happens when a user executes <code>listamount</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ExpenseSplitterListAmountCommandActivityDiagram.png" alt="ExpenseSplitterListAmountCommandActivityDiagram">
+</div>
+<div class="title">Figure 6. List Amount Activity Diagram<br></div>
+</div>
+<div class="paragraph">
+<p>&#160;</p>
+</div>
+<div class="paragraph">
+<p><strong>Structure of List Amount Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>ListAmountCommand</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ExpenseSplitterListAmountCommandClassDiagram.png" alt="ExpenseSplitterListAmountCommandClassDiagram">
+</div>
+<div class="title">Figure 7. List Amount Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>ListAmountCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>ListAmountCommand</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Implementation of List Amount Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations ListAmountCommand performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>ListAmountCommand#execute(SplitterModel splitterModel)</code> method is executed.</p>
+</li>
+<li>
+<p>The method <code>SplitterModel#listAmount()</code> will then be called to return the list of Person(s) with their amount.</p>
+</li>
+<li>
+<p><code>PersonAmountBook#toString()</code> will convert list of person in the list to the expected format and return it to
+SplitterModelManager.</p>
+</li>
+<li>
+<p>SplitterModelManager will then pass the String into CommandResult where it will be printed under the UI
+component.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Sequence Diagram for List Amount Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens during the execution of <code>listamount</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ExpenseSplitterListAmountCommandSequenceDiagram.png" alt="ExpenseSplitterListAmountCommandSequenceDiagram">
+</div>
+<div class="title">Figure 8. List Amount Command Sequence Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -890,7 +863,7 @@ empty is equivalent to the Person paying the user the full amount he/she owes th
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/ExpenseSplitterPaidCommandActivityDiagram.png" alt="ExpenseSplitterPaidCommandActivityDiagram">
+<img src="../images/ExpenseSplitterPaidCommandActivityDiagram.png" alt="ExpenseSplitterPaidCommandActivityDiagram">
 </div>
 <div class="title">Figure 9. Paid Command Activity Diagram</div>
 </div>
@@ -901,11 +874,11 @@ empty is equivalent to the Person paying the user the full amount he/she owes th
 <p><strong>Structure of Paid Command</strong><br></p>
 </div>
 <div class="paragraph">
-<p>In this section, you will learn more about the relationships between objects related to the <code>paid</code> command.</p>
+<p>In this section, you will learn more about the relationships between objects related to the <code>PaidCommand</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/ExpenseSplitterPaidCommandClassDiagram.png" alt="ExpenseSplitterPaidCommandClassDiagram">
+<img src="../images/ExpenseSplitterPaidCommandClassDiagram.png" alt="ExpenseSplitterPaidCommandClassDiagram">
 </div>
 <div class="title">Figure 10. Paid Command Class Diagram</div>
 </div>
@@ -947,13 +920,13 @@ String amountPaid will be converted into an Amount by instantiating a new instan
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/ExpenseSplitterPaidCommandSequenceDiagram.png" alt="ExpenseSplitterPaidCommandSequenceDiagram">
+<img src="../images/ExpenseSplitterPaidCommandSequenceDiagram.png" alt="ExpenseSplitterPaidCommandSequenceDiagram">
 </div>
 <div class="title">Figure 11. Paid Command Sequence Diagram</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/expense-splitter/ExpenseSplitterPaidCommandSequenceDiagram2.png" alt="ExpenseSplitterPaidCommandSequenceDiagram2">
+<img src="../images/ExpenseSplitterPaidCommandSequenceDiagram2.png" alt="ExpenseSplitterPaidCommandSequenceDiagram2">
 </div>
 <div class="title">Figure 12. Execution of Paid Command Sequence Diagram</div>
 </div>
@@ -1142,5 +1115,91 @@ paid.</p>
 </ul>
 </div>
 </div>
+<div class="sect2">
+<h3 id="list-receipt-in-expense-spliter"><a class="link" href="#list-receipt-in-expense-spliter">List Receipt in Expense Spliter</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Listing the items contained in the current receipt. The order of items listed depends on the order
+of items added by the user.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>ListReceipt Command format: <code>listreceipt</code></p>
+</li>
+<li>
+<p>Prerequisites: NIL.</p>
+</li>
+<li>
+<p>Test case: <code>listreceipt</code><br>
+   Expected: If there are items in the receipt: List all items in the current receipt, its price and amount associated with each
+person involved in splitting that item</p>
+</li>
+<li>
+<p>Test case: <code>listreceipt</code><br>
+Expected: If there are no items in the receipt: EYLAH will inform user that there is no items currently in the receipt.</p>
+</li>
+</ol>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 11:04:36 UTC</div></div></div></body></html>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="list-amount-in-expense-splitter"><a class="link" href="#list-amount-in-expense-splitter">List Amount In Expense Splitter</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>List all the Person(s) and the amount they owe.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>List Receipt command format: <code>listamount</code></p>
+</li>
+<li>
+<p>Test case: <code>listamount</code><br>
+Expected: If there are Person in the list: List all Person that currently owe the User money. There should not be anyone
+with $0 as those who do not owe any money will be
+deleted from the PersonList.</p>
+</li>
+<li>
+<p>Test case: <code>listamount</code><br>
+Expected: If there are no Person in the list: EYLAH will inform user that there no one owes money.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="paid-command-in-expense-splitter"><a class="link" href="#paid-command-in-expense-splitter">Paid Command In Expense Splitter</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Reduces the amount of money a Person owes.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Paid command format: <code>paid</code> <code>INDEX</code> <code>[AMOUNT]</code></p>
+</li>
+<li>
+<p>Test case: <code>paid 1 1.10</code><br>
+Expected: Reduces the amount of money the Person at Index 1 owes by $1.10.</p>
+</li>
+<li>
+<p>Test case: <code>paid 1</code><br>
+Expected: Reduces the entire amount of money the Person at Index 1 owes.</p>
+</li>
+<li>
+<p>Test case: <code>paid -1</code><br>
+Expected: EYLAH will inform the user that INDEX is incorrect.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 11:10:42 UTC</div></div></div></body></html>
