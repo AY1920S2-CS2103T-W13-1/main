@@ -28,61 +28,26 @@ them track their diet. The user interacts with it using a CLI and it is programm
 <li>
 <p>Adding of <strong>Height, Weight, Mode, Bmi and Self classes, and their storage components
 for the Diet Tracker</strong> portion of EYLAH
-(Height, Weight, Self - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/109">#109</a>)
-(Bmi - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/132">#132</a>)
-(Mode - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/157">#157</a>)
-(Related Storge - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/312">#312</a>)</p>
+(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/109">#109</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/109">#109</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/157">#157</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/312">#312</a>)</p>
 <div class="ulist">
 <ul>
 <li>
 <p><strong>What it does:</strong><br>
-Height and Weight are used when the User wants to store their personal health metrics into EYLAH
-for the ease of Diet Tracking. Self is the object that represents the User in EYLAH.
-Bmi is used to do calculations using the Height and Weight of the User.</p>
+These classes are used to stored user&#8217;s metrics and also perform calculations.</p>
 </li>
 <li>
 <p><strong>Justification:</strong><br>
-These classes are crucial for Diet Tracker to work because the User
-is likely to need a Health Metrics Tracker to aid him along his journey of Dieting.</p>
+The User needs a Health Metrics Tracker to aid his Dieting.</p>
 </li>
 <li>
 <p><strong>Highlights:</strong><br>
-Implementing Self was rather tricky at first, since I had used static reference to the Height, Weight and Mode,
-thinking that it would be stored without the need of a Storage. Unfortunately, my team mates realised this mistake of mine
-during an internal testing round, and together with my Diet Tracker team mate, Akhil, we managed to resolve this Storage and static
-reference issue for Height, Weight and Mode in Self.</p>
+Implementing Self was rather tricky at first, since I had used static references class attributes,
+thinking that it would be stored without a Storage. Together with Akhil, we managed to resolve this issue.</p>
 </li>
 <li>
 <p><strong>Credits:</strong><br>
 My groupmate Akhil, who helped with the correction for some of the bugs in the implementation of the classes.
 (Akhil&#8217;s resolution and refactors - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/318">#318</a>)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Heavily involved with <strong>setting up of the Commands and Parsers folders and classes for the Diet Tracker</strong> portion of EYLAH.
-(Commands - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/157">#157</a>)
-(Parsers - <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/107">#107</a>)</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>What it does:</strong><br>
-Sets up the base template on how a Command Execution would function through the Parser and the actual Commands.</p>
-</li>
-<li>
-<p><strong>Justification:</strong><br>
-This is the foundation by which the Diet Tracker and its commands would be work.</p>
-</li>
-<li>
-<p><strong>Highlights:</strong><br>
-By having a template and some basic implementations from the start, our Diet Tracker Team would be better
-prepared to handle the addition of new Commands and their relative executions via the different Model Managers.</p>
-</li>
-<li>
-<p><strong>Credits:</strong><br>
-Seedu Addressbook Level 3, for providing a basis by which we could adapt their structure.
-(<a href="https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic" class="bare">https://github.com/se-edu/addressbook-level3/tree/master/src/main/java/seedu/address/logic</a>)</p>
 </li>
 </ul>
 </div>
@@ -97,17 +62,13 @@ Seedu Addressbook Level 3, for providing a basis by which we could adapt their s
 Allows the integration of the both Diet Tracker and Expense Splitter seamlessly in the unified EYLAH class.</p>
 </li>
 <li>
-<p><strong>Justification:</strong><br>
-Otherwise, the name usages in the code would be lengthy and hard to read also. Class names in the unified EYLAH files would include the entire path name of the Class file.</p>
-</li>
-<li>
 <p><strong>Highlights:</strong><br>
-I noticed this in my review of my team mate, Shee Xiong&#8217;s, initial reorganisation of the code to allow for unification of both components. Upon further research as to why he may have left the class names as they were, I realised that it was because Java does not support <strong>class name aliasing</strong>, so we could not import the same named classes from DietTracker and ExpenseSplitter without first renaming them.</p>
+I noticed this in my review of my team mate, Shee Xiong&#8217;s, initial reorganisation of the code to allow for unification of both components. Upon further research, Java does not support <strong>class name aliasing</strong>.</p>
 </li>
 <li>
 <p><strong>Credits:</strong><br>
-Understanding more about Java from "https://stackoverflow.com/questions/2204157/class-or-method-alias-in-java"
-Shee Xiong, the our Team&#8217;s Integrations IC, went ahead and implemented it eventually in this following PR:
+I understood more about Java Name Aliasing from <a href="https://stackoverflow.com/questions/2204157/class-or-method-alias-in-java">here</a>.
+Shee Xiong, our Team&#8217;s Integrations IC, went ahead and implemented it eventually in this following PR:
 (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/232">#232</a>)</p>
 </li>
 </ul>
@@ -121,40 +82,15 @@ Shee Xiong, the our Team&#8217;s Integrations IC, went ahead and implemented it 
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Modified the <code>bmi</code> command to allow a user to calculate BMI with missing input arguments of Height and Weight<br>
-(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/218">#218</a>)</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>What it does:</strong><br>
-Expanded the <code>bmi</code> command to accept empty Height and Weight fields, which meant that the BmiCommand would retrieve the user&#8217;s stored Height and Weight for use to
-calculate BMI instead. Also added the functionality if users wanted to only check with one input argument, either Height or Weight.<br>
-Previously: Command format was <code>bmi -h HEIGHT -w WEIGHT</code><br>
-Now: Command format is <code>bmi [-h HEIGHT] [-w WEIGHT]</code></p>
-</li>
-<li>
-<p><strong>Justification:</strong><br>
-This allows the user to conveniently check their personal BMI, while giving them the option to also check
-the BMI for their friends. They could use the single input format to check what weight would allow them to
-hit their target BMI category.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
 <p>Performed defensive coding for <code>bmi</code>, <code>height</code>, and <code>weight</code> commands.<br>
-(Height and Weight - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/351">#351</a>)
-(Bmi - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/378">#378</a>)</p>
+(Height, Weight &amp; Bmi - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/351">#351</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/378">#378</a>)</p>
 <div class="ulist">
 <ul>
 <li>
 <p><strong>What it does:</strong><br>
 <code>bmi</code>, <code>height</code> and <code>weight</code> commands are commands in Diet Tracker,
-which includes numerical digits and multiple parameters. As a result, these commands may be exploited
-when discovering bugs in EYLAH. The most common exploits that could break the program was with Integer Overflow
-values. Especially since these huge numbers would have been parsed and stored as 'Infinity' in the JSON format,
-which completely destroyed the functionality of the bmi command. I combat these errorneous commands by either using
-try-catch blocks or by including limits on their values by checking them through BigDecimal inputs.</p>
+which includes numerical digits and multiple parameters. Common exploits that could break the program was with Integer Overflow
+values. I combat these errorneous commands by setting limits on their values by checking them through BigDecimal.</p>
 </li>
 <li>
 <p><strong>Justification:</strong><br>
@@ -164,7 +100,7 @@ Significantly reduces the chances of breaking Diet Tracker and crashing EYLAH.</
 </div>
 </li>
 <li>
-<p>Fixed the Calories bug that occurs when Calories are not in the desired range.<br>
+<p>Fixed the Calories bug that occurs when Calories are not in the desired range.
 (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/354">#354</a>)</p>
 <div class="ulist">
 <ul>
@@ -173,31 +109,19 @@ Significantly reduces the chances of breaking Diet Tracker and crashing EYLAH.</
 Properly validates the user&#8217;s Calories input for any of the Diet Tracker Commands which involve Calories.</p>
 </li>
 <li>
-<p><strong>Justification:</strong><br>
-Otherwise, the previously poor implementation would cause the application to crash.</p>
-</li>
-<li>
 <p><strong>Highlights</strong><br>
- This was brought up during internal testing within the team and also by others during the Mock PE Testing.
-It was important to fix this bug. I found that the cause of this overall bug was due to a few lapses in terms of the original implementation.
 The original implementation had failed to consider a VALIDATION_REGEX for the Calories String itself, since Calories was built using a long instead of directly from a String.
-This caused problems when typing unknown characters that were not longs. Another issue was that you could exceed in the input long for Calories which would crash the program also.
-This was circumvented using BigInteger when validating the long.</p>
+Another issue was that you could exceed in the input long for Calories which would crash the program also.
+This was circumvented using BigInteger.</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Added tests for <code>HeightCommand</code>, <code>WeightCommand</code>, <code>BmiCommand</code>, <code>ModeCommand</code>, <code>MetricsCommand</code> and some of the tests for <code>EditCommand</code></p>
-</li>
-<li>
-<p>Added tests for the <code>FoodBookParser</code> and <code>Parser</code> classes.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=jarrod-bob&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=true&amp;tabOpen=false">Functional code and Test Code</a>]</p>
+<p><strong>Code contributed</strong>: [<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=jarrod-bob&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=true&amp;tabOpen=false">Functional Code and Test Code</a>]</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -213,9 +137,6 @@ This was circumvented using BigInteger when validating the long.</p>
 <li>
 <p>Drew most UML Diagrams for the various Diet Tracker classes and functions for EYLAH.</p>
 </li>
-<li>
-<p>Participated in planning the project timeline for EYLAH.</p>
-</li>
 </ul>
 </div>
 </li>
@@ -224,7 +145,8 @@ This was circumvented using BigInteger when validating the long.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Adapted the given Parser and Command Design into Diet Tracker&#8217;s Design for EYLAH. <a href="https://github.com/" class="bare">https://github.com/</a></p>
+<p>Adapted the given Parser and Command Design into Diet Tracker&#8217;s Design for EYLAH. (Commands - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/157">#157</a>)
+(Parsers - <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/107">#107</a>)</p>
 </li>
 </ul>
 </div>
@@ -234,13 +156,13 @@ This was circumvented using BigInteger when validating the long.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Updated Developer Guide to include Bmi, Height, Weight, Mode and Metrics Command and their diagrams (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/372">#372</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/376">#376</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/401">#401</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/404">#404</a>)</p>
+<p>Updated Developer Guide to include Bmi, Height, Weight, Mode, Metrics Commands and diagrams (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/372">#372</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/376">#376</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/401">#401</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/404">#404</a>)</p>
 </li>
 <li>
-<p>Updated Developer Guide Template for Diet Tracker overall (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/252">#372</a>)</p>
+<p>Updated Developer Guide Template for Diet Tracker(Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/252">#372</a>)</p>
 </li>
 <li>
-<p>Updated User Guide to include Bmi, Height, Weight, Mode and Metrics Command (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/361">#361</a>)</p>
+<p>Updated User Guide to include the above Commands (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/361">#361</a>)</p>
 </li>
 </ul>
 </div>
@@ -250,8 +172,7 @@ This was circumvented using BigInteger when validating the long.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): (Pull requests: <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/128">#128</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/134">#134</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/135">#135</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/217">#217)</a>,
-)</p>
+<p>PRs reviewed: (Pull requests: <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/128">#128</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/134">#134</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/135">#135</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/217">#217)</a>)</p>
 </li>
 <li>
 <p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com/jarrod-bob/ped/issues" class="bare">https://github.com/jarrod-bob/ped/issues</a>)</p>
@@ -290,7 +211,6 @@ This was circumvented using BigInteger when validating the long.</p>
 <div class="paragraph">
 <p>You can store all your food intake everyday and calculate useful information.</p>
 </div>
-<hr>
 <hr>
 <div class="sect3">
 <h4 id="calculatebmi"><a class="link" href="#calculatebmi">Calculating Body Mass Index (BMI) <code>bmi</code></a></h4>
@@ -1802,4 +1722,4 @@ Error details shown in the response message.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:10:17 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:40:02 UTC</div></div></div></body></html>
