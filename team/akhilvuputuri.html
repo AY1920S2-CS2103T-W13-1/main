@@ -10,7 +10,7 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>EYELAH is a desktop application specifically programmed for Freshmen staying on NUS Campus. It aims to ease their lives
+<p>EYLAH is a desktop application specifically programmed for Freshmen staying on NUS Campus. It aims to ease their lives
 at halls/residential colleges by providing them with an application to split bills easily and help
 them track their diet. The user interacts with it using a CLI and it is programmed using JAVA 11.</p>
 </div>
@@ -37,19 +37,122 @@ them track their diet. The user interacts with it using a CLI and it is programm
 <li>
 <p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
 </li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Major Enhancements</strong>:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Refactored entire AB3 Code base to be used for EYLAH</strong>
+(Refactoring Codebase - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/126">#126</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong><br>
+The idea was to allow both the Expense Splitter and Diet Tracker features of EYLAH to be built onto the existing AB3
+framework rather than replace it entirely.</p>
+</li>
+<li>
+<p><strong>Justification:</strong><br>
+The partitioning into the two feature sections during the refactoring meant that it would be easy to extend the app in
+the future when adding more new features. It would also allow the two teams for each of the features work independently
+without much conflict of code, especially during the initial building phase where there are bound to be many bugs.
+Building on the existing AB3 code base also meant that we were able to follow the good practices and structure used.</p>
+</li>
+<li>
+<p><strong>Highlights:</strong><br>
+As we had already started development of the two features before the refactoring, the highlight was trying to understand
+the existing structure at that point to refactor and partition without introducing any bugs. This required working
+together with my teammates to understand the functionality they had started to implement.</p>
+</li>
+<li>
+<p><strong>Credits:</strong><br>
+Address Book 3 Code Base</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Adding of Food, Calories and Date classes, their test classes for the Diet Tracker</strong>
+(Food, Calories, Tests - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/104">#104</a>
+&amp; Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/125">#125</a>
+&amp; Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/111">#111</a>)
+(Date - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/104">#104</a>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong><br>
+Food is used to represent a food item to be added into the diet tracker and it stores a Calorie object that contains the
+number of calories in the food.</p>
+</li>
+<li>
+<p><strong>Justification:</strong><br>
+These classes are what the Diet Tracker is built upon as almost every command uses the classes to track the
+food intake of users. Without these classes, users would be unable to track the food they eat and their
+calorie intake. Date was added subsequently to allow for functionality of tracking food by date.</p>
+</li>
+<li>
+<p><strong>Highlights:</strong><br>
+The highlight was understanding the requirements of a user when using the Diet Tracker and translating them into the
+Food class. For example, for a diet tracker a user would want a food item that they store to have calories so as to
+track and a name to remember by. It was also interesting to understand how date was to be stored. Instead of serializing
+the LocalDateTime object, I decided to store as a string and call the parser that Java offers to convert it back.</p>
+</li>
+<li>
+<p><strong>Credits:</strong><br>
+AB3 Code Base on how Person is being modelled and used. Duke for the idea of using LocalDateTime.</p>
+</li>
+</ul>
+</div>
+</li>
 <li>
 <p><strong>Implement Storage for Diet Tracker in EYLAH</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: Store food data of user so that when the app is restarted, the information still exists.</p>
+<p><strong>What it does:</strong><br>
+Store food data of user so that when the app is restarted, the information still exists.
+(Storage - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/152">#152</a>
+&amp; <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/210">#210</a>)</p>
 </li>
 <li>
-<p>Justifcation: Users will not constantly keep the app open and there are times when they would close it,thus, storage
+<p><strong>Justification:</strong><br>
+Users will not constantly keep the app open and there are times when they would close it,thus, storage
 allows users to close the app and continue where they left off without doing all the work again.</p>
 </li>
 <li>
-<p>Highlights:</p>
+<p>Highlights:
+It was quite a challenge dealing with the storage due to the complex nature of translating Java objects into a form that
+can be stored in a Json. There were several issues, such as data being able to be stored but no read when the app was
+re-initialised.</p>
+</li>
+<li>
+<p>Credits: Would like to credit all my team mates in discussing and deciding that in this case the best way to store
+would be as a JSON rather than a string and also helping me with troubleshooting storage issues.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Implement Add, Delete Commands and relevant tests</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong><br>
+Allows for food to be added and removed.
+(Add, Delete - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/128">#128</a>)
+(Tests - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/242">#242</a>)</p>
+</li>
+<li>
+<p><strong>Justification:</strong><br>
+The core functionality of a diet tracking app is to be able to control the food in the app, that the Add and Delete
+commands let you do.</p>
+</li>
+<li>
+<p>Highlights:
+It was intriguing to understand the LogicManager as this was my first implementation of logic components.</p>
 </li>
 <li>
 <p>Credits: Address Book 3</p>
@@ -57,40 +160,205 @@ allows users to close the app and continue where they left off without doing all
 </ul>
 </div>
 </li>
-</ul>
-</div>
-</li>
 <li>
-<p><strong>Minor enhancement</strong>: [In Process]</p>
+<p><strong>Implement various list command (Daily, By Tag, By Time Period, All)</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Drew Diet Tracker portion of UML Class diagram</strong></p>
-<div class="imageblock">
-<div class="content">
-<img src="../images/expense-splitter/expense_splitter_uml_class_diagram.png" alt="expense splitter uml class diagram">
+<p><strong>What it does:</strong><br>
+This allows the list shown to change based on the flag provided by the user. They can view daily list, filter by tag,
+filter by time period or view all consumption ever.
+(List Fix - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/210">#210</a>)
+(List By Tag - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/221">#221</a>)
+(List By Past Num of Days - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/225">#225</a>)
+(Refactor Flags For Each Type - <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/248">#248</a>)</p>
+</li>
+<li>
+<p><strong>Justification:</strong><br>
+Instead of simply listing out all the food, there are different list commands for different user needs. If the user
+wants to track his daily consumption, they can view the daily list, if they wish to find a certain type of food,
+they can filter by tag and if they want to know what they ate over a past number of days they can use time period.</p>
+</li>
+<li>
+<p>Highlights:
+The incorporation of the various list command types was not straightforward as it did not just require changes in the
+List Command but also required addition of date and tags into food to be filtered.</p>
+</li>
+<li>
+<p>Credits: My team mate, Jarrod for the idea on having different types of lists to serve different user functions</p>
+</li>
+</ul>
 </div>
-</div>
-<div class="paragraph">
-<p>(Excluding the Height Class)</p>
+</li>
+</ol>
 </div>
 </li>
 <li>
-<p><strong>Added tests for Diet Tracker</strong></p>
+<p><strong>Minor enhancement</strong>:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Show Total Calories Intake and Calories left based on Mode</strong><br>
+(Total Calorie Count - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/248">#248</a>)
+(Show Remaining Calories - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/365">#356</a>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong><br>
+Tabulate the total calorie intake for the day and display to the user. Based on the mode, obtain the calorie limit
+and let the user know how many more calories he can take or whether he has hit the limit.</p>
 </li>
 <li>
-<p><strong>Drew Activity Diagram for Diet Tracker portion of EYLAH</strong></p>
-<div class="imageblock">
-<div class="content">
-<img src="../images/expense-splitter/activityDiagram_for_expensesplitter.png" alt="activityDiagram for expensesplitter">
-</div>
-</div>
+<p><strong>Justification:</strong><br>
+Knowing how many calories have been taken in and how much more one can eat would let the user better track his diet to
+know whether to consume more or less.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p><strong>Fix Several Failing Tests</strong><br>
+(Fix Bmi, Mode, Height, Weight Tests - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/375">#375</a>)
+(Fix AddCommand, ListCommand, LogicManager Tests - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/247">#247</a>)
+(Fix JsonFoodBookStorage Test - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/243">#243</a>)
+(Fix Add, Delete, List Test - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/242">#242</a>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong><br>
+There were many test methods that were failing.</p>
+</li>
+<li>
+<p><strong>Justification:</strong><br>
+The classes would not be able to be rigorously tested if the assertions do not work. This also meant that we potentially
+had problems in our code if the test classes were correct.</p>
+</li>
+<li>
+<p><strong>Highlights</strong><br>
+It was extremely hard to understand why the tests were failing, thus, required extensive logging and tracing to find out
+problems in the code.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Fix Storage Bugs</strong><br>
+(Storing of height, weight, mode - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/318">#318</a>)
+(Reading height, weight from storage - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/362">#362</a>)
+(Reading existing JSON - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/210">#210</a>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong><br>
+There were many bugs with storage, first when implementing storage for food and subsequently when implementing storage
+for personal metrics. For the storing for food, it was being saved to a JSON but could not be loaded when app was
+re-initialised. For the storing of personal metrics, there was issue with generating of the JSON file.</p>
+</li>
+<li>
+<p><strong>Highlights</strong><br>
+Similar to the bugs with tests, it was quite challenging to figure out my values were not able to be stored or read.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Fix Overflow Bug For Number Of Days</strong><br>
+(Num of Days Overflow - Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/318">#373</a>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>What it does:</strong><br>
+There was an issue during internal testing where extremely large values would cause overflow even when the data type
+was a long.</p>
+</li>
+<li>
+<p><strong>Highlights</strong><br>
+There was much discussion on where to handle this and impose a limit. Here, I imposed a limit in the parser based on
+the size of the input string and taking into consideration the average lifespan of a human.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Drew Activity Diagrams for various Diet Tracker functions.</strong></p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerActivityDiagram.png" alt="DietTrackerActivityDiagram">
+</div>
+<div class="title">Figure 1. Diet Tracker Overall Activity Diagram</div>
+</div>
+</li>
+<li>
+<p><strong>Drew Sequence Diagrams for various Diet Tracker functions.</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerAddCommandSequenceDiagram.png" alt="DietTrackerAddCommandSequenceDiagram">
+</div>
+<div class="title">Figure 2. Diet Tracker Add Command Sequence Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerDeleteCommandSequenceDiagram.png" alt="DietTrackerDeleteCommandSequenceDiagram">
+</div>
+<div class="title">Figure 3. Diet Tracker Delete Command Sequence Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerEditCommandSequenceDiagram.png" alt="DietTrackerEditCommandSequenceDiagram">
+</div>
+<div class="title">Figure 4. Diet Tracker Edit Command Sequence Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerListCommandSequenceDiagram.png" alt="DietTrackerListCommandSequenceDiagram">
+</div>
+<div class="title">Figure 5. Diet Tracker List Command Sequence Diagram</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Drew Class Diagrams for various Diet Tracker functions.</strong></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerAddCommandClassDiagram.png" alt="DietTrackerAddCommandClassDiagram">
+</div>
+<div class="title">Figure 6. Diet Tracker Add Command Class Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerDeleteCommandClassDiagram.png" alt="DietTrackerDeleteCommandClassDiagram">
+</div>
+<div class="title">Figure 7. Diet Tracker Delete Command Class Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerEditCommandClassDiagram.png" alt="DietTrackerEditCommandClassDiagram">
+</div>
+<div class="title">Figure 8. Diet Tracker Edit Command Class Diagram</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerListCommandClassDiagram.png" alt="DietTrackerListCommandClassDiagram">
+</div>
+<div class="title">Figure 9. Diet Tracker List Command Class Diagram</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Code contributed</strong>: <a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=akhilvuputuri&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">Functional Code and Test Code</a></p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -104,6 +372,12 @@ allows users to close the app and continue where they left off without doing all
 <p>In charge of refactoring initial codebase to be used for Expense Splitter and Diet Tracker.</p>
 </li>
 <li>
+<p>In charge of Diet Tracker functionalities for EYLAH.</p>
+</li>
+<li>
+<p>Incorporated</p>
+</li>
+<li>
 <p>Participated in planning the project timeline for EYLAH.</p>
 </li>
 </ul>
@@ -114,7 +388,7 @@ allows users to close the app and continue where they left off without doing all
 <div class="ulist">
 <ul>
 <li>
-<p>Adapted the given Address Book UI into EYLAH&#8217;s first draft UI. <a href="https://github.com/" class="bare">https://github.com/</a></p>
+<p>Adapted existing storage functionality of Address Book for Diet Tracker. (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/152">#152</a>)</p>
 </li>
 </ul>
 </div>
@@ -124,7 +398,13 @@ allows users to close the app and continue where they left off without doing all
 <div class="ulist">
 <ul>
 <li>
-<p>To be added</p>
+<p>Updated Developer Guide to include Add and Delete Commands and their Sequence Diagrams (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/177">#177</a>)</p>
+</li>
+<li>
+<p>Update User Guide and Construct Summary Table (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/255">#255</a>, Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/212">#212</a>, Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/377">#377</a>)</p>
+</li>
+<li>
+<p>Updated all Use Cases for Developer Guide (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/412">#412</a>)</p>
 </li>
 </ul>
 </div>
@@ -134,13 +414,13 @@ allows users to close the app and continue where they left off without doing all
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments):</p>
+<p>PRs reviewed (with non-trivial review comments): (Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/209">#209</a>,
+Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/186">#186</a>,
+Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/372">#372</a>,
+Pull request <a href="https://github.com/AY1920S2-CS2103T-W13-1/main/pull/132">#132</a>)</p>
 </li>
 <li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/52">1</a>, <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/48">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
+<p>Reported bugs and suggestions for other teams in the class: <a href="https://github.com/akhilvuputuri/ped/issues">ped</a></p>
 </li>
 </ul>
 </div>
@@ -175,6 +455,229 @@ allows users to close the app and continue where they left off without doing all
 </tr>
 </tbody>
 </table>
+<div class="sect3">
+<h4 id="addfood"><a class="link" href="#addfood">Adding food <code>add</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>add</code> command, <a href="#howtouseaddcommand">how to use it</a>
+and the <a href="#addexpectedoutcome">expected outcome</a> after using the
+<code>add</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Add Command:</strong><br>
+<code>add</code> You can use this command to add a food to the list.</p>
+</div>
+<div id="howtouseaddcommand" class="paragraph">
+<p><strong>How to use the Add Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>add -n NAME -c CALORIES [-t TAG]&#8230;&#8203;</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>add -n Fishball Noodles -c 383 -t favourite -t noodles</code></p>
+</div>
+<div id="addexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/dietTrackerAddCommandSuccessPhoto.png" alt="dietTrackerAddCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional notes</strong><br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Name and Calories are compulsory.</p>
+</li>
+<li>
+<p>Tags are optional.</p>
+</li>
+<li>
+<p>Any food that you add will be added based on the time that you keyed in the food data. As of Diet Tracker&#8217;s current functionalities, you cannot add in foods that you have consumed the day before while also setting that food to appear for the previous day&#8217;s data.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="deletefooditem"><a class="link" href="#deletefooditem">Deleting a Food Item <code>delete</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>delete</code> command, <a href="#howtousedeletecommand">how to use it</a>
+and the <a href="#deleteexpectedoutcome">expected outcome</a> after using the
+<code>delete</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of Delete Command:</strong><br>
+<code>delete</code> You can delete a food item based on the previous list of Foods that you have listed.<br></p>
+</div>
+<div id="howtousedeletecommand" class="paragraph">
+<p><strong>How to use the Delete Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>delete INDEX</code><br></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the food item at the specified <code>INDEX</code> of the list.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed food list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Valid Example:<br>
+<code>list</code><br>
+<code>delete 2</code><br>
+Deletes the 2nd row of food data from today&#8217;s list of food.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+You <strong>MUST</strong> use <code>list</code> to check the list of items to identify a target to edit. This would ensure that you get the
+correct index of the item.
+</td>
+</tr>
+</table>
+</div>
+<div id="deleteexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/dietTrackerDeleteCommandSuccessPhoto.png" alt="dietTrackerDeleteCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional notes and tips</strong><br></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>You can list based on time period or tags to find the item that you want to delete.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="listfooditem"><a class="link" href="#listfooditem">Listing items <code>list</code></a></h4>
+<div class="paragraph">
+<p>In this section, you will learn more about the <code>list</code> command, <a href="#howtouselistcommand">how to use it</a>
+and the <a href="#listexpectedoutcome">expected outcome</a> after using the
+<code>list</code> command.</p>
+</div>
+<div class="paragraph">
+<p><strong>Summary of List Command:</strong><br>
+<code>list</code> You can use this function to list out the different foods that you have consumed and their total calories.
+Different listing modes allow you to watch your overall diet during the period, or how much you can/should eat based
+on your daily intake.</p>
+</div>
+<div class="paragraph">
+<p>Displays different data based on the below flags:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Food consumed for the day (NO FLAG)</p>
+</li>
+<li>
+<p>All food ever consumed (-a)</p>
+</li>
+<li>
+<p>Food consumed for the past number of days (-d)</p>
+</li>
+<li>
+<p>All food with the given tag (-t)</p>
+</li>
+</ul>
+</div>
+<div id="howtouselistcommand" class="paragraph">
+<p><strong>How to use the List Command:</strong></p>
+</div>
+<div class="paragraph">
+<p>Format:<br>
+<code>list [-a] [-d NUMDAYS] [-t TAGNAME]</code><br></p>
+</div>
+<div class="paragraph">
+<p>Valid Examples:<br>
+<code>list</code><br>
+<code>list -a</code><br>
+<code>list -d 3</code><br>
+<code>list -t healthy</code></p>
+</div>
+<div id="listexpectedoutcome" class="paragraph">
+<p><strong>Expected outcome:</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/dietTrackerListCommandSuccessPhoto.png" alt="dietTrackerListCommandSuccessPhoto" width="890" height="200">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Additional notes</strong><br></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Default value of list is food consumed for the day.</p>
+</li>
+<li>
+<p>For the <code>-d</code> tag, the amount of days specified must be a positive Integer value.</p>
+</li>
+<li>
+<p>Calorie intake based on mode is only shown when listing food for the day.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -190,18 +693,1001 @@ allows users to close the app and continue where they left off without doing all
 </tr>
 </tbody>
 </table>
+<div class="sect3">
+<h4 id="Add-Command"><a class="link" href="#Add-Command">Add Command</a></h4>
+<div class="paragraph">
+<p>In this section, we will learn more about how the <code>add</code> command is implemented.</p>
+</div>
+<div class="paragraph">
+<p><strong>What is the Add Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>add</code> command allows the user to add a Food into the FoodBook, along with the Name of the Food and the Calories of the Food.</p>
+</div>
+<div class="paragraph">
+<p>The <code>add</code> command was implemented as <code>AddCommand</code> in the <code>diettracker/logic/commands</code> package.</p>
+</div>
+<div class="paragraph">
+<p>The <code>add</code> command has the following input format:</p>
+</div>
+<div class="paragraph">
+<p><code>add</code> <code>-n NAME</code> <code>-c CALORIES</code> <code>[-t TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>-n NAME</code> and <code>-c CALORIES</code> are <strong>compulsory</strong> fields.</p>
+</li>
+<li>
+<p>There can be multiple <code>-t TAG</code>.</p>
+</li>
+<li>
+<p><code>CALORIES</code> can range from 0 to 1000000. Calories are implemented as Integers.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates what happens when a user executes the <code>add</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerAddCommandActivityDiagram.png" alt="DietTrackerAddCommandActivityDiagram">
+</div>
+<div class="title">Figure 10. Add Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>Structure of Add Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>add</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerAddCommandClassDiagram.png" alt="DietTrackerAddCommandClassDiagram">
+</div>
+<div class="title">Figure 11. Add Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>AddCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>AddCommand</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Implementation of Add Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations AddCommand performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>AddCommand#execute(Model dietModel)</code> method is executed and it checks if the specified Name
+and Calories of a given Food to be added are valid. If valid, a new Food would be created with the specified Name and Calories.</p>
+</li>
+<li>
+<p>The Method <code>DietModel#addFood(Food food)</code> would be called to add the
+food into the <code>FoodBook#foods</code>.</p>
+</li>
+<li>
+<p>If successful, a success message will be generated by <code>CommandResult</code> and it will be returned with the generated
+success message. Otherwise, an error message showing the correct command syntax is thrown as <code>CommandException</code>.</p>
+</li>
+<li>
+<p>If the command syntax was valid and Food was added to the FoodBook, <code>LogicManager</code> calls
+<code>FoodBookStorage#saveFoodBook(ReadOnlyFoodBook foodBook)</code> which saves the new Food
+Amount into JSON format after serializing it using <code>JsonAdaptedFood</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Sequence diagram for Add Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens during the execution of <code>add</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerAddCommandSequenceDiagram.png" alt="DietTrackerAddCommandSequenceDiagram">
+</div>
+<div class="title">Figure 12. Add Command Sequence Diagram</div>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="Delete-Command"><a class="link" href="#Delete-Command">Delete Command</a></h4>
+<div class="paragraph">
+<p>In this section, we will learn more about how the <code>delete</code> command is implemented.</p>
+</div>
+<div class="paragraph">
+<p><strong>What is the Delete Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>The <code>delete</code> command allows users to remove the Food from the FoodBook via the Index.</p>
+</div>
+<div class="paragraph">
+<p>The <code>delete</code> command was implemented as <code>DeleteCommand</code> in the <code>diettracker/logic/commands</code> package.</p>
+</div>
+<div class="paragraph">
+<p>The <code>delete</code> command has the following input format:</p>
+</div>
+<div class="paragraph">
+<p><code>delete</code> <code>INDEX</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> is a compulsory field.</p>
+</li>
+<li>
+<p>The Index of the Food <strong>must</strong> be retrieved by using the <code>list</code> command.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates what happens when a user executes the <code>delete</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerDeleteCommandActivityDiagram.png" alt="DietTrackerDeleteCommandActivityDiagram">
+</div>
+<div class="title">Figure 13. Delete Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>Structure of Delete Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>delete</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerDeleteCommandClassDiagram.png" alt="DietTrackerDeleteCommandClassDiagram">
+</div>
+<div class="title">Figure 14. Delete Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>DeleteCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>DeleteCommand</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Implementation</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations DeleteCommand performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>DeleteCommand#execute(Model dietModel)</code> method is executed and it validates that the specified
+Index to delete is within range. If valid, the Food to be deleted will be retrieved from FoodBook using its Index.</p>
+</li>
+<li>
+<p>The method <code>DietModel#getFilteredFoodList()</code> will then be called to retrieve the List of Foods from Storage.
+<code>List#get(int Index)</code> is then invoked which retrieves the specified Food to be deleted.</p>
+</li>
+<li>
+<p>The method <code>DietModel#deleteFood(Food food)</code> will then be called to remove the Food from the FoodBook.
+<code>FoodBook#remove(int Index)</code> is invoked which makes a call to its internal list to remove the specified Food.</p>
+</li>
+<li>
+<p>If successful, a success message will be generated by <code>CommandResult</code> and it will be returned with the generated
+success message. Otherwise, an error message showing the correct command syntax is thrown as <code>CommandException</code>.</p>
+</li>
+<li>
+<p>If the command syntax was valid and Food was removed from FoodBook, <code>LogicManager</code> calls
+<code>FoodBookStorage#saveFoodBook(ReadOnlyFoodBook foodBook)</code> which saves the new Foods
+into JSON format after serializing it using <code>JsonAdaptedFood</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Sequence Diagram for Delete Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram summarizes what happens during the execution of <code>delete</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerDeleteCommandSequenceDiagram.png" alt="DietTrackerDeleteCommandSequenceDiagram">
+</div>
+<div class="title">Figure 15. Delete Command Sequence Diagram</div>
+</div>
+<hr>
+</div>
+<div class="sect3">
+<h4 id="List-Command"><a class="link" href="#List-Command">List Command</a></h4>
+<div class="paragraph">
+<p>In this section, we will learn more about how the <code>list</code> command is implemented.</p>
+</div>
+<div class="paragraph">
+<p><strong>What is the List Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The <code>list</code> command allows users to find out the current Foods in the FoodBook over a period of time as specified by the flag,
+or a list of foods with the specified tag.</p>
+</div>
+<div class="paragraph">
+<p>The <code>list</code> command was implemented as a <code>ListCommand</code> in the <code>diettracker/logic/commands</code> package.</p>
+</div>
+<div class="paragraph">
+<p>The <code>list</code> has the following input format:</p>
+</div>
+<div class="paragraph">
+<p><code>list</code> <code>[-a]</code> <code>[-d DAYS]</code> <code>[-t TAGS]</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Users must only enter <strong>at most ONE</strong> flag when using the list command.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following activity diagram illustrates what happens when a user executes <code>list</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerListCommandActivityDiagram.png" alt="DietTrackerListCommandActivityDiagram">
+</div>
+<div class="title">Figure 16. List Command Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p><strong>Structure of List Command</strong><br></p>
+</div>
+<div class="paragraph">
+<p>In this section, you will learn more about the relationships between objects related to the <code>list</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerListCommandClassDiagram.png" alt="DietTrackerListCommandClassDiagram">
+</div>
+<div class="title">Figure 17. List Command Class Diagram</div>
+</div>
+<div class="paragraph">
+<p>The above class diagram shows the structure of the <code>ListCommand</code> and its associated classes and
+interfaces. Some methods and fields are left out because they are not of concern in <code>ListCommand</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Implementation of List Command</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is a detailed explanation of the operations <code>ListCommand</code> performs.<br></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>ListCommand#execute(DietModel dietModel)</code> method is executed and it validates that the flag used to decide what
+Foods to list. If the flag is valid, the items to be listed will be retrieved from DietModel according
+to the input flag.</p>
+</li>
+<li>
+<p>The method <code>DietModel#updateFilteredFoodList() will then be called to filter the List of Foods in DietModel.
+`FilteredList#setPredicate(Predicate&lt;Food&gt; predicate)</code> is then invoked which retrieves the specified Foods to be listed.</p>
+<div class="literalblock">
+<div class="content">
+<pre>Case No-Flag Input: The Predicate is any food with date within 1 day back from current time.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Case `-a`: The Predicate always returns true so the list is the entire FoodBook.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Case `-d`: The Predicate will be all food with date later than the specified date which is calculated by input number of days back from the current date.</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Case `-t`: The Predicate will be any food with tags that matches given time.</pre>
+</div>
+</div>
+</li>
+<li>
+<p>If successful, a success message will be generated by <code>CommandResult</code> and it will be returned with the generated
+success message. Otherwise, an error message showing the correct command syntax is thrown as <code>CommandException</code>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Sequence Diagram for List Command</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerListCommandAllSequenceDiagram.png" alt="DietTrackerListCommandAllSequenceDiagram">
+</div>
+<div class="title">Figure 18. List Sequence Diagram for <code>-a</code> or No-Flag Input</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerListCommandDaySequenceDiagram.png" alt="DietTrackerListCommandDaySequenceDiagram">
+</div>
+<div class="title">Figure 19. List Sequence Diagram for <code>-d</code></div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DietTrackerListCommandTagSequenceDiagram.png" alt="DietTrackerListCommandTagSequenceDiagram">
+</div>
+<div class="title">Figure 20. List Sequence Diagram for <code>-t</code></div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
+<h2 id="use-cases"><a class="link" href="#use-cases">Appendix A: Use Cases</a></h2>
 <div class="sectionbody">
-<hr>
 <div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+<p>(For all use cases below, the <strong>System</strong> is the <code>EYLAH</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
+<h3 id="diet-tracker-use-cases" class="discrete">Diet Tracker Use Cases</h3>
+<h4 id="use-case-uc01-update-user-profile" class="discrete">Use case: UC01 Update User Profile</h4>
+<div class="paragraph">
+<p><strong>Actor:</strong> User<br>
+User&#8217;s Height, Weight and Mode will be updated in Self.</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User chooses dieting mode (i.e. Weight Loss, Weight Gain, Maintain)</p>
+</li>
+<li>
+<p>EYLAH updates users' dieting mode</p>
+</li>
+<li>
+<p>User updates height</p>
+</li>
+<li>
+<p>EYLAH updates height of user</p>
+</li>
+<li>
+<p>User updates weight</p>
+</li>
+<li>
+<p>EYLAH updates weight of user</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The flag field for dieting mode is empty or flag is invalid.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. EYLAH requests user to re-enter command with flag</p>
+</li>
+<li>
+<p>1a2. User enters command with flag<br>
+Steps 1a1-1a2 are repeated until the correct entered is correct.<br>
+Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3a. Height field is empty or in invalid format.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. EYLAH requests user to re-enter height in correct format</p>
+</li>
+<li>
+<p>3a2. User enters command with height in correct format<br>
+Steps 3a1-3a2 are repeated until the correct  entered is correct.<br>
+Use case resumes from step 4.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3b. Height value is too large and beyond the limit.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3b1. EYLAH tells user the limit for the height value and prompts to re-enter command.</p>
+</li>
+<li>
+<p>3b2. User will input values within the specified range.<br>
+Steps 3b1-3b2 are repeated until the command entered is correct.<br>
+Use case resumes from step 4.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>5a. Weight field is empty or in invalid format.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>5a1. EYLAH requests user to re-enter weight in correct format</p>
+</li>
+<li>
+<p>5a2. User enters command with weight in correct format<br>
+Steps 5a1-5a2 are repeated until the correct  entered is correct.<br>
+Use case resumes from step 6.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>5b. Weight value is too large and beyond the limit.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>5b1. EYLAH tells user the limit for the weight value and prompts to re-enter command.</p>
+</li>
+<li>
+<p>5b2. User will input values within the specified range.<br>
+Steps 5b1-5b2 are repeated until the command entered is correct.<br>
+Use case resumes from step 6.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>*a. At any time, User chooses to not proceed after inputting in invalid command.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>*a1. EYLAH will not make any changes<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h4 id="use-case-uc02-add-food-item" class="discrete">Use case: UC02 Add Food Item</h4>
+<div class="paragraph">
+<p><strong>Actor:</strong> User<br>
+Food will be added into FoodBook.</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User adds food item</p>
+</li>
+<li>
+<p>EYLAH adds food item to user&#8217;s log</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. The food item is added in an invalid format or certain fields are missing.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. EYLAH requests user to re-enter food item in valid format.</p>
+</li>
+<li>
+<p>1a2. User enters command in the correct format as requested by EYLAH<br>
+Steps 1a1-1a2 are repeated until the correct entered is correct.<br>
+Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>*a. At any time, User chooses to not proceed after inputting in invalid command.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>*a1. EYLAH will not make any changes<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h4 id="use-case-uc03-delete-food-item" class="discrete">Use case: UC03 Delete Food Item</h4>
+<div class="paragraph">
+<p><strong>Actor:</strong> User<br>
+Food will be deleted from FoodBook.</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User lists out existing items</p>
+</li>
+<li>
+<p>EYLAH shows the list based on flags entered</p>
+</li>
+<li>
+<p>User deletes item by index</p>
+</li>
+<li>
+<p>EYLAH deletes item tagged to specified index</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. List command contains invalid flag.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. EYLAH will show proper usage of the command and the valid flags.</p>
+</li>
+<li>
+<p>1a2. User will re-enter the command with a valid flag.<br>
+Steps 1a1-1a2 are repeated until the command entered is correct.
+Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3a. Invalid or empty index keyed into command.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. EYLAH requests user to re-enter index in correct format</p>
+</li>
+<li>
+<p>3a2. User enters edit in  correct format<br>
+Steps 3a1-3a2 are repeated until the command entered is correct.<br>
+Use case ends.
+Use case resumes from step 4.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>*a. At any time, User chooses to not proceed after inputting in invalid command.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>*a1. EYLAH will not make any changes<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h4 id="use-case-uc04-edit-food-item" class="discrete">Use case: UC04 Edit Food Item</h4>
+<div class="paragraph">
+<p><strong>Actor:</strong> User<br>
+Food in FoodBook will be edited.</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User lists out existing items</p>
+</li>
+<li>
+<p>EYLAH shows the list based on flags entered</p>
+</li>
+<li>
+<p>User edits item by index</p>
+</li>
+<li>
+<p>EYLAH edits the data of the item stored at the index.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. List command contains invalid flag.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. EYLAH will show proper usage of the command and the valid flags.</p>
+</li>
+<li>
+<p>1a2. User will re-enter the command with a valid flag.<br>
+Steps 1a1-1a2 are repeated until the command entered is correct.
+Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3a. Invalid or empty index keyed into command.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3a1. EYLAH requests user to re-enter index in correct format</p>
+</li>
+<li>
+<p>3a2. User enters edit in  correct format<br>
+Steps 3a1-3a2 are repeated until the command entered is correct.<br>
+Use case resumes from step 4.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3b. No additional tags and data keyed in as flags to replace existing data.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>3b1. EYLAH requests user to re-enter command with at least one flag</p>
+</li>
+<li>
+<p>3b2. User enters command with flag and data<br>
+Steps 3b1-3b2 are repeated until the command entered is correct.<br>
+Use case resumes from step 4.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>*a. At any time, User chooses to not proceed after inputting in invalid command.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>*a1. EYLAH will not make any changes<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h4 id="use-case-uc05-list-food-items" class="discrete">Use case: UC05 List Food Items</h4>
+<div class="paragraph">
+<p><strong>Actor:</strong> User<br>
+List food in FoodBook filtered by tags.</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User lists out existing items</p>
+</li>
+<li>
+<p>EYLAH shows the list based on flags entered</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Invalid flag or additional arguments are entered into the command.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. EYLAH will show proper usage of the command and the valid flags.</p>
+</li>
+<li>
+<p>1a2. User will re-enter the command with a valid flag.<br>
+Steps 1a1-1a2 are repeated until the command entered is correct.
+Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>*a. At any time, User chooses to not proceed after inputting in invalid command.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>*a1. EYLAH will not make any changes<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h4 id="use-case-uc06-track-daily-calories" class="discrete">Use case: UC06 Track Daily Calories</h4>
+<div class="paragraph">
+<p><strong>Actor:</strong> User<br>
+Show user daily food and calorie intake.</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User calls <code>list</code> command</p>
+</li>
+<li>
+<p>EYLAH shows food intake for the day, calories intake for the day, and calories left to consume</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Additional valid flags entered with the list command.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. EYLAH would generate and display the appropriate list according to the flag<br>
+User case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>*a. At any time, User chooses to not proceed after inputting in invalid command.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>*a1. EYLAH will not make any changes<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h4 id="use-case-uc07-calculate-bmi" class="discrete">Use case: UC07 Calculate BMI</h4>
+<div class="paragraph">
+<p><strong>Actor:</strong> User<br>
+Calculate BMI for user.</p>
+</div>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User calls <code>bmi</code> command, with optional height and weight entered</p>
+</li>
+<li>
+<p>EYLAH calculates and shows user&#8217;s BMI based on the height and weight</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. BMI command contains invalid flags.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. EYLAH suggests to user the correct format to use</p>
+</li>
+<li>
+<p>1a2. User will key in the correct format<br>
+Steps 1a1-1a2 are repeated until the command entered is correct.<br>
+Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. Both height and weight are not provided as input and there is no stored height and weight.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1b1. EYLAH tells user to provide both height and weight as there are no stored values</p>
+</li>
+<li>
+<p>1b2. User will input both height and weight values.<br>
+Steps 1b1-1b2 are repeated until the command entered is correct.<br>
+Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1c. Height is not provided as input and there is no stored height.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1c1. EYLAH tells user to provide height as there are no stored value.</p>
+</li>
+<li>
+<p>1c2. User will input height value with the bmi command.<br>
+Steps 1c1-1c2 are repeated until the command entered is correct.<br>
+Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1d. Weight is not provided as input and there is no stored weight.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1d1. EYLAH tells user to provide weight as there are no stored value.</p>
+</li>
+<li>
+<p>1d2. User will input Weight value with the bmi command.<br>
+Steps 1d1-1d2 are repeated until the command entered is correct.<br>
+Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1e. Height and weight values are extremely large and beyond the limit.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1e1. EYLAH tells user the limit for the values and prompts to re-enter command.</p>
+</li>
+<li>
+<p>1e2. User will input values within the specified range.<br>
+Steps 1e1-1e2 are repeated until the command entered is correct.<br>
+Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>*a. At any time, User chooses to not proceed after inputting in invalid command.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>*a1. EYLAH will not make any changes<br>
+Use case ends.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><em>Table 1. Diet Tracker Command Prefix</em><br></p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 59%;">
+<colgroup>
+<col style="width: 31.4285%;">
+<col style="width: 32.8571%;">
+<col style="width: 35.7144%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Prefix</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used in Following Commands</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-n</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of Food</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Add-Command"><strong>Add</strong></a>, <a href="#Edit-Command"><strong>Edit</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-c</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Calories</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Add-Command"><strong>Add</strong></a>, <a href="#Edit-Command"><strong>Edit</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-i</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Index</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Edit-Command"><strong>Edit</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-g</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Mode-Command"><strong>Mode</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-m</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Maintain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Mode-Command"><strong>Mode</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-l</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lose</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Mode-Command"><strong>Mode</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">All</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#List-Command"><strong>List</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-d</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">By Past Num of Days</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#List-Command"><strong>List</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-t</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">By Tag</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#List-Command"><strong>List</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Height</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Bmi-Command"><strong>Bmi</strong></a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-w</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Weight</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#Bmi-Command"><strong>Bmi</strong></a></p></td>
+</tr>
+</tbody>
+</table>
 <div class="paragraph">
 <p>Questions to ask:<br>
-1. Is JSON the most optimal way of storing the data? Would text files have been more appropriate in this instance?<br></p>
+1. Is JSON the most optimal way of storing the data? Would text files have been more appropriate in this instance?<br>
+2. Are there additional attributes that should be in a food?</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 14:40:28 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 14:59:53 UTC</div></div></div></body></html>
