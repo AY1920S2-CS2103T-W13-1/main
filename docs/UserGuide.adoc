@@ -30,11 +30,11 @@ the <<intro, introduction>>, <<getting-started, getting started>>, <<Features,fe
 <<command-summary, command summary>>, <<glossary, glossary>> and <<AppendixA, appendix>>.
 
 Are you someone who *lives in Temasek Hall* in the National University of Singapore (NUS) and
-has *supper frequently with your hall mates?* Do experience *splitting headaches when splitting large bills amongst
+has *supper frequently with your hall mates?* Do experience *headaches when splitting large bills amongst
 a large group of friends*? Have you ever wished for a *quick and easy way to manage your calorie intake*?
 Or wished for a *Command Line Interface* (CLI) application that can solve the above-mentioned issues?
 
-If you answered *"YES!"* to any of the above questions, Ease Your Life At Halls (EYLAH) is a revolutionary new
+If you answered *Yes* to the above questions, Ease Your Life At Halls (EYLAH) is a revolutionary new
 super-application developed just for you that will make your lives at halls much easier!
 
 EYLAH is an Expense Splitter and Diet Tracker rolled into one, for Temasek Hall residents who *prefer to use a desktop
@@ -237,7 +237,7 @@ Diet Tracker will help you achieve your ideal weight and body mass!
 
 You can store all your food intake for any day and calculate useful information required for you to achieve your goal!
 
-Here are some of the prefixes used:
+Here are some of the prefixes used for diet tracker:
 |===
 |*Prefix* | *Representation*
 | -n | Name of Food
@@ -896,7 +896,7 @@ such as `paid`.
 
 //tag::donereceipt[]
 [[donereceipt]]
-==== Mark receipt as done `donereceipt`
+==== Marking the receipt as done `donereceipt`
 
 In this section, you will learn more about the `donereceipt` command, <<howtousedonereceiptcommand,how to use it>>
 and the <<donereceiptexpectedoutcome,expected outcome>> after using the `donereceipt` command.
@@ -991,7 +991,7 @@ Use `listamount` command to find the index of the person who paid you.
 
 //tag::clearreceipt[]
 [[clearreceipt]]
-==== Clears the receipt `clearreceipt`
+==== Clearing the receipt `clearreceipt`
 In this section, you will learn more about the `clearreceipt` command, <<howtouseclearreceiptcommand,how to use it>>
 and the <<clearreceiptexpectedoutcome,expected outcome>> after using the `clearreceipt` command.
 
@@ -1096,8 +1096,9 @@ You *do not* need to save manually.
 [[faq]]
 == FAQ
 *Q*: How do I transfer my data to another Computer? +
-*A*: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous EYLAH folder.
+*A*: Install the app in your other device and replace the data folder it creates with your previous EYLAH folder.
 
+image::faq1.png[width="890"]
 [[command-summary]]
 == Command Summary
 In this section, you can find out more about the commands supported by EYLAH, as well as their respective format and
