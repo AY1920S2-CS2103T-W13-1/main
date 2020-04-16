@@ -27,7 +27,7 @@ Greetings! Welcome to EYLAH's User Guide.
 This user guide provides in-depth guide for you to aid you in using the
 EYLAH desktop application. This guide comprises of 7 main portions,
 the <<intro, introduction>>, <<getting-started, getting started>>, <<Features,features>>, <<faq, FAQ>>,
-<<command-summary, command summary>>, <<glossary, glossary>> and <<AppendixA, appendix>>.
+<<command-summary, command summary>>, <<glossary, glossary>> and <<Appendix, appendix>>.
 
 Are you someone who *lives in Temasek Hall* in the National University of Singapore (NUS) and
 has *supper frequently with your hall mates?* Do experience *headaches when splitting large bills amongst
@@ -78,15 +78,14 @@ This block of text with a yellow light bulb indicates *additional tips* that wil
 
 [WARNING]
 ====
-This block of text with a warning sign indicates warnings, information you should take extreme note of.
+This block of text with a warning sign indicates *warnings*, information you should take extreme note of.
 ====
 
 kbd:[Enter] - This symbol indicates the enter button on the keyboard.
 
-`markup` - A grey highlight (known as a mark-up) indicates a command that can be inputted into EYLAH. +
+`markup` - A grey highlight (known as a mark-up) indicates keywords such as
+command that can be input into EYLAH +
 
-`[-c Calories]` - For some commands there are optional fields. Keywords placed in square brackets are optional fields. +
-(e.g: `edit INDEX [-n NAME] [-c CALORIES]`)
 
 Lastly, blue underlined words like link:[this] will lead you to other portions of the User Guide or to an external
 website.
@@ -216,11 +215,11 @@ image::diethelp.png[width="890"]
 .Expense Splitter Help
 image::splithelp.png[width="890"]
 
-*Additional notes and tips* +
+*Additional notes & tips* +
 
 [NOTE]
 ====
-`help` in the main menu and the different modes will display different help information.
+`help` in the main menu and in the different modes will display different help information.
 ====
 
 //end::help[]
@@ -237,7 +236,9 @@ Diet Tracker will help you achieve your ideal weight and body mass!
 
 You can store all your food intake for any day and calculate useful information required for you to achieve your goal!
 
-Here are some of the prefixes used for diet tracker:
+Here are some of the prefixes used for diet tracker: +
+
+.Prefix table for Diet Tracker
 |===
 |*Prefix* | *Representation*
 | -n | Name of Food
@@ -607,7 +608,7 @@ and the <<deleteexpectedoutcome, expected outcome>> after using the
 `delete` command.
 
 *Summary of Delete Command:* +
-`delete` You can delete a food item based on the previous list of Foods that you have listed. +
+`delete` You can delete a food item based on the previous list of foods that you have listed. +
 
 [[howtousedeletecommand]]
 *How to use the Delete Command:*
@@ -731,10 +732,12 @@ With EYLAH, splitting a large receipt with friends has never been easier! All yo
 it's price and the names involved in splitting the cost of that item and EYLAH will calculate the rest for you!
 
 We have drawn some diagrams to help you visualize the workflow of
-Expense Splitter. Click <<AppendixA, here>> to find out more!
+Expense Splitter. Click <<AppendixB, here>> to find out more!
 
 
-Here are some of the prefixes used in Expense Splitter:
+Here are some of the prefixes used in Expense Splitter: +
+
+.Prefix table for Expense Splitter
 |===
 |*Prefix* | *Representation*
 | -i | Item Name
@@ -1267,8 +1270,15 @@ item in a list.
 
 | Activity Diagram | This refers to the workflow of a software. | <<AppendixA,Appendix>>
 
+| bmi | Body mass index |
+
+| Java 11 | Java is a general-purpose programming language that is class-based, object-oriented,
+and designed to have as few implementation dependencies as possible. |
+
 |=======================================================================
+[[Appendix]]
 == Appendix
+
 [[AppendixA]]
 === Appendix A: Simple activity diagram to aid you with using Diet Tracker +
 
