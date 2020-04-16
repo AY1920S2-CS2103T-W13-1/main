@@ -7,29 +7,29 @@ start
 
 
 
-if (Are all metrics entered?) then ([Yes])
+if () then ([allMetricsEntered])
 
-else ([No])
-    if (Are both Height and Weight entered?) then ([Yes])
-        if (Is Mode entered?) then ([Yes])
+else ([else])
+    if () then ([bothHeightWeightEntered])
+        if () then ([modeEntered])
 
-        else ([No])
+        else ([else])
             : Mode Command;
         endif
-    else ([No])
-        if (Only one of Height and Weight is entered?) then ([Yes])
-            if (Only height is entered?) then ([Yes])
+    else ([else])
+        if () then ([onlyHeightOrWeightEntered])
+            if () then ([onlyHeightEntered])
                 : Weight Command;
-            else ([No])
+            else ([else])
                 : Height Command;
             endif
-        else ([No])
+        else ([else])
             : Height Command;
             : Weight Command;
         endif
-        if (Is Mode entered?) then ([Yes])
+        if () then ([modeEntered])
 
-                else ([No])
+                else ([else])
                     : Mode Command;
                 endif
     endif
